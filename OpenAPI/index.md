@@ -1,1 +1,1 @@
-# Welcome to OpenAPI!
+# Welcome to OpenAPI
