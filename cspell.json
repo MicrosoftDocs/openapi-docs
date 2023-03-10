@@ -6,5 +6,11 @@
         "docsets",
         "markdownlint",
         "MSRC"
+    ],
+    "flagWords": [
+        "teh"
+    ],
+    "ignorePaths": [
+        "cspell.json"
     ]
 }
