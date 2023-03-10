@@ -3,6 +3,7 @@ title: Welcome to Kiota
 description: Kiota is a command line tool for generating an API client to call any OpenAPI-described API.
 author: jasonjoh
 ms.author: jasonjoh
+date: 03/10/2023
 ---
 
 # Welcome to Kiota
@@ -25,8 +26,6 @@ Kiota is a command line tool for generating an API client to call any OpenAPI-de
 
 ## Next steps
 
-To discover more about the developer experience that Kiota API clients provide, read about the [experience](experience.md).
-
-For details about how to use Kiota to generate API clients, read the [using](using.md) section.
-
-To gain a better understanding of how Kiota works and how to extend it for other languages read the [extending](extending/index.md).
+- To discover more about the developer experience that Kiota API clients provide, see [Kiota API client experience](experience.md).
+- For details about how to use Kiota to generate API clients, see [Using the Kiota tool](using.md).
+- To gain a better understanding of how Kiota works and how to extend it for other languages, see [Kiota design overview](design.md).

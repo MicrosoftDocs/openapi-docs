@@ -13,8 +13,12 @@ items:
     href: install.md
 - name: Concepts
   items:
+  - name: Kiota design
+    href: design.md
   - name: API client experience
     href: experience.md
+  - name: Request builders
+    href: request-builders.md
 - name: How to
   items:
   - name: Add an API to search

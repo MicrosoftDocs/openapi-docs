@@ -3,6 +3,7 @@ title: Get started with Kiota
 description: Learn how to use Kiota to build API clients.
 author: jasonjoh
 ms.author: jasonjoh
+date: 03/10/2023
 ---
 
 # Get started with Kiota
@@ -19,11 +20,11 @@ Kiota can be accessed in the following ways.
 
 You can download the latest version for your operating system.
 
-| Operating system | Download                                                                                    |
-|------------------|---------------------------------------------------------------------------------------------|
-| Windows          | [win-x64.zip](https://github.com/microsoft/kiota/releases/download/v0.11.1/win-x64.zip)     |
-| Linux            | [linux-x64.zip](https://github.com/microsoft/kiota/releases/download/v0.11.1/linux-x64.zip) |
-| macOS            | [osx-x64.zip](https://github.com/microsoft/kiota/releases/download/v0.11.1/osx-x64.zip)     |
+| Operating system | Download                                                                                   |
+|------------------|--------------------------------------------------------------------------------------------|
+| Windows          | [win-x64.zip](https://github.com/microsoft/kiota/releases/download/v1.0.1/win-x64.zip)     |
+| Linux            | [linux-x64.zip](https://github.com/microsoft/kiota/releases/download/v1.0.1/linux-x64.zip) |
+| macOS            | [osx-x64.zip](https://github.com/microsoft/kiota/releases/download/v1.0.1/osx-x64.zip)     |
 
 [All releases](https://github.com/microsoft/kiota/releases/latest)
 
@@ -83,6 +84,4 @@ You can run kiota with a modern web browser by navigating to [app.kiota.dev](htt
 
 ## Next steps
 
-For details on running Kiota, see [Using the Kiota tool](using.md)
-
-The following topics provide details on using Kiota to generate SDKs for specific languages.
+For details on running Kiota, see [Using the Kiota tool](using.md).

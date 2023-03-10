@@ -3,6 +3,7 @@ title: Kiota API client experience
 description: Learn about the developer experience provided by Kiota-generated API clients.
 author: baywet
 ms.author: vibiret
+date: 03/10/2023
 ---
 
 # Kiota API client experience
@@ -44,7 +45,7 @@ var message = await client.Users["bob@contoso.com"]
     .GetAsync();
 ```
 
-The client object is a [request builder](extending/requestbuilders.md) object, and forms the root of a hierarchy of request builder objects that can access any number of APIs that are merged into a common URI space.
+The client object is a [request builder](request-builders.md) object, and forms the root of a hierarchy of request builder objects that can access any number of APIs that are merged into a common URI space.
 
 Requests can be further refined by providing query parameters. Each HTTP operation method that supports query parameters accepts a lambda that can configure an object with the desired query parameters.
 

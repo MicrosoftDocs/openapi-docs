@@ -21,6 +21,8 @@ landingContent:
             url: overview.md
       - linkListType: concept
         links:
+          - text: Kiota design
+            url: design.md
           - text: API client experience
             url: experience.md
 

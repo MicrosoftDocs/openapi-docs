@@ -3,6 +3,7 @@ title: Releases and support for Kiota
 description: Learn about versioning and support options for Kiota.
 author: jasonjoh
 ms.author: jasonjoh
+date: 03/10/2023
 ---
 
 # Releases and support for Kiota
