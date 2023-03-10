@@ -20,7 +20,7 @@ jobs:
     - name: Lint
       uses: DavidAnson/markdownlint-cli2-action@v9
       with:
-        globs: '*.md'
+        globs: '**/*.md'
     - name: Spell check
       uses: streetsidesoftware/cspell-action@v2
       with:
