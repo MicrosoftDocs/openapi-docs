@@ -3,12 +3,8 @@ name: Lint and spell-check
 on:
   pull_request:
     branches: [ main, live ]
-    paths:
-    - '**/*.{md,yml}'
   push:
     branches: [ main, live ]
-    paths:
-    - '**/*.{md,yml}'
 
 jobs:
   lint:
