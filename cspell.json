@@ -1,13 +1,19 @@
 {
     "words": [
+        "allof",
         "Anson",
+        "apisguru",
+        "baywet",
+        "deserializers",
         "docfx",
         "docset",
         "docsets",
+        "ghes",
         "markdownlint",
         "MSRC",
         "openapi",
-        "quickstart"
+        "quickstart",
+        "vibiret"
     ],
     "flagWords": [
         "teh"
