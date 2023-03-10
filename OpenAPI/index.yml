@@ -17,7 +17,7 @@ highlightedContent:
   items:
   - title: Kiota
     itemType: overview
-    url: /kiota/index.md
+    url: ./kiota/index.yml
 
 conceptualContent:
   title: Kiota
@@ -35,4 +35,4 @@ tools:
   items:
   - title: Kiota
     imageSrc: ./images/hub/icon01-tool.svg
-    url: /kiota/index.md
+    url: ./kiota/index.yml
