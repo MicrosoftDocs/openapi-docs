@@ -1,11 +1,5 @@
 {
     "cSpell.spellCheckOnlyWorkspaceFiles": true,
-    "cSpell.words": [
-        "docfx",
-        "docset",
-        "docsets",
-        "MSRC"
-    ],
     "markdownlint.ignore": [
         "LICENSE-CODE"
     ]
