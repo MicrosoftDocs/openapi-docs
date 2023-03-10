@@ -1,0 +1,27 @@
+name: Lint and spell-check Markdown
+
+on:
+  pull_request:
+    branches: [ main, live ]
+    paths:
+    - '**/*.md'
+  push:
+    branches: [ main, live ]
+    paths:
+    - '**/*.md'
+
+jobs:
+  lint:
+    name: Lint  and spell-check Markdown
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Lint
+      uses: DavidAnson/markdownlint-cli2-action@v9
+      with:
+        globs: '**/*.md'
+    - name: Spell check
+      uses: streetsidesoftware/cspell-action@v2
+      with:
+        files: '**/*.md'
