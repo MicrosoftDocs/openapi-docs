@@ -3,7 +3,21 @@ items:
   href: index.yml
 - name: Overview
   href: overview.md
-- name: Get started
+- name: Install
+  href: install.md
+- name: Use Kiota
+  href: using.md
+- name: Quick start
   items:
-  - name: Install
+  - name: .NET
     href: install.md
+- name: Concepts
+  items:
+  - name: API client experience
+    href: experience.md
+- name: How to
+  items:
+  - name: Add an API to search
+    href: add-api.md
+- name: Support
+  href: support.md
