@@ -1,0 +1,38 @@
+### YamlMime:Hub
+
+title: Microsoft OpenAPI documentation
+summary: Learn how to work with OpenAPI-described APIs using Microsoft tools.
+brand: m365
+
+metadata:
+  title: Microsoft OpenAPI documentation
+  description: Learn how to work with OpenAPI-described APIs using Microsoft tools.
+  ms.prod: open-api
+  ms.topic: hub-page
+  author: jasonjoh
+  ms.author: jasonjoh
+  ms.date: 03/10/2023
+
+highlightedContent:
+  items:
+  - title: Kiota
+    itemType: overview
+    url: /kiota/index.md
+
+conceptualContent:
+  title: Kiota
+  summary: Kiota builds API clients
+  items:
+  - title: Kiota
+    links:
+    - text: Get started
+      itemType: get-started
+      url: ./kiota/install.md
+
+tools:
+  title: Open API tools
+  summary: Here's all of our tools!
+  items:
+  - title: Kiota
+    imageSrc: ./images/hub/icon01-tool.svg
+    url: /kiota/index.md

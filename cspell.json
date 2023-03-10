@@ -5,7 +5,9 @@
         "docset",
         "docsets",
         "markdownlint",
-        "MSRC"
+        "MSRC",
+        "openapi",
+        "quickstart"
     ],
     "flagWords": [
         "teh"

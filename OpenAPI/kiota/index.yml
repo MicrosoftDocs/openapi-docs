@@ -1,0 +1,37 @@
+### YamlMime:Landing
+
+title: Kiota documentation
+summary: Use Kiota to generate API clients to call any OpenAPI-described API.
+
+metadata:
+  title: Kiota documentation
+  description: Learn how to use Kiota to generate API clients to call any OpenAPI-described API.
+  ms.prod: open-api
+  ms.topic: landing-page
+  author: jasonjoh
+  ms.author: jasonjoh
+  ms.date: 03/10/2023
+
+landingContent:
+  - title: About Kiota
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Kiota?
+            url: overview.md
+      - linkListType: concept
+        links:
+          - text: What is Kiota
+            url: overview.md
+
+  # Card
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Install Kiota
+            url: install.md
+      - linkListType: quickstart
+        links:
+          - text: Build API clients for .NET
+            url: install.md
