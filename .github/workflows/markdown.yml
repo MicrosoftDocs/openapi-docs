@@ -12,7 +12,7 @@ on:
 
 jobs:
   lint:
-    name: Lint Markdown files
+    name: Lint  and spell-check Markdown
     runs-on: ubuntu-latest
 
     steps:
