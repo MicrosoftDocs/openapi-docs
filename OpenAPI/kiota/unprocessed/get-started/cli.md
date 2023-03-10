@@ -5,12 +5,15 @@ parent: Get started
 # Build SDKs for CLI
 
 ## Required tools
+
 A commandline tool is required. We recommend:
+
 - [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=us) (or equivalent on MacOS/linux)
 
 - [.NET SDK 7.0](https://get.dot.net/7)
 
 ## Target project requirements
+
 Before you can compile and run the generated files, you will need to make sure they are part of a project with the required dependencies. After creating a new project, or reusing an existing one, you will need to add references to the [abstraction](https://github.com/microsoft/kiota-abstractions-dotnet), [authentication](https://github.com/microsoft/kiota-authentication-azure-dotnet), [cli-commons](https://github.com/microsoft/kiota-cli-commons), [http](https://github.com/microsoft/kiota-http-dotnet), and [FORM](https://github.com/microsoft/kiota-serialization-form-dotnet), [JSON](https://github.com/microsoft/kiota-serialization-json-dotnet) and [text](https://github.com/microsoft/kiota-serialization-text-dotnet) serialization packages from the NuGet feed.
 
 ## Creating target projects
@@ -42,7 +45,6 @@ dotnet add package Azure.Identity
 ### Add Kiota and dependencies
 
 > **Note:** Find current version numbers for Kiota packages at [Nexus Repository Manager](https://oss.sonatype.org/).
-
 
 ## Generating the SDK
 
@@ -100,7 +102,7 @@ class Program
                     adapter.BaseUrl = "https://graph.microsoft.com/v1.0";
                     return adapter;
                 }).RegisterCommonServices();
-        
+
         return await builder.Build().InvokeAsync(args);
     }
 }
@@ -114,7 +116,6 @@ class Program
 > - If the target API requires an `Authorization bearer <token>` header but doesn't rely on the Microsoft identity platform, you can implement your own authentication provider by inheriting from **BaseBearerTokenAuthenticationProvider**.
 > - If the target API requires any other form of authentication schemes, you can implement the **IAuthenticationProvider** interface.
 
-
 When ready to execute the application, execute the following command in your project directory.
 
 ```bash
@@ -122,8 +123,8 @@ dotnet run -- me get
 ```
 
 ### Samples
-You can find additional samples here: [CLI SDK samples](https://github.com/microsoftgraph/msgraph-cli/tree/main/samples)
 
+You can find additional samples here: [CLI SDK samples](https://github.com/microsoftgraph/msgraph-cli/tree/main/samples)
 
 ## See also
 

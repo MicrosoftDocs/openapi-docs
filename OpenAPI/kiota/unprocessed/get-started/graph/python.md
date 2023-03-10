@@ -21,6 +21,7 @@ Before you can compile and run the target project, you will need to initialize i
 Create a directory that will contain the new project.
 
 ## Adding dependencies
+
 In your project directory, run the following commands on the terminal to install required dependencies
 using `pip`:
 
