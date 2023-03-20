@@ -1,30 +1,40 @@
 ---
-parent: Get started
+title: Build API clients for Go with Microsoft identity authentication
+description: Learn how use Kiota to build API clients in Go to access APIs that require Microsoft identity authentication.
+author: jasonjoh
+ms.author: jasonjoh
+date: 03/20/2023
 ---
 
-# Build SDKs for Go
+# Build API clients for Go with Azure authentication
+
+In this tutorial, you will generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
 
 ## Required tools
 
 - [Go 1.18](https://golang.org/dl/)
 
-## Target project requirements
+## Create a project
 
-Before you can compile and run the target project, you will need to initialize it. After initializing the test project, you will need to add references to the [abstraction](https://github.com/microsoft/kiota-abstractions-go), [authentication](https://github.com/microsoft/kiota-authentication-azure-go), [http](https://github.com/microsoft/kiota-http-go), [serialization Form](https://github.com/microsoft/kiota-serialization-form-go), [serialization JSON](https://github.com/microsoft/kiota-serialization-json-go), and [serialization Text](https://github.com/microsoft/kiota-serialization-text-go) packages.
-
-## Creating target projects
-
-> **Note:** you can use an existing project if you have one, in that case, you can skip the following section.
-
-Execute the following commands in the directory where you want to create a new project.
+Run the following commands in the directory where you want to create a new project.
 
 ```bash
 go mod init getuser
 ```
 
-## Adding dependencies
+## Add dependencies
 
-Create a file named **getuser.go** and add the following code.
+Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-go). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+
+- Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-azure-go))
+- HTTP ([Kiota default net/http-based implementation](https://github.com/microsoft/kiota-http-go))
+- Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-go))
+- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-go))
+- Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-go))
+
+For this tutorial, you will use the default implementations.
+
+Run the following commands to get the required dependencies.
 
 ```bash
 go get github.com/microsoft/kiota-abstractions-go
@@ -36,23 +46,21 @@ go get github.com/microsoft/kiota-authentication-azure-go
 go get github.com/Azure/azure-sdk-for-go/sdk/azidentity
 ```
 
-Only the first package, `github.com/microsoft/kiota-abstractions-go`, is required. The other packages provide default implementations that you can choose to replace with your own implementations if you wish.
-
 ## Generating the SDK
 
-Kiota generates SDKs from OpenAPI documents. Create a file named **getme.yml** and add the contents of the [Sample OpenAPI description](reference-openapi.md).
+Kiota generates SDKs from OpenAPI documents. Create a file named **get-me.yml** and add the following.
+
+:::code language="yaml" source="/code-snippets/get-started/getme.yml":::
 
 You can then use the Kiota command line tool to generate the SDK classes.
 
 ```shell
-kiota generate -l go -d ../getme.yml -c GraphApiClient -n getuser/client -o ./client
+kiota generate -l go -d ../get-me.yml -c GraphApiClient -n getuser/client -o ./client
 ```
 
 ## Creating an application registration
 
-> **Note:** this step is required if your client will be calling APIs that are protected by the Microsoft Identity Platform like Microsoft Graph.
-
-Follow the instructions in [Register an application for Microsoft identity platform authentication](register-app.md) to get an application ID (also know as a client ID).
+Follow the instructions in [Register an application for Microsoft identity platform authentication](register-azure-app.md) to get an application ID (also know as a client ID).
 
 ## Creating the client application
 
@@ -117,16 +125,12 @@ func main() {
 }
 ```
 
-> **Note:**
->
-> - If the target API doesn't require any authentication, you can use the **AnonymousAuthenticationProvider** instead.
-> - If the target API relies on an API key for authentication, you can use the **ApiKeyAuthenticationProvider** instead.
-> - If the target API requires an `Authorization: Bearer <token>` header but doesn't rely on the Microsoft Identity Platform, you can implement your own authentication provider by inheriting from **BaseBearerTokenAuthenticationProvider**.
-> - If the target API requires any other form of authentication schemes, you can implement the **AuthenticationProvider** interface.
+> [!NOTE]
+> This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `azidentity` library.
 
 ## Executing the application
 
-When ready to execute the application, execute the following command in your project directory.
+When ready to run the application, run the following command in your project directory.
 
 ```shell
 go run .

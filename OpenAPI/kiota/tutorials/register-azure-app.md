@@ -1,17 +1,21 @@
 ---
-title: Register an app
-parent: Get started
+title: Register an application for Microsoft identity platform authentication
+description: Learn how to register an application to enable Microsoft identity authentication.
+author: jasonjoh
+ms.author: jasonjoh
+date: 03/20/2023
 ---
 
 # Register an application for Microsoft identity platform authentication
 
 To be able to authenticate with the Microsoft identity platform and get an access token for Microsoft Graph, you will need to create an application registration. You can install the [Microsoft Graph PowerShell SDK](https://github.com/microsoftgraph/msgraph-sdk-powershell) and use it to create the app registration, or register the app manually in the Azure Active Directory admin center.
 
-The following instructions register an app and enable [device code flow](https://learn.microsoft.com/azure/active-directory/develop/v2-oauth2-device-code) for authentication. This is the authentication method used by the guides in this section.
+The following instructions register an app and enable [device code flow](/azure/active-directory/develop/v2-oauth2-device-code) for authentication. This is the authentication method used by the guides in this section.
 
 ## Use PowerShell
 
-**Note:** The PowerShell script requires an account with the Application administrator, Cloud application administrator, or Global administrator role. If your account has the Application developer role, you can [register manually](#register-manually).
+> [!NOTE]
+> The PowerShell script requires an account with the Application administrator, Cloud application administrator, or Global administrator role. If your account has the Application developer role, you can [register manually](#register-manually).
 
 ```powershell
 Connect-MgGraph -Scopes "Application.ReadWrite.All"
