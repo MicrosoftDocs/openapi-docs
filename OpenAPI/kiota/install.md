@@ -1,12 +1,12 @@
 ---
-title: Get started with Kiota
-description: Learn how to use Kiota to build API clients.
+title: Install Kiota
+description: Learn how to install Kiota to build API clients.
 author: jasonjoh
 ms.author: jasonjoh
 date: 03/10/2023
 ---
 
-# Get started with Kiota
+# Install Kiota
 
 Kiota can be accessed in the following ways.
 
