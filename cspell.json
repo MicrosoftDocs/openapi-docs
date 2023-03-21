@@ -1,5 +1,6 @@
 {
     "words": [
+        "abstractmethod",
         "allof",
         "Anson",
         "apiclient",
@@ -29,11 +30,14 @@
         "MSRC",
         "Ndiritu",
         "Nethttplibrary",
+        "Nonnull",
         "openapi",
         "pgichuhi",
         "phpleague",
         "Println",
         "quickstart",
+        "quickstarts",
+        "struct",
         "vibiret"
     ],
     "flagWords": [

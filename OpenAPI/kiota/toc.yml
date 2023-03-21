@@ -10,17 +10,25 @@ items:
 - name: Quick start
   items:
   - name: .NET
-    href: install.md
+    href: quickstarts/dotnet.md
 - name: Tutorials
   items:
   - name: User Microsoft identity authentication
     items:
     - name: .NET
       href: tutorials/dotnet-azure.md
+    - name: CLI
+      href: tutorials/cli-azure.md
     - name: Go
       href: tutorials/go-azure.md
     - name: Java
       href: tutorials/java-azure.md
+    - name: PHP
+      href: tutorials/php-azure.md
+    - name: Python
+      href: tutorials/python-azure.md
+    - name: Ruby
+      href: tutorials/ruby-azure.md
     - name: TypeScript
       href: tutorials/typescript-azure.md
 - name: Concepts
@@ -29,6 +37,8 @@ items:
     href: design.md
   - name: API client experience
     href: experience.md
+  - name: authentication
+    href: authentication.md
   - name: Request builders
     href: request-builders.md
 - name: How to
