@@ -16,10 +16,6 @@ In this tutorial, you will generate an API client that uses [Microsoft identity 
 - [PHP ^7.4 or ^8.0](https://www.php.net/downloads)
 - [Composer](https://getcomposer.org/)
 
-## Target project requirements
-
-Before you can run the target project, you will need to initialize it. After initializing the test project, you will need to add references to the [abstractions](https://github.com/microsoft/kiota-abstractions-php), [authentication](https://github.com/microsoft/kiota-authentication-phpleague-php), [http](https://github.com/microsoft/kiota-http-guzzle-php), [serialization JSON](https://github.com/microsoft/kiota-serialization-json-php), and [serialization Text](https://github.com/microsoft/kiota-serialization-text-php) packages.
-
 ## Create a project
 
 Run the following commands in the directory where you want to create a new project.
