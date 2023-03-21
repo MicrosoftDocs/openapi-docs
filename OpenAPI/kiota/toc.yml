@@ -37,12 +37,16 @@ items:
     href: design.md
   - name: API client experience
     href: experience.md
+  - name: Abstractions
+    href: abstractions.md
   - name: Authentication
     href: authentication.md
   - name: Request builders
     href: request-builders.md
   - name: Models
     href: models.md
+  - name: Status codes
+    href: status-codes.md
   - name: Error handling
     href: errors.md
 - name: How to
