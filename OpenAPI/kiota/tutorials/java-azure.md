@@ -75,6 +75,8 @@ kiota generate -l java -d get-me.yml -c GetUserApiClient -n getuserclient.apicli
 [!INCLUDE [register-azure-app-device-code-powershell](../includes/register-azure-app-device-code-powershell.md)]
 <!-- markdownlint-enable MD051 -->
 
+---
+
 ## Create the client application
 
 The final step is to update the **./app/src/main/java/getuserclient/App.java** file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.

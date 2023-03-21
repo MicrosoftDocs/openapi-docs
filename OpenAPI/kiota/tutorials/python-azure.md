@@ -72,6 +72,8 @@ kiota generate -l python -d get-me.yml -c GetUserApiClient -n client -o ./client
 [!INCLUDE [register-azure-app-device-code-powershell](../includes/register-azure-app-device-code-powershell.md)]
 <!-- markdownlint-enable MD051 -->
 
+---
+
 ## Create the client application
 
 Create a file in the root of the project named **get_user.py** and add the following code. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.

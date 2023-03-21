@@ -73,6 +73,8 @@ kiota generate -l go -d ../get-me.yml -c GraphApiClient -n getuser/client -o ./c
 [!INCLUDE [register-azure-app-device-code-powershell](../includes/register-azure-app-device-code-powershell.md)]
 <!-- markdownlint-enable MD051 -->
 
+---
+
 ## Create the client application
 
 Create a file in the root of the project named **getuser.go** and add the following code. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.

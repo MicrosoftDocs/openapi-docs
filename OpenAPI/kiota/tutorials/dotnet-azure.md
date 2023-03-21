@@ -7,7 +7,7 @@ ms.topic: tutorial
 date: 03/20/2023
 ---
 
-# Build API clients for .NET with Azure authentication
+# Build API clients for .NET with Microsoft identity authentication
 
 In this tutorial, you will generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
 
@@ -73,6 +73,8 @@ kiota generate -l csharp -d get-me.yml -c GetUserApiClient -n GetUserClient.ApiC
 
 [!INCLUDE [register-azure-app-device-code-powershell](../includes/register-azure-app-device-code-powershell.md)]
 <!-- markdownlint-enable MD051 -->
+
+---
 
 ## Create the client application
 
