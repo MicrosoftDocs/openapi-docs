@@ -3,6 +3,7 @@ title: Build API clients for .NET with Microsoft identity authentication
 description: Learn how use Kiota to build API clients in .NET to access APIs that require Microsoft identity authentication.
 author: jasonjoh
 ms.author: jasonjoh
+ms.topic: tutorial
 date: 03/20/2023
 ---
 
@@ -23,7 +24,7 @@ dotnet new console -o GetUserClient
 dotnet new gitignore
 ```
 
-## Adding dependencies
+## Add dependencies
 
 Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
 
@@ -35,6 +36,8 @@ Before you can compile and run the generated API client, you will need to make s
 
 For this tutorial, you will use the default implementations.
 
+Run the following commands to get the required dependencies.
+
 ```bash
 dotnet add package Microsoft.Kiota.Abstractions
 dotnet add package Microsoft.Kiota.Http.HttpClientLibrary
@@ -45,23 +48,31 @@ dotnet add package Microsoft.Kiota.Authentication.Azure
 dotnet add package Azure.Identity
 ```
 
-## Generating the SDK
+## Generate the API client
 
-Kiota generates SDKs from OpenAPI documents. Create a file named **get-me.yml** and add the following.
+Kiota generates API clients from OpenAPI documents. Create a file named **get-me.yml** and add the following.
 
 :::code language="yaml" source="~/code-snippets/get-started/getme.yml":::
 
-You can then use the Kiota command line tool to generate the SDK classes.
+You can then use the Kiota command line tool to generate the API client classes.
 
 ```bash
 kiota generate -l csharp -d get-me.yml -c GetUserApiClient -n GetUserClient.ApiClient -o ./Client
 ```
 
-## Creating an application registration
+## Register an application
 
-Follow the instructions in [Register an application for Microsoft identity platform authentication](register-azure-app.md) to get an application ID (also know as a client ID).
+[!INCLUDE [register-azure-app-device-code-intro](../includes/register-azure-app-device-code-intro.md)]
 
-## Creating the client application
+### Azure portal [#tab/portal]
+
+[!INCLUDE [register-azure-app-device-code-portal](../includes/register-azure-app-device-code-portal.md)]
+
+### PowerShell [#tab/powershell]
+
+[!INCLUDE [register-azure-app-device-code-powershell](../includes/register-azure-app-device-code-powershell.md)]
+
+## Create the client application
 
 The final step is to update the **Program.cs** file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
@@ -97,9 +108,9 @@ Console.WriteLine($"Hello {me.DisplayName}, your ID is {me.Id}");
 > [!NOTE]
 > This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `Azure.Identity` library.
 
-## Executing the application
+## Run the application
 
-When ready to run the application, run the following command in your project directory.
+Run the following command in your project directory to start the application.
 
 ```bash
 dotnet run

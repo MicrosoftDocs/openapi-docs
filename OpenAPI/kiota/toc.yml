@@ -11,6 +11,18 @@ items:
   items:
   - name: .NET
     href: install.md
+- name: Tutorials
+  items:
+  - name: User Microsoft identity authentication
+    items:
+    - name: .NET
+      href: tutorials/dotnet-azure.md
+    - name: Go
+      href: tutorials/go-azure.md
+    - name: Java
+      href: tutorials/java-azure.md
+    - name: TypeScript
+      href: tutorials/typescript-azure.md
 - name: Concepts
   items:
   - name: Kiota design

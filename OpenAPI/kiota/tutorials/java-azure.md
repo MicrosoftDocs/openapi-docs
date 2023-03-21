@@ -1,21 +1,20 @@
 ---
-parent: Get started
+title: Build API clients for Java with Microsoft identity authentication
+description: Learn how use Kiota to build API clients in Java to access APIs that require Microsoft identity authentication.
+author: jasonjoh
+ms.author: jasonjoh
+ms.topic: tutorial
+date: 03/20/2023
 ---
 
-# Build SDKs for Java
+# Build API clients for Java with Microsoft identity authentication
 
 ## Required tools
 
 - [JDK 16](https://adoptopenjdk.net/)
 - [Gradle 7.4](https://gradle.org/install/)
 
-## Target project requirements
-
-Before you can compile and run the target project, you will need to initialize it. After initializing the test project, you will need to add references to the [abstraction](https://github.com/microsoft/kiota-java), [authentication](https://github.com/microsoft/kiota-java), [http](https://github.com/microsoft/kiota-java), [serialization Form](https://github.com/microsoft/kiota-java), [serialization JSON](https://github.com/microsoft/kiota-java), and [serialization Text](https://github.com/microsoft/kiota-java) packages.
-
-## Creating target projects
-
-> **Note:** you can use an existing project if you have one, in that case, you can skip the following section.
+## Create a project
 
 Use Gradle to initialize a Java application project.
 
@@ -23,15 +22,22 @@ Use Gradle to initialize a Java application project.
 gradle init --dsl groovy --test-framework junit --type java-application --project-name getuserclient --package getuserclient
 ```
 
-## Adding dependencies
+## Add dependencies
 
-### Getting access to the packages
+Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-java). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
 
-### Add Kiota and dependencies
+- Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-java))
+- HTTP ([Kiota default OkHttp-based implementation](https://github.com/microsoft/kiota-java))
+- Form serialization ([Kiota default](https://github.com/microsoft/kiota-java))
+- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-java))
+- Text serialization ([Kiota default](https://github.com/microsoft/kiota-java))
+
+For this tutorial, you will use the default implementations.
 
 Edit **./app/build.gradle** to add the following dependencies.
 
-> **Note:** Find current version numbers for Kiota packages at [Nexus Repository Manager](https://oss.sonatype.org/).
+> [!NOTE]
+> Find current version numbers for Kiota packages at [Nexus Repository Manager](https://oss.sonatype.org/).
 
 ```groovy
 implementation 'com.microsoft.kiota:microsoft-kiota-abstractions:0.2.0'
@@ -43,27 +49,31 @@ implementation 'com.microsoft.kiota:microsoft-kiota-serialization-form:0.2.0'
 implementation 'com.azure:azure-identity:1.7.3'
 ```
 
-Only the first package, `kiota-abstractions`, is required. The other packages provide default implementations that you can choose to replace with your own implementations if you wish.
+## Generate the API client
 
-## Generating the SDK
+Kiota generates API clients from OpenAPI documents. Create a file named **get-me.yml** and add the following.
 
-Kiota generates SDKs from OpenAPI documents. Create a file named **getme.yml** and add the contents of the [Sample OpenAPI description](reference-openapi.md).
+:::code language="yaml" source="~/code-snippets/get-started/getme.yml":::
 
 You can then use the Kiota command line tool to generate the SDK classes.
 
 ```bash
-kiota generate -l java -d getme.yml -c GetUserApiClient -n getuserclient.apiclient -o ./app/src/main/java/getuserclient/apiclient
+kiota generate -l java -d get-me.yml -c GetUserApiClient -n getuserclient.apiclient -o ./app/src/main/java/getuserclient/apiclient
 ```
 
-## Registering an application in Azure AD
+## Register an application
 
-## Creating an application registration
+[!INCLUDE [register-azure-app-device-code-intro](../includes/register-azure-app-device-code-intro.md)]
 
-> **Note:** this step is required if your client will be calling APIs that are protected by the Microsoft Identity Platform like Microsoft Graph.
+### Azure portal [#tab/portal]
 
-Follow the instructions in [Register an application for Microsoft identity platform authentication](register-app.md) to get an application ID (also know as a client ID).
+[!INCLUDE [register-azure-app-device-code-portal](../includes/register-azure-app-device-code-portal.md)]
 
-## Creating the client application
+### PowerShell [#tab/powershell]
+
+[!INCLUDE [register-azure-app-device-code-powershell](../includes/register-azure-app-device-code-powershell.md)]
+
+## Create the client application
 
 The final step is to update the **./app/src/main/java/getuserclient/App.java** file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
@@ -114,16 +124,12 @@ public class App {
 }
 ```
 
-> **Note:**
->
-> - If the target API doesn't require any authentication, you can use the **AnonymousAuthenticationProvider** instead.
-> - If the target API relies on an API key for authentication, you can use the **ApiKeyAuthenticationProvider** instead.
-> - If the target API requires an `Authorization bearer <token>` header but doesn't rely on the Microsoft identity platform, you can implement your own authentication provider by inheriting from **BaseBearerTokenAuthenticationProvider**.
-> - If the target API requires any other form of authentication schemes, you can implement the **AuthenticationProvider** interface.
+> [!NOTE]
+> This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `com.azure.identity` library.
 
-## Executing the application
+## Run the application
 
-When ready to execute the application, execute the following command in your project directory.
+Run the following command in your project directory to start the application.
 
 ```bash
 ./gradlew --console plain run

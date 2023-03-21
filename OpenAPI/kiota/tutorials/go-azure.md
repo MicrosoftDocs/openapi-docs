@@ -3,6 +3,7 @@ title: Build API clients for Go with Microsoft identity authentication
 description: Learn how use Kiota to build API clients in Go to access APIs that require Microsoft identity authentication.
 author: jasonjoh
 ms.author: jasonjoh
+ms.topic: tutorial
 date: 03/20/2023
 ---
 
@@ -46,23 +47,31 @@ go get github.com/microsoft/kiota-authentication-azure-go
 go get github.com/Azure/azure-sdk-for-go/sdk/azidentity
 ```
 
-## Generating the SDK
+## Generate the API client
 
-Kiota generates SDKs from OpenAPI documents. Create a file named **get-me.yml** and add the following.
+Kiota generates API clients from OpenAPI documents. Create a file named **get-me.yml** and add the following.
 
 :::code language="yaml" source="~/code-snippets/get-started/getme.yml":::
 
-You can then use the Kiota command line tool to generate the SDK classes.
+You can then use the Kiota command line tool to generate the API client classes.
 
 ```shell
 kiota generate -l go -d ../get-me.yml -c GraphApiClient -n getuser/client -o ./client
 ```
 
-## Creating an application registration
+## Register an application
 
-Follow the instructions in [Register an application for Microsoft identity platform authentication](register-azure-app.md) to get an application ID (also know as a client ID).
+[!INCLUDE [register-azure-app-device-code-intro](../includes/register-azure-app-device-code-intro.md)]
 
-## Creating the client application
+### Azure portal [#tab/portal]
+
+[!INCLUDE [register-azure-app-device-code-portal](../includes/register-azure-app-device-code-portal.md)]
+
+### PowerShell [#tab/powershell]
+
+[!INCLUDE [register-azure-app-device-code-powershell](../includes/register-azure-app-device-code-powershell.md)]
+
+## Create the client application
 
 Create a file in the root of the project named **getuser.go** and add the following code. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
@@ -128,9 +137,9 @@ func main() {
 > [!NOTE]
 > This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `azidentity` library.
 
-## Executing the application
+## Run the application
 
-When ready to run the application, run the following command in your project directory.
+Run the following command in your project directory to start the application.
 
 ```shell
 go run .
