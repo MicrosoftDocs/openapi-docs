@@ -1,6 +1,6 @@
 ---
 title: Authentication with Kiota API clients
-description: Learn how to add an API description to the Kiota search command.
+description: Learn how to authenticate requests made by Kiota API clients.
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
