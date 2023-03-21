@@ -4,8 +4,9 @@ description: Learn how to add an API description to the Kiota search command.
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 03/10/2023
+date: 03/21/2023
 ---
+
 # Authentication with Kiota API clients
 
 Most REST APIs are protected through some kind of authentication and authorization scheme. The default HTTP core services provided by Kiota require an authentication provider to be passed to handle authentication concerns.
