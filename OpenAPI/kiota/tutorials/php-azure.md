@@ -99,6 +99,8 @@ Create a file in the root of the project named **GetUser.php** and add the follo
 
 [!INCLUDE [get-azure-auth-code-manually](../includes/get-azure-auth-code-manually.md)]
 
+Replace the `$authorizationCode` with your authorization code.
+
 ```php
 <?php
 
