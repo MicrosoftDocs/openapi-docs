@@ -122,5 +122,5 @@ python3 get_user.py
 
 ## See also
 
-- [kiota-samples repository](https://github.com/microsoft/kiota-samples/tree/main/get-started/python) contains the code from this guide.
+- [kiota-samples repository](https://github.com/microsoft/kiota-samples/tree/main/get-started/azure-auth/python) contains the code from this guide.
 - [ToDoItem Sample API](https://github.com/microsoft/kiota-samples/tree/main/sample-api) implements a sample OpenAPI in ASP.NET Core and sample clients in multiple languages.
