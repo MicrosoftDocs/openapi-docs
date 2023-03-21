@@ -37,10 +37,14 @@ items:
     href: design.md
   - name: API client experience
     href: experience.md
-  - name: authentication
+  - name: Authentication
     href: authentication.md
   - name: Request builders
     href: request-builders.md
+  - name: Models
+    href: models.md
+  - name: Error handling
+    href: errors.md
 - name: How to
   items:
   - name: Add an API to search
