@@ -64,13 +64,15 @@ kiota generate -l csharp -d get-me.yml -c GetUserApiClient -n GetUserClient.ApiC
 
 [!INCLUDE [register-azure-app-device-code-intro](../includes/register-azure-app-device-code-intro.md)]
 
-### Azure portal [#tab/portal]
+<!-- markdownlint-disable MD051 -->
+### [Azure portal](#tab/portal)
 
 [!INCLUDE [register-azure-app-device-code-portal](../includes/register-azure-app-device-code-portal.md)]
 
-### PowerShell [#tab/powershell]
+### [PowerShell](#tab/powershell)
 
 [!INCLUDE [register-azure-app-device-code-powershell](../includes/register-azure-app-device-code-powershell.md)]
+<!-- markdownlint-enable MD051 -->
 
 ## Create the client application
 
