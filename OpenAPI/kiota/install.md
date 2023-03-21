@@ -3,6 +3,7 @@ title: Install Kiota
 description: Learn how to install Kiota to build API clients.
 author: jasonjoh
 ms.author: jasonjoh
+ms.topic: get-started
 date: 03/10/2023
 ---
 
