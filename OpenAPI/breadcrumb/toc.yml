@@ -1,4 +1,4 @@
 items:
-- name: Docs
-  tocHref: /
-  topicHref: /
+- name: OpenAPI
+  tocHref: /openapi
+  topicHref: /openapi/index
