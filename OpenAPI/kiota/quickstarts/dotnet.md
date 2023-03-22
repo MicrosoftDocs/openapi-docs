@@ -49,7 +49,7 @@ dotnet add package Microsoft.Kiota.Serialization.Text
 
 Kiota generates API clients from OpenAPI documents. Create a file named **posts-api.yml** and add the following.
 
-:::code language="yaml" source="~/code-snippets/get-started/quickstarts/posts-api.yml":::
+:::code language="yaml" source="~/code-snippets/get-started/quickstart/posts-api.yml":::
 
 This is a minimal OpenAPI description that describes how to call the `/posts` endpoint in the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/).
 
