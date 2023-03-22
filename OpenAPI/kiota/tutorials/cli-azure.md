@@ -13,7 +13,7 @@ In this tutorial, you will generate an API client that uses [Microsoft identity 
 
 ## Required tools
 
-A commandline tool is required. We recommend:
+A command line tool is required. We recommend:
 
 - [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701?hl=en-us&gl=us) (or equivalent on MacOS/linux)
 - [.NET SDK 7.0](https://get.dot.net/7)
