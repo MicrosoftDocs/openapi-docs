@@ -53,7 +53,7 @@ implementation 'com.azure:azure-identity:1.7.3'
 
 Kiota generates API clients from OpenAPI documents. Create a file named **get-me.yml** and add the following.
 
-:::code language="yaml" source="~/code-snippets/get-started/get-me.yml":::
+:::code language="yaml" source="~/code-snippets/get-started/azure-auth/get-me.yml":::
 
 You can then use the Kiota command line tool to generate the SDK classes.
 
