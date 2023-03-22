@@ -13,7 +13,7 @@ items:
     href: quickstarts/dotnet.md
 - name: Tutorials
   items:
-  - name: User Microsoft identity authentication
+  - name: Microsoft identity authentication
     items:
     - name: .NET
       href: tutorials/dotnet-azure.md
