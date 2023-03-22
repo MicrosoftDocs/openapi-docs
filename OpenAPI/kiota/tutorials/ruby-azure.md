@@ -51,7 +51,7 @@ For this tutorial, you will use the default implementations.
 
 Kiota generates API clients from OpenAPI documents. Create a file named **get-me.yml** and add the following.
 
-:::code language="yaml" source="~/code-snippets/get-started/getme.yml":::
+:::code language="yaml" source="~/code-snippets/get-started/get-me.yml":::
 
 You can then use the Kiota command line tool to generate the API client classes.
 
