@@ -16,4 +16,4 @@ Kiota quick starts are step-by-step exercises that guide you through generating 
 
 | Quick start | GitHub location |
 |-------------|-----------------|
-| :::image type="icon" source="/media/logos/logo_NET.svg?branch=main" border="false"::: .NET | [microsoft/kiota-samples/get-started/quickstart/dotnet](https://github.com/microsoft/kiota-samples/get-started/quickstart/dotnet) |
+| [.NET](dotnet.md) | [microsoft/kiota-samples/get-started/quickstart/dotnet](https://github.com/microsoft/kiota-samples/get-started/quickstart/dotnet) |
