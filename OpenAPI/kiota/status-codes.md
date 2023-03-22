@@ -1,6 +1,6 @@
 ---
 title: HTTP status code handling with Kiota API clients
-description: Learn about the interfaces used for serialization and deserialization in Kiota clients.
+description: Learn how Kiota maps HTTP status codes to return values.
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
