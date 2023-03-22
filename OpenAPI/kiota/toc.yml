@@ -43,6 +43,8 @@ items:
     href: authentication.md
   - name: Request builders
     href: request-builders.md
+  - name: Serialization
+    href: serialization.md
   - name: Models
     href: models.md
   - name: Status codes

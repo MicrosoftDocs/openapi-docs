@@ -19,14 +19,17 @@ landingContent:
         links:
           - text: What is Kiota?
             url: overview.md
+          - text: Use Kiota
+            url: using.md
       - linkListType: concept
         links:
           - text: Kiota design
             url: design.md
           - text: API client experience
             url: experience.md
+          - text: Authentication
+            url: authentication.md
 
-  # Card
   - title: Get started
     linkLists:
       - linkListType: get-started
@@ -36,4 +39,38 @@ landingContent:
       - linkListType: quickstart
         links:
           - text: Build API clients for .NET
-            url: install.md
+            url: quickstarts/dotnet.md
+
+  - title: Microsoft identity authentication
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: .NET tutorial
+            url: tutorials/dotnet-azure.md
+          - text: CLI tutorial
+            url: tutorials/cli-azure.md
+          - text: Go tutorial
+            url: tutorials/go-azure.md
+          - text: Java tutorial
+            url: tutorials/java-azure.md
+          - text: PHP tutorial
+            url: tutorials/php-azure.md
+          - text: Python tutorial
+            url: tutorials/python-azure.md
+          - text: Ruby tutorial
+            url: tutorials/ruby-azure.md
+          - text: TypeScript tutorial
+            url: tutorials/typescript-azure.md
+
+  - title: Extending Kiota libraries
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Abstractions
+            url: abstractions.md
+      - linkListType: overview
+        links:
+          - text: Authentication
+            url: authentication.md
+          - text: Serialization
+            url: serialization.md
