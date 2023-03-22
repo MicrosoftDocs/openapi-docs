@@ -12,6 +12,8 @@ date: 03/22/2023
 Kiota quick starts are step-by-step exercises that guide you through generating an API client for a basic OpenAPI and creating a basic application that uses the generated client. These quick starts use the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/).
 
 > [!NOTE]
-> Completed code for these quickstarts is available in the [kiota-samples](https://github.com/microsoft/kiota-samples) GitHub repository.
+> Completed code for these quickstarts is available in the [kiota-samples](https://github.com/microsoft/kiota-samples/get-started/quickstart) GitHub repository.
 
-- :::image type="icon" source="/media/logos/logo_NET.svg" border="false"::: [.NET](quickstarts/dotnet.md)
+| Quick start | GitHub location |
+|-------------|-----------------|
+| :::image type="icon" source="/media/logos/logo_NET.svg?branch=main" border="false"::: .NET | [microsoft/kiota-samples/get-started/quickstart/dotnet](https://github.com/microsoft/kiota-samples/get-started/quickstart/dotnet) |
