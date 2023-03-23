@@ -80,43 +80,7 @@ kiota generate -l typescript -d get-me.yml -c GetUserApiClient -o ./client
 
 Create a file in the root of the project named **index.ts** and add the following code. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
-```typescript
-import { DeviceCodeCredential } from '@azure/identity';
-import { AzureIdentityAuthenticationProvider } from '@microsoft/kiota-authentication-azure';
-import { FetchRequestAdapter } from '@microsoft/kiota-http-fetchlibrary';
-import { GetUserApiClient } from './client/getUserApiClient';
-
-const clientId = 'YOUR_CLIENT_ID';
-
-// The auth provider will only authorize requests to
-// the allowed hosts, in this case Microsoft Graph
-const allowedHosts = new Set<string>([ 'graph.microsoft.com' ]);
-const graphScopes = [ 'User.Read' ];
-
-const credential = new DeviceCodeCredential({
-  clientId: clientId,
-  userPromptCallback: (deviceCodeInfo) => {
-    console.log(deviceCodeInfo.message);
-  }
-});
-
-const authProvider =
-  new AzureIdentityAuthenticationProvider(credential, graphScopes, undefined, allowedHosts);
-const adapter = new FetchRequestAdapter(authProvider);
-
-const client = new GetUserApiClient(adapter);
-
-async function GetUser(): Promise<void> {
-  try {
-    const me = await client.me.get();
-    console.log(`Hello ${me?.displayName}, your ID is ${me?.id}`);
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-GetUser();
-```
+:::code language="typescript" source="~/code-snippets/get-started/azure-auth/typescript/index.ts" id="ProgramSnippet":::
 
 > [!NOTE]
 > This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `@azure/identity` library.

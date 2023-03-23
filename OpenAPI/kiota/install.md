@@ -73,7 +73,7 @@ You can run kiota with a modern web browser by navigating to [app.kiota.dev](htt
 1. Install the [.NET SDK 7.0](https://get.dot.net/7).
 1. Open the solution with Visual Studio and right click *publish* **--or--** execute the following command:
 
-    ```shell
+    ```bash
     dotnet publish ./src/kiota/kiota.csproj -c Release -p:PublishSingleFile=true -r win-x64
     ```
 
