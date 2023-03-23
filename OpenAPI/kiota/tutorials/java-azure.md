@@ -39,7 +39,7 @@ Edit **./app/build.gradle** to add the following dependencies.
 > [!NOTE]
 > Find current version numbers for Kiota packages at [Nexus Repository Manager](https://oss.sonatype.org/).
 
-```groovy
+```gradle
 implementation 'com.microsoft.kiota:microsoft-kiota-abstractions:0.2.0'
 implementation 'com.microsoft.kiota:microsoft-kiota-authentication-azure:0.2.0'
 implementation 'com.microsoft.kiota:microsoft-kiota-http-okHttp:0.2.0'

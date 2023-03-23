@@ -55,7 +55,7 @@ Kiota generates API clients from OpenAPI documents. Create a file named **get-me
 
 You can then use the Kiota command line tool to generate the API client classes.
 
-```shell
+```bash
 kiota generate -l go -d ../get-me.yml -c GraphApiClient -n getuser/client -o ./client
 ```
 
@@ -88,7 +88,7 @@ Create a file in the root of the project named **getuser.go** and add the follow
 
 Run the following command in your project directory to start the application.
 
-```shell
+```bash
 go run .
 ```
 

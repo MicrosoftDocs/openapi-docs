@@ -53,7 +53,7 @@ Kiota generates API clients from OpenAPI documents. Create a file named **get-me
 
 You can then use the Kiota command line tool to generate the API client classes.
 
-```shell
+```bash
 kiota generate -l PHP -d get-me.yml -c GraphApiClient -n GetUser\Client -o ./client
 ```
 
@@ -69,7 +69,7 @@ Add the following to your `composer.json` to set your namespaces correctly:
 
 To ensure the newly generated classes can be imported, update the autoload paths using:
 
-```shell
+```bash
 composer dumpautoload
 ```
 
@@ -106,7 +106,7 @@ Replace the `$authorizationCode` with your authorization code.
 
 Run the following command in your project directory to start the application.
 
-```shell
+```bash
 php GetUser.php
 ```
 

@@ -81,6 +81,8 @@ end
 [!INCLUDE [register-azure-app-auth-code-powershell](../includes/register-azure-app-auth-code-powershell.md)]
 <!-- markdownlint-enable MD051 -->
 
+---
+
 ## Create the client application
 
 Create a file in the root of the project named **get_user.rb** and add the code below. Replace the `client_id` and `client_secret` with your credentials from the previous step.

@@ -87,7 +87,7 @@ Create a file in the root of the project named **get_user.py** and add the follo
 
 Run the following command in your project directory to start the application.
 
-```shell
+```bash
 python3 get_user.py
 ```
 
