@@ -386,13 +386,13 @@ kiota info
 
 ```bash
 Language    Maturity Level
-CLI         Preview
-CSharp      Preview
+CSharp      Stable
 Go          Preview
 Java        Preview
 PHP         Preview
-Python      Experimental
+Python      Preview
 Ruby        Experimental
+Shell       Preview
 Swift       Experimental
 TypeScript  Experimental
 ```
@@ -406,13 +406,14 @@ kiota info -l CSharp
 ```
 
 ```bash
-The language CSharp is currently in Preview maturity level.
+The language CSharp is currently in Stable maturity level.
 After generating code for this language, you need to install the following packages:
-dotnet add package Microsoft.Kiota.Abstractions --version 1.0.0-preview.13 --prerelease
-dotnet add package Microsoft.Kiota.Http.HttpClientLibrary --version 1.0.0-preview.10 --prerelease
-dotnet add package Microsoft.Kiota.Serialization.Json --version 1.0.0-preview.7 --prerelease
-dotnet add package Microsoft.Kiota.Authentication.Azure --version 1.0.0-preview.4 --prerelease
-dotnet add package Microsoft.Kiota.Serialization.Text --version 1.0.0-preview.4 --prerelease
+dotnet add package Microsoft.Kiota.Abstractions --version 1.0.0
+dotnet add package Microsoft.Kiota.Http.HttpClientLibrary --version 1.0.0
+dotnet add package Microsoft.Kiota.Serialization.Form --version 1.0.0
+dotnet add package Microsoft.Kiota.Serialization.Json --version 1.0.1
+dotnet add package Microsoft.Kiota.Authentication.Azure --version 1.0.0
+dotnet add package Microsoft.Kiota.Serialization.Text --version 1.0.0
 ```
 
 ### Optional Parameters
