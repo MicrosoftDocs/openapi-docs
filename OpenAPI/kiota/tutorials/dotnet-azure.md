@@ -80,34 +80,7 @@ kiota generate -l csharp -d get-me.yml -c GetUserApiClient -n GetUserClient.ApiC
 
 The final step is to update the **Program.cs** file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
-```csharp
-using Azure.Identity;
-using GetUserClient.ApiClient;
-using Microsoft.Kiota.Authentication.Azure;
-using Microsoft.Kiota.Http.HttpClientLibrary;
-
-var clientId = "YOUR_CLIENT_ID";
-
-// The auth provider will only authorize requests to
-// the allowed hosts, in this case Microsoft Graph
-var allowedHosts = new [] { "graph.microsoft.com" };
-var graphScopes = new [] { "User.Read" };
-
-var credential = new DeviceCodeCredential((code, cancellation) =>
-{
-    Console.WriteLine(code.Message);
-    return Task.FromResult(0);
-},
-clientId);
-
-var authProvider = new AzureIdentityAuthenticationProvider(credential, allowedHosts, scopes: graphScopes);
-var requestAdapter = new HttpClientRequestAdapter(authProvider);
-var client = new GetUserApiClient(requestAdapter);
-
-var me = await client.Me.GetAsync();
-Console.WriteLine($"Hello {me.DisplayName}, your ID is {me.Id}");
-
-```
+:::code language="csharp" source="~/code-snippets/get-started/azure-auth/dotnet/src/Program.cs" id="ProgramSnippet":::
 
 > [!NOTE]
 > This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `Azure.Identity` library.

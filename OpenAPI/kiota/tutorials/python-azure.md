@@ -78,36 +78,7 @@ kiota generate -l python -d get-me.yml -c GetUserApiClient -n client -o ./client
 
 Create a file in the root of the project named **get_user.py** and add the following code. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
-<!-- :::code language="python" source="~/code-snippets/get-started/azure-auth/python/get_user.py" id="ProgramSnippet"::: -->
-
-```python
-import asyncio
-from azure.identity import DeviceCodeCredential
-from kiota_authentication_azure.azure_identity_authentication_provider import (
-    AzureIdentityAuthenticationProvider)
-from kiota_http.httpx_request_adapter import HttpxRequestAdapter
-from client.get_user_api_client import GetUserApiClient
-
-async def main():
-    # You may need this if your're using asyncio on windows
-    # See: https://stackoverflow.com/questions/63860576/asyncio-event-loop-is-closed-when-using-asyncio-run
-    # asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-
-    client_id = 'YOUR_CLIENT_ID'
-    graph_scopes = ['User.Read']
-
-    credential = DeviceCodeCredential(client_id)
-    auth_provider = AzureIdentityAuthenticationProvider(credential, scopes=graph_scopes)
-
-    request_adapter = HttpxRequestAdapter(auth_provider)
-    client = GetUserApiClient(request_adapter)
-
-    me = await client.me.get()
-    print(f"Hello {me.display_name}, your ID is {me.id}")
-
-# Run main
-asyncio.run(main())
-```
+:::code language="python" source="~/code-snippets/get-started/azure-auth/python/get_user.py" id="ProgramSnippet":::
 
 > [!NOTE]
 > This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `azure.identity` library.
@@ -116,7 +87,7 @@ asyncio.run(main())
 
 Run the following command in your project directory to start the application.
 
-```shell
+```bash
 python3 get_user.py
 ```
 

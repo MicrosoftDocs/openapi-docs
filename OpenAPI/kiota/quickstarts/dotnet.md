@@ -63,52 +63,7 @@ kiota generate -l CSharp -c PostsClient -n KiotaPosts.Client -d ./posts-api.yml 
 
 The final step is to update the **Program.cs** file that was generated as part of the console application to include the code below.
 
-```csharp
-using KiotaPosts.Client;
-using KiotaPosts.Client.Models;
-using Microsoft.Kiota.Abstractions.Authentication;
-using Microsoft.Kiota.Http.HttpClientLibrary;
-
-// API requires no authentication, so use the anonymous
-// authentication provider
-var authProvider = new AnonymousAuthenticationProvider();
-// Create request adapter using the HttpClient-based implementation
-var adapter = new HttpClientRequestAdapter(authProvider);
-// Create the API client
-var client = new PostsClient(adapter);
-
-// GET /posts
-var allPosts = await client.Posts.GetAsync();
-Console.WriteLine($"Retrieved {allPosts?.Count} posts.");
-
-// GET /posts/{id}
-var specificPostId = "5";
-var specificPost = await client.Posts[specificPostId].GetAsync();
-Console.WriteLine($"Retrieved post - ID: {specificPost?.Id}, Title: {specificPost?.Title}, Body: {specificPost?.Body}");
-
-// POST /posts
-var newPost = new Post
-{
-    UserId = 42,
-    Title = "Testing Kiota-generated API client",
-    Body = "Hello world!"
-};
-
-var createdPost = await client.Posts.PostAsync(newPost);
-Console.WriteLine($"Created new post with ID: {createdPost?.Id}");
-
-// PATCH /posts/{id}
-var update = new Post
-{
-    // Only update title
-    Title = "Updated title"
-};
-var updatedPost = await client.Posts[specificPostId].PatchAsync(update);
-Console.WriteLine($"Updated post - ID: {updatedPost?.Id}, Title: {updatedPost?.Title}, Body: {updatedPost?.Body}");
-
-// DELETE /posts/{id}
-await client.Posts[specificPostId].DeleteAsync();
-```
+:::code language="csharp" source="~/code-snippets/get-started/quickstart/dotnet/src/Program.cs" id="ProgramSnippet":::
 
 > [!NOTE]
 > The [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/) doesn't require any authentication, so this sample uses the **AnonymousAuthenticationProvider**. For APIs that require authentication, use an applicable authentication provider.

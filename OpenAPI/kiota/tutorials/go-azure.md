@@ -55,7 +55,7 @@ Kiota generates API clients from OpenAPI documents. Create a file named **get-me
 
 You can then use the Kiota command line tool to generate the API client classes.
 
-```shell
+```bash
 kiota generate -l go -d ../get-me.yml -c GraphApiClient -n getuser/client -o ./client
 ```
 
@@ -79,64 +79,7 @@ kiota generate -l go -d ../get-me.yml -c GraphApiClient -n getuser/client -o ./c
 
 Create a file in the root of the project named **getuser.go** and add the following code. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
-```go
-package main
-
-import (
-  "context"
-  "fmt"
-
-  "getuser/client"
-
-  "github.com/Azure/azure-sdk-for-go/sdk/azidentity"
-  azure "github.com/microsoft/kiota-authentication-azure-go"
-  http "github.com/microsoft/kiota-http-go"
-)
-
-func main() {
-  clientId := "YOUR_CLIENT_ID"
-
-  // The auth provider will only authorize requests to
-  // the allowed hosts, in this case Microsoft Graph
-  allowedHosts := []string{"graph.microsoft.com"}
-  graphScopes := []string{"User.Read"}
-
-  credential, err := azidentity.NewDeviceCodeCredential(&azidentity.DeviceCodeCredentialOptions{
-    ClientID: clientId,
-    UserPrompt: func(ctx context.Context, dcm azidentity.DeviceCodeMessage) error {
-      fmt.Println(dcm.Message)
-      return nil
-    },
-  })
-
-  if err != nil {
-    fmt.Printf("Error creating credential: %v\n", err)
-  }
-
-  authProvider, err := azure.NewAzureIdentityAuthenticationProviderWithScopesAndValidHosts(
-    credential, graphScopes, allowedHosts)
-
-  if err != nil {
-    fmt.Printf("Error creating auth provider: %v\n", err)
-  }
-
-  adapter, err := http.NewNetHttpRequestAdapter(authProvider)
-
-  if err != nil {
-    fmt.Printf("Error creating request adapter: %v\n", err)
-  }
-
-  client := client.NewGraphApiClient(adapter)
-
-  me, err := client.Me().Get(context.Background(), nil)
-
-  if err != nil {
-    fmt.Printf("Error getting user: %v\n", err)
-  }
-
-  fmt.Printf("Hello %s, your ID is %s\n", *me.GetDisplayName(), *me.GetId())
-}
-```
+:::code language="go" source="~/code-snippets/get-started/azure-auth/go/getuser.go" id="ProgramSnippet":::
 
 > [!NOTE]
 > This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `azidentity` library.
@@ -145,7 +88,7 @@ func main() {
 
 Run the following command in your project directory to start the application.
 
-```shell
+```bash
 go run .
 ```
 
