@@ -1,5 +1,7 @@
 # OpenAPI documentation
 
+This repository contains the source for docs published to [https://learn.microsoft.com/openapi](https://learn.microsoft.com/openapi). For information on authoring guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Microsoft Open Source Code of Conduct
 
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
