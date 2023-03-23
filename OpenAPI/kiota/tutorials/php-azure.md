@@ -97,47 +97,7 @@ Create a file in the root of the project named **GetUser.php** and add the follo
 
 Replace the `$authorizationCode` with your authorization code.
 
-```php
-<?php
-
-use GetUser\Client\GraphApiClient;
-use Microsoft\Kiota\Abstractions\ApiException;
-use Microsoft\Kiota\Authentication\Oauth\AuthorizationCodeContext;
-use Microsoft\Kiota\Authentication\PhpLeagueAuthenticationProvider;
-use Microsoft\Kiota\Http\GuzzleRequestAdapter;
-
-require __DIR__.'/vendor/autoload.php';
-
-try {
-    $clientId = 'clientId';
-    $clientSecret = 'secret';
-    $authorizationCode = 'authCode';
-
-    $tenantId = 'common';
-    $redirectUri = 'http://localhost';
-
-    $scopes = ['User.Read'];
-
-    $tokenRequestContext = new AuthorizationCodeContext(
-        $tenantId,
-        $clientId,
-        $clientSecret,
-        $authorizationCode,
-        $redirectUri
-    );
-
-    $authProvider = new PhpLeagueAuthenticationProvider($tokenRequestContext, $scopes);
-    $requestAdapter = new GuzzleRequestAdapter($authProvider);
-    $client = new GraphApiClient($requestAdapter);
-
-    $me = $client->me()->get()->wait();
-    echo "Hello {$me->getDisplayName()}, your ID is {$me->getId()}";
-
-} catch (ApiException $ex) {
-    echo $ex->getMessage();
-}
-
-```
+:::code language="php" source="~/code-snippets/get-started/azure-auth/php/GetUser.php" id="ProgramSnippet":::
 
 > [!NOTE]
 > This example uses the **AuthorizationCodeContext** class. You can use any of the credential classes from the `kiota-authentication-phpleague` library.
