@@ -81,7 +81,7 @@ kiota generate -l java -d get-me.yml -c GetUserApiClient -n getuserclient.apicli
 
 The final step is to update the **./app/src/main/java/getuserclient/App.java** file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
-:::code language="java" source="~/code-snippets/get-started/azure-auth/java/app/src/main/App.java" id="ProgramSnippet":::
+:::code language="java" source="~/code-snippets/get-started/azure-auth/java/app/src/main/java/getuserclient/App.java" id="ProgramSnippet":::
 
 > [!NOTE]
 > This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `com.azure.identity` library.
