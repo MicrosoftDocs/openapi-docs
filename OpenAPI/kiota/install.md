@@ -57,7 +57,7 @@ If you have the [.NET SDK](https://dotnet.microsoft.com/download) installed, you
 Execute the following command to install the tool.
 
 ```bash
-dotnet tool install --global --prerelease Microsoft.OpenApi.Kiota
+dotnet tool install --global Microsoft.OpenApi.Kiota
 ```
 
 ## Run in browser
