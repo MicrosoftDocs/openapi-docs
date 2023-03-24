@@ -43,11 +43,11 @@
     "globalMetadata": {
       "breadcrumb_path": "/OpenAPI/breadcrumb/toc.json",
       "feedback_system": "None",
-      "ms.prod": "open-api"
+      "ms.prod": "open-api",
+      "uhfHeaderId": "MSDocsHeader-OpenAPI"
     },
     "fileMetadata": {},
     "template": [],
-    "dest": "OpenAPI",
-    "uhfHeaderId": "MSDocsHeader-OpenAPI"
+    "dest": "OpenAPI"
   }
 }
