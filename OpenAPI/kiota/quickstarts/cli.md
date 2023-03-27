@@ -110,6 +110,6 @@ dotnet run -- posts item delete --post-id 5
 
 ## See also
 
-- [kiota-samples repository](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstarts/cli) contains the code from this guide.
+- [kiota-samples repository](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/cli) contains the code from this guide.
 - [Microsoft Graph sample using Microsoft identity platform authentication](https://github.com/microsoft/kiota-samples/tree/main/get-started/azure-auth/cli)
 - [ToDoItem Sample API](https://github.com/microsoft/kiota-samples/tree/main/sample-api) implements a sample OpenAPI in ASP.NET Core and sample clients in multiple languages.
