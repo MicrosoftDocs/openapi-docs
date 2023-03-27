@@ -7,7 +7,7 @@ ms.topic: quickstart
 date: 03/24/2023
 ---
 
-# Build API clients for Java
+# Build API clients for CLIs
 
 In this tutorial, you will build a sample command line interface (CLI) app that calls a REST API that does not require authentication.
 
