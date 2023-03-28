@@ -17,7 +17,7 @@
   ],
   "notification_subscribers": [
     "rabebothmani@microsoft.com",
-    " jasonjoh@microsoft.com"
+    "jasonjoh@microsoft.com"
   ],
   "sync_notification_subscribers": [],
   "branches_to_filter": [],
@@ -26,6 +26,12 @@
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
+      "branch": "main",
+      "branch_mapping": {}
+    },
+    {
+      "path_to_root": "openapi/code-snippets",
+      "url": "https://github.com/microsoft/kiota-samples",
       "branch": "main",
       "branch_mapping": {}
     }

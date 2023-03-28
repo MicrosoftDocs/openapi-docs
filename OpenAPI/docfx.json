@@ -25,7 +25,8 @@
       {
         "files": [
           "**/*.png",
-          "**/*.jpg"
+          "**/*.jpg",
+          "**/*.svg"
         ],
         "exclude": [
           "**/obj/**",
@@ -41,8 +42,9 @@
     "externalReference": [],
     "globalMetadata": {
       "breadcrumb_path": "/OpenAPI/breadcrumb/toc.json",
-      "extendBreadcrumb": true,
-      "feedback_system": "None"
+      "feedback_system": "None",
+      "ms.prod": "open-api",
+      "uhfHeaderId": "MSDocsHeader-OpenAPI"
     },
     "fileMetadata": {},
     "template": [],

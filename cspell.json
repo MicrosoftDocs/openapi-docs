@@ -1,0 +1,52 @@
+{
+    "words": [
+        "abstractmethod",
+        "allof",
+        "Anson",
+        "apiclient",
+        "apisguru",
+        "asyncio",
+        "autoload",
+        "azidentity",
+        "baywet",
+        "ckigoonya",
+        "cligeneric",
+        "contoso",
+        "deserializers",
+        "docfx",
+        "docset",
+        "docsets",
+        "dumpautoload",
+        "fetchlibrary",
+        "getuser",
+        "getuserclient",
+        "ghes",
+        "gradlew",
+        "HTTPX",
+        "isvargas",
+        "isvargasmsft",
+        "jasonjoh",
+        "Kigoonya",
+        "kiota",
+        "markdownlint",
+        "MSRC",
+        "nameof",
+        "Ndiritu",
+        "Nethttplibrary",
+        "Nonnull",
+        "openapi",
+        "pgichuhi",
+        "phpleague",
+        "Println",
+        "quickstart",
+        "quickstarts",
+        "struct",
+        "vibiret"
+    ],
+    "flagWords": [
+        "teh"
+    ],
+    "ignorePaths": [
+        "cspell.json"
+    ]
+}

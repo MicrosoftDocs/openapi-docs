@@ -1,0 +1,76 @@
+### YamlMime:Landing
+
+title: Kiota documentation
+summary: Use Kiota to generate API clients to call any OpenAPI-described API.
+
+metadata:
+  title: Kiota documentation
+  description: Learn how to use Kiota to generate API clients to call any OpenAPI-described API.
+  ms.prod: open-api
+  ms.topic: landing-page
+  author: jasonjoh
+  ms.author: jasonjoh
+  ms.date: 03/10/2023
+
+landingContent:
+  - title: About Kiota
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: What is Kiota?
+            url: overview.md
+          - text: Use Kiota
+            url: using.md
+      - linkListType: concept
+        links:
+          - text: Kiota design
+            url: design.md
+          - text: API client experience
+            url: experience.md
+          - text: Authentication
+            url: authentication.md
+
+  - title: Get started
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Install Kiota
+            url: install.md
+      - linkListType: quickstart
+        links:
+          - text: Build API clients for .NET
+            url: quickstarts/dotnet.md
+
+  - title: Microsoft identity authentication
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: .NET tutorial
+            url: tutorials/dotnet-azure.md
+          - text: CLI tutorial
+            url: tutorials/cli-azure.md
+          - text: Go tutorial
+            url: tutorials/go-azure.md
+          - text: Java tutorial
+            url: tutorials/java-azure.md
+          - text: PHP tutorial
+            url: tutorials/php-azure.md
+          - text: Python tutorial
+            url: tutorials/python-azure.md
+          - text: Ruby tutorial
+            url: tutorials/ruby-azure.md
+          - text: TypeScript tutorial
+            url: tutorials/typescript-azure.md
+
+  - title: Extending Kiota libraries
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Abstractions
+            url: abstractions.md
+      - linkListType: overview
+        links:
+          - text: Authentication
+            url: authentication.md
+          - text: Serialization
+            url: serialization.md

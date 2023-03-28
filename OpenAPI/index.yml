@@ -1,0 +1,73 @@
+### YamlMime:Hub
+
+title: Microsoft OpenAPI documentation
+summary: Learn how to work with OpenAPI-described APIs using Microsoft tools.
+brand: m365
+
+metadata:
+  title: Microsoft OpenAPI documentation
+  description: Learn how to work with OpenAPI-described APIs using Microsoft tools.
+  ms.prod: open-api
+  ms.topic: hub-page
+  author: jasonjoh
+  ms.author: jasonjoh
+  ms.date: 03/10/2023
+
+highlightedContent:
+  items:
+  - title: What is Kiota?
+    itemType: overview
+    url: ./kiota/overview.md
+  - title: Kiota docs
+    itemType: learn
+    url: ./kiota/index.yml
+  - title: Get Kiota
+    itemType: get-started
+    url: ./kiota/install.md
+
+productDirectory:
+  title: Kiota
+  summary: Kiota builds API clients from OpenAPI descriptions
+  items:
+  - title: .NET
+    imageSrc: /media/logos/logo_NET.svg
+    links:
+    - text: Quick start
+      url: ./kiota/quickstarts/dotnet.md
+    - text: Azure auth tutorial
+      url: ./kiota/tutorials/dotnet-azure.md
+  - title: CLI
+    imageSrc: /media/common/i_cligeneric.svg
+    links:
+    - text: Azure auth tutorial
+      url: ./kiota/tutorials/cli-azure.md
+  - title: Go
+    imageSrc: /media/logos/logo_Go-lightblue.svg
+    links:
+    - text: Azure auth tutorial
+      url: ./kiota/tutorials/go-azure.md
+  - title: Java
+    imageSrc: /media/logos/logo_java.svg
+    links:
+    - text: Azure auth tutorial
+      url: ./kiota/tutorials/java-azure.md
+  - title: PHP
+    imageSrc: /media/logos/logo_php.svg
+    links:
+    - text: Azure auth tutorial
+      url: ./kiota/tutorials/php-azure.md
+  - title: Python
+    imageSrc: /media/logos/logo_python.svg
+    links:
+    - text: Azure auth tutorial
+      url: ./kiota/tutorials/python-azure.md
+  - title: Ruby
+    imageSrc: /media/logos/logo_ruby.svg
+    links:
+    - text: Azure auth tutorial
+      url: ./kiota/tutorials/ruby-azure.md
+  - title: TypeScript
+    imageSrc: /media/logos/logo_TS.svg
+    links:
+    - text: Azure auth tutorial
+      url: ./kiota/tutorials/typescript-azure.md

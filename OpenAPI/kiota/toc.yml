@@ -1,0 +1,61 @@
+items:
+- name: Kiota documentation
+  href: index.yml
+- name: Overview
+  href: overview.md
+- name: Install
+  href: install.md
+- name: Use Kiota
+  href: using.md
+- name: Quick start
+  items:
+  - name: Overview
+    href: quickstarts/index.md
+  - name: .NET
+    href: quickstarts/dotnet.md
+- name: Tutorials
+  items:
+  - name: Microsoft identity authentication
+    items:
+    - name: .NET
+      href: tutorials/dotnet-azure.md
+    - name: CLI
+      href: tutorials/cli-azure.md
+    - name: Go
+      href: tutorials/go-azure.md
+    - name: Java
+      href: tutorials/java-azure.md
+    - name: PHP
+      href: tutorials/php-azure.md
+    - name: Python
+      href: tutorials/python-azure.md
+    - name: Ruby
+      href: tutorials/ruby-azure.md
+    - name: TypeScript
+      href: tutorials/typescript-azure.md
+- name: Concepts
+  items:
+  - name: Kiota design
+    href: design.md
+  - name: API client experience
+    href: experience.md
+  - name: Abstractions
+    href: abstractions.md
+  - name: Authentication
+    href: authentication.md
+  - name: Request builders
+    href: request-builders.md
+  - name: Serialization
+    href: serialization.md
+  - name: Models
+    href: models.md
+  - name: Status codes
+    href: status-codes.md
+  - name: Error handling
+    href: errors.md
+- name: How to
+  items:
+  - name: Add an API to search
+    href: add-api.md
+- name: Support
+  href: support.md
