@@ -21,7 +21,7 @@ Major releases include new features, new public API surface area, and bug fixes.
 
 ### Minor releases
 
-Minor releases also include new features, public API surface area, and bug fixes. The difference between these and major releases is that minor releases will not contain breaking changes to the tooling experience or the generated API surface area of GA maturity languages. Minor releases can install side by side with previous minor releases. Minor releases are targeted to publish on the first Tuesday of every month.
+Minor releases also include new features, public API surface area, and bug fixes. The difference between these and major releases is that minor releases will not contain breaking changes to the tooling experience or the generated API surface area of Stable maturity languages. Minor releases can install side by side with previous minor releases. Minor releases are targeted to publish on the first Tuesday of every month.
 
 ### Patches
 
