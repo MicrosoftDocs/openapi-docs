@@ -47,8 +47,6 @@ dotnet add package Microsoft.Kiota.Http.HttpClientLibrary
 dotnet add package Microsoft.Kiota.Serialization.Form
 dotnet add package Microsoft.Kiota.Serialization.Json
 dotnet add package Microsoft.Kiota.Serialization.Text
-dotnet add package Microsoft.Extensions.DependencyInjection
-dotnet add package Microsoft.Extensions.Hosting
 ```
 
 ## Generate the API client
