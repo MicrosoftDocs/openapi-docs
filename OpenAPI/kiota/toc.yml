@@ -11,6 +11,18 @@ items:
   items:
   - name: .NET
     href: quickstarts/dotnet.md
+  - name: CLI
+    href: quickstarts/cli.md
+  - name: Go
+    href: quickstarts/go.md
+  - name: Java
+    href: quickstarts/java.md
+  - name: PHP
+    href: quickstarts/php.md
+  - name: Python
+    href: quickstarts/python.md
+  - name: TypeScript
+    href: quickstarts/typescript.md
 - name: Tutorials
   items:
   - name: Microsoft identity authentication
