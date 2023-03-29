@@ -9,6 +9,8 @@ items:
   href: using.md
 - name: Quick start
   items:
+  - name: Overview
+    href: quickstarts/index.md
   - name: .NET
     href: quickstarts/dotnet.md
   - name: CLI
