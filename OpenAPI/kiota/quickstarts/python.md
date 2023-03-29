@@ -71,7 +71,7 @@ Create a file in the root of the project named **main.py** and add the following
 Run the following command in your project directory to start the application.
 
 ```bash
-php main.php
+python3 main.py
 ```
 
 ## See also
