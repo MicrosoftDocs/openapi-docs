@@ -519,6 +519,8 @@ A glob pattern to exclude paths from generation. Accepts multiple values. Defaul
 kiota <command name> --exclude-path **/users/** --exclude-path **/groups/**
 ```
 
+You can also filter specific HTTP methods by appending `#METHOD` to the pattern, replacing `METHOD` with the HTTP method to filter. For example, `**/users/**#GET`.
+
 > [!TIP]
 > An exclude pattern can be used in combination with the include pattern argument. A path item is included when (no include pattern is included OR it matches an include pattern) AND (no exclude pattern is included OR it doesn't match an exclude pattern).
 
@@ -529,6 +531,8 @@ A glob pattern to include paths from generation. Accepts multiple values. Defaul
 ```bash
 kiota <command name> --include-path **/users/** --include-path **/groups/**
 ```
+
+You can also filter specific HTTP methods by appending `#METHOD` to the pattern, replacing `METHOD` with the HTTP method to filter. For example, `**/users/**#GET`.
 
 > [!TIP]
 > An include pattern can be used in combination with the exclude pattern argument. A path item is included when (no include pattern is included OR it matches an include pattern) AND (no exclude pattern is included OR it doesn't match an exclude pattern).

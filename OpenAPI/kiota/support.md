@@ -37,7 +37,7 @@ The following criteria is used to determine the maturity levels.
 - **Preview**: Kiota is at or near the level of stable but hasn't been used to generate production API clients.
 - **Experimental**: Kiota provides some functionality for the language but is still in early stages. Some features may not work correctly or at all.
 
-Breaking changes to languages that are stable will result in major version change for Kiota tooling.
+Breaking changes to languages that are stable will result in major version change for Kiota tooling. Code generation changes to a stable language are not considered breaking when they rely on additions in the corresponding abstractions library as these changes will only require updating the abstractions library to the latest minor/patch version under the same major version.
 
 The current status of language support can be queried by using the following command.
 
