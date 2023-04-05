@@ -16,6 +16,7 @@ Kiota can be accessed in the following ways.
 - [Install as .NET tool](#install-as-net-tool)
 - [Run in browser (experimental)](#run-in-browser)
 - [Build from source](#build-from-source)
+- [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
 
 ## Download binaries
 
@@ -23,9 +24,11 @@ You can download the latest version for your operating system.
 
 | Operating system | Download                                                                                   |
 |------------------|--------------------------------------------------------------------------------------------|
-| Windows          | [win-x64.zip](https://github.com/microsoft/kiota/releases/download/v1.0.1/win-x64.zip)     |
-| Linux            | [linux-x64.zip](https://github.com/microsoft/kiota/releases/download/v1.0.1/linux-x64.zip) |
-| macOS            | [osx-x64.zip](https://github.com/microsoft/kiota/releases/download/v1.0.1/osx-x64.zip)     |
+| Linux (x64)      | [linux-x64.zip](https://aka.ms/get/kiota/latest/linux-x64.zip) |
+| macOS (arm64)    | [osx-arm64.zip](https://aka.ms/get/kiota/latest/osx-arm64.zip) |
+| macOS (x64)      | [osx-x64.zip](https://aka.ms/get/kiota/latest/osx-x64.zip)     |
+| Windows (x64)    | [win-x64.zip](https://aka.ms/get/kiota/latest/win-x64.zip)     |
+| Windows (x86)    | [win-x86.zip](https://aka.ms/get/kiota/latest/win-x86.zip)     |
 
 [All releases](https://github.com/microsoft/kiota/releases/latest)
 
@@ -82,6 +85,11 @@ You can run kiota with a modern web browser by navigating to [app.kiota.dev](htt
 
 > [!NOTE]
 > Refer to [.NET runtime identifier catalog](/dotnet/core/rid-catalog) so select the appropriate runtime for your platform.
+
+## Install the Visual Studio Code extension
+
+1. Open the [Marketplace page of the extension](https://aka.ms/kiota/extension)
+1. Click on the **Install** button.
 
 ## Next steps
 
