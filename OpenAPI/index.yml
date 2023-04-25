@@ -83,3 +83,10 @@ productDirectory:
       url: ./kiota/quickstarts/typescript.md
     - text: Azure auth tutorial
       url: ./kiota/tutorials/typescript-azure.md
+tools:
+  title: OpenAPI Tools
+  summary: Tooling and SDKs for working with OpenAPI
+  items:
+  - title: OpenAPI.NET
+    imageSrc: /media/common/i_tools.svg
+    url: /dotnet/api/microsoft.openapi
