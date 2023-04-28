@@ -49,6 +49,7 @@
         "teh"
     ],
     "ignorePaths": [
-        "cspell.json"
+        "cspell.json",
+        "LICENSE"
     ]
 }
