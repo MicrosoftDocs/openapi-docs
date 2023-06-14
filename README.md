@@ -1,4 +1,4 @@
-# OpenAPI documentation
+# Microsoft OpenAPI documentation
 
 This repository contains the source for docs published to [https://learn.microsoft.com/openapi](https://learn.microsoft.com/openapi). For information on authoring guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
