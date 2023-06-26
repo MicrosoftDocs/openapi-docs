@@ -87,6 +87,9 @@ tools:
   title: OpenAPI Tools
   summary: Tooling and SDKs for working with OpenAPI
   items:
-  - title: OpenAPI.NET
+  - title: OpenAPI.NET (Microsoft.OpenApi)
     imageSrc: /media/common/i_tools.svg
     url: /dotnet/api/microsoft.openapi
+  - title: Microsoft.OpenApi.OData
+    imageSrc: /media/common/i_code-blocks.svg
+    url: /dotnet/api/microsoft.openapi.odata
