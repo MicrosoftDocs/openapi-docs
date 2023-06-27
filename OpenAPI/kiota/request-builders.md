@@ -172,3 +172,10 @@ These method will return an abstract request information object, that can be pas
 Request executor methods follow this `{HTTPMethodName}{Suffix}` naming convention, where a suffix is applied when it makes sense for the target language (e.g. GetAsync in C#). These methods accept the same parameter set as the request generators as they call into these methods to generate the request and then pass the request information to the request adapter for execution. They provide an additional parameter:
 
 - responseHandler: this parameter may be used to bypass the standard response handling for the current request and access the native HTTP response object.
+
+### NOTES
+
+Those are notes about the limitations of the current Kiota implementation:
+
+- [Request headers:](https://github.com/microsoft/kiota/issues/2428) are not typed and are encoded as `Map<String, String>`
+- [Enums in Query parameters:](https://github.com/microsoft/kiota/issues/2306) are encoded with open `String`s
