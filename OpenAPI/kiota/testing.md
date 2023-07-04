@@ -2,7 +2,7 @@
 title: Unit testing with Kiota API clients
 description: Learn about writing unit tests with Kiota API clients.
 author: LockTar
-ms.author: 
+ms.author: vibiret
 ms.topic: conceptual
 date: 07/04/2023
 ---
