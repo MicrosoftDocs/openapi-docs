@@ -9,7 +9,7 @@ date: 07/04/2023
 
 # Unit testing with Kiota API clients
 
-Code were Kiota API clients are used can be tested. In this document is explained how to mock the Microsoft Graph SDK.
+Code where Kiota API clients are used can be tested. In this document is explained how to mock the Microsoft Graph SDK.
 
 ## Prerequisite
 
