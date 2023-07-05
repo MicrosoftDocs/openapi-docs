@@ -203,9 +203,9 @@ public class MicrosoftGraphUserTests
 
         // Capture the request information (so we can check it) in a list because in this tests we have multiple posts.
         // Only needed when your class is doing multiple posts
-        var requestInformations = new List<RequestInformation>();
+        var requestInformationList = new List<RequestInformation>();
         await requestAdapter.SendAsync(
-            Arg.Do<RequestInformation>(ri => requestInformations.Add(ri)),
+            Arg.Do<RequestInformation>(ri => requestInformationList.Add(ri)),
             Arg.Any<ParsableFactory<User>>(),
             Arg.Any<Dictionary<string, ParsableFactory<IParsable>>?>(),
             Arg.Any<CancellationToken>());
@@ -231,7 +231,7 @@ public class MicrosoftGraphUserTests
             Arg.Any<CancellationToken>());
 
         // Get request information to check the actual posted content
-        var requestInfo = requestInformations.Single(ri => ri.UrlTemplate!.Contains("/users"));
+        var requestInfo = requestInformationList.Single(ri => ri.UrlTemplate!.Contains("/users"));
         var model = JsonSerializer.Deserialize<User>(requestInfo.Content,
             new JsonSerializerOptions()
             {
