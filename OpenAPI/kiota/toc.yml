@@ -65,6 +65,8 @@ items:
     href: status-codes.md
   - name: Error handling
     href: errors.md
+  - name: Unit testing
+    href: testing.md
 - name: How to
   items:
   - name: Add an API to search
