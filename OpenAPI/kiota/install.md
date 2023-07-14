@@ -14,6 +14,7 @@ Kiota can be accessed in the following ways.
 - [Download binaries](#download-binaries)
 - [Run in Docker](#run-in-docker)
 - [Install as .NET tool](#install-as-net-tool)
+- [Install with asdf](#install-with-asdf)
 - [Run in browser (experimental)](#run-in-browser)
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
