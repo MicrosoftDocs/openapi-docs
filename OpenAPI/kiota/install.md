@@ -63,6 +63,12 @@ Execute the following command to install the tool.
 dotnet tool install --global Microsoft.OpenApi.Kiota
 ```
 
+## Install with asdf
+
+If you have [asdf](https://asdf-vm.com/) installed, you can install Kiota as an [asdf plugin](https://asdf-vm.com/manage/plugins.html).
+
+To install the `asdf-kiota` plugin follow [these instructions](https://github.com/asdf-community/asdf-kiota#install).
+
 ## Run in browser
 
 You can run kiota with a modern web browser by navigating to [app.kiota.dev](https://app.kiota.dev).
