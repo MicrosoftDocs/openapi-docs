@@ -14,7 +14,6 @@ Kiota can be accessed in the following ways.
 - [Download binaries](#download-binaries)
 - [Run in Docker](#run-in-docker)
 - [Install as .NET tool](#install-as-net-tool)
-- [Run in browser (experimental)](#run-in-browser)
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
 
@@ -62,13 +61,6 @@ Execute the following command to install the tool.
 ```bash
 dotnet tool install --global Microsoft.OpenApi.Kiota
 ```
-
-## Run in browser
-
-You can run kiota with a modern web browser by navigating to [app.kiota.dev](https://app.kiota.dev).
-
-> [!NOTE]
-> This feature is experimental and performances for large API descriptions might be impacted, should you run into issues, we suggest you revert to using the CLI.
 
 ## Build from source
 
