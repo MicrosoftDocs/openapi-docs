@@ -16,6 +16,11 @@ Kiota can be accessed in the following ways.
 - [Install as .NET tool](#install-as-net-tool)
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
+
+**Community provided options:**
+
+> Disclaimer: The community provided options are maintained and distributed by the community and are not official Microsoft installation options. Microsoft makes no warranties, express or implied, with respect to the community installation options or their use. Use of these installation options is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of these installation options.
+
 - [Install with asdf (unofficial)](#install-with-asdf)
 - [Install the REST API Client Code Generator extension for Visual Studio](#install-rest-api-client-code-generator-extension-for-visual-studio)
 
@@ -111,6 +116,8 @@ kiota --version
 ```
 
 ## Install REST API Client Code Generator extension for Visual Studio
+
+> Disclaimer: The REST API Client Code Generator extension for Visual Studio is maintained and distributed by the community and is not an official Microsoft extension. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
 
 1. From Visual Studio, using the **Manage Extensions** dialog box (Tools -> Manage Extensions), search for the [Visual Studio extension](https://learn.microsoft.com/en-us/visualstudio/ide/finding-and-using-visual-studio-extensions) called [REST API Client Code Generator](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022). This extension supports Visual Studio [2022 AMD64 and ARM64](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022) and [2019](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator)
 2. Click on the **Download** button. The extension will be installed after closing Visual Studio so you will need to do a restart
