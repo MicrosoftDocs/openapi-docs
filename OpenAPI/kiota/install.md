@@ -11,12 +11,19 @@ date: 03/10/2023
 
 Kiota can be accessed in the following ways.
 
+**Microsoft provided options:**
+
 - [Download binaries](#download-binaries)
 - [Run in Docker](#run-in-docker)
 - [Install as .NET tool](#install-as-net-tool)
-- [Install with asdf](#install-with-asdf)
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
+
+**Community provided options:**
+
+> Disclaimer: The community provided options are maintained and distributed by the community and are not official Microsoft installation options. Microsoft makes no warranties, express or implied, with respect to the community installation options or their use. Use of these installation options is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of these installation options.
+
+- [Install with asdf](#install-with-asdf)
 
 ## Download binaries
 
@@ -64,6 +71,8 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 ```
 
 ## Install with asdf
+
+> Disclaimer: The asdf Kiota plugin is maintained and distributed by the community and is not an official Microsoft plugin. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
 
 If you have [asdf](https://asdf-vm.com/) installed, you can install Kiota as an [asdf plugin](https://asdf-vm.com/manage/plugins.html).
 
