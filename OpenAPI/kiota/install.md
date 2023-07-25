@@ -78,13 +78,6 @@ If you have [asdf](https://asdf-vm.com/) installed, you can install Kiota as an 
 
 To install the `asdf-kiota` plugin follow [these instructions](https://github.com/asdf-community/asdf-kiota#install).
 
-## Run in browser
-
-You can run kiota with a modern web browser by navigating to [app.kiota.dev](https://app.kiota.dev).
-
-> [!NOTE]
-> This feature is experimental and performances for large API descriptions might be impacted, should you run into issues, we suggest you revert to using the CLI.
-
 ## Build from source
 
 1. Clone the current repository.
