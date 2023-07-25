@@ -17,6 +17,7 @@ Kiota can be accessed in the following ways.
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
 - [Install with asdf (unofficial)](#install-with-asdf)
+- [Install the REST API Client Code Generator extension for Visual Studio](#install-rest-api-client-code-generator-extension-for-visual-studio)
 
 ## Download binaries
 
@@ -108,6 +109,11 @@ asdf global kiota latest
 # Now kiota commands are available
 kiota --version
 ```
+
+## Install REST API Client Code Generator extension for Visual Studio
+
+1. From Visual Studio, using the **Manage Extensions** dialog box (Tools -> Manage Extensions), search for the [Visual Studio extension](https://learn.microsoft.com/en-us/visualstudio/ide/finding-and-using-visual-studio-extensions) called [REST API Client Code Generator](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022). This extension supports Visual Studio [2022 AMD64 and ARM64](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022) and [2019](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator)
+2. Click on the **Download** button. The extension will be installed after closing Visual Studio so you will need to do a restart
 
 ## Next steps
 
