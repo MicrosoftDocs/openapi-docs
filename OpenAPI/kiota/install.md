@@ -16,11 +16,6 @@ Kiota can be accessed in the following ways.
 - [Install as .NET tool](#install-as-net-tool)
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
-
-**Community provided options:**
-
-> Disclaimer: The community provided options are maintained and distributed by the community and are not official Microsoft installation options. Microsoft makes no warranties, express or implied, with respect to the community installation options or their use. Use of these installation options is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of these installation options.
-
 - [Install with asdf (unofficial)](#install-with-asdf)
 - [Install the REST API Client Code Generator extension for Visual Studio](#install-rest-api-client-code-generator)
 
@@ -90,9 +85,7 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 1. Open the [Marketplace page of the extension](https://aka.ms/kiota/extension)
 1. Click on the **Install** button.
 
-## Install REST API Client Code Generator
 ## Install with asdf
-
 > [!IMPORTANT]
 > The asdf Kiota plugin is maintained and distributed by the community and is not an official Microsoft plugin. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
 
@@ -118,14 +111,17 @@ kiota --version
 
 ## Install REST API Client Code Generator extension for Visual Studio
 
-> Disclaimer: The REST API Client Code Generator extension for Visual Studio is maintained and distributed by the community and is not an official Microsoft extension. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
+## Next steps
+
+For details on running Kiota, see [Using the Kiota tool](using.md).
+
+## Install REST API Client Code Generator
+
+> [!IMPORTANT]
+> The REST API Client Code Generator extension for Visual Studio is maintained and distributed by the community and is not an official Microsoft Visual Studio extension. Microsoft makes no warranties, express or implied, with respect to the extension or its use. Use of this extension is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
 
 1. From Visual Studio (Windows), using the [Manage Extensions](https://learn.microsoft.com/en-us/visualstudio/ide/finding-and-using-visual-studio-extensions) dialog box (Tools -> Manage Extensions), search for extension  called [REST API Client Code Generator](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022). This extension supports [Visual Studio 2022 for AMD64 and ARM64](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022) and [Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator)        
 
    For Visual Studio for Mac, follow [these instructions](https://github.com/christianhelle/apiclientcodegen/blob/master/README.md#visual-studio-for-mac-1) for update convenience on Visual Studio for Mac
 
 2. Click on the **Download** button. The extension will be installed after closing Visual Studio so you will need to do a restart
-
-## Next steps
-
-For details on running Kiota, see [Using the Kiota tool](using.md).
