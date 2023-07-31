@@ -16,8 +16,8 @@ Kiota can be accessed in the following ways.
 - [Install as .NET tool](#install-as-net-tool)
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
-- [Install with asdf (unofficial)](#install-with-asdf)
-- [REST API Client Code Generator extension for Visual Studio (unofficial)](#rest-api-client-code-generator)
+- [Install with asdf (UNOFFICIAL)](#install-with-asdf)
+- [REST API Client Code Generator extension for Visual Studio (UNOFFICIAL)](#rest-api-client-code-generator)
 
 ## Download binaries
 
@@ -126,7 +126,7 @@ kiota --version
 
 1. Click on the **Download** button. Restart Visual Studio to complete the installation.
 
-Follow [these instructions](https://github.com/christianhelle/apiclientcodegen/blob/master/docs/KiotaUsage.md) for generating code.
+1. Follow [these instructions](https://github.com/christianhelle/apiclientcodegen/blob/master/docs/KiotaUsage.md) for generating code.
 
 ## Next steps
 
