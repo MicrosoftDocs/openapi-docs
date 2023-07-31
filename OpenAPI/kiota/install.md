@@ -16,7 +16,8 @@ Kiota can be accessed in the following ways.
 - [Install as .NET tool](#install-as-net-tool)
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
-- [Install with asdf (unofficial)](#install-with-asdf)
+- [Install with asdf (UNOFFICIAL)](#install-with-asdf)
+- [REST API Client Code Generator extension for Visual Studio (UNOFFICIAL)](#rest-api-client-code-generator)
 
 ## Download binaries
 
@@ -84,13 +85,49 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 1. Open the [Marketplace page of the extension](https://aka.ms/kiota/extension)
 1. Click on the **Install** button.
 
-## Next steps
-
-For details on running Kiota, see [Using the Kiota tool](using.md).
-
 ## Install with asdf
 
 > [!IMPORTANT]
 > The asdf Kiota plugin is maintained and distributed by the community and is not an official Microsoft plugin. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
 
-The community has made Kiota available as an [asdf plugin](https://asdf-vm.com/manage/plugins.html). To install the `asdf-kiota` plugin follow [these instructions](https://github.com/asdf-community/asdf-kiota#install).
+The community has made Kiota available as an [asdf plugin](https://asdf-vm.com/manage/plugins.html). To install the `asdf-kiota` plugin follow these instructions:
+
+```bash
+asdf plugin add kiota
+# or
+asdf plugin add kiota https://github.com/asdf-community/asdf-kiota.git
+
+# Show all installable versions
+asdf list-all kiota
+
+# Install specific version
+asdf install kiota latest
+
+# Set a version globally (on your ~/.tool-versions file)
+asdf global kiota latest
+
+# Now kiota commands are available
+kiota --version
+```
+
+## REST API Client Code Generator
+
+> [!IMPORTANT]
+> The REST API Client Code Generator extension for Visual Studio is maintained and distributed by the community and is not an official Microsoft Visual Studio extension. Microsoft makes no warranties, express or implied, with respect to the extension or its use. Use of this extension is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this extension.
+
+[REST API Client Code Generator](https://github.com/christianhelle/apiclientcodegen) is a collection of Visual Studio C# custom tool code generators for OpenAPI specifications. This extension will install Kiota on-demand and will also add the required NuGet packages to build the generated code to the project. The generated code is created as a "code-behind" file to the OpenAPI specifications file in the .NET project. This extension offers same-day releases for new Kiota versions, but this requires updating the extension, which can be configured to be automatically.
+
+### Installation
+
+1. From Visual Studio (Windows), using the [Manage Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions) dialog box (**Tools** -> **Manage Extensions**), search for extension  called **REST API Client Code Generator**. This extension is available for [Visual Studio 2022 for AMD64 and ARM64](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022) and [Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator)
+
+    > [!NOTE]
+    > For Visual Studio for Mac, follow [these instructions](https://github.com/christianhelle/apiclientcodegen/blob/master/docs/VisualStudioForMac.md#installation)
+
+1. Click on the **Download** button. Restart Visual Studio to complete the installation.
+
+1. Follow [these instructions](https://github.com/christianhelle/apiclientcodegen/blob/master/docs/KiotaUsage.md) for generating code.
+
+## Next steps
+
+For details on running Kiota, see [Using the Kiota tool](using.md).
