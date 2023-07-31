@@ -146,4 +146,4 @@ If the operation worked successfully then you should see a code-behind file for 
 
 If you already have a OpenAPI specifications file in the project, then you can also generate code using Kiota by right clicking on the file then selecting **REST API Client Generator -> Generate with Microsoft Kiota**
 
-![Genrate code using Kiota](./images/community/rest-api-client-generator/generate-from-existing.png)
+![Generate code using Kiota](./images/community/rest-api-client-generator/generate-from-existing.png)
