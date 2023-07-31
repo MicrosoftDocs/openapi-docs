@@ -19,7 +19,7 @@ Kiota can be accessed in the following ways.
 
 Unofficial Community provided options:
 - [Install with asdf](#install-with-asdf)
-- [Install the REST API Client Code Generator extension for Visual Studio](#install-rest-api-client-code-generator)
+- [REST API Client Code Generator extension for Visual Studio](#rest-api-client-code-generator)
 
 ## Download binaries
 
