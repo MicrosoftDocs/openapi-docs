@@ -17,7 +17,7 @@ Kiota can be accessed in the following ways.
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
 
-Unofficial Community provided options:
+Community provided options:
 - [Install with asdf](#install-with-asdf)
 - [REST API Client Code Generator extension for Visual Studio](#rest-api-client-code-generator)
 
