@@ -136,14 +136,14 @@ For details on running Kiota, see [Using the Kiota tool](using.md).
 
 To generate code using Kiota, Right click on a project or location under a project and select **Add -> New REST API Client -> Generate with Microsoft Kiota**
 
-![](images/community/add-new.png)
+![](images/community/rest-api-client-generator/add-new.png)
 
 This will prompt you for a URL to download the OpenAPI specifications file.
 
 If the operation worked successfully then you should see a code-behind file for the OpenAPI specifications. Once you have generated code, all changes to the OpenAPI specifications file will trigger a re-generation of the code-behind file via the **KiotaCodeGenerator** custom tool
 
-![](images/community/custom-tool-experience.png)
+![](images/community/rest-api-client-generator/custom-tool-experience.png)
 
 If you already have an OpenAPI specifications file in the project then you can also generate code using Kiota by right clicking on the file then selecting **REST API Client Generator -> Generate with Microsoft Kiota**
 
-![](images/community/generate-from-existing.png)
+![](images/community/rest-api-client-generator/generate-from-existing.png)
