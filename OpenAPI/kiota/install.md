@@ -126,21 +126,7 @@ kiota --version
 
 2. Click on the **Download** button. The extension will be installed after closing Visual Studio so you will need to do a restart
 
-**Usage:**
-
-To generate code using Kiota, Right click on a project or location under a project and select **Add -> New REST API Client -> Generate with Microsoft Kiota**
-
-![Add New REST API Client](./images/community/rest-api-client-generator/add-new.png)
-
-This will prompt you for a URL to download the OpenAPI specifications file.
-
-If the operation worked successfully then you should see a code-behind file for the OpenAPI specifications. Once you have generated code, all changes to the OpenAPI specifications file will trigger a re-generation of the code-behind file via the **KiotaCodeGenerator** custom tool
-
-![Custom Tool Experience](./images/community/rest-api-client-generator/custom-tool-experience.png)
-
-If you already have a OpenAPI specifications file in the project, then you can also generate code using Kiota by right clicking on the file then selecting **REST API Client Generator -> Generate with Microsoft Kiota**
-
-![Generate code using Kiota](./images/community/rest-api-client-generator/generate-from-existing.png)
+Follow [these instructions](https://github.com/christianhelle/apiclientcodegen/blob/master/docs/KiotaUsage.md) for generating code using [REST API Client Code Generator](https://github.com/christianhelle/apiclientcodegen)
 
 ## Next steps
 
