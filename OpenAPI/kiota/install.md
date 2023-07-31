@@ -120,7 +120,7 @@ kiota --version
 
 **Installation:**
 
-1. From Visual Studio (Windows), using the [Manage Extensions](https://learn.microsoft.com/visualstudio/ide/finding-and-using-visual-studio-extensions) dialog box (Tools -> Manage Extensions), search for extension  called [REST API Client Code Generator](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022). This extension is available for [Visual Studio 2022 for AMD64 and ARM64](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022) and [Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator)
+1. From Visual Studio (Windows), using the [Manage Extensions](/visualstudio/ide/finding-and-using-visual-studio-extensions) dialog box (Tools -> Manage Extensions), search for extension  called [REST API Client Code Generator](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022). This extension is available for [Visual Studio 2022 for AMD64 and ARM64](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator2022) and [Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=ChristianResmaHelle.ApiClientCodeGenerator)
 
    For Visual Studio for Mac, follow [these instructions](https://github.com/christianhelle/apiclientcodegen/blob/master/docs/VisualStudioForMac.md#installation)
 
