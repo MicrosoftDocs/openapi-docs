@@ -18,6 +18,7 @@ Kiota can be accessed in the following ways.
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
 
 Community provided options:
+
 - [Install with asdf](#install-with-asdf)
 - [REST API Client Code Generator extension for Visual Studio](#rest-api-client-code-generator)
 
@@ -88,6 +89,7 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 1. Click on the **Install** button.
 
 ## Install with asdf
+
 > [!IMPORTANT]
 > The asdf Kiota plugin is maintained and distributed by the community and is not an official Microsoft plugin. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
 
