@@ -111,12 +111,6 @@ asdf global kiota latest
 kiota --version
 ```
 
-## Install REST API Client Code Generator extension for Visual Studio
-
-## Next steps
-
-For details on running Kiota, see [Using the Kiota tool](using.md).
-
 ## REST API Client Code Generator
 
 > [!IMPORTANT]
@@ -147,3 +141,7 @@ If the operation worked successfully then you should see a code-behind file for 
 If you already have a OpenAPI specifications file in the project, then you can also generate code using Kiota by right clicking on the file then selecting **REST API Client Generator -> Generate with Microsoft Kiota**
 
 ![Generate code using Kiota](./images/community/rest-api-client-generator/generate-from-existing.png)
+
+## Next steps
+
+For details on running Kiota, see [Using the Kiota tool](using.md).
