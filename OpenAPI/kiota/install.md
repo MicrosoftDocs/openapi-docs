@@ -89,7 +89,25 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 > [!IMPORTANT]
 > The asdf Kiota plugin is maintained and distributed by the community and is not an official Microsoft plugin. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
 
-The community has made Kiota available as an [asdf plugin](https://asdf-vm.com/manage/plugins.html). To install the `asdf-kiota` plugin follow [these instructions](https://github.com/asdf-community/asdf-kiota#install).
+The community has made Kiota available as an [asdf plugin](https://asdf-vm.com/manage/plugins.html). To install the `asdf-kiota` plugin follow these instructions:
+
+```bash
+asdf plugin add kiota
+# or
+asdf plugin add kiota https://github.com/asdf-community/asdf-kiota.git
+
+# Show all installable versions
+asdf list-all kiota
+
+# Install specific version
+asdf install kiota latest
+
+# Set a version globally (on your ~/.tool-versions file)
+asdf global kiota latest
+
+# Now kiota commands are available
+kiota --version
+```
 
 ## Next steps
 
