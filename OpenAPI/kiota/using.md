@@ -265,6 +265,8 @@ The fully qualified class names for deserializers. Defaults to the following val
 | C#         | `Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory`, `Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory`, `Microsoft.Kiota.Serialization.Text.TextParseNodeFactory`                                           |
 | Go         | `github.com/microsoft/kiota-serialization-form-go/FormParseNodeFactory`, `github.com/microsoft/kiota-serialization-json-go/JsonParseNodeFactory`, `github.com/microsoft/kiota-serialization-text-go/TextParseNodeFactory` |
 | Java       | `com.microsoft.kiota.serialization.TextParseNodeFactory`, `com.microsoft.kiota.serialization.JsonParseNodeFactory`, `com.microsoft.kiota.serialization.TextParseNodeFactory`                                              |
+| PHP | `Microsoft\Kiota\Serialization\Json\JsonParseNodeFactory`, `Microsoft\Kiota\Serialization\Text\TextParseNodeFactory` |
+| Python | `kiota_serialization_json.json_parse_node_factory.JsonParseNodeFactory`, `kiota_serialization_text.text_parse_node_factory.TextParseNodeFactory` |
 | Ruby       | `microsoft_kiota_serialization/json_parse_node_factory`                                                                                                                                                                   |
 | TypeScript | `@microsoft/kiota-serialization-form.FormParseNodeFactory`, `@microsoft/kiota-serialization-json.JsonParseNodeFactory`, `@microsoft/kiota-serialization-text.TextParseNodeFactory`                                        |
 
@@ -326,11 +328,13 @@ The fully qualified class names for deserializers. Defaults to the following val
 
 | Language   | Default deserializer                                                                                                                                                                                                                                    |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| C#         | `Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory`, `Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory`, `Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory`                                           |
-| Go         | `github.com/microsoft/kiota-serialization-form-go/FormSerializationWriterFactory`, `github.com/microsoft/kiota-serialization-json-go/JsonSerializationWriterFactory`, `github.com/microsoft/kiota-serialization-text-go/TextSerializationWriterFactory` |
-| Java       | `com.microsoft.kiota.serialization.FormSerializationWriterFactory`, `com.microsoft.kiota.serialization.JsonSerializationWriterFactory`, `com.microsoft.kiota.serialization.TextSerializationWriterFactory`                                              |
-| Ruby       | `microsoft_kiota_serialization/json_serialization_writer_factory`                                                                                                                                                                                       |
-| TypeScript | `@microsoft/kiota-serialization-form.FormSerializationWriterFactory`, `@microsoft/kiota-serialization-json.JsonSerializationWriterFactory`, `@microsoft/kiota-serialization-text.TextSerializationWriterFactory`                                        |
+| C#         | `Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory`, `Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory`, `Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory`, `Microsoft.Kiota.Serialization.Multipart.MultipartSerializationWriterFactory` |
+| Go         | `github.com/microsoft/kiota-serialization-form-go/FormSerializationWriterFactory`, `github.com/microsoft/kiota-serialization-json-go/JsonSerializationWriterFactory`, `github.com/microsoft/kiota-serialization-text-go/TextSerializationWriterFactory`, `github.com/microsoft/kiota-serialization-multipart-go/MultipartSerializationWriterFactory` |
+| Java       | `com.microsoft.kiota.serialization.FormSerializationWriterFactory`, `com.microsoft.kiota.serialization.JsonSerializationWriterFactory`, `com.microsoft.kiota.serialization.TextSerializationWriterFactory`, `com.microsoft.kiota.serialization.MultipartSerializationWriterFactory`|
+| PHP | `Microsoft\Kiota\Serialization\Json\JsonSerializationWriterFactory`, `Microsoft\Kiota\Serialization\Text\TextSerializationWriterFactory` |
+| Python | `kiota_serialization_json.json_serialization_writer_factory.JsonSerializationWriterFactory`, `kiota_serialization_text.text_serialization_writer_factory.TextSerializationWriterFactory` |
+| Ruby       | `microsoft_kiota_serialization/json_serialization_writer_factory` |
+| TypeScript | `@microsoft/kiota-serialization-form.FormSerializationWriterFactory`, `@microsoft/kiota-serialization-json.JsonSerializationWriterFactory`, `@microsoft/kiota-serialization-text.TextSerializationWriterFactory`, `@microsoft/kiota-serialization-multipart.MultipartSerializationWriterFactory` |
 
 ##### Accepted values
 
@@ -348,6 +352,7 @@ Default values :
 
 - `application/json`
 - `application/x-www-form-urlencoded`
+- `multipart/form-data`
 - `text/plain`
 
 > [!NOTE]
