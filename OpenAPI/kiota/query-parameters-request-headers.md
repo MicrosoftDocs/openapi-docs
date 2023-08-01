@@ -1,8 +1,8 @@
 ---
 title: Query Parameters and Request Headers
 description: Learn how to use Query Parameters and Request Headers to customize API calls.
-author: baywet
-ms.author: baywet
+author: vibiret
+ms.author: vibiret
 ms.topic: conceptual
 date: 08/01/2023
 ---
