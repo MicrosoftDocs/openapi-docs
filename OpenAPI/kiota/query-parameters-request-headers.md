@@ -30,7 +30,7 @@ The URL template for the request builder looks something like `{+baseurl}/taskLi
 And the resulting URI will be `https://contoso.com/taskLists/taskListId/toDos/todoId/assignedTo?select=id,title`
 
 > [!NOTE]
-> [Enums in query parameters](https://github.com/microsoft/kiota/issues/2306) are encoded with open `String`.
+> [Enumerations in query parameters](https://github.com/microsoft/kiota/issues/2306) are treated as strings.
 
 ## Request headers
 
