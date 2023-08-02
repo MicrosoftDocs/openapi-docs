@@ -1,46 +1,52 @@
 ---
-title: Query Parameters and Request Headers
-description: Learn how to use Query Parameters and Request Headers to customize API calls.
+title: Query parameters and request headers
+description: Learn how to use query parameters and request headers to customize API calls.
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
 date: 08/01/2023
 ---
 
-# Query Parameters and Request Headers
+# Query parameters and request headers
 
-Kiota API clients provide a fluent API you can use to customize request before sending them out to the service.
+Kiota API clients provide a fluent API you can use to add query parameters or headers to requests before sending them out to the service.
 
-## Query Parameters
+## Query parameters
 
-Kiota will generate an additional type for each operation to reflect the query parameters in the API description.
-
-The application code can then use that type to customize the request and benefit from compile time validations.
+Kiota generates an additional type for each operation to reflect the query parameters in the API description. The application code can then use that type to customize the request and benefit from compile time validations.
 
 Consider the following sample:
 
 ```csharp
-var result = await todoClient.TaskLists["taskListId"].ToDos["todoId"].AssignedTo.GetAsync(x => x.QueryParameters.Select = new string[] { "id", "title" });
+var result = await todoClient
+    .TaskLists["taskListId"]
+    .ToDos["todoId"]
+    .AssignedTo
+    .GetAsync(x => x.QueryParameters.Select = new string[] { "id", "title" });
 ```
 
-The URL template for the requestBuilder will look something like `{+baseurl}/taskLists/{task_list_id}/toDos/{todo_id}/assignedTo{?select,expand}`.
+The URL template for the request builder looks something like `{+baseurl}/taskLists/{task_list_id}/toDos/{todo_id}/assignedTo{?select,expand}`.
 
 And the resulting URI will be `https://contoso.com/taskLists/taskListId/toDos/todoId/assignedTo?select=id,title`
 
 > [!NOTE]
-> [Enums in Query parameters](https://github.com/microsoft/kiota/issues/2306) are encoded with open `String`.
+> [Enums in query parameters](https://github.com/microsoft/kiota/issues/2306) are encoded with open `String`.
 
-## Request Headers
+## Request headers
 
-Kiota does not generate a type specific to the operation for request headers. The HTTP RFC specifies a large number of standard headers, additionally, vendors can come up with custom headers, as well as API developers. Projecting a type for request headers would be redundant and inflate the amount of code being generated.
+Kiota does not generate a type specific to the operation for request headers. The HTTP RFC specifies a large number of standard headers, and vendors can come up with custom headers, as well as API developers. Projecting a type for request headers would be redundant and inflate the amount of code being generated.
 
 The application code can use the fluent API to customize headers sent to the service via a generic **Headers** type.
 
 ```csharp
-var result = await todoClient.TaskLists["taskListId"].ToDos["todoId"].AssignedTo.GetAsync(x => x.Headers.Add("Contoso-custom", "foo", "bar"));
+var result = await todoClient
+    .TaskLists["taskListId"]
+    .ToDos["todoId"]
+    .AssignedTo
+    .GetAsync(x => x.Headers.Add("Contoso-Custom", "foo", "bar"));
 ```
 
-Will result in the following request
+The code above results in the following request.
 
 ```http
 GET ...
