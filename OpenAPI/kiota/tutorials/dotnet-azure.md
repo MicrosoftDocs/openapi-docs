@@ -33,6 +33,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-dotnet))
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-dotnet))
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
+- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-dotnet))
 
 For this tutorial, you will use the default implementations.
 
@@ -44,6 +45,7 @@ dotnet add package Microsoft.Kiota.Http.HttpClientLibrary
 dotnet add package Microsoft.Kiota.Serialization.Form
 dotnet add package Microsoft.Kiota.Serialization.Json
 dotnet add package Microsoft.Kiota.Serialization.Text
+dotnet add package Microsoft.Kiota.Serialization.Multipart
 dotnet add package Microsoft.Kiota.Authentication.Azure
 dotnet add package Azure.Identity
 ```
