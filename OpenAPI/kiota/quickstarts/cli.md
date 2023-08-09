@@ -35,6 +35,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-dotnet))
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-dotnet))
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
+- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-dotnet))
 
 For this tutorial, you will use the default implementations.
 
@@ -47,6 +48,7 @@ dotnet add package Microsoft.Kiota.Http.HttpClientLibrary
 dotnet add package Microsoft.Kiota.Serialization.Form
 dotnet add package Microsoft.Kiota.Serialization.Json
 dotnet add package Microsoft.Kiota.Serialization.Text
+dotnet add package Microsoft.Kiota.Serialization.Multipart
 ```
 
 ## Generate the API client
@@ -60,7 +62,7 @@ This is a minimal OpenAPI description that describes how to call the `/posts` en
 You can then use the Kiota command line tool to generate the API client classes.
 
 ```bash
-kiota generate -l shell -c PostsClient -n KiotaPostsCLI.Client -d ./posts-api.yml -o ./src/Client
+kiota generate -l CLI -c PostsClient -n KiotaPostsCLI.Client -d ./posts-api.yml -o ./src/Client
 ```
 
 ## Create the client application
@@ -85,7 +87,7 @@ dotnet run -- posts list
 ### GET /posts/{id}
 
 ```bash
-dotnet run -- posts item get --post-id 5
+dotnet run -- posts get --post-id 5
 ```
 
 ### POST /posts
@@ -97,13 +99,13 @@ dotnet run -- posts create --body '{ "userId": 42, "title": "Testing Kiota-gener
 ### PATCH /posts/{id}
 
 ```bash
-dotnet run -- posts item patch --post-id 5 --body '{ "title": "Updated title" }'
+dotnet run -- posts patch --post-id 5 --body '{ "title": "Updated title" }'
 ```
 
 ### DELETE /posts/{id}
 
 ```bash
-dotnet run -- posts item delete --post-id 5
+dotnet run -- posts delete --post-id 5
 ```
 
 ## See also

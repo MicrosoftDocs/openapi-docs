@@ -36,6 +36,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-dotnet))
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-dotnet))
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
+- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-dotnet))
 
 For this tutorial, you will use the default implementations.
 
@@ -48,6 +49,7 @@ dotnet add package Microsoft.Kiota.Http.HttpClientLibrary
 dotnet add package Microsoft.Kiota.Serialization.Form
 dotnet add package Microsoft.Kiota.Serialization.Json
 dotnet add package Microsoft.Kiota.Serialization.Text
+dotnet add package Microsoft.Kiota.Serialization.Multipart
 dotnet add package Microsoft.Kiota.Authentication.Azure
 dotnet add package Azure.Identity
 dotnet add package Microsoft.Extensions.DependencyInjection
@@ -63,7 +65,7 @@ Kiota generates API clients from OpenAPI documents. Create a file named **get-me
 You can then use the Kiota command line tool to generate the API client classes.
 
 ```bash
-kiota generate --openapi get-me.yml --language shell -c GetUserApiClient -n GetUserClient.ApiClient -o ./Client
+kiota generate --openapi get-me.yml --language CLI -c GetUserApiClient -n GetUserClient.ApiClient -o ./Client
 ```
 
 ## Register an application
