@@ -32,6 +32,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-go))
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-go))
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-go))
+- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-go))
 
 For this tutorial, you will use the default implementations.
 
@@ -43,6 +44,7 @@ go get github.com/microsoft/kiota-http-go
 go get github.com/microsoft/kiota-serialization-form-go
 go get github.com/microsoft/kiota-serialization-json-go
 go get github.com/microsoft/kiota-serialization-text-go
+go get github.com/microsoft/kiota-serialization-multipart-go
 go get github.com/microsoft/kiota-authentication-azure-go
 go get github.com/Azure/azure-sdk-for-go/sdk/azidentity
 ```

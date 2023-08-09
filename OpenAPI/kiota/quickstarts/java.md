@@ -32,6 +32,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Form serialization ([Kiota default](https://github.com/microsoft/kiota-java))
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-java))
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-java))
+- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-java))
 
 For this tutorial, you will use the default implementations.
 
