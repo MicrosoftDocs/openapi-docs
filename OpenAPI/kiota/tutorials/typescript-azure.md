@@ -33,6 +33,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Form serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-form))
 - JSON serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-json))
 - Text serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-text))
+- Multipart serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-multipart))
 
 For this tutorial, you will use the default implementations.
 
@@ -45,6 +46,7 @@ npm install @microsoft/kiota-http-fetchlibrary
 npm install @microsoft/kiota-serialization-form
 npm install @microsoft/kiota-serialization-json
 npm install @microsoft/kiota-serialization-text
+npm install @microsoft/kiota-serialization-multipart
 npm install @azure/identity
 ```
 
