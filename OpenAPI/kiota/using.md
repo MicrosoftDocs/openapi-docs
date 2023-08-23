@@ -392,12 +392,12 @@ kiota info
 ```bash
 Language    Maturity Level
 CSharp      Stable
+CLI         Preview
 Go          Preview
 Java        Preview
 PHP         Preview
 Python      Preview
 Ruby        Experimental
-Shell       Preview
 Swift       Experimental
 TypeScript  Experimental
 ```
