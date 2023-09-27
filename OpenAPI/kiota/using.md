@@ -241,6 +241,8 @@ kiota generate --backing-store
 
 Whether to exclude the code generated only for backward compatibility reasons or not. Defaults to `false`.
 
+To maintain compatibility with applications that depends on generated clients, kiota emits additional code marked as obsolete. New clients do not need this additional backward compatible code. The code marked as obsolete will be removed in the next major version of kiota. Use this option to omit emitting the backward compatible code when generating a new client, or when the application using the existing client being refreshed does not depend on backward compatible code.
+
 ```bash
 kiota generate --exclude-backward-compatible
 ```
