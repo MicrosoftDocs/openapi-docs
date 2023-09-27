@@ -198,6 +198,7 @@ kiota generate (--openapi | -d) <path>
       [(--namespace-name | -n) <name>]
       [(--log-level | --ll) <level>]
       [--backing-store | -b]
+      [--exclude-backward-compatible | --ebc]
       [--additional-data | --ad]
       [(--serializer | -s) <classes>]
       [(--deserializer | --ds) <classes>]
@@ -236,9 +237,17 @@ Enables backing store for models. Defaults to `false`.
 kiota generate --backing-store
 ```
 
+### `--exclude-backward-compatible (--ebc)`
+
+Whether to exclude the code generated only for backward compatibility reasons or not. Defaults to `false`.
+
+```bash
+kiota generate --exclude-backward-compatible
+```
+
 #### `--additional-data (--ad)`
 
-Will include the 'AdditionalData' property for generated models. Defaults to 'true'.
+Will include the 'AdditionalData' property for generated models. Defaults to `true`.
 
 ```bash
 kiota generate --additional-data false
