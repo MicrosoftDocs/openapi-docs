@@ -198,6 +198,7 @@ kiota generate (--openapi | -d) <path>
       [(--namespace-name | -n) <name>]
       [(--log-level | --ll) <level>]
       [--backing-store | -b]
+      [--exclude-backward-compatible | --ebc]
       [--additional-data | --ad]
       [(--serializer | -s) <classes>]
       [(--deserializer | --ds) <classes>]
@@ -236,9 +237,19 @@ Enables backing store for models. Defaults to `false`.
 kiota generate --backing-store
 ```
 
+### `--exclude-backward-compatible (--ebc)`
+
+Whether to exclude the code generated only for backward compatibility reasons or not. Defaults to `false`.
+
+To maintain compatibility with applications that depends on generated clients, kiota emits additional code marked as obsolete. New clients do not need this additional backward compatible code. The code marked as obsolete will be removed in the next major version of kiota. Use this option to omit emitting the backward compatible code when generating a new client, or when the application using the existing client being refreshed does not depend on backward compatible code.
+
+```bash
+kiota generate --exclude-backward-compatible
+```
+
 #### `--additional-data (--ad)`
 
-Will include the 'AdditionalData' property for generated models. Defaults to 'true'.
+Will include the 'AdditionalData' property for generated models. Defaults to `true`.
 
 ```bash
 kiota generate --additional-data false
