@@ -66,7 +66,7 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 
 ## Build from source
 
-1. Clone the current repository.
+1. Clone the [Kiota repository](https://github.com/microsoft/kiota).
 1. Install the [.NET SDK 7.0](https://get.dot.net/7).
 1. Open the solution with Visual Studio and right click *publish* **--or--** execute the following command:
 
