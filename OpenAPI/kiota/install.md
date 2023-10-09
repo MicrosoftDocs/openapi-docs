@@ -71,14 +71,31 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 1. Open the solution with Visual Studio and right click *publish* **--or--** execute the following command:
 
     ```bash
+    dotnet publish ./src/kiota/kiota.csproj -c Release -p:PublishSingleFile=true -r <RIDs>
+    ```
+
+    | RIDs               | Value     |
+    |--------------------|-----------|
+    | Linux (x64)        | linux-x64 |
+    | macOS (arm64)      | osx-arm64 |
+    | macOS (x64)        | osx-x64   |
+    | Windows (x64)      | win-x64   |
+    | Windows (x86)      | win-x86   |
+
+    > [!NOTE]
+    > Refer to [.NET runtime identifier catalog](/dotnet/core/rid-catalog) so select the appropriate runtime for your platform.
+
+    For example if your platform is Windows (x64), your command will be as below
+
+     ```bash
     dotnet publish ./src/kiota/kiota.csproj -c Release -p:PublishSingleFile=true -r win-x64
     ```
+
 
 1. Navigate to the output directory (usually under `src/kiota/bin/Release/net7.0`).
 1. Run `kiota.exe ...`.
 
-> [!NOTE]
-> Refer to [.NET runtime identifier catalog](/dotnet/core/rid-catalog) so select the appropriate runtime for your platform.
+
 
 ## Install the Visual Studio Code extension
 
