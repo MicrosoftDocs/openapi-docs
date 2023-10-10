@@ -91,11 +91,8 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
     dotnet publish ./src/kiota/kiota.csproj -c Release -p:PublishSingleFile=true -r win-x64
     ```
 
-
 1. Navigate to the output directory (usually under `src/kiota/bin/Release/net7.0`).
 1. Run `kiota.exe ...`.
-
-
 
 ## Install the Visual Studio Code extension
 
