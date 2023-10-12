@@ -357,14 +357,14 @@ kiota generate --serializer Contoso.Json.CustomSerializer
 
 #### `--structured-mime-types (-m)`
 
-The MIME types to use for structured data model generation. Accepts multiple values.
+The MIME types to use for structured data model generation with their preference weight. Any type without a preference will have its preference defaulted to 1. Accepts multiple values. The notation style and the preference weight logic follow the convention [defined in RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-accept).
 
 Default values :
 
-- `application/json`
-- `application/x-www-form-urlencoded`
-- `multipart/form-data`
-- `text/plain`
+- `application/json;q=1`
+- `application/x-www-form-urlencoded;q=0.2`
+- `multipart/form-data;q=0.1`
+- `text/plain;q=0.9`
 
 > [!NOTE]
 > Only request body types or response types with a defined schema will generate models, other entries will default back to stream/byte array.
