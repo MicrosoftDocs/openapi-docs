@@ -430,6 +430,52 @@ dotnet add package Microsoft.Kiota.Serialization.Form --version 1.0.0
 dotnet add package Microsoft.Kiota.Serialization.Json --version 1.0.1
 dotnet add package Microsoft.Kiota.Authentication.Azure --version 1.0.0
 dotnet add package Microsoft.Kiota.Serialization.Text --version 1.0.0
+dotnet add package Microsoft.Kiota.Serialization.Multipart --version 1.0.0
+```
+
+Using the `--json` optional parameter render the output in a machine parsable format:
+
+```bash
+kiota info -l CSharp --json
+```
+
+```json
+{
+  "maturityLevel": "Stable",
+  "dependencyInstallCommand": "dotnet add package {0} --version {1}",
+  "dependencies": [
+    {
+      "name": "Microsoft.Kiota.Abstractions",
+      "version": "1.0.0"
+    },
+    {
+      "name": "Microsoft.Kiota.Http.HttpClientLibrary",
+      "version": "1.0.0"
+    },
+    {
+      "name": "Microsoft.Kiota.Serialization.Form",
+      "version": "1.0.0"
+    },
+    {
+      "name": "Microsoft.Kiota.Serialization.Json",
+      "version": "1.0.1"
+    },
+    {
+      "name": "Microsoft.Kiota.Authentication.Azure",
+      "version": "1.0.0"
+    },
+    {
+      "name": "Microsoft.Kiota.Serialization.Text",
+      "version": "1.0.0"
+    },
+    {
+      "name": "Microsoft.Kiota.Serialization.Multipart",
+      "version": "1.0.0"
+    }
+  ],
+  "clientClassName": "",
+  "clientNamespaceName": ""
+}
 ```
 
 ### Optional Parameters
