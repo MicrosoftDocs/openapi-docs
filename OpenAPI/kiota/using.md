@@ -433,7 +433,7 @@ dotnet add package Microsoft.Kiota.Serialization.Text --version 1.0.0
 dotnet add package Microsoft.Kiota.Serialization.Multipart --version 1.0.0
 ```
 
-Using `--json` render the output in a machine parsable format:
+Using the `--json` optional parameter render the output in a machine parsable format:
 
 ```bash
 kiota info -l CSharp --json
