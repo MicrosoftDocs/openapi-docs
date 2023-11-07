@@ -402,12 +402,12 @@ kiota info
 
 ```bash
 Language    Maturity Level
-CSharp      Stable
 CLI         Preview
-Go          Preview
+CSharp      Stable
+Go          Stable
 Java        Preview
-PHP         Preview
-Python      Preview
+PHP         Stable
+Python      Stable
 Ruby        Experimental
 Swift       Experimental
 TypeScript  Experimental
