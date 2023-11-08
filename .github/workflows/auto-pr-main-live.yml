@@ -6,6 +6,7 @@ on:
 
 permissions:
   pull-requests: write
+  contents: read
 
 jobs:
   build:
@@ -13,4 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: gh pr create -B live -t "Merge main to live" -b "This PR was created automatically by a GitHub Action."
+      - run: |
+          git switch main
+          gh pr create -B live -t "Merge main to live" -b "This PR was created automatically by a GitHub Action."
