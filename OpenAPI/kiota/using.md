@@ -402,12 +402,12 @@ kiota info
 
 ```bash
 Language    Maturity Level
-CSharp      Stable
 CLI         Preview
-Go          Preview
+CSharp      Stable
+Go          Stable
 Java        Preview
-PHP         Preview
-Python      Preview
+PHP         Stable
+Python      Stable
 Ruby        Experimental
 Swift       Experimental
 TypeScript  Experimental
@@ -424,13 +424,13 @@ kiota info -l CSharp
 ```bash
 The language CSharp is currently in Stable maturity level.
 After generating code for this language, you need to install the following packages:
-dotnet add package Microsoft.Kiota.Abstractions --version 1.0.0
-dotnet add package Microsoft.Kiota.Http.HttpClientLibrary --version 1.0.0
-dotnet add package Microsoft.Kiota.Serialization.Form --version 1.0.0
-dotnet add package Microsoft.Kiota.Serialization.Json --version 1.0.1
-dotnet add package Microsoft.Kiota.Authentication.Azure --version 1.0.0
-dotnet add package Microsoft.Kiota.Serialization.Text --version 1.0.0
-dotnet add package Microsoft.Kiota.Serialization.Multipart --version 1.0.0
+dotnet add package Microsoft.Kiota.Abstractions --version 1.6.1
+dotnet add package Microsoft.Kiota.Http.HttpClientLibrary --version 1.3.0
+dotnet add package Microsoft.Kiota.Serialization.Form --version 1.1.0
+dotnet add package Microsoft.Kiota.Serialization.Json --version 1.1.1
+dotnet add package Microsoft.Kiota.Authentication.Azure --version 1.1.0
+dotnet add package Microsoft.Kiota.Serialization.Text --version 1.1.0
+dotnet add package Microsoft.Kiota.Serialization.Multipart --version 1.1.0
 ```
 
 Using the `--json` optional parameter render the output in a machine parsable format:
@@ -446,31 +446,31 @@ kiota info -l CSharp --json
   "dependencies": [
     {
       "name": "Microsoft.Kiota.Abstractions",
-      "version": "1.0.0"
+      "version": "1.6.1"
     },
     {
       "name": "Microsoft.Kiota.Http.HttpClientLibrary",
-      "version": "1.0.0"
+      "version": "1.2.0"
     },
     {
       "name": "Microsoft.Kiota.Serialization.Form",
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "name": "Microsoft.Kiota.Serialization.Json",
-      "version": "1.0.1"
+      "version": "1.1.1"
     },
     {
       "name": "Microsoft.Kiota.Authentication.Azure",
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "name": "Microsoft.Kiota.Serialization.Text",
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     {
       "name": "Microsoft.Kiota.Serialization.Multipart",
-      "version": "1.0.0"
+      "version": "1.1.0"
     }
   ],
   "clientClassName": "",
