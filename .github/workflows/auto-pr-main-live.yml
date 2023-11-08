@@ -1,0 +1,16 @@
+name: Create a PR from main to live on merge to main
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  pull-requests: write
+
+jobs:
+  build:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && github.repository == 'microsoftdocs/openapi-docs-pr'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: gh pr create -B live -t "Merge main to live" -b "This PR was created automatically by a GitHub Action."
