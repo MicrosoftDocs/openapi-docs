@@ -13,7 +13,7 @@ In this tutorial, you will build a sample app in Java that calls a REST API that
 
 ## Required tools
 
-- [OpenJDK 17](https://learn.microsoft.com/java/openjdk/download)
+- [OpenJDK 17](/java/openjdk/download)
 - [Gradle 7.4](https://gradle.org/install/)
 
 ## Create a project
