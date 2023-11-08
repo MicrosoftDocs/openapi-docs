@@ -4,6 +4,9 @@ on:
     branches:
       - main
 
+env:
+  GH_TOKEN: ${{ github.token }}
+
 permissions:
   pull-requests: write
   contents: read
@@ -14,6 +17,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
-          git switch main
-          gh pr create -B live -t "Merge main to live" -b "This PR was created automatically by a GitHub Action."
+      - run: gh pr create -B live -t "Merge main to live" -b "This PR was created automatically by a GitHub Action."
