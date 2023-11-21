@@ -9,7 +9,7 @@ date: 21/11/2023
 
 # Implementing Middleware
 
-By registering custom middleware delegates we can perform operations before a request is made. For example, auditing and filtering the request before we send.
+By registering custom middleware delegates you can perform operations before a request is made. For example, auditing and filtering the request before the client sends it.
 
 ## Middleware
 
@@ -21,35 +21,36 @@ public class SaveRequestHandler : DelegatingHandler
     protected override async Task<HttpResponseMessage> SendAsync(
         HttpRequestMessage request, CancellationToken cancellationToken)
     {
-        string jsonContent = await request.Content.ReadAsStringAsync();
+        var jsonContent = await request.Content.ReadAsStringAsync(cancellationToken);
         Console.WriteLine($"Request: {jsonContent}");
 
         return await base.SendAsync(request, cancellationToken);
     }
 }
 ```
+
 ## Register Middleware
 
 Create a Middleware delegate array and use the existing Middleware already implemented within Kiota.HttpClient that includes existing Delegates like Retry, redirect handling and more.
 
 ```cs
-var delegates = KiotaClientFactory.CreateDefaultHandlers();
-delegates.Add(new SaveRequestHandler());
+var handlers = KiotaClientFactory.CreateDefaultHandlers();
+handlers.Add(new SaveRequestHandler());
 ```
 
-Next we create a Delegate chain so middleware is registered in the right order.
+Next you will need to create a Delegate chain so the middleware handlers are registered in the right order.
 
 ```cs
-var handler =
+var httpMessageHandler =
     KiotaClientFactory.ChainHandlersCollectionAndGetFirstLink(
         KiotaClientFactory.GetDefaultHttpMessageHandler(),
-        delegates.ToArray());
+        handlers.ToArray());
 ```
 
-Finally we create Adapter using our HttpClient that's registered our Middleware. This adapter can then be using when submitting requests. The power of this design means that different adapters/middleware can be used when calling Endpoints and therefore gives flexibility to how and when Middleware is used.
+Finally, create a request adapter using a HttpClient with the message handler that was just created. This adapter can then be used when submitting requests from the generated client. This design means different adapters/middleware can be used when calling APIs and therefore gives flexibility to how and when a middleware handler is used.
 
 ```cs
-var httpClient = new HttpClient(handler!);
+var httpClient = new HttpClient(httpMessageHandler!);
 var adapter = new HttpClientRequestAdapter(authProvider, httpClient:httpClient);
-var client = new PostsClient(adapter);
+var client = new PostsClient(adapter); // the name of the client will vary based on your generation parameters
 ```
