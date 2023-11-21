@@ -29,6 +29,8 @@ landingContent:
             url: experience.md
           - text: Authentication
             url: authentication.md
+          - text: Middleware
+            url: middleware.md
 
   - title: Get started
     linkLists:
