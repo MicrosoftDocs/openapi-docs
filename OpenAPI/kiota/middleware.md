@@ -1,5 +1,5 @@
 ---
-title: Middleware
+title: Middleware1
 description: Learn about implementing middleware into Kiota.
 author: gpltaylor
 ms.author: gpltaylor
@@ -8,10 +8,10 @@ date: 21/11/2023
 ---
 
 # Implementing Middleware
-Here we review implementing Middleware into Kiota. Using this example we are going to access the request before we proccess the request. This allows us to audio the request or to maker changes before submitting.
+By registering custom middleware delegates we can perform operations before a request is made. For example, auditing and filtering the request before we send.
 
-## Middleware class
-Create your middleware class and add your business requirements. For example you may wish to add custom Headers to the request.
+## Middleware
+Create your middleware class and add your business requirements. For example you may wish to add custom Headers to the request or filter headers and content.
 
 ```
 public class SaveRequestHandler : DelegatingHandler
@@ -42,7 +42,7 @@ var handler =
         delegates.ToArray());
 ```
 
-Finally create the HttpClient and then the Adapter 
+Finally we create Adapter using our HttpClient that's registered our Middleware. This adapter can then be using when submitting requests. The power of this design means that different adapters/middleware can be used when calling Endpoints and therefore gives flexibility to how and when Middleware is used.
 
 ```
 var httpClient = new HttpClient(handler!);
