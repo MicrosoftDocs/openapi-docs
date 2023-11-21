@@ -52,3 +52,4 @@ Finally we create Adapter using our HttpClient that's registered our Middleware.
 var httpClient = new HttpClient(handler!);
 var adapter = new HttpClientRequestAdapter(authProvider, httpClient:httpClient);
 var client = new PostsClient(adapter);
+```
