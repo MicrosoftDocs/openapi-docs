@@ -9,7 +9,7 @@ date: 21/11/2023
 
 # Implementing Middleware
 
-By registering custom middleware delegates you can perform operations before a request is made. For example, auditing and filtering the request before the client sends it.
+By registering custom middleware handlers you can perform operations before a request is made. For example, auditing and filtering the request before the client sends it.
 
 ## Middleware
 
@@ -31,7 +31,7 @@ public class SaveRequestHandler : DelegatingHandler
 
 ## Register Middleware
 
-Create a Middleware delegate array and use the existing Middleware already implemented within Kiota.HttpClient that includes existing Delegates like Retry, redirect handling and more.
+Create a middleware handlers array and use the existing middleware already implemented within **Microsoft.Kiota.HttpClientLibrary** that includes existing handlers like retry, redirect and more.
 
 ```cs
 var handlers = KiotaClientFactory.CreateDefaultHandlers();
