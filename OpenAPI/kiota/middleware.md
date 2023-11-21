@@ -1,8 +1,7 @@
 ---
-title: Middleware1
+title: Middleware
 description: Learn about implementing middleware into Kiota.
 author: gpltaylor
-ms.author: gpltaylor
 ms.topic: overview
 date: 21/11/2023
 ---
