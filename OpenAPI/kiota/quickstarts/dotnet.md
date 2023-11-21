@@ -13,7 +13,7 @@ In this tutorial, you will build a sample app in .NET that calls a REST API that
 
 ## Required tools
 
-- [.NET SDK 7.0](https://get.dot.net/7)
+- [.NET SDK 8.0](https://get.dot.net/8)
 
 ## Create a project
 
