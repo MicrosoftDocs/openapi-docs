@@ -8,10 +8,10 @@ date: 21/11/2023
 ---
 
 # Implementing Middleware
-Implement middleware to access the pure request.
+Here we review implementing Middleware into Kiota. Using this example we are going to access the request before we proccess the request. This allows us to audio the request or to maker changes before submitting.
 
 ## Middleware class
-Create your middleware class and add your business logic
+Create your middleware class and add your business requirements. For example you may wish to add custom Headers to the request.
 
 ```
 public class SaveRequestHandler : DelegatingHandler
@@ -27,7 +27,7 @@ public class SaveRequestHandler : DelegatingHandler
 }
 ```
 ## Register Middleware
-Create a Middleware delegate array however, make sure to use the existing Middleware already implemented within Kiota.HttpClient. This includes Retry, redirect handling and more.
+Create a Middleware delegate array and use the existing Middleware already implemented within Kiota.HttpClient that includes existing Delegates like Retry, redirect handling and more.
 
 ```
 var delegates = KiotaClientFactory.CreateDefaultHandlers();
