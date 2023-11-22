@@ -29,7 +29,7 @@ landingContent:
             url: experience.md
           - text: Authentication
             url: authentication.md
-          - text: Middleware
+          - text: Middleware handlers
             url: middleware.md
 
   - title: Get started
