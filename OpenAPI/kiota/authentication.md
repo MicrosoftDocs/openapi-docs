@@ -28,7 +28,7 @@ public interface IAuthenticationProvider
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The return value must be a `Task` that completes whenever the authentication sequence has completed and the request object has been updates with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The return value must be a `Task` that completes whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
 
 ### [Go](#tab/go)
 
@@ -39,7 +39,7 @@ type AuthenticationProvider interface {
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence has completed and the request object has been updates with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
 
 ### [Java](#tab/java)
 
@@ -50,7 +50,7 @@ public interface AuthenticationProvider {
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The return value must be a `CompletableFuture` that completes whenever the authentication sequence has completed and the request object has been updates with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The return value must be a `CompletableFuture` that completes whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
 
 ### [PHP](#tab/php)
 
@@ -60,7 +60,7 @@ interface AuthenticationProvider {
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The return value must be a `Promise` that completes whenever the authentication sequence has completed and the request object has been updates with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The return value must be a `Promise` that completes whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
 
 ### [Python](#tab/python)
 
@@ -72,7 +72,7 @@ class AuthenticationProvider(ABC):
         pass
 ```
 
-The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence has completed and the request object has been updates with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
 
 ### [Ruby](#tab/ruby)
 
@@ -84,7 +84,7 @@ module AuthenticationProvider
 end
 ```
 
-The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence has completed and the request object has been updates with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
 
 ### [TypeScript](#tab/typescript)
 
@@ -97,7 +97,7 @@ export interface AuthenticationProvider {
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The return value must be a `Promise` that completes whenever the authentication sequence has completed and the request object has been updates with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The return value must be a `Promise` that completes whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
 
 <!-- markdownlint-enable MD051 -->
 
