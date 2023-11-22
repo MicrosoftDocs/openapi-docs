@@ -61,6 +61,8 @@ items:
     href: query-parameters-request-headers.md
   - name: Serialization
     href: serialization.md
+  - name: Middleware handlers
+    href: middleware.md
   - name: Models
     href: models.md
   - name: Status codes
