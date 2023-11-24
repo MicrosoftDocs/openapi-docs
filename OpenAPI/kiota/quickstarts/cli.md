@@ -24,6 +24,7 @@ Run the following command in the directory you want to create a new project.
 
 ```bash
 dotnet new console -o KiotaPostsCLI
+cd KiotaPostsCLI
 dotnet new gitignore
 ```
 
