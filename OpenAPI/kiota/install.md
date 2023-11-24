@@ -37,22 +37,52 @@ You can download the latest version for your operating system.
 
 You can run Kiota in our Docker container with one of the following commands.
 
+<!-- markdownlint-disable MD051 -->
+### [bash](#tab/bash)
+
 ```bash
 docker run -v /some/output/path:/app/output \
 -v /some/input/description.yml:/app/openapi.yml \
 mcr.microsoft.com/openapi/kiota generate --language csharp -n namespace-prefix
 ```
 
+### [PowerShell](#tab/powershell)
+
+```powershell
+docker run -v /some/output/path:/app/output `
+-v /some/input/description.yml:/app/openapi.yml `
+mcr.microsoft.com/openapi/kiota generate --language csharp -n namespace-prefix
+```
+
+<!-- markdownlint-enable MD051 -->
+
+---
+
 > [!TIP]
 > You can alternatively use the `--openapi` parameter with a URI instead of volume mapping.
 
 To generate a SDK from an online OpenAPI description and into the current directory:
+
+<!-- markdownlint-disable MD024 MD051 -->
+### [bash](#tab/bash)
 
 ```bash
 docker run -v ${PWD}:/app/output mcr.microsoft.com/openapi/kiota \
 generate --language typescript -n gfx -d \
 https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/openApiDocs/v1.0/Mail.yml
 ```
+
+### [PowerShell](#tab/powershell)
+
+```powershell
+docker run -v ${PWD}:/app/output mcr.microsoft.com/openapi/kiota `
+generate --language typescript -n gfx -d `
+https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/openApiDocs/v1.0/Mail.yml
+```
+
+<!-- markdownlint-disable MD024 MD051 -->
+
+---
 
 ## Install as .NET tool
 
