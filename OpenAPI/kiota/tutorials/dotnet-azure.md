@@ -4,7 +4,7 @@ description: Learn how use Kiota to build API clients in .NET to access APIs tha
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: tutorial
-date: 03/20/2023
+date: 11/29/2023
 ---
 
 # Build API clients for .NET with Microsoft identity authentication
@@ -19,7 +19,7 @@ In this tutorial, you will generate an API client that uses [Microsoft identity 
 
 Run the following command in the directory you want to create a new project.
 
-```bash
+```dotnetcli
 dotnet new console -o GetUserClient
 dotnet new gitignore
 ```
@@ -39,7 +39,7 @@ For this tutorial, you will use the default implementations.
 
 Run the following commands to get the required dependencies.
 
-```bash
+```dotnetcli
 dotnet add package Microsoft.Kiota.Abstractions
 dotnet add package Microsoft.Kiota.Http.HttpClientLibrary
 dotnet add package Microsoft.Kiota.Serialization.Form
@@ -80,18 +80,18 @@ kiota generate -l csharp -d get-me.yml -c GetUserApiClient -n GetUserClient.ApiC
 
 ## Create the client application
 
-The final step is to update the **Program.cs** file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
+The final step is to update the _Program.cs_ file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
 :::code language="csharp" source="~/code-snippets/get-started/azure-auth/dotnet/src/Program.cs" id="ProgramSnippet":::
 
 > [!NOTE]
-> This example uses the **DeviceCodeCredential** class. You can use any of the credential classes from the `Azure.Identity` library.
+> This example uses the `DeviceCodeCredential` class. You can use any of the credential classes from the `Azure.Identity` library.
 
 ## Run the application
 
 Run the following command in your project directory to start the application.
 
-```bash
+```dotnetcli
 dotnet run
 ```
 
