@@ -28,7 +28,7 @@ npx tsc --init
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://www.npmjs.com/package/@microsoft/kiota-abstractions). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://www.npmjs.com/package/@microsoft/kiota-abstractions). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - HTTP ([Kiota default fetch-based implementation](https://www.npmjs.com/package/@microsoft/kiota-http-fetchlibrary))
 - Form serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-form))
