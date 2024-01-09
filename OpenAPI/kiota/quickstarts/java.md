@@ -76,6 +76,6 @@ Run the following command in your project directory to start the application.
 
 ## See also
 
-- [kiota-samples repository](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/go) contains the code from this guide.
-- [Microsoft Graph sample using Microsoft identity platform authentication](https://github.com/microsoft/kiota-samples/tree/main/get-started/azure-auth/go)
+- [kiota-samples repository](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/java) contains the code from this guide.
+- [Microsoft Graph sample using Microsoft identity platform authentication](https://github.com/microsoft/kiota-samples/tree/main/get-started/azure-auth/java)
 - [ToDoItem Sample API](https://github.com/microsoft/kiota-samples/tree/main/sample-api) implements a sample OpenAPI in ASP.NET Core and sample clients in multiple languages.
