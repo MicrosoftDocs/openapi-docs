@@ -79,3 +79,16 @@ Run the following command in your project directory to start the application.
 - [kiota-samples repository](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/java) contains the code from this guide.
 - [Microsoft Graph sample using Microsoft identity platform authentication](https://github.com/microsoft/kiota-samples/tree/main/get-started/azure-auth/java)
 - [ToDoItem Sample API](https://github.com/microsoft/kiota-samples/tree/main/sample-api) implements a sample OpenAPI in ASP.NET Core and sample clients in multiple languages.
+
+## (UNOFFICIAL) Community tools and libraries
+
+> [!IMPORTANT]
+> The Kiota Community tools and libraries are maintained and distributed by the community and are not official Microsoft tools and libraries. Microsoft makes no warranties, express or implied, with respect to the tools and libraries or their use. Use of the tools and libraries at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of the tools and libraries.
+
+There are community tools and libraries to make it easy for you to get started with Kiota and to better harmonize the class path according to the rest of your stack:
+
+- [Kiota Maven Plugin](https://github.com/kiota-community/kiota-java-extra?tab=readme-ov-file#maven-plugin)
+- [Kiota Jackson Serialization](https://github.com/kiota-community/kiota-java-extra?tab=readme-ov-file#serialization-jackson)
+- [Kiota Http VertX](https://github.com/kiota-community/kiota-java-extra?tab=readme-ov-file#http-vertx)
+- [Kiota Http JDK](https://github.com/kiota-community/kiota-java-extra?tab=readme-ov-file#http-jdk)
+- [Kiota Quarkus Extension](https://github.com/quarkiverse/quarkus-kiota)
