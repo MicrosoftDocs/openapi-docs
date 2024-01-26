@@ -17,6 +17,7 @@ Kiota can be accessed in the following ways.
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
 - [Install with asdf (UNOFFICIAL)](#install-with-asdf)
+- [Install with Homebrew (UNOFFICIAL)](#install-with-homebrew)
 - [REST API Client Code Generator extension for Visual Studio (UNOFFICIAL)](#rest-api-client-code-generator)
 
 ## Download binaries
@@ -152,6 +153,17 @@ asdf global kiota latest
 
 # Now kiota commands are available
 kiota --version
+```
+
+## Install with Homebrew
+
+> [!IMPORTANT]
+> The Homebrew formula for Kiota is maintained and distributed by the community and is not an official Microsoft plugin. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
+
+The community has made Kiota available as a [Homebrew formula](https://formulae.brew.sh/formula/kiota) for macOS running on x64 and arm64 architectures. To install follow these instructions:
+
+```bash
+brew install kiota
 ```
 
 ## REST API Client Code Generator
