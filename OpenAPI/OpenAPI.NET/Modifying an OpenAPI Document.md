@@ -10,9 +10,7 @@ using Microsoft.OpenApi.Readers;
 
 using System.IO; 
 
-using Microsoft.OpenApi.Writers; 
-
- 
+using Microsoft.OpenApi.Writers;
 
 class ModifyOpenApiDocument 
 
@@ -26,15 +24,10 @@ class ModifyOpenApiDocument
 
         var filePath = "petstore.yaml"; 
 
- 
-
         if (File.Exists(filePath)) 
 
         { 
-
             var document = ReadOpenApiDocumentFromYamlFile(filePath); 
-
- 
 
             // Now you can modify the document as needed 
 
@@ -68,7 +61,7 @@ class ModifyOpenApiDocument
 
                                     Schema = new OpenApiSchema 
 
-                                    { 
+                                    {
 
                                         Type = "object", 
 
@@ -90,8 +83,6 @@ class ModifyOpenApiDocument
 
                                         }, 
 
- 
-
                                     } 
 
                                 } 
@@ -99,7 +90,6 @@ class ModifyOpenApiDocument
                             }, 
 
                              Required = true, // Indicates that the "name" property is required 
-
                         }, 
 
                         Responses = new OpenApiResponses 
@@ -122,19 +112,13 @@ class ModifyOpenApiDocument
 
             }; 
 
- 
-
             // Add the new path to the document 
 
             document.Paths.Add("/pets/post", newPetPath); 
 
- 
-
             // Serialize and save the modified OpenAPI document to a new file 
 
             SerializeOpenAPIDocument(document, "updated_petstore.yaml"); 
-
- 
 
             Console.WriteLine("PetStore OpenAPI document updated."); 
 
@@ -149,8 +133,6 @@ class ModifyOpenApiDocument
         } 
 
     } 
-
- 
 
     static OpenApiDocument ReadOpenApiDocumentFromYamlFile(string filePath) 
 
@@ -168,15 +150,13 @@ class ModifyOpenApiDocument
 
     } 
 
- 
-
     static void SerializeOpenAPIDocument(OpenApiDocument document, string filePath) 
 
     { 
 
         using (var streamWriter = new StreamWriter(filePath)) 
 
-        { 
+        {
 
             var writer = new OpenApiYamlWriter(streamWriter); 
 
