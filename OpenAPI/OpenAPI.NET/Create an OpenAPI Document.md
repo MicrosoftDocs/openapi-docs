@@ -102,3 +102,4 @@ paths:
                 items:
                   $ref: '#/components/schemas/Pet'
 ```
+You can also use the OpenAPI.NET library to modify an existing OpenAPI document. See **ModifyingOpenAPIDocumnet** example on how to modify the OpenAPI document we created here to add a new path.
