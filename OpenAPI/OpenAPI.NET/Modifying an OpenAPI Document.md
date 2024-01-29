@@ -1,5 +1,5 @@
 # ModifyOpenApiDocument
-The PetStore service we described in the ## CreateOpenApiDocument has only one path for getting all pets. Let’s assume now that we have added capability to allow users to add a pet to the store. To modify the OpenAPI document for the PetStore service, we can use the object model to make changes to its components. In this example, we are going to add a new path to the OpenAPI document to describe a new endpoint for adding a pet to the PetStore.
+The PetStore service we described in the [CreateOpenApiDocument](https://github.com/njaci1/openapi-docs-pr/blob/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Create%20an%20OpenAPI%20Document.md) has only one path for getting all pets. Let’s assume now that we have added capability to allow users to add a pet to the store. To modify the OpenAPI document for the PetStore service, we can use the object model to make changes to its components. In this example, we are going to add a new path to the OpenAPI document to describe a new endpoint for adding a pet to the PetStore.
 
 ```csharp
 using System; 
@@ -239,3 +239,4 @@ paths:
 
           description: Pet created successfully
 ```
+In this example we modified an existing YAML OpenAPI document and output it in YAML format. OpenAPI.NET also supports converting OpenAPI files between YAML and JSON formats. Here’s an example of how to [convert the YAML OpenAPI file to JSON format](https://github.com/njaci1/openapi-docs-pr/edit/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Converting%20an%20OpenAPI%20Document.md).
