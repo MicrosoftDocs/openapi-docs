@@ -102,4 +102,4 @@ paths:
                 items:
                   $ref: '#/components/schemas/Pet'
 ```
-You can also use the OpenAPI.NET library to modify an existing OpenAPI document. See **ModifyingOpenAPIDocumnet** example on how to modify the OpenAPI document we created here to add a new path.
+Check out the [ModifyingOpenApiDocument](https://github.com/njaci1/openapi-docs-pr/edit/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Modifying%20an%20OpenAPI%20Document.md) example to learn how to add a new path to the OpenAPI document we created earlier or checkout [ConvertingOpenApiDocument](https://github.com/njaci1/openapi-docs-pr/edit/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Converting%20an%20OpenAPI%20Document.md) to learn how to use the OpenAPI.NET library to convert between YAML and JSON formts.
