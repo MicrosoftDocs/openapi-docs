@@ -5,76 +5,141 @@ To create a new OpenAPI document for the PetStore service, we can use the object
 Here is the code to create an OpenAPI document for the PetStore API:
 
 ```csharp
-using System;
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Writers;
-using System.IO;
+using System; 
 
-class CreateOpenApiDocument
-{
-    static void Main()
-    {
-        // Create an OpenAPI document for the PetStore API
-        var document = new OpenApiDocument
-        {
-            Info = new OpenApiInfo
-            {
-                Title = "PetStore API",
-                Version = "1.0.0"
-            },
-            Servers = new List<OpenApiServer>
-            {
-                new OpenApiServer { Url = "https://api.petstore.com" }
-            },
-            Paths = new OpenApiPaths
-            {
-                ["/pets"] = new OpenApiPathItem
-                {
-                    Operations = new Dictionary<OperationType, OpenApiOperation>
-                    {
-                        [OperationType.Get] = new OpenApiOperation
-                        {
-                            Description = "Get all pets",
-                            Responses = new OpenApiResponses
-                            {
-                                ["200"] = new OpenApiResponse
-                                {
-                                    Description = "A list of pets",
-                                    Content = new Dictionary<string, OpenApiMediaType>
-                                    {
-                                        ["application/json"] = new OpenApiMediaType
-                                        {
-                                            Schema = new OpenApiSchema
-                                            {
-                                                Type = "array",
-                                                Items = new OpenApiSchema
-                                                {
-                                                    Reference = new OpenApiReference
-                                                    {
-                                                        Type = ReferenceType.Schema,
-                                                        Id = "Pet"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        };
+using Microsoft.OpenApi.Models; 
 
-        // Write the OpenAPI document to a string
-        var writer = new StringWriter();
-        document.SerializeAsV3(new OpenApiJsonWriter(writer));
-        var openApiString = writer.ToString();
+using Microsoft.OpenApi.Writers; 
 
-        // Print the OpenAPI document
-        Console.WriteLine(openApiString);
-    }
-}
+using System.IO; 
+
+
+class CreateOpenApiDocument 
+
+{ 
+
+    static void Main() 
+
+    { 
+
+        // Create an OpenAPI document for the PetStore API 
+
+        var document = new OpenApiDocument 
+
+        { 
+
+            Info = new OpenApiInfo 
+
+            { 
+
+                Title = "PetStore API", 
+
+                Version = "1.0.0" 
+
+            }, 
+
+            Servers = new List<OpenApiServer> 
+
+            { 
+
+                new OpenApiServer { Url = "https://api.petstore.com" } 
+
+            }, 
+
+            Paths = new OpenApiPaths 
+
+            { 
+
+                ["/pets"] = new OpenApiPathItem 
+
+                { 
+
+                    Operations = new Dictionary<OperationType, OpenApiOperation> 
+
+                    { 
+
+                        [OperationType.Get] = new OpenApiOperation 
+
+                        { 
+
+                            Description = "Get all pets", 
+
+                            Responses = new OpenApiResponses 
+
+                            { 
+
+                                ["200"] = new OpenApiResponse 
+
+                                { 
+
+                                    Description = "A list of pets", 
+
+                                    Content = new Dictionary<string, OpenApiMediaType> 
+
+                                    { 
+
+                                        ["application/json"] = new OpenApiMediaType 
+
+                                        { 
+
+                                            Schema = new OpenApiSchema 
+
+                                            { 
+
+                                                Type = "array", 
+
+                                                Items = new OpenApiSchema 
+
+                                                { 
+
+                                                    Reference = new OpenApiReference 
+
+                                                    { 
+
+                                                        Type = ReferenceType.Schema, 
+
+                                                        Id = "Pet" 
+
+                                                    } 
+
+                                                } 
+
+                                            } 
+
+                                        } 
+
+                                    } 
+
+                                } 
+
+                            } 
+
+                        } 
+
+                    } 
+
+                } 
+
+            } 
+
+        }; 
+
+        // Serialize the OpenAPI document to a YAML file 
+
+        using (var streamWriter = new StreamWriter("petstore.yaml")) 
+
+        { 
+
+            var writer = new OpenApiYamlWriter(streamWriter); 
+
+            document.SerializeAsV3(writer); 
+
+        } 
+        Console.WriteLine("PetStore OpenAPI document created and saved."); 
+
+    } 
+
+} 
 ```
 Here is the resulting OpenAPI description for our PetStore service:
 
