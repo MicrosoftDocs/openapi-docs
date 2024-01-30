@@ -269,7 +269,13 @@ kiota generate --class-name MyApiClient
 
 #### `--deserializer (--ds)`
 
-The fully qualified class names for deserializers. Defaults to the following values.
+The fully qualified class names for deserializers.
+
+These values are used in the client class to initialize the deserialization providers.
+
+Since version 1.11 this parameter also supports a **none** key to generate a client with no deserialization providers in order to enable better portability.
+
+Defaults to the following values.
 
 | Language   | Default deserializers                                                                                                                                                                                                     |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -335,7 +341,13 @@ kiota generate --openapi https://contoso.com/api/openapi.yml
 
 #### `--serializer (-s)`
 
-The fully qualified class names for deserializers. Defaults to the following values.
+The fully qualified class names for deserializers.
+
+These values are used in the client class to initialize the serialization providers.
+
+Since version 1.11 this parameter also supports a **none** key to generate a client with no serialization providers in order to enable better portability.
+
+Defaults to the following values.
 
 | Language   | Default deserializer                                                                                                                                                                                                                                    |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
