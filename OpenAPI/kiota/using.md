@@ -341,7 +341,7 @@ kiota generate --openapi https://contoso.com/api/openapi.yml
 
 #### `--serializer (-s)`
 
-The fully qualified class names for deserializers.
+The fully qualified class names for serializers.
 
 These values are used in the client class to initialize the serialization providers.
 
