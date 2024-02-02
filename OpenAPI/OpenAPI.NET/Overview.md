@@ -15,6 +15,6 @@ Some of the benefits for using the OpenAPI.NET library when working with OpenAPI
 
 Here is an example of some of the usecases:
 Let’s say we have a service called “PetStore” that allows users to view and  post pets to the online store. We want to create an OpenAPI document to describe the PetStore service RESTful API.
-* Creating an OpenAPI document.
-* Modifying an OpenAPI document.
-* Coverting an OpenAPI document.
+* [Creating an OpenAPI document.](https://github.com/njaci1/openapi-docs-pr/blob/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Creating%20an%20OpenAPI%20Document.md).
+* [Modifying an OpenAPI document.](https://github.com/njaci1/openapi-docs-pr/blob/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Creating%20an%20OpenAPI%20Document.md)
+* [Coverting an OpenAPI document.](https://github.com/njaci1/openapi-docs-pr/blob/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Creating%20an%20OpenAPI%20Document.md)
