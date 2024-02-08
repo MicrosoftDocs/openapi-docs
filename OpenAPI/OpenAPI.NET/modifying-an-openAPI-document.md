@@ -247,4 +247,4 @@ paths:
 
           description: Pet created successfully
 ```
-In this example we modified an existing YAML OpenAPI document and output it in YAML format. OpenAPI.NET also supports converting OpenAPI files between YAML and JSON formats. Here’s an example of how to [convert the YAML OpenAPI file to JSON format](converting-an-openAPI document.md).
+In this example we modified an existing YAML OpenAPI document and output it in YAML format. OpenAPI.NET also supports converting OpenAPI files between YAML and JSON formats. Here’s an example of how to [convert the YAML OpenAPI file to JSON format](converting-an-openAPI-document.md).
