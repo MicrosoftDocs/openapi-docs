@@ -1,12 +1,12 @@
 ---
-title: OpenAPI.NET conceptual documents
-description: Learn how to use OpenAPI.NET library
+title: Overview
+description: Intorduction on how to use OpenAPI.NET library
 author: njaci1
 ms.author: kelvinnjaci
 ms.topic: conceptual
 date: 01/02/2024
 ---
-## Overview
+# Overview
 OpenAPI.NET is a .NET library for working with OpenAPI documents. OpenAPI is a standard specification for describing RESTful APIs in a machine-readable and human-friendly way. With OpenAPI.NET, you can create, modify, validate, and convert(between JSON and YAML) OpenAPI documents in your .NET applications. The library includes readers and writers for serializing and deserializing OpenAPI documents to and from different formats.
 
 At a high level, OpenAPI.NET works by providing an object model for OpenAPI documents. This object model represents the different components of an OpenAPI document, such as its paths, operations, parameters, and responses. 
