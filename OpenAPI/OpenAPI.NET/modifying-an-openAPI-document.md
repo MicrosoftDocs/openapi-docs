@@ -7,7 +7,7 @@ ms.topic: conceptual
 date: 01/02/2024
 ---
 # Modify an OpenApi Document
-The PetStore service we described in the [Create an OpenApi Document](creating-an-openAPI.md) has only one path for getting all pets. Let’s assume now that we have added capability to allow users to add a pet to the store. To modify the OpenAPI document for the PetStore service, we can use the object model to make changes to its components. In this example, we are going to add a new path to the OpenAPI document to describe a new endpoint for adding a pet to the PetStore.
+The PetStore service we described in the [Create an OpenApi Document](creating-an-openAPI-document.md) has only one path for getting all pets. Let’s assume now that we have added capability to allow users to add a pet to the store. To modify the OpenAPI document for the PetStore service, we can use the object model to make changes to its components. In this example, we are going to add a new path to the OpenAPI document to describe a new endpoint for adding a pet to the PetStore.
 
 ```csharp
 using System; 
