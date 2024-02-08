@@ -1,4 +1,12 @@
-# CreateOpenApiDocument
+---
+title: Creating an OpenApi Document
+description: Learn how to use OpenAPI.NET library to create an OpenAPI documents
+author: njaci1
+ms.author: kelvinnjaci
+ms.topic: conceptual
+date: 01/02/2024
+---
+# Creating an OpenApi Document
 Let’s say we have a service called “PetStore” that allows users to view and  post pets to the online store.
 To create a new OpenAPI document for the PetStore service, we can use the object model provided by OpenAPI.NET.We can create a new OpenApiDocument object, and then add paths, operations, parameters, and responses to it to describe the different endpoints of the PetStore API. Here we will create the OpenAPI document info and server components and add only one path for retrieving all pets(“/pets”). We will write this document out as a YAML file(petstore.yaml)
 
@@ -167,4 +175,4 @@ paths:
                 items:
                   $ref: '#/components/schemas/Pet'
 ```
-Check out the [ModifyingOpenApiDocument](https://github.com/njaci1/openapi-docs-pr/edit/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Modifying%20an%20OpenAPI%20Document.md) example to learn how to add a new path to the OpenAPI document we created earlier or checkout [ConvertingOpenApiDocument](https://github.com/njaci1/openapi-docs-pr/edit/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Converting%20an%20OpenAPI%20Document.md) to learn how to use the OpenAPI.NET library to convert between YAML and JSON formats.
+Check out the [Modifying an OpenApi Document](modifying-an-openAPI-document.md) example to learn how to add a new path to the OpenAPI document we created earlier or checkout [Converting an OpenApi Document](converting-an-openAPI-document.md) to learn how to use the OpenAPI.NET library to convert between YAML and JSON formats.
