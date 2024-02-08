@@ -1,3 +1,11 @@
+---
+title: OpenAPI.NET conceptual documents
+description: Learn how to use OpenAPI.NET library
+author: njaci1
+ms.author: kelvinnjaci
+ms.topic: conceptual
+date: 01/02/2024
+---
 ## Overview
 OpenAPI.NET is a .NET library for working with OpenAPI documents. OpenAPI is a standard specification for describing RESTful APIs in a machine-readable and human-friendly way. With OpenAPI.NET, you can create, modify, validate, and convert(between JSON and YAML) OpenAPI documents in your .NET applications. The library includes readers and writers for serializing and deserializing OpenAPI documents to and from different formats.
 
@@ -15,6 +23,6 @@ Some of the benefits for using the OpenAPI.NET library when working with OpenAPI
 
 Here is an example of some of the usecases:
 Let’s say we have a service called “PetStore” that allows users to view and  post pets to the online store. We want to create an OpenAPI document to describe the PetStore service RESTful API.
-* [Creating an OpenAPI document.](https://github.com/njaci1/openapi-docs-pr/blob/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Creating%20an%20OpenAPI%20Document.md).
-* [Modifying an OpenAPI document.](https://github.com/njaci1/openapi-docs-pr/blob/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Creating%20an%20OpenAPI%20Document.md)
-* [Coverting an OpenAPI document.](https://github.com/njaci1/openapi-docs-pr/blob/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Creating%20an%20OpenAPI%20Document.md)
+* [Creating an OpenAPI document.](creating-an-openAPI-document.md).
+* [Modifying an OpenAPI document.](modifying-an-openAPI-document.md)
+* [Coverting an OpenAPI document.](converting-an-openAPI-document.md)
