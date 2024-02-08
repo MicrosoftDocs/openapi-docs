@@ -1,9 +1,18 @@
-# ConvertOpenApiDocument
+---
+title: ConvertOpenApiDocument
+description: Learn how to use OpenAPI.NET library to convert OpenAPI documents between YAML and JSON
+author: njaci1
+ms.author: kelvinnjaci
+ms.topic: conceptual
+date: 01/02/2024
+---
+
+# Convert OpenApi Document
 OpenAPI.NET provides the ability to convert OpenAPI documents between different formats, such as from YAML to JSON. This can be useful when you need to share or collaborate on an OpenAPI document with others who may prefer a different format. 
 
 Here is an example of how you can convert an OpenAPI document from YAML to JSON using OpenAPI.NET: 
 
-In this example we will convert the OpenAPI Document we created and modified from the [CreateOpenApiDocument](https://github.com/njaci1/openapi-docs-pr/blob/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Create%20an%20OpenAPI%20Document.md) and [ModifyOpenApiDocument](https://github.com/njaci1/openapi-docs-pr/blob/njaci1-OpenAPI.NET-conceptual-doc/OpenAPI/OpenAPI.NET/Modifying%20an%20OpenAPI%20Document.md) from YAML to JSON. This is the YAML file we will convert to JSON:
+In this example we will convert the OpenAPI Document we created and modified from the [create openApi document](create-openAPI-document.md) and [modify openApi document](modify-openAPI-documrnt) from YAML to JSON. This is the YAML file we will convert to JSON:
 
 ```yaml
 openapi: 3.0.1 
