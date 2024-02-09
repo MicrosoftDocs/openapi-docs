@@ -12,7 +12,7 @@ OpenAPI.NET has the ability to convert OpenAPI documents between different forma
 
 Here is an example of how you can convert an OpenAPI document from YAML to JSON using OpenAPI.NET.
 
-This example converts the OpenAPI document [created](create-openapi.md) and [modified](create-openpi.md) in the previous examples from YAML to JSON.
+This example converts the OpenAPI document [created](create-openapi.md) and [modified](modify-openapi.md) in the previous examples from YAML to JSON.
 
 ```csharp
 using Microsoft.OpenApi.Readers;
