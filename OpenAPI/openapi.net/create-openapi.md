@@ -86,11 +86,9 @@ var document = new OpenApiDocument
 };
 
 // Serialize the OpenAPI document to a YAML file
-using (var streamWriter = new StreamWriter("pet-store.yaml"))
-{
-    var writer = new OpenApiYamlWriter(streamWriter);
-    document.SerializeAsV3(writer);
-}
+using var streamWriter = new StreamWriter("pet-store.yaml");
+var writer = new OpenApiYamlWriter(streamWriter);
+document.SerializeAsV3(writer);
 Console.WriteLine("PetStore OpenAPI document created and saved.");
 ```
 
