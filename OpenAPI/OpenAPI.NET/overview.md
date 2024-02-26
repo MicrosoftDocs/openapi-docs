@@ -24,6 +24,8 @@ Some of the benefits of using the OpenAPI.NET library when working with OpenAPI 
 
 - **Interoperability:** OpenAPI.NET can convert OpenAPI documents between different versions (versions 2.0 and 3.0 and soon 3.1) of the OpenAPI specification, as well as between different formats (JSON and YAML), making it easy to share and collaborate on OpenAPI documents with others.
 
+- **Customization:** OpenAPI.NET supports changing the validation rules and creating custom serializers/deserializer for extensions.
+
 ## See also
 
 - [Creating an OpenAPI document](create-openapi.md)
