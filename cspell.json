@@ -16,6 +16,7 @@
         "docfx",
         "docset",
         "docsets",
+        "dotnetcli",
         "dumpautoload",
         "fetchlibrary",
         "getuser",
@@ -26,6 +27,7 @@
         "isvargas",
         "isvargasmsft",
         "jasonjoh",
+        "kelvinnjaci",
         "Kigoonya",
         "kiota",
         "kiotaposts",
@@ -34,6 +36,7 @@
         "nameof",
         "Ndiritu",
         "Nethttplibrary",
+        "njaci1",
         "Nonnull",
         "odata",
         "openapi",
@@ -44,8 +47,7 @@
         "quickstart",
         "quickstarts",
         "struct",
-        "vibiret",
-        "dotnetcli"
+        "vibiret"
     ],
     "flagWords": [
         "teh"
