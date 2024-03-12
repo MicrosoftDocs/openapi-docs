@@ -23,7 +23,7 @@ Create a directory that will contain the new project.
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-python). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-python). Additionally, you must either use the [Kiota](https://github.com/microsoft/kiota) default implementations or provide your own custom implementations of the following packages:
 
 - HTTP ([Kiota default HTTPX-based implementation](https://github.com/microsoft/kiota-http-python))
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-python))
@@ -31,7 +31,7 @@ Before you can compile and run the generated API client, you will need to make s
 
 For this tutorial, you will use the default implementations.
 
-Run the following commands to get the required dependencies.
+Run the following commands to get the required dependencies:
 
 ```bash
 pip install microsoft-kiota-abstractions
