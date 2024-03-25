@@ -6,7 +6,7 @@ summary: Use Kiota to generate API clients to call any OpenAPI-described API.
 metadata:
   title: Kiota documentation
   description: Learn how to use Kiota to generate API clients to call any OpenAPI-described API.
-  ms.prod: open-api
+  ms.service: open-api
   ms.topic: landing-page
   author: jasonjoh
   ms.author: jasonjoh
