@@ -38,6 +38,8 @@ pip install microsoft-kiota-abstractions
 pip install microsoft-kiota-http
 pip install microsoft-kiota-serialization-json
 pip install microsoft-kiota-serialization-text
+pip install microsoft-kiota-serialization-form
+pip install microsoft-kiota-serialization-multipart
 ```
 
 > [!TIP]
