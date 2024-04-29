@@ -36,3 +36,34 @@ Most request adapters handle transient errors (e.g. `429` because of throttling,
 
 - The native clients of most platforms provide support for some transient errors handling (e.g. reconnecting when the network was interrupted).
 - Request adapters provide a middleware infrastructure to implement cross-cutting concerns like transient error handling (e.g. exponential back-off when throttled) which is enabled by default.
+
+## Error message
+
+Kiota will generate code to extract the value of a property from the generated error type as the main exception/error message/reason if a string property is identified with the `x-ms-primary-error-message` extension.
+
+In this example, the value for the **errorMessage** property returned from the API will be used as the error message for the exception if any 404 response is returned.
+
+```yaml
+openapi: 3.0.3
+info:
+  title: OData Service for namespace microsoft.graph
+  description: This OData service is located at https://graph.microsoft.com/v1.0
+  version: 1.0.1
+paths:
+  /foo:
+    get:
+      responses:
+        '404':
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  bar:
+                    type: string
+                  errorMessage:
+                    type: string
+                    x-ms-primary-error-message: true
+servers:
+  - url: https://graph.microsoft.com/v1.0
+```
