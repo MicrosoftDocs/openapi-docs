@@ -13,7 +13,7 @@ Kiota API clients include error types for errors defined in OpenAPI descriptions
 
 ## Error types mapping
 
-The abstractions library for each language defines an API exception type (or error) which inherits or implements the default error/exception type for the language. Kiota will also generate types for schemas mapped to HTTP specific error status codes (400-600) or to ranges (4XX, 5XX), derived from the API exception defined in the abstractions library.
+The abstractions library for each language defines an API exception type (or error) which inherits or implements the default error/exception type for the language. Kiota will also generate types for schemas mapped to HTTP specific error status codes (400-600) or to ranges (4XX, 5XX).
 
 > [!NOTE]
 > If the error schema is an `allOf`, Kiota will flatten all the `allOf` entries recursively into the generated type as most languages do not support multiple parents inheritance.
@@ -78,3 +78,11 @@ The base API exception/error type from which all generated error types derive de
 | ResponseHeaders | map(string,string[]) | The response headers. |
 
 Additionally these types also derive from the native exception/error type of the platform, and can be expected to provide the same properties.
+
+## Solutions to missing error mappings
+
+When a description does not document a mapping for an error status code encountered at runtime, the client application will receive an exception/error with the following error message: "The server returned an unexpected status code and no error factory is registered for this code". There are a number of ways to deal with this situation:
+
+- You can reach out to the API producer to ask them to improve their description and add the missing code to the API description. The API client can then be refreshed to include the error mapping.
+- You can maintain a local copy of the description and add the missing code to the API description. The API client can then be refreshed to include the error mapping.
+- The client application can rely on the status code and header fields to drive its recovery.
