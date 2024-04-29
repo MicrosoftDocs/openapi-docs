@@ -26,6 +26,7 @@ At runtime, if an error status code is returned by the API, the request adapter 
 
 1. If a mapping is present for the specific status code and if the response body can be deserialized to that type, deserialize and throw.
 1. If a mapping is present for the corresponding range (4XX, 5XX) and if the response body can be deserialized to that type, deserialize and throw.
+1. If a mapping is present for "default" responses and if the response body can be deserialized to that type, deserialize and throw.
 1. Otherwise throw a new instance of the API exception defined in the abstractions library.
 
 The generated clients throw exceptions/errors when running into failed response codes to allow the consumer to tell the difference between a successful response that didn't return a body (204, etc...) and a failed response. The consumer can choose to implement try/catch behavior that either catches the generic API exception type or is more specific to an exception type mapped to a range or even a status code depending on the scenario.
