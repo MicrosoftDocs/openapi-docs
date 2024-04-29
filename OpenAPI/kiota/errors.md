@@ -18,7 +18,7 @@ The abstractions library for each language defines an API exception type (or err
 > [!NOTE]
 > If the error schema is an `allOf`, Kiota will flatten all the `allOf` entries recursively into the generated type as most languages do not support multiple parents inheritance.
 
-This mapping of codes to types will be passed to the request adapter as a dictionary/map so it can be used at runtime and is specific to each endpoint.
+This mapping of codes to types will be passed to the request adapter as a dictionary/map so it can be used at runtime and is specific to each endpoint. An error mapping will only be considered as valid if the response has a schema of type **object** and at least one field. All generated error/exception types will inherit from the base API exception/error defined in the abstractions library.
 
 ## Runtime behavior
 
@@ -67,3 +67,14 @@ paths:
 servers:
   - url: https://graph.microsoft.com/v1.0
 ```
+
+## API Exception properties
+
+The base API exception/error type from which all generated error types derive define the following properties. Those properties are automatically populated by the default request adapter for the language and may be populated by other request adapter implementations.
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| ResponseStatusCode | int32 | The status code from the HTTP response. |
+| ResponseHeaders | map(string,string[]) | The response headers. |
+
+Additionally these types also derive from the native exception/error type of the platform, and can be expected to provide the same properties.
