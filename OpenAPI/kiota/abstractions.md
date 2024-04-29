@@ -56,7 +56,8 @@ public interface IRequestAdapter
 
 Kiota service libraries return the model type that is associated with an HTTP resource. This behavior can be overridden by changing the `responseHandler` to do something different than default behavior. One use of this is to change the response type to be either a native HTTP response class, or return a generic API response class that provides access to more underlying metadata.
 
-> Note: This interface is meant to support the generated code and not to be used by application developers. Should you need to make arbitrary requests because they are not part of the generated client, please use a native HTTP client instead as it will be better suited for that purpose. Additionally you should obtain that native client from the provided factory, or use the middleware factory to augment an existing client. See [middleware](./middleware.md) for more information.
+> [!NOTE]
+> This interface is meant to support the generated code and not to be used by application developers. Should you need to make arbitrary requests because they are not part of the generated client, please use a native HTTP client instead as it will be better suited for that purpose. Additionally you should obtain that native client from the provided factory, or use the middleware factory to augment an existing client. See [middleware](./middleware.md) for more information.
 
 ### Request information
 
