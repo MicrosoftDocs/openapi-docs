@@ -316,3 +316,11 @@ Some APIs simply rely on an API key for authentication that's placed in the requ
 - Is the authentication implemented via an API key in the query parameters or headers? Use the API key authentication provider.
 - Is the authentication implemented via a bearer token in the `Authorization` header? Use a custom access token provider with the Base bearer token authentication provider.
 - Anything else, use a custom authentication provider.
+
+## Design considerations
+
+The default request adapters used by generated clients to make an HTTP request require an authentication provider as a constructor parameter, and call the **authenticate request** method themselves. An alternative could have been to use [HTTP client middleware handlers](./middleware.md) instead. This was a deliberate design decision to:
+
+- Lead application developer to make a conscious choice about authenticating with the API.
+- Enable reusability through interfaces defined to work with Request Information, limiting interdependencies.
+- Enable dependency injection scenarios.
