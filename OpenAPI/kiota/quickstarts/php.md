@@ -24,6 +24,12 @@ Run the following commands in the directory where you want to create a new proje
 composer init
 ```
 
+## Project configuration
+
+In case you're adding a kiota client to an existing project, the following configuration is required:
+
+- **composer.json** > **require** > **php** set to "php": "^8.0 || ^7.4" or above.
+
 ## Add dependencies
 
 Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-php). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.

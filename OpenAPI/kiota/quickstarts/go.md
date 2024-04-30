@@ -23,6 +23,12 @@ Run the following command in the directory you want to create a new project.
 go mod init kiota_posts
 ```
 
+## Project configuration
+
+In case you're adding a kiota client to an existing project, the following configuration is required:
+
+- **go.mod** > go set to version 18 or above.
+
 ## Add dependencies
 
 Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-go). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.

@@ -13,8 +13,8 @@ In this tutorial, you will build a sample app in TypeScript that calls a REST AP
 
 ## Required tools
 
-- [NodeJS 18](https://nodejs.org/en/)
-- [TypeScript](https://www.typescriptlang.org/)
+- [NodeJS 18 or above](https://nodejs.org/en/)
+- [TypeScript 5 or above](https://www.typescriptlang.org/)
 
 ## Create a project
 
@@ -25,6 +25,17 @@ npm init
 npm install -D typescript ts-node
 npx tsc --init
 ```
+
+## Project configuration
+
+In case you're adding a kiota client to an existing project, the following configuration is required:
+
+- **tsconfig** > **compilerOptions** > **esModuleInterop** set to "true".
+- **tsconfig** > **compilerOptions** > **forceConsistentCasingInFileNames** set to "true".
+- **tsconfig** > **compilerOptions** > **lib** with an entry of "es2015".
+- **tsconfig** > **compilerOptions** > **module** set to "NodeNext".
+- **tsconfig** > **compilerOptions** > **moduleResolution** set to "NodeNext".
+- **tsconfig** > **compilerOptions** > **target** set to "es2016" or above.
 
 ## Add dependencies
 
