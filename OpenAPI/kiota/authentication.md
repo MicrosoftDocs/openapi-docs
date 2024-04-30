@@ -309,6 +309,15 @@ Some APIs do not require any authentication and can be queried anonymously. For 
 
 Some APIs simply rely on an API key for authentication that's placed in the request query parameters or in the request headers. For this reason the abstractions packages also provide an `ApiKeyAuthenticationProvider`.
 
+This provider allows you to:
+
+- Set the name of the request header/query parameter. (e.g. "Authorization")
+- Set the value of the request header/query parameter. (e.g. "Basic base64encodedValue")
+- Choose whether the provided name and value will be used for a request header or for a query parameter.
+
+> [!NOTE]
+> This authentication provider does not perform any encoding of the key or the value, if the authentication scheme requires any encoding, it needs to be performed before the values are passed to the provider. For example with basic authentication, you'll need to base64 encode the "userId:password" pair before passing it to the provider.
+
 ## Choose your authentication provider
 
 - Does the target API require no authentication? Use the anonymous authentication provider.

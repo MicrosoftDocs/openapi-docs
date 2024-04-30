@@ -28,6 +28,14 @@ cd KiotaPostsCLI
 dotnet new gitignore
 ```
 
+## Project configuration
+
+In case you're adding a kiota client to an existing project, the following configuration is required:
+
+- ***.csproj** > **TargetFramework** set to "net6" or above. [More information](/dotnet/standard/frameworks)
+- ***.csproj** > **LangVersion** set to "latest". [More information](/dotnet/csharp/language-reference/configure-language-version#c-language-version-reference)
+- ***.csproj** > **Nullable** set to "enable".
+
 ## Add dependencies
 
 Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet) and the [cli-commons package](https://github.com/microsoft/kiota-cli-commons). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.

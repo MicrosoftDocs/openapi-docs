@@ -382,6 +382,9 @@ Default values :
 > [!NOTE]
 > Only request body types or response types with a defined schema will generate models, other entries will default back to stream/byte array.
 
+> [!NOTE]
+> In a scenario where the client application needs to upload/download a binary object of a type that matches a structured mime types entry (e.g. uploading a JSON report that came from the file storage), the recommendation is generate an additional client for that operation excluding this type, which will result in a method accepting a stream for the request body or returning a stream for the response.
+
 ##### Accepted values
 
 Any valid MIME type which will match a request body type or a response type in the OpenAPI description.
