@@ -146,6 +146,9 @@ public static new Person CreateFromDiscriminatorValue(IParseNode parseNode) {
 
 The field deserializers method or property contains a list of callbacks to be used by the parse node implementation when deserializing the objects. Kiota relies on auto-serialization, where each type knows how to serialize/deserialize itself thanks to the OpenAPI description. A big advantage of this approach it to avoid tying the generated models to any specific serialization format (JSON, YAML, XML,...) or any specific library (because of attributes/annotations these libraries often require).
 
+> [!NOTE]
+> Any property found in the response payload and which does not match an entry in the field deserializers (casing included), will be stored in the additional data collection.
+
 ### Serialize method
 
 Like the field deserializers, the model's serialize method leverages the passed serialization writer to serialize itself.
