@@ -28,8 +28,8 @@ dotnet new gitignore
 
 In case you're adding a kiota client to an existing project, the following configuration is required:
 
-- ***.csproj** > **TargetFramework** set to "netstandard2.0" or "netstandard2.1" or "net462" or "net6" or above. [More information](https://learn.microsoft.com/dotnet/standard/frameworks)
-- ***.csproj** > **LangVersion** set to "7.3" or above or "preview" or "latest". [More information](https://learn.microsoft.com/dotnet/csharp/language-reference/configure-language-version#c-language-version-reference)
+- ***.csproj** > **TargetFramework** set to "netstandard2.0" or "netstandard2.1" or "net462" or "net6" or above. [More information](/dotnet/standard/frameworks)
+- ***.csproj** > **LangVersion** set to "7.3" or above or "preview" or "latest". [More information](/dotnet/csharp/language-reference/configure-language-version#c-language-version-reference)
 
 The following configuration is recommended:
 
