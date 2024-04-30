@@ -152,6 +152,29 @@ The underlying URL template looks like `{+baseurl}/taskLists/{task_list_id}/getR
 
 This method with parameters always return a value (non-null) and never throw an exception.
 
+### WithUrl
+
+Request builders offer a **WithUrl** method to facilitate the interoperability between the fluent API surface and raw URLs coming from other sources.
+
+Let's assume the following call returns a URL to the next page, a common practice for REST APIs.
+
+```CSharp
+var page1 = await client.Customers["Jane"].Orders.GetAsync();
+page1.NextPageUrl;
+```
+
+You can still leverage the fluent API and get the benefits of auto-completion, compile-time validation and more by using the **WithUrl** method.
+
+```CSharp
+var page1 = await client.Customers["Jane"].Orders.WithUrl(page1.NextPageUrl).GetAsync();
+```
+
+> [!NOTE]
+> In this example, any path parameter (any value passed before the WithUrl method) as well as any query parameter (passed to the executor/GetAsync method) will be ignored.
+
+> [!INFO]
+> Always use the WithUrl method in the right-most position before the executor method (GetAsync), this way the data types for the request and response bodies will match what you expect.
+
 ## Request building and execution
 
 Once the request path is built using the fluent style API, request builders provide methods to generate and execute requests.
