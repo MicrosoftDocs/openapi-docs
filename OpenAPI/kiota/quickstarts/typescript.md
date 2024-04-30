@@ -28,7 +28,7 @@ npx tsc --init
 
 ## Project configuration
 
-In case you're adding a kiota client to an existing project, the following configuration is required for the project:
+In case you're adding a kiota client to an existing project, the following configuration is required:
 
 - **tsconfig** > **compilerOptions** > **esModuleInterop** set to "true".
 - **tsconfig** > **compilerOptions** > **forceConsistentCasingInFileNames** set to "true".
