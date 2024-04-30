@@ -13,13 +13,19 @@ In this tutorial, you will build a sample app in Python that calls a REST API th
 
 ## Required tools
 
-- [Python 3.6+](https://www.python.org/)
+- [Python 3.8+](https://www.python.org/)
 - [pip 20.0+](https://pip.pypa.io/en/stable/)
 - [asyncio/any other supported async environment e.g AnyIO, Trio.](https://docs.python.org/3/library/asyncio.html)
 
 ## Create a project
 
 Create a directory that will contain the new project.
+
+## Project configuration
+
+In case you're adding a kiota client to an existing project, the following configuration is required:
+
+- **pyproject.toml** > **project** > **requires-python** set to ">=3.8".
 
 ## Add dependencies
 

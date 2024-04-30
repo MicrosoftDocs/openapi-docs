@@ -24,6 +24,14 @@ Use Gradle to initialize a Java application project.
 gradle init --dsl groovy --test-framework junit --type java-application --project-name kiotaposts --package kiotaposts
 ```
 
+## Project configuration
+
+In case you're adding a kiota client to an existing project, the following configuration is required:
+
+- **build.gradle** > **compileJava** > **sourceCompatibility** set to "1.8" or above. (or equivalent if you're not using gradle)
+- **build.gradle** > **compileJava** > **targetCompatibility** set to "1.8" or above. (or equivalent if you're not using gradle)
+- JDK version 17 or above.
+
 ## Add dependencies
 
 Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-java). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.

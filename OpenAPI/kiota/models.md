@@ -182,3 +182,14 @@ To produce a more idiomatic output for specific languages, mangling is applied t
 | Ruby       | `snake_case`  | `snake_case`       |
 | Swift      | -             | -                  |
 | TypeScript | -             | `camelCase`        |
+
+### Enumerations
+
+Kiota will only project enum models when the schema type is **string** as projecting enums for boolean or number types does not add a lot of value.
+
+Additionally, you can:
+
+- Control the enum symbol name using the **x-ms-enum** extension. [more information](https://azure.github.io/autorest/extensions/#x-ms-enum)
+- Control whether the projected enum should be flaggable through the **x-ms-enum-flags** extension. [more information](https://github.com/microsoft/OpenAPI/blob/main/extensions/x-ms-enum-flags.md)
+
+During deserialization, if an unknown enum member value is encountered, the client will throw an exception. This design decision was made to ensure client applications fail as early as possible when the client might need to be refreshed or when the API description is inaccurate.
