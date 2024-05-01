@@ -16,6 +16,7 @@ Kiota can be accessed in the following ways.
 - [Install as .NET tool](#install-as-net-tool)
 - [Build from source](#build-from-source)
 - [Install the Visual Studio Code extension (preview)](#install-the-visual-studio-code-extension)
+- [Run in GitHub Actions (preview)](#run-in-github-actions)
 - [Install with asdf (UNOFFICIAL)](#install-with-asdf)
 - [Install with Homebrew (UNOFFICIAL)](#install-with-homebrew)
 - [REST API Client Code Generator extension for Visual Studio (UNOFFICIAL)](#rest-api-client-code-generator)
@@ -129,6 +130,27 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 
 1. Open the [Marketplace page of the extension](https://aka.ms/kiota/extension)
 1. Click on the **Install** button.
+
+> [!NOTE]
+> The Kiota Visual Studio Code extension is currently in public preview and is subject to change.
+
+## Run in GitHub actions
+
+You can use the [setup Kiota GitHub Action](https://github.com/microsoft/setup-kiota/) in your workflow to automate client refresh and more by adding a reference to it in your workflow definition and using the CLI just like you would locally.
+
+```yaml
+steps:
+  - uses: actions/checkout@v3
+
+  - uses: microsoft/setup-kiota@v0.5.0
+
+  - name: Update kiota clients in the repository
+    run: kiota update -o . # for a complete documentation of the CLI commands see https://aka.ms/kiota/docs
+    working-directory: src # assumes client is under the src path in your repository
+```
+
+> [!NOTE]
+> The setup Kiota GitHub Action in public preview and is subject to change.
 
 ## Install with asdf
 
