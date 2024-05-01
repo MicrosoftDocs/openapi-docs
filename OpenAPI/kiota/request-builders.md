@@ -131,7 +131,7 @@ It is important to note that even if an endpoint to index in the collection `{+b
 > For languages that do not support indexers, a method with a suffix and a single parameters is used instead.
 
 ```Java
-var requestBuilder = todoClient.taskListsById("taskListId").toDosById("todoId").assignedTo;
+var requestBuilder = todoClient.taskLists().byTaskListId("taskListId").toDos().byToDoId("todoId").assignedTo;
 ```
 
 This indexer always return a value (non-null) and never throws an exception.
