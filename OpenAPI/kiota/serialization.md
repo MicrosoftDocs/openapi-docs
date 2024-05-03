@@ -106,6 +106,7 @@ It's important to use the kiota serialization infrastructure and not the native 
 
 Let's assume the API contains a **User** model.
 
+<!-- markdownlint-disable-next-line MD051 -->
 ### [C#](#tab/csharp)
 
 ```cs
@@ -126,6 +127,7 @@ var deserializedUser = await KiotaJsonSerializer.DeserializeAsync(result, User.C
 // returns the deserialized value
 ```
 
+<!-- markdownlint-disable-next-line MD051 -->
 ### [Java](#tab/java)
 
 ```java
@@ -143,6 +145,7 @@ final String result = KiotaJsonSerialization.serializeAsString(myUser);
 final User deserializedUser = KiotaJsonSerialization.deserialize(result, User::createFromDiscriminatorValue);
 ```
 
+<!-- markdownlint-disable-next-line MD051 -->
 ### [Go](#tab/go)
 
 ```go
@@ -164,6 +167,7 @@ result, err := kiotaSerialization.SerializeToJson(myUser);
 deserializedUser, err := kiotaSerialization.DeserializeFromJson(result, CreateUserFromDiscriminatorValue)
 ```
 
+<!-- markdownlint-disable-next-line MD051 -->
 ### [TypeScript](#tab/typescript)
 
 ```TS
