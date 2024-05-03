@@ -181,3 +181,5 @@ const result = serializeToJson(myUser, serializeUser);
 
 const deserializedUser = deserializeFromJson(result, createUserFromDiscriminatorValue);
 ```
+
+---
