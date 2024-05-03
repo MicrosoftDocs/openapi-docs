@@ -106,7 +106,7 @@ It's important to use the kiota serialization infrastructure and not the native 
 
 Let's assume the API contains a **User** model.
 
-# [C#](#tab/csharp)
+### [C#](#tab/csharp)
 
 ```cs
 
@@ -126,7 +126,7 @@ var deserializedUser = await KiotaJsonSerializer.DeserializeAsync(result, User.C
 // returns the deserialized value
 ```
 
-# [Java](#tab/java)
+### [Java](#tab/java)
 
 ```java
 import com.microsoft.kiota.serialization;
@@ -143,7 +143,7 @@ final String result = KiotaJsonSerialization.serializeAsString(myUser);
 final User deserializedUser = KiotaJsonSerialization.deserialize(result, User::createFromDiscriminatorValue);
 ```
 
-# [Go](#tab/go)
+### [Go](#tab/go)
 
 ```go
 import (
@@ -164,7 +164,7 @@ result, err := kiotaSerialization.SerializeToJson(myUser);
 deserializedUser, err := kiotaSerialization.DeserializeFromJson(result, CreateUserFromDiscriminatorValue)
 ```
 
-# [TypeScript](#tab/typescript)
+### [TypeScript](#tab/typescript)
 
 ```TS
 import {serializeToJson, deserializeFromJson } from "@microsoft/kiota-abstractions";
