@@ -93,3 +93,97 @@ This class is a registry for multiple serialization writer factories which can b
 ## Serialization writer proxy factory
 
 Serialization writer offers multiple *events* that are called during the serialization sequence to allow a third party to be notified. This proxy facilitate the registration of such events with existing serialization writers. Implementers for new serialization libraries or formats do not need to do anything with this type other than requesting users to wrap their factories with it as well should they be subscribing to serialization events.
+
+## Serialization helpers
+
+Auto-serialization and the decoupling between the serialization information and the serialization format can make some serialization scenarios more complex. For that reason, kiota abstractions libraries offer serialization helpers to unblock such scenarios.
+
+It's important to use the kiota serialization infrastructure and not the native serialization capabilities from a library as:
+
+- it supports down-casting to a derived type from discriminator. (e.g. getting a student with additional fields and not just a user)
+- it supports complex property types. (duration, dates, etc...)
+- it does not rely on any runtime reflection of the code.
+
+Let's assume the API contains a **User** model.
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [C#](#tab/csharp)
+
+```cs
+
+using Microsoft.Kiota.Abstractions.Serialization;
+
+var myUser = new User {
+    FirstName = "Jane",
+    LastName = "Smith"
+};
+
+var result = await KiotaJsonSerializer.SerializeAsStringAsync(myUser);
+// gives us {"firstName":"Jane","lastName":"Smith"}
+// alternatively if you need to serialize to a different content type you can use this helper instead
+// var result = await KiotaSerializer.SerializeAsStringAsync("application/json", myUser);
+
+var deserializedUser = await KiotaJsonSerializer.DeserializeAsync(result, User.CreateFromDiscriminatorValue);
+// returns the deserialized value
+```
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [Java](#tab/java)
+
+```java
+import com.microsoft.kiota.serialization;
+
+final User myUser = new User();
+myUser.firstName = "Jane";
+myUser.lastName = "Smith";
+
+final String result = KiotaJsonSerialization.serializeAsString(myUser);
+// gives us {"firstName":"Jane","lastName":"Smith"}
+// alternatively if you need to serialize to a different content type you can use this helper instead
+// final String result = KiotaSerialization.serializeAsString("application/json", myUser);
+
+final User deserializedUser = KiotaJsonSerialization.deserialize(result, User::createFromDiscriminatorValue);
+```
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [Go](#tab/go)
+
+```go
+import (
+    kiotaSerialization "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+myUser := NewUser()
+firstName := "Jane"
+myUser.SetFirstName(&firstName)
+lastName := "Smith"
+myUser.SetLastName(&lastName)
+
+result, err := kiotaSerialization.SerializeToJson(myUser);
+// gives us {"firstName":"Jane","lastName":"Smith"}
+// alternatively if you need to serialize to a different content type you can use this helper instead
+// result, err := kiotaSerialization.Serialize("application/json", myUser);
+
+deserializedUser, err := kiotaSerialization.DeserializeFromJson(result, CreateUserFromDiscriminatorValue)
+```
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [TypeScript](#tab/typescript)
+
+```TS
+import {serializeToJson, deserializeFromJson } from "@microsoft/kiota-abstractions";
+
+const myUser = {
+    firstName: "Jane",
+    lastName: "Smith"
+};
+
+const result = serializeToJson(myUser, serializeUser);
+// gives us {"firstName":"Jane","lastName":"Smith"}
+// alternatively if you need to serialize to a different content type you can use this helper instead
+// const result = serialize("application/json", myUser, serializeUser);
+
+const deserializedUser = deserializeFromJson(result, createUserFromDiscriminatorValue);
+```
+
+---
