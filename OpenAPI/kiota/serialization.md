@@ -96,7 +96,7 @@ Serialization writer offers multiple *events* that are called during the seriali
 
 ## Serialization helpers
 
-Auto-serialization and the decoupling between the serialization information and the serialization format can make some serialization scenarios more complex. For that reason, kiota abstractions libraries offer serialization helpers so unblock such scenarios.
+Auto-serialization and the decoupling between the serialization information and the serialization format can make some serialization scenarios more complex. For that reason, kiota abstractions libraries offer serialization helpers to unblock such scenarios.
 
 It's important to use the kiota serialization infrastructure and not the native serialization capabilities from a library as:
 
