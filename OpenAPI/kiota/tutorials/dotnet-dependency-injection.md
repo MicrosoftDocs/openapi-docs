@@ -239,7 +239,7 @@ builder.Services.AddHttpClient<GitHubClientFactory>((sp, client) => {
 }).AttachKiotaHandlers();
 
 // Register the GitHub client
-builder.Services.AddTransient(sp=> sp.GetRequiredService<GitHubClientFactory>().GetClient());
+builder.Services.AddTransient(sp => sp.GetRequiredService<GitHubClientFactory>().GetClient());
 ```
 
 ## Create an endpoint
