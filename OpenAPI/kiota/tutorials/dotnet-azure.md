@@ -14,6 +14,7 @@ In this tutorial, you will generate an API client that uses [Microsoft identity 
 ## Required tools
 
 - [.NET SDK 8.0](https://get.dot.net/8)
+- [Kiota CLI](/openapi/kiota/install?tabs=bash&wt.mc_id=SEC-MVP-5004985#install-as-net-tool)
 
 ## Create a project
 
@@ -26,7 +27,7 @@ dotnet new gitignore
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-azure-dotnet))
 - HTTP ([Kiota default HttpClient-based implementation](https://github.com/microsoft/kiota-http-dotnet))
