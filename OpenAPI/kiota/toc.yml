@@ -78,6 +78,6 @@ items:
   - name: Add an API to search
     href: add-api.md
   - name: Use Kiota with Dependency Injection in .NET
-    href: tutorials/dotnet-dependencyinjection.md
+    href: tutorials/dotnet-dependency-injection.md
 - name: Support
   href: support.md

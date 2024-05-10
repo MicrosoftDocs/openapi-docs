@@ -12,6 +12,7 @@
         "ckigoonya",
         "cligeneric",
         "contoso",
+        "cref",
         "deserializers",
         "docfx",
         "docset",
@@ -50,7 +51,9 @@
         "quickstart",
         "quickstarts",
         "struct",
+        "svrooij",
         "vibiret"
+        "webapi",
     ],
     "flagWords": [
         "teh"
