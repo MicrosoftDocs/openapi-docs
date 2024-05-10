@@ -272,7 +272,7 @@ You can now open a browser and navigate to `http://localhost:{port}/dotnet/relea
 
 The `GitHubClientFactory` class is responsible for creating the client, and it is also responsible for creating the `IAuthenticationProvider`. In this sample, we are using the `AnonymousAuthenticationProvider`, which is a simple provider that does not add any authentication headers. More details on authentication with Kiota can be found in the [Kiota authentication documentation](/openapi/kiota/authentication?wt.mc_id=SEC-MVP-5004985).
 
-What to remember is that the `GitHubClientFactory` is used through dependency injection, which means you can have other types injected by the constructor that are needed for the authentication provider.
+The `GitHubClientFactory` is used through dependency injection, which means you can have other types injected by the constructor that are needed for the authentication provider.
 
 You might want to create a [BaseBearerTokenAuthenticationProvider](/openapi/kiota/authentication?tabs=csharp&wt.mc_id=SEC-MVP-5004985#base-bearer-token-authentication-provider) that is available in Kiota and expects an `IAccessTokenProvider` which is just an interface with one method "give me an access token". Access tokens usually have a lifetime of 1 hour, which is why you need to get them at runtime and not set them at registration time.
 
