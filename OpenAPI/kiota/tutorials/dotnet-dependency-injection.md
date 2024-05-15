@@ -159,12 +159,21 @@ public static class KiotaServiceCollectionExtensions
     /// <remarks>The handlers are added to the http client by the <see cref="AttachKiotaHandlers(IHttpClientBuilder)"/> call, which requires them to be pre-registered in DI</remarks>
     public static IServiceCollection AddKiotaHandlers(this IServiceCollection services)
     {
-        services.AddTransient<UriReplacementHandler<UriReplacementHandlerOption>>();
-        services.AddTransient<RetryHandler>();
-        services.AddTransient<RedirectHandler>();
-        services.AddTransient<ParametersNameDecodingHandler>();
-        services.AddTransient<UserAgentHandler>();
-        services.AddTransient<HeadersInspectionHandler>();
+        // Dynamically load the Kiota handlers from the Client Factory
+        var kiotaHandlers = KiotaClientFactory.CreateDefaultHandlers().Select(h => h.GetType());
+        // And register them in the DI container
+        foreach(var handler in kiotaHandlers)
+        {
+            services.AddTransient(handler);
+        }
+
+        // Or register them manually
+        // services.AddTransient<UriReplacementHandler<UriReplacementHandlerOption>>();
+        // services.AddTransient<RetryHandler>();
+        // services.AddTransient<RedirectHandler>();
+        // services.AddTransient<ParametersNameDecodingHandler>();
+        // services.AddTransient<UserAgentHandler>();
+        // services.AddTransient<HeadersInspectionHandler>();
         return services;
     }
 
@@ -180,12 +189,21 @@ public static class KiotaServiceCollectionExtensions
     /// </remarks>
     public static IHttpClientBuilder AttachKiotaHandlers(this IHttpClientBuilder builder)
     {
-        builder.AddHttpMessageHandler<UriReplacementHandler<UriReplacementHandlerOption>>();
-        builder.AddHttpMessageHandler<RetryHandler>();
-        builder.AddHttpMessageHandler<RedirectHandler>();
-        builder.AddHttpMessageHandler<ParametersNameDecodingHandler>();
-        builder.AddHttpMessageHandler<UserAgentHandler>();
-        builder.AddHttpMessageHandler<HeadersInspectionHandler>();
+        // Dynamically load the Kiota handlers from the Client Factory
+        var kiotaHandlers = KiotaClientFactory.CreateDefaultHandlers().Select(h => h.GetType());
+        // And attach them to the http client builder
+        foreach(var handler in kiotaHandlers)
+        {
+            builder.AddHttpMessageHandler((sp) => (DelegatingHandler)sp.GetRequiredService(handler));
+        }    
+        
+        // Or attach them manually
+        // builder.AddHttpMessageHandler<UriReplacementHandler<UriReplacementHandlerOption>>();
+        // builder.AddHttpMessageHandler<RetryHandler>();
+        // builder.AddHttpMessageHandler<RedirectHandler>();
+        // builder.AddHttpMessageHandler<ParametersNameDecodingHandler>();
+        // builder.AddHttpMessageHandler<UserAgentHandler>();
+        // builder.AddHttpMessageHandler<HeadersInspectionHandler>();
         return builder;
     }
 }
