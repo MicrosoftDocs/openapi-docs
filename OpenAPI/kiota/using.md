@@ -709,7 +709,7 @@ kiota <command name> --version beta
 
 ### `--disable-ssl-validation (--dsv)`
 
-The disableSSLValidation is an option that allows users to disable SSL certificate validation. When this option is set to true, the SSL certificates presented by HTTPS servers of the openAPI Description File will not be validated. This can be useful in development or testing environments with self-signed certificates.
+The disable SSL validation is an option that allows users to disable SSL certificate validation. When this option is set to true, the SSL certificates presented by HTTPS servers of the OpenAPI Description File will not be validated. This can be useful in development or testing environments with self-signed certificates.
 
 Available for commands: generate, show, and download.
 
