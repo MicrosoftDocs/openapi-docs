@@ -21,6 +21,28 @@ All models declared inline with an operation are generated under the namespace o
 
 Models in an [allOf](https://spec.openapis.org/oas/latest.html#composition-and-inheritance-polymorphism) schema declaration inherit from each other. The uppermost type in the collection is the greatest ancestor of the chain.
 
+### allOf interpretation rules
+
+The following table describes how kiota will project any schema with allOf entries when processing an API description:
+
+| Number of Properties | Number of allOf entries without a reference / inline | Number of allOf entries with a reference | Total number of allOf entries | Result |
+| -------------------- | ---------------------------------------- | ------------------------------------------- | ----------------------------- | ------ |
+| 0 | 0 | 0 | 0 | Ignored/Invalid |
+| 0 | 0 or 1 | 0 or 1 | 1 | Ignored, will process the only allOf entry instead and use the original schema's description and name. |
+| 1 or more | 0 | 0 | 0 | Class/interface without a parent type. |
+| 0 | 1 | 1 | 2 | Class/interface with properties from the inline schema and a parent type from the referenced schema. |
+| 1 or more | 0 | 1 | 1 | Class/interface with properties from the current schema and a parent type from the referenced schema. |
+| 1 or more | 1 | 0 | 1 | Class/interface with properties from the current schema and a parent type from the inline schema. |
+| 0 | 0 | 1 | 1 | Class/interface with properties from the referenced schema without a parent type. |
+| 0 | 1 | 0 | 1 | Class/interface with properties from the inline schema without a parent type. |
+| 1 or more | 1 | 1 | 2 | Class/interface with properties from the current schema and a parent type from referenced schema if it has properties. |
+| 1 or more | 1 | 1 | 2 | Class/interface with properties from the current schema and a parent type from the inline schema if it has properties. |
+| 0 | 0 | 0 | 0 | Invalid scenario for inheritance |
+| 1 or more | 1 or more | 1 or more | * | Invalid scenario for inheritance. Will result in a class/interface will all the properties from the current schema as well as all the properties from the allOf entries. |
+
+> [!NOTE]
+> These rules are applied to allOf entries recursively enabling multi-level inheritance.
+
 ## Faceted implementation of oneOf
 
 `oneOf` specifies a type union (exclusive) where the response can be of one of the specified child schemas. Kiota implements that specification by generating types for all the child schemas and using a union type for languages that support it or a wrapper type with one property per type in the union.
