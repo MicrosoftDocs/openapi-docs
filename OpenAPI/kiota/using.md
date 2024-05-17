@@ -119,6 +119,7 @@ kiota download <searchTerm>
       [(--log-level | --ll) <level>]
       [(--version | -v) <version>]
       [(--output | -o) <path>]
+      [--disable-ssl-validation | --dsv]
 ```
 
 ### Mandatory arguments
@@ -140,6 +141,7 @@ The download command accepts optional parameters commonly available on the other
 - [--log-level](#--log-level---ll)
 - [--output](#--output--o)
 - [--version](#--version--v)
+- [--disable-ssl-validation](#--disable-ssl-validation---dsv)
 
 ## Description show
 
@@ -154,6 +156,7 @@ kiota show [(--openapi | -d) <path>]
       [(--max-depth | --m-d) <maximumDepth>]
       [(--include-path | -i) <glob pattern>]
       [(--exclude-path | -e) <glob pattern>]
+      [--disable-ssl-validation | --dsv]
 ```
 
 ### Example
@@ -186,6 +189,7 @@ The show command accepts optional parameters commonly available on the other com
 - [--exclude-path](#--exclude-path--e)
 - [--version](#--version--v)
 - [--search-key](#--search-key--k)
+- [--disable-ssl-validation](#--disable-ssl-validation---dsv)
 
 ## Client generation
 
@@ -209,6 +213,7 @@ kiota generate (--openapi | -d) <path>
       [(--include-path | -i) <glob pattern>]
       [(--exclude-path | -e) <glob pattern>]
       [(--disable-validation-rules | --dvr) <rule name>]
+      [--disable-ssl-validation | --dsv]
 ```
 
 > [!NOTE]
@@ -229,6 +234,7 @@ The generate command accepts optional parameters commonly available on the other
 - [--exclude-path](#--exclude-path--e)
 - [--log-level](#--log-level---ll)
 - [--output](#--output--o)
+- [--disable-ssl-validation](#--disable-ssl-validation---dsv)
 
 #### `--backing-store (-b)`
 
@@ -699,4 +705,14 @@ Available for commands: download, search.
 
 ```bash
 kiota <command name> --version beta
+```
+
+### `--disable-ssl-validation (--dsv)`
+
+The disableSSLValidation is an option that allows users to disable SSL certificate validation. When this option is set to true, the SSL certificates presented by HTTPS servers of the openAPI Description File will not be validated. This can be useful in development or testing environments with self-signed certificates.
+
+Available for commands: generate, show, and download.
+
+```bash
+kiota <command name> --disable-ssl-validation
 ```
