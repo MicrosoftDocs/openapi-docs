@@ -33,11 +33,10 @@ The following table describes how kiota will project any schema with allOf entri
 | 0 | 1 | 1 | 2 | Class/interface with properties from the inline schema and a parent type from the referenced schema. |
 | 1 or more | 0 | 1 | 1 | Class/interface with properties from the current schema and a parent type from the referenced schema. |
 | 1 or more | 1 | 0 | 1 | Class/interface with properties from the current schema and a parent type from the inline schema. |
-| 0 | 0 | 1 | 1 | Class/interface with properties from the referenced schema without a parent type. |
-| 0 | 1 | 0 | 1 | Class/interface with properties from the inline schema without a parent type. |
+| 0 | 0 | 1 | 1 | Class/interface with properties from the referenced schema and without a parent type. |
+| 0 | 1 | 0 | 1 | Class/interface with properties from the inline schema and without a parent type. |
 | 1 or more | 1 | 1 | 2 | Class/interface with properties from the current schema and a parent type from referenced schema if it has properties. |
 | 1 or more | 1 | 1 | 2 | Class/interface with properties from the current schema and a parent type from the inline schema if it has properties. |
-| 0 | 0 | 0 | 0 | Invalid scenario for inheritance |
 | 1 or more | 1 or more | 1 or more | * | Invalid scenario for inheritance. Will result in a class/interface will all the properties from the current schema as well as all the properties from the allOf entries. |
 
 > [!NOTE]
