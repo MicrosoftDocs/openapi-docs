@@ -25,7 +25,7 @@ Models in an [allOf](https://spec.openapis.org/oas/latest.html#composition-and-i
 
 The following table describes how kiota will project any schema with allOf entries when processing an API description:
 
-| Number of Properties | Number of allOf entries without a reference / inline | Number of allOf entries with a reference | Total number of allOf entries | Result |
+| Number of peer properties | Number of inline schemas | Number referenced schemas | Total number of schemas | Result |
 | -------------------- | ---------------------------------------- | ------------------------------------------- | ----------------------------- | ------ |
 | 0 | 0 | 0 | 0 | Ignored/Invalid |
 | 0 | 0 or 1 | 0 or 1 | 1 | Ignored, will process the only allOf entry instead and use the original schema's description and name. |
