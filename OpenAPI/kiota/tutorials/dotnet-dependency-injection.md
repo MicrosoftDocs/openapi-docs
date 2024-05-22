@@ -30,7 +30,7 @@ dotnet new gitignore
 
 Before you can compile and run the generated API client, ensure the generated source files are part of a project with the required dependencies. Your project must reference the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet) and default implementations.
 
-- HTTP ([Kiota default HttpClient-based implementation](https://github.com/microsoft/kiota-http-dotnet))
+- HTTP ([Kiota default HttpClient-based implementation](https://github.com/microsoft/kiota-http-dotnet)) version `1.4.2` or higher
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-dotnet))
 - Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-dotnet))
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
@@ -160,7 +160,7 @@ public static class KiotaServiceCollectionExtensions
     public static IServiceCollection AddKiotaHandlers(this IServiceCollection services)
     {
         // Dynamically load the Kiota handlers from the Client Factory
-        var kiotaHandlers = KiotaClientFactory.CreateDefaultHandlers().Select(h => h.GetType());
+        var kiotaHandlers = KiotaClientFactory.GetDefaultHandlerTypes();
         // And register them in the DI container
         foreach(var handler in kiotaHandlers)
         {
@@ -185,12 +185,11 @@ public static class KiotaServiceCollectionExtensions
     /// <remarks>
     /// Requires the handlers to be registered in DI by <see cref="AddKiotaHandlers(IServiceCollection)"/>.
     /// The order in which the handlers are added is important, as it defines the order in which they will be executed.
-    /// <see href="https://github.com/microsoft/kiota-http-dotnet/blob/c1c295d3b0ebb2182b66d9a6858241117b59b540/src/KiotaClientFactory.cs#L50-L62">KiotaClientFactory.cs</see> for the default order.
     /// </remarks>
     public static IHttpClientBuilder AttachKiotaHandlers(this IHttpClientBuilder builder)
     {
         // Dynamically load the Kiota handlers from the Client Factory
-        var kiotaHandlers = KiotaClientFactory.CreateDefaultHandlers().Select(h => h.GetType());
+        var kiotaHandlers = KiotaClientFactory.GetDefaultHandlerTypes();
         // And attach them to the http client builder
         foreach(var handler in kiotaHandlers)
         {
@@ -252,9 +251,11 @@ builder.Services.AddKiotaHandlers();
 
 // Register the factory for the GitHub client
 builder.Services.AddHttpClient<GitHubClientFactory>((sp, client) => {
+    // Set the base address and accept header
+    // or other settings on the http client
     client.BaseAddress = new Uri("https://api.github.com");
     client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
-}).AttachKiotaHandlers();
+}).AttachKiotaHandlers(); // Attach the Kiota handlers to the http client, this is to enable all the Kiota features.
 
 // Register the GitHub client
 builder.Services.AddTransient(sp => sp.GetRequiredService<GitHubClientFactory>().GetClient());
