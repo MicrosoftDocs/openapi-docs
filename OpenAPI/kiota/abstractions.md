@@ -13,7 +13,7 @@ On most platforms, there are a range of different HTTP client library implementa
 
 Kiota attempts to minimizing the amount of generated code to decrease processing time and reduce the binary footprint of the client libraries. In order to achieve this goal, we attempt to put as much code as a possible into the core libraries. Kiota ships with a default set of core libraries that include default implementations for HTTP transport, authentication, and serialization. Replacing these core libraries with ones optimized for your scenarios is a supported scenario.
 
-The core libraries take care of all generic processing of HTTP requests. The service library that Kiota generates is designed to create a strongly-typed layer over the core libraries to simplify the process of creating requests and consuming responses.
+The core libraries take care of all generic processing of HTTP requests. The service library that Kiota generates is designed to create a strongly typed layer over the core libraries to simplify the process of creating requests and consuming responses.
 
 ## Requests
 
