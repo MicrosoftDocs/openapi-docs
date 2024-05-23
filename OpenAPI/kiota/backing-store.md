@@ -9,16 +9,16 @@ date: 05/01/2024
 
 # Kiota backing store
 
-By default kiota models are generated to store the data directly within their memory space, while this option is simpler, it limits a number of scenarios.
+By default Kiota models are generated to store the data directly within their memory space. While this option is simpler, it limits many scenarios.
 
-The [backing store option](./using.md) (`-b | --backing-store`) allows you to generate different models which rely on a backing store implementation to store their data.
+The [backing store option](./using.md) (`-b | --backing-store`) allows you to generate different models that rely on a backing store implementation to store their data.
 
 ## Backing store features
 
 ### Dirty tracking
 
 A common limitation of simple models is round trip update of data send the entire representation of the object, which is wasteful and can have side effects.
-Imagine a scenario where your application gets a user, updates their title to send it back to the service. In that scenario you'll want your client to automatically track which fields have been updated by the application:
+Imagine a scenario where your application gets a user, updates their title to send it back to the service. In that scenario, you want your client to automatically track which fields the application updates.
 
 ```csharp
 var user = await client.Users["john"].GetAsync();
@@ -26,7 +26,7 @@ user.Title = "Dr";
 await client.Users["john"].PatchAsync(user);
 ```
 
-Without the backing store enabled the client will send the entire representation:
+Without the backing store enabled, the client sends the entire representation:
 
 ```json
 {
@@ -39,7 +39,7 @@ Without the backing store enabled the client will send the entire representation
 
 Not only it leads to more data being transferred, but it can potentially result in errors if the service prevents updating the email address field without a specific permission.
 
-With the backing store enabled the client will send only the changed fields:
+With the backing store enabled, the client sends only the changed fields:
 
 ```json
 {
@@ -77,7 +77,7 @@ With the backing store would result in:
 
 ### Event subscription
 
-In certain scenarios you need your application to be notified when data changes happen, whether it is to refresh the user interface or to synchronize the data with another data store.
+In certain scenarios, you need your application to be notified when data changes happen. For instance, to refresh the user interface or to synchronize the data with another data store.
 
 The backing store also enables these scenarios through a subscription mechanism.
 
@@ -100,6 +100,6 @@ await client.Users["john"].PatchAsync(user);
 
 ## Implementations
 
-Kiota abstractions libraries provide a default implementation of the backing store **InMemoryBackingStore**, it is automatically registered by the generated client when the client is instantiated. The registration mechanism relies on a singleton defined in the abstractions library and the implementation in use will be common for all clients in the application domain.
+Kiota abstractions libraries provide a default implementation of the backing store **InMemoryBackingStore**. The generated client automatically registers it when the client is instantiated. The registration mechanism relies on a singleton defined in the abstractions library and the implementation in use is common for all clients in the application domain.
 
 You can register your own implementation by calling the **EnableBackingStore** on the **RequestAdapter** in use, or by passing it as an argument to the client constructor.

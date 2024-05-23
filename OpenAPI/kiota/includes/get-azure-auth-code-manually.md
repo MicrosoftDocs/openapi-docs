@@ -20,8 +20,8 @@ Use the following steps to get an authorization code.
 
 1. Sign in with your Microsoft account. Review the requested permissions and grant consent to continue.
 
-1. Once authentication completes, your browser will redirect to `http://localhost`. The browser will display an error which can be safely ignored.
+1. Once authentication completes, your browser will redirect to `http://localhost`. The browser displays an error that can be safely ignored.
 
 1. Copy the URL from your browser's address bar.
 
-1. Copy everything in the URL between `code=` and `&`. This is the authorization code.
+1. Copy everything in the URL between `code=` and `&`. This value is the authorization code.
