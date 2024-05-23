@@ -161,19 +161,12 @@ public static class KiotaServiceCollectionExtensions
     {
         // Dynamically load the Kiota handlers from the Client Factory
         var kiotaHandlers = KiotaClientFactory.GetDefaultHandlerTypes();
-        // And register them in the DI container
+        // And register them in the dependency injection container
         foreach(var handler in kiotaHandlers)
         {
             services.AddTransient(handler);
         }
 
-        // Or register them manually
-        // services.AddTransient<UriReplacementHandler<UriReplacementHandlerOption>>();
-        // services.AddTransient<RetryHandler>();
-        // services.AddTransient<RedirectHandler>();
-        // services.AddTransient<ParametersNameDecodingHandler>();
-        // services.AddTransient<UserAgentHandler>();
-        // services.AddTransient<HeadersInspectionHandler>();
         return services;
     }
 
@@ -196,13 +189,6 @@ public static class KiotaServiceCollectionExtensions
             builder.AddHttpMessageHandler((sp) => (DelegatingHandler)sp.GetRequiredService(handler));
         }    
         
-        // Or attach them manually
-        // builder.AddHttpMessageHandler<UriReplacementHandler<UriReplacementHandlerOption>>();
-        // builder.AddHttpMessageHandler<RetryHandler>();
-        // builder.AddHttpMessageHandler<RedirectHandler>();
-        // builder.AddHttpMessageHandler<ParametersNameDecodingHandler>();
-        // builder.AddHttpMessageHandler<UserAgentHandler>();
-        // builder.AddHttpMessageHandler<HeadersInspectionHandler>();
         return builder;
     }
 }
