@@ -50,6 +50,8 @@
         "quickstart",
         "quickstarts",
         "struct",
+        "subnamespace",
+        "subnamespaces",
         "vibiret"
     ],
     "flagWords": [

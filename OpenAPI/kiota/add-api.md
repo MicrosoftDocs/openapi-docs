@@ -19,8 +19,8 @@ The search command relies on multiple indices to find OpenAPI descriptions that 
 You can add your API descriptions to the search result by following these steps:
 
 1. Add the **kiota-index** topic to your GitHub repository.
-2. Add an **apis.json** or **apis.yaml** file at the root of your repository on your main branch.
-3. Make sure the repository is public and that it has a description.
+1. Add an **apis.json** or **apis.yaml** file at the root of your repository on your main branch.
+1. Make sure the repository is public and that it has a description.
 
 ### Example apis.yaml
 
