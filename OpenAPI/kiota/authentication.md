@@ -28,7 +28,7 @@ public interface IAuthenticationProvider
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The return value must be a `Task` that completes whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The return value must be a `Task` that completes whenever the authentication sequence completes and the request object is updated with the authentication/authorization information.
 
 ### [Go](#tab/go)
 
@@ -39,7 +39,7 @@ type AuthenticationProvider interface {
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence completes and the request object is updated with the authentication/authorization information.
 
 ### [Java](#tab/java)
 
@@ -50,7 +50,7 @@ public interface AuthenticationProvider {
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The return value must be a `CompletableFuture` that completes whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The return value must be a `CompletableFuture` that completes whenever the authentication sequence completes and the request object is updated with the authentication/authorization information.
 
 ### [PHP](#tab/php)
 
@@ -60,7 +60,7 @@ interface AuthenticationProvider {
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The return value must be a `Promise` that completes whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The return value must be a `Promise` that completes whenever the authentication sequence completes and the request object is updated with the authentication/authorization information.
 
 ### [Python](#tab/python)
 
@@ -72,7 +72,7 @@ class AuthenticationProvider(ABC):
         pass
 ```
 
-The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence completes and the request object is updated with the authentication/authorization information.
 
 ### [Ruby](#tab/ruby)
 
@@ -84,7 +84,7 @@ module AuthenticationProvider
 end
 ```
 
-The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The method should return whenever the authentication sequence completes and the request object is updated with the authentication/authorization information.
 
 ### [TypeScript](#tab/typescript)
 
@@ -97,7 +97,7 @@ export interface AuthenticationProvider {
 }
 ```
 
-The `request` parameter is the abstract request to be executed. The return value must be a `Promise` that completes whenever the authentication sequence has completed and the request object has been updated with the additional authentication/authorization information.
+The `request` parameter is the abstract request to be executed. The return value must be a `Promise` that completes whenever the authentication sequence completes and the request object is updated with the authentication/authorization information.
 
 <!-- markdownlint-enable MD051 -->
 
@@ -105,7 +105,7 @@ The `request` parameter is the abstract request to be executed. The return value
 
 ## Access token provider interface
 
-Implementations of this interface can be used in combination with the `BaseBearerTokenAuthentication` provider class to provide the access token to the request before it's executed. They can also be used to retrieve an access token to build and execute arbitrary requests with a native HTTP client.
+Implementations of this interface can be used in combination with the `BaseBearerTokenAuthentication` provider class to provide the access token to the request before it executes. They can also be used to retrieve an access token to build and execute arbitrary requests with a native HTTP client.
 
 <!-- markdownlint-disable MD024 MD051 -->
 ### [.NET](#tab/csharp)
@@ -214,13 +214,13 @@ In `getAuthorizationToken`, the `url` parameter is the URL of the abstract reque
 
 ## Allowed hosts validator
 
-This utility class is in charge of validating the host of any request is present on an allow list. This is used by the base access token provider to check whether it should return a token to the request.
+This utility class is in charge of validating the host of any request is present on an allowlist. The validator is used by the base access token provider to check whether it should return a token to the request.
 
 ## Base bearer token authentication provider
 
 A common practice in the industry for APIs is to implement authentication and authorization via the `Authorization` request header with a bearer token value.
 
-Should you want to add support for additional authentication providers for that scheme, Kiota abstractions already offer a class to use in combination with your own implementation of an access token provider so you only need to implement the access token acquisition sequence and not the header composition/addition.
+If you want to add support for more authentication providers for that scheme, Kiota abstractions offer a class to use in combination with your own implementation of an access token provider. You only need to implement the access token acquisition sequence and not the header composition and addition.
 
 <!-- markdownlint-disable MD024 MD051 -->
 ### [.NET](#tab/csharp)
@@ -297,23 +297,23 @@ export class BaseBearerTokenAuthenticationProvider {
 > [!NOTE]
 > Please leverage the same approach if you want to add support for new authentication schemes where the authentication scheme composition logic is implemented in a base class so it can be reused across multiple providers.
 
-## Azure Identity authentication provider
+## Microsoft Entra Identity authentication provider
 
-The additional Azure authentication package contains an authentication provider that relies on Azure Identity to get access tokens and implements bearer authentication. It can effectively be used for any client making requests to APIs secured by the Microsoft/Azure Identity Platform.
+The Azure authentication package contains an authentication provider that relies on Microsoft Entra Identity to get access tokens and implements bearer authentication. It can effectively be used for any client making requests to APIs secured by the Microsoft Entra Identity Platform.
 
 ## Anonymous authentication provider
 
-Some APIs do not require any authentication and can be queried anonymously. For this reason the abstractions packages also provide an `AnonymousAuthenticationProvider` which serves as a placeholder and performs no operation.
+Some APIs don't require any authentication and can be queried anonymously. For this scenario, the abstractions packages provide an `AnonymousAuthenticationProvider`, which serves as a placeholder and performs no operation.
 
 ## API key authentication provider
 
-Some APIs simply rely on an API key for authentication that's placed in the request query parameters or in the request headers. For this reason the abstractions packages also provide an `ApiKeyAuthenticationProvider`.
+Some APIs simply rely on an API key for authentication in the request query parameters or in the request headers. For this scenario, the abstractions packages provide an `ApiKeyAuthenticationProvider`.
 
 This provider allows you to:
 
-- Set the name of the request header/query parameter. (e.g. "Authorization")
-- Set the value of the request header/query parameter. (e.g. "Basic base64encodedValue")
-- Choose whether the provided name and value will be used for a request header or for a query parameter.
+- Set the name of the request header/query parameter. (for example `Authorization`)
+- Set the value of the request header/query parameter. (for example `Basic base64encodedValue`)
+- Choose whether the provided name and value are used for a request header or for a query parameter.
 
 > [!NOTE]
 > This authentication provider does not perform any encoding of the key or the value, if the authentication scheme requires any encoding, it needs to be performed before the values are passed to the provider. For example with basic authentication, you'll need to base64 encode the "userId:password" pair before passing it to the provider.
@@ -328,7 +328,7 @@ This provider allows you to:
 
 ## Design considerations
 
-The default request adapters used by generated clients to make an HTTP request require an authentication provider as a constructor parameter, and call the **authenticate request** method themselves. An alternative could have been to use [HTTP client middleware handlers](./middleware.md) instead. This was a deliberate design decision to:
+The default request adapters used by generated clients to make an HTTP request require an authentication provider as a constructor parameter, and call the **authenticate request** method themselves. An alternative could be to use [HTTP client middleware handlers](./middleware.md) instead. This approach was a deliberate design decision to:
 
 - Lead application developer to make a conscious choice about authenticating with the API.
 - Enable reusability through interfaces defined to work with Request Information, limiting interdependencies.

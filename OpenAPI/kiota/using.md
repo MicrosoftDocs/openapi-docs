@@ -16,14 +16,14 @@ date: 03/10/2023
 
 ## Configuration environment variables
 
-The table below provides the list of environment variables that can be used to configure the experience for the Kiota CLI.
+The following table provides the list of environment variables that can be used to configure the experience for the Kiota CLI.
 
-| Environment variable name      | Description                                                         | Default value |
-|--------------------------------|---------------------------------------------------------------------|---------------|
-| `KIOTA_CONSOLE_COLORS_ENABLED` | Enable/disable output colorization                                  | `true`        |
-| `KIOTA_CONSOLE_COLORS_SWAP`    | Enable/disable inverting the color scheme of the output             | `false`       |
-| `KIOTA_TUTORIAL_ENABLED`       | Enable/disable displaying additional hints after commands execution | `true`        |
-| `KIOTA_OFFLINE_ENABLED`        | Enable/disable checking for updates before commands execution       | `false`       |
+| Environment variable name      | Description                                                    | Default value |
+|--------------------------------|----------------------------------------------------------------|---------------|
+| `KIOTA_CONSOLE_COLORS_ENABLED` | Enable/disable output colorization                             | `true`        |
+| `KIOTA_CONSOLE_COLORS_SWAP`    | Enable/disable inverting the color scheme of the output        | `false`       |
+| `KIOTA_TUTORIAL_ENABLED`       | Enable/disable displaying extra hints after commands execution | `true`        |
+| `KIOTA_OFFLINE_ENABLED`        | Enable/disable checking for updates before commands execution  | `false`       |
 
 ## Commands
 
@@ -35,8 +35,8 @@ Kiota offers the following commands to help you build your API client:
 - [generate](#client-generation): generate a client for any API from its description.
 - [update](#client-update): update existing clients from previous generations.
 - [info](#language-information): show languages and runtime dependencies information.
-- [login](#login): logs in to private API descriptions repositories.
-- [logout](#logout): logs out from private API description repositories.
+- [login](#sign-in): signs in to private API descriptions repositories.
+- [logout](#sign-out): signs out from private API description repositories.
 
 ## Description search
 
@@ -58,7 +58,7 @@ kiota search <searchTerm>
 
 The term to use during the search for APIs and their descriptions.
 
-If multiple results are found, kiota will present a table with the different results.
+If multiple results are found, Kiota presents a table with the different results.
 
 The following example returns multiple results.
 
@@ -66,7 +66,7 @@ The following example returns multiple results.
 kiota search github
 ```
 
-Which will return the following display.
+This command returns the following display.
 
 ```bash
 Key                                  Title               Description            Versions
@@ -81,7 +81,7 @@ apisguru::github.com:ghes-3.0        GitHub v3 REST API  GitHub's v3 REST API.  
 apisguru::github.com:ghes-3.1        GitHub v3 REST API  GitHub's v3 REST API.  1.1.4
 ```
 
-If the search term is an exact match with one of the results' key, the search command will display a detailed view of the result.
+If the search term is an exact match with one of the results' key, the search command displays a detailed view of the result.
 
 ```bash
 kiota search apisguru::github.com
@@ -107,7 +107,7 @@ The search command accepts optional parameters commonly available on the other c
 
 Kiota download downloads API descriptions to a local from a registry and accepts the following parameters.
 
-It is not mandatory to download the description locally for the purpose of generation as the generation command can download the description directly. However, having a local copy of the description can be helpful to inspect it, determine which API paths are needed, and come up with the include/exclude filters for generation.
+It isn't mandatory to download the description locally for generation as the generation command can download the description directly. However, having a local copy of the description can be helpful to inspect it, determine which API paths are needed, and come up with the filters for generation.
 
 > [!NOTE]
 > The download command requires access to internet and cannot be used offline.
@@ -126,7 +126,7 @@ kiota download <searchTerm>
 
 #### Search term
 
-The search term to use to locate the description. The description will be downloaded only if an exact key match occurs. You can use the search command to find the key of the API description before downloading it.
+The search term to use to locate the description. The description is downloaded only if an exact key match occurs. You can use the search command to find the key of the API description before downloading it.
 
 ```bash
 kiota download apisguru::github.com
@@ -161,7 +161,7 @@ kiota show [(--openapi | -d) <path>]
 
 ### Example
 
-The following command with the provided options will display the following result.
+The following command with the provided options displays the following result.
 
 ```bash
 kiota show -d https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/openApiDocs/v1.0/Mail.yml -i **/messages
@@ -248,7 +248,7 @@ kiota generate --backing-store
 
 Whether to exclude the code generated only for backward compatibility reasons or not. Defaults to `false`.
 
-To maintain compatibility with applications that depends on generated clients, kiota emits additional code marked as obsolete. New clients do not need this additional backward compatible code. The code marked as obsolete will be removed in the next major version of kiota. Use this option to omit emitting the backward compatible code when generating a new client, or when the application using the existing client being refreshed does not depend on backward compatible code.
+To maintain compatibility with applications that depends on generated clients, Kiota emits extra code marked as obsolete. New clients don't need this extra backward compatible code. The code marked as obsolete will be removed in the next major version of Kiota. Use this option to omit emitting the backward compatible code when generating a new client, or when the application using the existing client being refreshed doesn't depend on backward compatible code.
 
 ```bash
 kiota generate --exclude-backward-compatible
@@ -256,7 +256,7 @@ kiota generate --exclude-backward-compatible
 
 #### `--additional-data (--ad)`
 
-Will include the 'AdditionalData' property for generated models. Defaults to `true`.
+Include the 'AdditionalData' property for generated models. Defaults to `true`.
 
 ```bash
 kiota generate --additional-data false
@@ -296,7 +296,7 @@ Defaults to the following values.
 
 ##### Accepted values
 
-One or more module names that implements `IParseNodeFactory`.
+One or more module names that implement `IParseNodeFactory`.
 
 ```bash
 kiota generate --deserializer Contoso.Json.CustomDeserializer
@@ -314,13 +314,13 @@ Rules:
 
 - DivergentResponseSchema: returns a warning if an operation defines multiple different successful response schemas. (200, 201, 202, 203)
 - GetWithBody: returns a warning if a GET request has a body defined.
-- InconsistentTypeFormat: returns a warning if an inconsistent type/format pair is defined. (e.g. type: string, format: int32)
-- KnownAndNotSupportedFormats: returns a warning if a known formats is not supported for generation. (e.g. email, uri, ...)
+- InconsistentTypeFormat: returns a warning if an inconsistent type/format pair is defined. (for example, type: string, format: int32)
+- KnownAndNotSupportedFormats: returns a warning if a known format isn't supported for generation. (for example, email, uri, ...)
 - MissingDiscriminator: returns a warning if an anyOf or oneOf schema is used without a discriminator property name.
 - MultipleServerEntries: returns a warning if multiple servers are defined.
 - NoContentWithBody: returns a warning if a response schema is defined for a 204 response.
 - NoServerEntry: returns a warning if no servers are defined.
-- UrlFormEncodedComplex: returns a warning if a response of type uri form encoded has a schema that contains complex properties.
+- UrlFormEncodedComplex: returns a warning if a URI form encoded response has a schema that contains complex properties.
 
 ```bash
 kiota generate --disable-validation-rules NoServerEntry
@@ -368,7 +368,7 @@ Defaults to the following values.
 
 ##### Accepted values
 
-One or more module names that implements `ISerializationWriterFactory`.
+One or more module names that implement `ISerializationWriterFactory`.
 
 ```bash
 kiota generate --serializer Contoso.Json.CustomSerializer
@@ -376,9 +376,9 @@ kiota generate --serializer Contoso.Json.CustomSerializer
 
 #### `--structured-mime-types (-m)`
 
-The MIME types to use for structured data model generation with their preference weight. Any type without a preference will have its preference defaulted to 1. Accepts multiple values. The notation style and the preference weight logic follow the convention [defined in RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-accept).
+The MIME types to use for structured data model generation with their preference weight. Any type without a preference has its preference defaulted to 1. Accepts multiple values. The notation style and the preference weight logic follow the convention [defined in RFC9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-accept).
 
-Default values :
+Default values:
 
 - `application/json;q=1`
 - `application/x-www-form-urlencoded;q=0.2`
@@ -393,7 +393,7 @@ Default values :
 
 ##### Accepted values
 
-Any valid MIME type which will match a request body type or a response type in the OpenAPI description.
+Any valid MIME type that matches a request body type or a response type in the OpenAPI description.
 
 ### Examples
 
@@ -416,7 +416,7 @@ kiota info [(--openapi | -d) <path>]
 
 ### Example - global
 
-The following command with the provided options will display the following result.
+The following command with the provided options displays the following result.
 
 ```bash
 kiota info
@@ -437,7 +437,7 @@ TypeScript  Experimental
 
 ### Example - with language
 
-The following command with the provided options will display the following result.
+The following command with the provided options displays the following result.
 
 ```bash
 kiota info -l CSharp
@@ -455,7 +455,7 @@ dotnet add package Microsoft.Kiota.Serialization.Text --version 1.1.0
 dotnet add package Microsoft.Kiota.Serialization.Multipart --version 1.1.0
 ```
 
-Using the `--json` optional parameter render the output in a machine parsable format:
+Using the `--json` optional parameter renders the output in a machine parsable format:
 
 ```bash
 kiota info -l CSharp --json
@@ -513,7 +513,7 @@ The info command accepts optional parameters commonly available on the other com
 
 ## Client update
 
-Kiota update accepts the following parameters during the update of existing clients. This command will search for lock files in the output directory and all its subdirectories and trigger generations to refresh the existing clients using settings from the lock files.
+Kiota update accepts the following parameters during the update of existing clients. This command searches for lock files in the output directory and all its subdirectories and triggers generations to refresh the existing clients using settings from the lock files.
 
 ```bash
 kiota update [(--output | -o) <path>]
@@ -531,11 +531,11 @@ The generate command accepts optional parameters commonly available on the other
 - [--log-level](#--log-level---ll)
 - [--output](#--output--o)
 
-## Login
+## Sign in
 
-Use kiota login to sign in to private repositories and search for/display/generate clients for private API descriptions. This command makes sub-commands available to sign in to specific authentication providers.
+Use `kiota login` to sign in to private repositories and search for/display/generate clients for private API descriptions. This command makes subcommands available to sign in to specific authentication providers.
 
-### Login to GitHub
+### Sign in to GitHub
 
 ```bash
 kiota login github <device|pat>
@@ -543,9 +543,9 @@ kiota login github <device|pat>
       [(--pat) <patValue>]
 ```
 
-Use `kiota login github device` to sign in using a device code, you will be prompted to sign-in using a web browser.
+Use `kiota login github device` to sign in using a device code, you're prompted to sign-in using a web browser.
 
-Use `kiota login github pat --pat patValue` to sign in using a Personal Access Token you previously generated. You can use both classic PATs or granular PATs (beta). Classic PATs need the **repo** permission and to be granted access to the target organizations. Granular PATs need a **read-only** permission for the **contents** scope under the **repository** category and they need to be consented for all private repositories or selected private repositories.
+Use `kiota login github pat --pat patValue` to sign in using a Personal Access Token you previously generated. You can use either a classic personal access token (PAT) or a granular PAT. A classic PAT needs the **repo** permission and to be granted access to the target organizations. A granular PAT needs a **read-only** permission for the **contents** scope under the **repository** category and they need to be consented for all private repositories or selected private repositories.
 
 > [!NOTE]
 > For more information about adding API descriptions to the GitHub index, see [Adding an API to search](add-api.md).
@@ -556,9 +556,9 @@ The generate command accepts optional parameters commonly available on the other
 
 - [--log-level](#--log-level---ll)
 
-## Logout
+## Sign out
 
-Use kiota logout to logout from a private repository containing API descriptions.
+Use `kiota logout` to sign out from a private repository containing API descriptions.
 
 ```bash
 kiota logout github
@@ -597,7 +597,7 @@ kiota <command name> --clear-cache
 
 ### `--exclude-path (-e)`
 
-A glob pattern to exclude paths from generation. Accepts multiple values. Defaults to no value which excludes nothing.
+A glob pattern to exclude paths from generation. Accepts multiple values.
 
 ```bash
 kiota <command name> --exclude-path **/users/** --exclude-path **/groups/**
@@ -606,11 +606,11 @@ kiota <command name> --exclude-path **/users/** --exclude-path **/groups/**
 You can also filter specific HTTP methods by appending `#METHOD` to the pattern, replacing `METHOD` with the HTTP method to filter. For example, `**/users/**#GET`.
 
 > [!TIP]
-> An exclude pattern can be used in combination with the include pattern argument. A path item is included when (no include pattern is included OR it matches an include pattern) AND (no exclude pattern is included OR it doesn't match an exclude pattern).
+> An `--exclude-path` pattern can be used in combination with the `--include-path` argument. A path item is included when (no include pattern is included OR it matches an include pattern) AND (no exclude pattern is included OR it doesn't match an exclude pattern).
 
 ### `--include-path (-i)`
 
-A glob pattern to include paths from generation. Accepts multiple values. Defaults to no value which includes everything.
+A glob pattern to include paths from generation. Accepts multiple values. If this parameter is absent, everything is included.
 
 ```bash
 kiota <command name> --include-path **/users/** --include-path **/groups/**
@@ -619,7 +619,7 @@ kiota <command name> --include-path **/users/** --include-path **/groups/**
 You can also filter specific HTTP methods by appending `#METHOD` to the pattern, replacing `METHOD` with the HTTP method to filter. For example, `**/users/**#GET`.
 
 > [!TIP]
-> An include pattern can be used in combination with the exclude pattern argument. A path item is included when (no include pattern is included OR it matches an include pattern) AND (no exclude pattern is included OR it doesn't match an exclude pattern).
+> An `--include-path` pattern can be used in combination with the `--exclude-path` argument. A path item is included when (no include pattern is included OR it matches an include pattern) AND (no exclude pattern is included OR it doesn't match an exclude pattern).
 
 ### `--openapi (-d)`
 
@@ -689,9 +689,9 @@ kiota <command name> --output ./src/client
 
 ### `--search-key (-k)`
 
-The search key to use to fetch the Open API description, can be used in combination with the version option. Should not be used in combination with the openapi option. Default empty.
+The search key to use to fetch the Open API description. This parameter can be used in combination with the version option. Shouldn't be used in combination with the `--openapi` option. Default empty.
 
-Available for commands: info, show.
+Available for commands: `info` and `show`.
 
 ```bash
 kiota <command name> --search-key apisguru::github.com:api.github.com
@@ -709,7 +709,7 @@ kiota <command name> --version beta
 
 ### `--disable-ssl-validation (--dsv)`
 
-The disable SSL validation is an option that allows users to disable SSL certificate validation. When this option is set to true, the SSL certificates presented by HTTPS servers of the OpenAPI Description File will not be validated. This can be useful in development or testing environments with self-signed certificates.
+The disable SSL validation is an option that allows users to disable SSL certificate validation. When this option is set to true, the SSL certificates presented by HTTPS servers of the OpenAPI description file aren't validated. Disabling validation can be useful in development or testing environments with self-signed certificates.
 
 Available for commands: generate, show, and download.
 

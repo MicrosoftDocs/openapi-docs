@@ -13,7 +13,7 @@ Kiota uses the specified HTTP status codes in OpenAPI descriptions to determine 
 
 ## Generation
 
-During API client generation, Kiota follows these rules to map status codes described by the OpenAPI description. The following table is ordered which means the first rule that matches will be the one used during generation.
+During API client generation, Kiota follows these rules to map status codes described by the OpenAPI description. The following table is ordered, which means the first rule that matches is used during generation.
 
 | Code          | Schema is present | Result type |
 |---------------|-------------------|-------------|
@@ -29,7 +29,7 @@ During API client generation, Kiota follows these rules to map status codes desc
 
 ## Runtime status code handling
 
-At runtime the client can encounter response status codes that differ from what was originally documented due to how HTTP works. Default request adapter implementations follow these rules:
+At runtime, the client can encounter response status codes that differ from what was originally documented due to how HTTP works. Default request adapter implementations follow these rules:
 
 | Expected return type | Response status code | Response body is present | Returned value     |
 |----------------------|----------------------|--------------------------|--------------------|

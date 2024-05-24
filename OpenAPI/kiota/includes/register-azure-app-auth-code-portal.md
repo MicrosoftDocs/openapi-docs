@@ -7,7 +7,7 @@ date: 03/20/2023
 
 <!-- markdownlint-disable MD041 -->
 
-1. Open a browser and navigate to the [Azure Active Directory admin center](https://aad.portal.azure.com). Login with your Azure account.
+1. Open a browser and navigate to the [Azure Active Directory admin center](https://aad.portal.azure.com). Sign in with your Azure account.
 1. Select **Azure Active Directory** in the left-hand navigation, then select **App registrations** under **Manage**.
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
@@ -17,4 +17,4 @@ date: 03/20/2023
 
 1. Select **Register**. On the **Overview** page, copy the value of the **Application (client) ID** and save it.
 1. Select **Certificates & secrets** under **Manage**. Select the **New client secret** button. Enter a value in **Description** and select one of the options for **Expires** and select **Add**.
-1. Copy the **Value** of the new secret before you leave this page. It will never be displayed again. Save the value for later.
+1. Copy the **Value** of the new secret before you leave this page. It is never displayed again. Save the value for later.

@@ -63,7 +63,7 @@ mcr.microsoft.com/openapi/kiota generate --language csharp -n namespace-prefix
 > [!TIP]
 > You can alternatively use the `--openapi` parameter with a URI instead of volume mapping.
 
-To generate a SDK from an online OpenAPI description and into the current directory:
+To generate a client library from an online OpenAPI description and into the current directory:
 
 <!-- markdownlint-disable MD024 MD051 -->
 ### [bash](#tab/bash)
@@ -90,7 +90,7 @@ https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-powershell/dev/open
 
 If you have the [.NET SDK](https://dotnet.microsoft.com/download) installed, you can install Kiota as a [.NET tool](/dotnet/core/tools/global-tools).
 
-Execute the following command to install the tool.
+To install the tool, execute the following command.
 
 ```bash
 dotnet tool install --global Microsoft.OpenApi.Kiota
@@ -100,13 +100,13 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 
 1. Clone the [Kiota repository](https://github.com/microsoft/kiota).
 1. Install the [.NET SDK 8.0](https://get.dot.net/8).
-1. Open the solution with Visual Studio and right click *publish* **--or--** execute the following command:
+1. Open the solution with Visual Studio and right select *publish* **or** execute the following command:
 
     ```bash
-    dotnet publish ./src/kiota/kiota.csproj -c Release -p:PublishSingleFile=true -r <RIDs>
+    dotnet publish ./src/kiota/kiota.csproj -c Release -p:PublishSingleFile=true -r <runtime-identifiers>
     ```
 
-    | RIDs               | Value     |
+    | Runtime identifier | Value     |
     |--------------------|-----------|
     | Linux (x64)        | linux-x64 |
     | macOS (arm64)      | osx-arm64 |
@@ -117,7 +117,7 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
     > [!NOTE]
     > Refer to [.NET runtime identifier catalog](/dotnet/core/rid-catalog) so select the appropriate runtime for your platform.
 
-    For example if your platform is Windows (x64), your command will be as below
+    For example, the following command builds for Windows (x64).
 
      ```bash
     dotnet publish ./src/kiota/kiota.csproj -c Release -p:PublishSingleFile=true -r win-x64
@@ -129,7 +129,7 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 ## Install the Visual Studio Code extension
 
 1. Open the [Marketplace page of the extension](https://aka.ms/kiota/extension)
-1. Click on the **Install** button.
+1. Select on the **Install** button.
 
 > [!NOTE]
 > The Kiota Visual Studio Code extension is currently in public preview and is subject to change.
@@ -157,7 +157,7 @@ steps:
 > [!IMPORTANT]
 > The asdf Kiota plugin is maintained and distributed by the community and is not an official Microsoft plugin. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
 
-The community has made Kiota available as an [asdf plugin](https://asdf-vm.com/manage/plugins.html). To install the `asdf-kiota` plugin follow these instructions:
+The community made Kiota available as an [asdf plugin](https://asdf-vm.com/manage/plugins.html). To install the `asdf-kiota` plugin, follow these instructions:
 
 ```bash
 asdf plugin add kiota
@@ -182,7 +182,7 @@ kiota --version
 > [!IMPORTANT]
 > The Homebrew formula for Kiota is maintained and distributed by the community and is not an official Microsoft plugin. Microsoft makes no warranties, express or implied, with respect to the plugin or its use. Use of this plugin is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this plugin.
 
-The community has made Kiota available as a [Homebrew formula](https://formulae.brew.sh/formula/kiota) for macOS running on x64 and arm64 architectures. To install follow these instructions:
+The community made Kiota available as a [Homebrew formula](https://formulae.brew.sh/formula/kiota) for macOS running on x64 and arm64 architectures. To install, follow these instructions:
 
 ```bash
 brew install kiota
@@ -193,7 +193,7 @@ brew install kiota
 > [!IMPORTANT]
 > The REST API Client Code Generator extension for Visual Studio is maintained and distributed by the community and is not an official Microsoft Visual Studio extension. Microsoft makes no warranties, express or implied, with respect to the extension or its use. Use of this extension is at your own risk. Microsoft shall not be liable for any damages arising out of or in connection with the use of this extension.
 
-[REST API Client Code Generator](https://github.com/christianhelle/apiclientcodegen) is a collection of Visual Studio C# custom tool code generators for OpenAPI specifications. This extension will install Kiota on-demand and will also add the required NuGet packages to build the generated code to the project. The generated code is created as a "code-behind" file to the OpenAPI specifications file in the .NET project. This extension offers same-day releases for new Kiota versions, but this requires updating the extension, which can be configured to be automatically.
+[REST API Client Code Generator](https://github.com/christianhelle/apiclientcodegen) is a collection of Visual Studio C# custom tool code generators for OpenAPI specifications. This extension installs Kiota on-demand and adds the required NuGet packages to build the generated code to the project. The generated code is created as a "code-behind" file to the OpenAPI specifications file in the .NET project. This extension offers same-day releases for new Kiota versions, but this requires updating the extension, which can be configured to be automatically.
 
 ### Installation
 
@@ -202,7 +202,7 @@ brew install kiota
     > [!NOTE]
     > For Visual Studio for Mac, follow [these instructions](https://github.com/christianhelle/apiclientcodegen/blob/master/docs/VisualStudioForMac.md#installation)
 
-1. Click on the **Download** button. Restart Visual Studio to complete the installation.
+1. Select on the **Download** button. To complete the installation, restart Visual Studio.
 
 1. Follow [these instructions](https://github.com/christianhelle/apiclientcodegen/blob/master/docs/KiotaUsage.md) for generating code.
 

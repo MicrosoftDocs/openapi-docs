@@ -7,7 +7,7 @@ date: 03/20/2023
 
 <!-- markdownlint-disable MD041 -->
 
-1. Open a browser and navigate to the [Azure Active Directory admin center](https://aad.portal.azure.com). Login with your Azure account.
+1. Open a browser and navigate to the [Azure Active Directory admin center](https://aad.portal.azure.com). Sign in with your Azure account.
 1. Select **Azure Active Directory** in the left-hand navigation, then select **App registrations** under **Manage**.
 1. Select **New registration**. On the **Register an application** page, set the values as follows.
 
