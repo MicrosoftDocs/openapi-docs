@@ -26,7 +26,7 @@ npx tsc --init
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://www.npmjs.com/package/@microsoft/kiota-abstractions). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://www.npmjs.com/package/@microsoft/kiota-abstractions). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - Authentication ([Kiota default Azure authentication](https://www.npmjs.com/package/@microsoft/kiota-authentication-azure))
 - HTTP ([Kiota default fetch-based implementation](https://www.npmjs.com/package/@microsoft/kiota-http-fetchlibrary))
@@ -35,7 +35,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Text serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-text))
 - Multipart serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-multipart))
 
-For this tutorial, you will use the default implementations.
+For this tutorial, use the default implementations.
 
 Run the following commands to get the required dependencies.
 
@@ -89,7 +89,7 @@ Create a file in the root of the project named **index.ts** and add the followin
 
 ## Run the application
 
-Run the following command in your project directory to start the application.
+To start the application, run the following command in your project directory.
 
 ```bash
 npx ts-node index.ts

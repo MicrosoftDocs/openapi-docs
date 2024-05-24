@@ -1,15 +1,15 @@
 ---
-title: Build API clients for CLIs
-description: Learn how use Kiota to build API clients for CLIs.
+title: Build API clients for a command line interface (CLI)
+description: Learn how use Kiota to build API clients for a CLI.
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: quickstart
 date: 03/24/2023
 ---
 
-# Build API clients for CLIs
+# Build API clients for a command line interface (CLI)
 
-In this tutorial, you will build a sample command line interface (CLI) app that calls a REST API that does not require authentication.
+In this tutorial, you build a sample command line interface (CLI) app that calls a REST API that doesn't require authentication.
 
 ## Required tools
 
@@ -30,15 +30,15 @@ dotnet new gitignore
 
 ## Project configuration
 
-In case you're adding a kiota client to an existing project, the following configuration is required:
+In case you're adding a Kiota client to an existing project, the following configuration is required:
 
-- ***.csproj** > **TargetFramework** set to "net6" or above. [More information](/dotnet/standard/frameworks)
+- ***.csproj** > **TargetFramework** set to "net6" or later. [More information](/dotnet/standard/frameworks)
 - ***.csproj** > **LangVersion** set to "latest". [More information](/dotnet/csharp/language-reference/configure-language-version#c-language-version-reference)
 - ***.csproj** > **Nullable** set to "enable".
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet) and the [cli-commons package](https://github.com/microsoft/kiota-cli-commons). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet) and the [cli-commons package](https://github.com/microsoft/kiota-cli-commons). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - HTTP ([Kiota default HttpClient-based implementation](https://github.com/microsoft/kiota-http-dotnet))
 - Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-dotnet))
@@ -46,7 +46,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
 - Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-dotnet))
 
-For this tutorial, you will use the default implementations.
+For this tutorial, use the default implementations.
 
 Run the following commands to get the required dependencies.
 
@@ -66,7 +66,7 @@ Kiota generates API clients from OpenAPI documents. Create a file named **posts-
 
 :::code language="yaml" source="~/code-snippets/get-started/quickstart/posts-api.yml":::
 
-This is a minimal OpenAPI description that describes how to call the `/posts` endpoint in the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/).
+This file is a minimal OpenAPI description that describes how to call the `/posts` endpoint in the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/).
 
 You can then use the Kiota command line tool to generate the API client classes.
 
@@ -76,7 +76,7 @@ kiota generate -l CLI -c PostsClient -n KiotaPostsCLI.Client -d ./posts-api.yml 
 
 ## Create the client application
 
-The final step is to update the **Program.cs** file that was generated as part of the console application, replacing its contents with the code below.
+The final step is to update the **Program.cs** file that was generated as part of the console application, replacing its contents with the following code.
 
 :::code language="csharp" source="~/code-snippets/get-started/quickstart/cli/src/Program.cs" id="ProgramSnippet":::
 
@@ -85,7 +85,7 @@ The final step is to update the **Program.cs** file that was generated as part o
 
 ## Run the application
 
-Run the following commands in your project directory to invoke the CLI.
+To invoke the CLI app, run the following commands in your project directory.
 
 ### GET /posts
 

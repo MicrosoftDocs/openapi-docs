@@ -9,7 +9,7 @@ date: 03/24/2023
 
 # Build API clients for Java
 
-In this tutorial, you will build a sample app in Java that calls a REST API that does not require authentication.
+In this tutorial, you build a sample app in Java that calls a REST API that doesn't require authentication.
 
 ## Required tools
 
@@ -26,15 +26,15 @@ gradle init --dsl groovy --test-framework junit --type java-application --projec
 
 ## Project configuration
 
-In case you're adding a kiota client to an existing project, the following configuration is required:
+In case you're adding a Kiota client to an existing project, the following configuration is required:
 
-- **build.gradle** > **compileJava** > **sourceCompatibility** set to "1.8" or above. (or equivalent if you're not using gradle)
-- **build.gradle** > **compileJava** > **targetCompatibility** set to "1.8" or above. (or equivalent if you're not using gradle)
-- JDK version 17 or above.
+- **build.gradle** > **compileJava** > **sourceCompatibility** set to "1.8" or later. (or equivalent if you're not using gradle)
+- **build.gradle** > **compileJava** > **targetCompatibility** set to "1.8" or later. (or equivalent if you're not using gradle)
+- Java Development Kit (JDK) version 17 or above.
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-java). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-java). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - HTTP ([Kiota default OkHttp-based implementation](https://github.com/microsoft/kiota-java))
 - Form serialization ([Kiota default](https://github.com/microsoft/kiota-java))
@@ -42,7 +42,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-java))
 - Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-java))
 
-For this tutorial, you will use the default implementations.
+For this tutorial, use the default implementations.
 
 Edit **./app/build.gradle** to add the following dependencies.
 
@@ -57,7 +57,7 @@ Kiota generates API clients from OpenAPI documents. Create a file named **posts-
 
 :::code language="yaml" source="~/code-snippets/get-started/quickstart/posts-api.yml":::
 
-This is a minimal OpenAPI description that describes how to call the `/posts` endpoint in the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/).
+This file is a minimal OpenAPI description that describes how to call the `/posts` endpoint in the [JSONPlaceholder REST API](https://jsonplaceholder.typicode.com/).
 
 You can then use the Kiota command line tool to generate the API client classes.
 
@@ -67,7 +67,7 @@ kiota generate -l java -c PostsClient -n kiotaposts.client -d ./posts-api.yml -o
 
 ## Create the client application
 
-The final step is to update the **./app/src/main/java/kiotaposts/App.java** file that was generated as part of the console application, replacing its contents with the code below.
+The final step is to update the **./app/src/main/java/kiotaposts/App.java** file that was generated as part of the console application, replacing its contents with the following code.
 
 :::code language="java" source="~/code-snippets/get-started/quickstart/java/app/src/main/java/kiotaposts/App.java" id="ProgramSnippet":::
 
@@ -76,7 +76,7 @@ The final step is to update the **./app/src/main/java/kiotaposts/App.java** file
 
 ## Run the application
 
-Run the following command in your project directory to start the application.
+To start the application, run the following command in your project directory.
 
 ```bash
 ./gradlew --console plain run

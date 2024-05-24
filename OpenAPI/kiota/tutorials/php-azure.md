@@ -9,7 +9,7 @@ date: 03/20/2023
 
 # Build API clients for PHP with Microsoft identity authentication
 
-In this tutorial, you will generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
+In this tutorial, you generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
 
 ## Required tools
 
@@ -26,14 +26,14 @@ composer init
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-php). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-php). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-phpleague-php))
 - HTTP ([Kiota default Guzzle-based implementation](https://github.com/microsoft/kiota-http-guzzle-php))
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-php))
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-php))
 
-For this tutorial, you will use the default implementations.
+For this tutorial, use the default implementations.
 
 Run the following commands to get the required dependencies.
 
@@ -104,7 +104,7 @@ Replace the `$authorizationCode` with your authorization code.
 
 ## Run the application
 
-Run the following command in your project directory to start the application.
+To start the application, run the following command in your project directory.
 
 ```bash
 php GetUser.php

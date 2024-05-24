@@ -9,28 +9,28 @@ date: 03/20/2023
 
 # Build API clients for Python with Microsoft identity authentication
 
-In this tutorial, you will generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
+In this tutorial, you generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
 
 ## Required tools
 
 - [Python 3.6+](https://www.python.org/)
 - [pip 20.0+](https://pip.pypa.io/en/stable/)
-- [asyncio/any other supported async environment e.g AnyIO, Trio.](https://docs.python.org/3/library/asyncio.html)
+- [asyncio](https://docs.python.org/3/library/asyncio.html) or any other supported async environment, for example, AnyIO, Trio.
 
 ## Create a project
 
-Create a directory that will contain the new project.
+Create a directory to contain the new project.
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-python). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-python). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-azure-python))
 - HTTP ([Kiota default HTTPX-based implementation](https://github.com/microsoft/kiota-http-python))
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-python))
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-python))
 
-For this tutorial, you will use the default implementations.
+For this tutorial, use the default implementations.
 
 Run the following commands to get the required dependencies.
 
@@ -85,7 +85,7 @@ Create a file in the root of the project named **get_user.py** and add the follo
 
 ## Run the application
 
-Run the following command in your project directory to start the application.
+To start the application, run the following command in your project directory.
 
 ```bash
 python3 get_user.py

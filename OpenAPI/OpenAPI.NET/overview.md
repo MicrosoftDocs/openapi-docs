@@ -1,6 +1,6 @@
 ---
 title: Overview
-description: Learn about the features and use cases for the OpenAPI.NET library
+description: Learn about the features and use cases for the OpenAPI.NET library.
 author: njaci1
 ms.author: kelvinnjaci
 ms.topic: conceptual
@@ -18,7 +18,7 @@ Some of the benefits of using the OpenAPI.NET library when working with OpenAPI 
 
 - **Ease of use:** OpenAPI.NET provides a useful object model for OpenAPI documents, making it easy to create and manipulate OpenAPI documents in your .NET code.
 
-- **Flexibility:** OpenAPI.NET includes readers and writers for serializing and deserializing OpenAPI documents to and from different formats, including JSON and YAML, giving you the flexibility to work with OpenAPI documents in the format of your choice.
+- **Flexibility:** OpenAPI.NET includes readers and writers for serializing and deserializing OpenAPI documents to and from different formats, including JSON and YAML. This functionality gives you the flexibility to work with OpenAPI documents in the format of your choice.
 
 - **Reliability:** OpenAPI.NET can validate OpenAPI documents to ensure that they conform to the OpenAPI specification, helping you to catch and fix errors early in the development process.
 
