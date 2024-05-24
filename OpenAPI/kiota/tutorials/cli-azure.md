@@ -1,15 +1,15 @@
 ---
-title: Build API clients for CLIs with Microsoft identity authentication
-description: Learn how use Kiota to build API clients for CLIs to access APIs that require Microsoft identity authentication.
+title: Build API clients for a command line interface (CLI) with Microsoft identity authentication
+description: Learn how use Kiota to build API clients for a CLI to access APIs that require Microsoft identity authentication.
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: tutorial
 date: 03/20/2023
 ---
 
-# Build API clients for CLIs with Microsoft identity authentication
+# Build API clients for a command line interface (CLI) with Microsoft identity authentication
 
-In this tutorial, you will generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
+In this tutorial, you generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
 
 ## Required tools
 
@@ -29,7 +29,7 @@ dotnet new gitignore
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet) and the [cli-commons package](https://github.com/microsoft/kiota-cli-commons). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet) and the [cli-commons package](https://github.com/microsoft/kiota-cli-commons). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-azure-dotnet))
 - HTTP ([Kiota default HttpClient-based implementation](https://github.com/microsoft/kiota-http-dotnet))
@@ -38,7 +38,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
 - Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-dotnet))
 
-For this tutorial, you will use the default implementations.
+For this tutorial, use the default implementations.
 
 Run the following commands to get the required dependencies.
 
@@ -86,7 +86,7 @@ kiota generate --openapi get-me.yml --language CLI -c GetUserApiClient -n GetUse
 
 ## Create the client application
 
-The final step is to update the **Program.cs** file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
+The final step is to update the **Program.cs** file that was generated as part of the console application to include the following code. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
 :::code language="csharp" source="~/code-snippets/get-started/azure-auth/cli/src/Program.cs" id="ProgramSnippet":::
 
@@ -95,7 +95,7 @@ The final step is to update the **Program.cs** file that was generated as part o
 
 ## Run the application
 
-Run the following command in your project directory to start the application.
+To start the application, run the following command in your project directory.
 
 ```bash
 dotnet run -- me get
@@ -104,5 +104,5 @@ dotnet run -- me get
 ## See also
 
 - [kiota-samples repository](https://github.com/microsoft/kiota-samples/tree/main/get-started/azure-auth/cli) contains the code from this guide.
-- [Additional CLI samples](https://github.com/microsoftgraph/msgraph-cli/tree/main/samples)
+- [More CLI samples](https://github.com/microsoftgraph/msgraph-cli/tree/main/samples)
 - [ToDoItem Sample API](https://github.com/microsoft/kiota-samples/tree/main/sample-api) implements a sample OpenAPI in ASP.NET Core and sample clients in multiple languages.
