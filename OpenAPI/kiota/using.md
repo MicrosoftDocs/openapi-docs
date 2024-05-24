@@ -35,8 +35,8 @@ Kiota offers the following commands to help you build your API client:
 - [generate](#client-generation): generate a client for any API from its description.
 - [update](#client-update): update existing clients from previous generations.
 - [info](#language-information): show languages and runtime dependencies information.
-- [login](#login): signs in to private API descriptions repositories.
-- [logout](#logout): signs out from private API description repositories.
+- [login](#sign-in): signs in to private API descriptions repositories.
+- [logout](#sign-out): signs out from private API description repositories.
 
 ## Description search
 
