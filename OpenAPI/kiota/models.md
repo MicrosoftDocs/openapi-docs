@@ -30,14 +30,17 @@ The following table describes how kiota will project any schema with allOf entri
 | 0 | 0 | 0 | 0 | Ignored/Invalid |
 | 0 | 0 or 1 | 0 or 1 | 1 | Ignored, will process the only allOf entry instead and use the original schema's description and name. |
 | 1 or more | 0 | 0 | 0 | Class/interface without a parent type. |
-| 0 | 1 | 1 | 2 | Class/interface with properties from the inline schema and a parent type from the referenced schema. |
+| 0 | 1 or more | 1 | * | Class/interface with merged properties from the inline schemas and a parent type from the referenced schema. |
 | 1 or more | 0 | 1 | 1 | Class/interface with properties from the current schema and a parent type from the referenced schema. |
 | 1 or more | 1 | 0 | 1 | Class/interface with properties from the current schema and a parent type from the inline schema. |
 | 0 | 0 | 1 | 1 | Class/interface with properties from the referenced schema and without a parent type. |
 | 0 | 1 | 0 | 1 | Class/interface with properties from the inline schema and without a parent type. |
-| 1 or more | 1 | 1 | 2 | Class/interface with properties from the current schema and a parent type from referenced schema if it has properties. |
-| 1 or more | 1 | 1 | 2 | Class/interface with properties from the current schema and a parent type from the inline schema if it has properties. |
-| 1 or more | 1 or more | 1 or more | * | Invalid scenario for inheritance. Will result in a class/interface will all the properties from the current schema as well as all the properties from the allOf entries. |
+| 1 or more | 1 | 1 | 2 | If the referenced schema has properties and the inline schema does not, class/interface with properties from the current schema and a parent type from referenced schema. |
+| 1 or more | 1 | 1 | 2 | If the inline schema has properties and the referenced schema does not. class/interface with properties from the current schema and a parent type from the inline schema. |
+| 1 or more | 1 | 1 | 2 | If both the inline schema and the referenced schema have properties: class/interface with properties from the current schema merged with the inline schema and a parent type from the referenced schema. |
+| 1 or more | 1 | 1 | 2 | If none of the inline and the referenced schema have properties. Class/interface without a parent type. |
+| * | 1 or more | 0 or 1 | * | Class/interface with properties from the main schema, and allOf entries merged. |
+| * | 0 or 1 | 1 or more | * | Class/interface with properties from the main schema, and allOf entries merged. |
 
 > [!NOTE]
 > These rules are applied to allOf entries recursively enabling multi-level inheritance.
