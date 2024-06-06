@@ -99,7 +99,7 @@ OpenAPI: https://raw.githubusercontent.com/github/rest-api-description/main/desc
 
 The search command accepts optional parameters commonly available on the other commands:
 
-- [--clear-cache](#--clear-cache---co)
+- [--clear-cache](#--clear-cache---cc)
 - [--log-level](#--log-level---ll)
 - [--version](#--version--v)
 
@@ -137,7 +137,7 @@ kiota download apisguru::github.com
 The download command accepts optional parameters commonly available on the other commands:
 
 - [--clean-output](#--clean-output---co)
-- [--clear-cache](#--clear-cache---co)
+- [--clear-cache](#--clear-cache---cc)
 - [--log-level](#--log-level---ll)
 - [--output](#--output--o)
 - [--version](#--version--v)
@@ -183,7 +183,7 @@ kiota show -d https://raw.githubusercontent.com/microsoftgraph/msgraph-sdk-power
 The show command accepts optional parameters commonly available on the other commands:
 
 - [--openapi](#--openapi--d)
-- [--clear-cache](#--clear-cache---co)
+- [--clear-cache](#--clear-cache---cc)
 - [--log-level](#--log-level---ll)
 - [--include-path](#--include-path--i)
 - [--exclude-path](#--exclude-path--e)
@@ -228,7 +228,7 @@ kiota generate (--openapi | -d) <path>
 
 The generate command accepts optional parameters commonly available on the other commands:
 
-- [--clear-cache](#--clear-cache---co)
+- [--clear-cache](#--clear-cache---cc)
 - [--clean-output](#--clean-output---co)
 - [--include-path](#--include-path--i)
 - [--exclude-path](#--exclude-path--e)
@@ -505,7 +505,7 @@ kiota info -l CSharp --json
 The info command accepts optional parameters commonly available on the other commands:
 
 - [--openapi](#--openapi--d)
-- [--clear-cache](#--clear-cache---co)
+- [--clear-cache](#--clear-cache---cc)
 - [--log-level](#--log-level---ll)
 - [--language](#--language--l)
 - [--version](#--version--v)
@@ -526,7 +526,7 @@ kiota update [(--output | -o) <path>]
 
 The generate command accepts optional parameters commonly available on the other commands:
 
-- [--clear-cache](#--clear-cache---co)
+- [--clear-cache](#--clear-cache---cc)
 - [--clean-output](#--clean-output---co)
 - [--log-level](#--log-level---ll)
 - [--output](#--output--o)
@@ -585,7 +585,7 @@ Available for commands: download, generate.
 kiota <command name> --clean-output
 ```
 
-### `--clear-cache (--co)`
+### `--clear-cache (--cc)`
 
 Clears the currently cached file for the command. Defaults to false.
 
