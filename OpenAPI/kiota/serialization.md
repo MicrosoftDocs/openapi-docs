@@ -186,4 +186,151 @@ const result = serializeToJson(myUser, serializeUser);
 const deserializedUser = deserializeFromJson(result, createUserFromDiscriminatorValue);
 ```
 
+## Untyped Node
+
+In scenarios where the type information for a property/parameter could in the input description is not present, Kiota will generate with the generic `UntypedNode` type which represent that the property/parameter could be a primitive,object or a collection. As the type information is unknown at compile/generation time, the `UntypedNode` object can be parsed at runtime to call the `GetValue()` methods of the derived types to get the native representation of the node.
+
+The example below shows a sample generic function that parses an `UntypedNode` object parse out the various elements inside it.
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [C#](#tab/csharp)
+
+```cs
+
+using Microsoft.Kiota.Abstractions.Serialization;
+
+private static void ParseUntypedNode(UntypedNode untypedNode)
+{
+    switch (untypedNode)
+    {
+        case UntypedObject untypedObject:
+            Console.WriteLine("Found object value: ");
+            foreach (var (name, node) in untypedObject.GetValue())
+            {
+                Console.WriteLine("Property Name: " + name);
+                ParseUntypedNode(node);// handle the nested nodes
+            }
+            break;
+
+        case UntypedArray untypedArray:
+            Console.WriteLine("Found array value: ");
+            foreach (var item in untypedArray.GetValue())
+            {
+                Console.WriteLine("Array Item: ");
+                ParseUntypedNode(item);// handle the nested nodes
+            }
+            break;
+
+        case UntypedString:
+        case UntypedBoolean:
+        case UntypedDouble:
+        case UntypedFloat:
+        case UntypedInteger:
+        case UntypedLong:
+        case UntypedNull:
+            string scalarAsString = KiotaJsonSerializer.SerializeAsString(untypedNode);
+            Console.WriteLine("Found scalar value : " + scalarAsString);
+            break;
+    }
+}
+```
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [Java](#tab/java)
+
+```java
+import com.microsoft.kiota.serialization.*;
+
+    public static void parseUntypedNode(UntypedNode node) throws IOException {
+        switch (node) {
+            case UntypedArray array -> {
+                System.out.println("Found array value");
+                for(var item: array.getValue()){
+                    System.out.println("New Item");
+                    parseUntypedNode(item);// handle the nested nodes
+                }
+            }
+            case UntypedObject object -> {
+                System.out.println("Found object value");
+                for(var item: object.getValue().entrySet()){
+                    System.out.println("Property name: " + item.getKey());
+                    parseUntypedNode(item.getValue());// handle the nested nodes
+                }
+            }
+            default  -> {
+                String scalarAsString = KiotaJsonSerialization.serializeAsString(node);
+                System.out.println("Found scalar value: " + scalarAsString);
+            }
+        };
+    }
+```
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [Go](#tab/go)
+
+```go
+import (
+    kiotaSerialization "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+func parseUntypedNode(node absser.UntypedNodeable) {
+    switch value := node.(type) {
+        case *absser.UntypedObject:
+            fmt.Printf("Found object value: \n")
+            for key, val := range value.GetValue() {
+                fmt.Printf("Property Name: %v \n", key)
+                parseUntypedNode(val)
+            }
+        case *absser.UntypedArray:
+            fmt.Printf("Found array value: \n")
+            for _, item := range value.GetValue() {
+                fmt.Printf("New Item: \n")
+                parseUntypedNode(item)
+            }
+        case *absser.UntypedBoolean:
+            fmt.Printf("Found bool value: %v \n", *value.GetValue())
+        case *absser.UntypedFloat:
+            fmt.Printf("Found float value: %v \n", *value.GetValue())
+        case *absser.UntypedDouble:
+            fmt.Printf("Found double value: %v \n", *value.GetValue())
+        case *absser.UntypedInteger:
+            fmt.Printf("Found int value: %v \n", *value.GetValue())
+        case *absser.UntypedLong:
+            fmt.Printf("Found long value: %v \n", *value.GetValue())
+        case *absser.UntypedNull:
+            fmt.Printf("Found null value: %v \n", value.GetValue())
+        case *absser.UntypedString:
+            fmt.Printf("Found string value: %v \n", *value.GetValue())
+    }
+}
+```
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [TypeScript](#tab/typescript)
+
+```TS
+import {UntypedNode, isUntypedArray, isUntypedObject, serializeToJson, serializeUntypedNode} from "@microsoft/kiota-abstractions";
+
+function parseUntypedJson(node: UntypedNode) {
+    if (isUntypedArray(node)) {
+        console.log("Found array type: ");
+        for (const dataSet of node.getValue()) {
+            parseUntypedJson(dataSet);// handle the nested nodes
+        }
+    }
+    else if (isUntypedObject(node)) {
+        const properties = node.getValue();
+        console.log("Found object type: ");
+        for (const [key,value] of Object.entries(properties)) {
+            console.log("Found property with name: " + key);
+            parseUntypedJson(value);// handle the nested nodes
+        }
+    }
+    else {
+        var scalarAsString = serializeToJson(node, serializeUntypedNode);
+        console.log("Found scalar value: " + scalarAsString);
+    }
+}
+```
+
 ---
