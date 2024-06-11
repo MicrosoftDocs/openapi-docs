@@ -186,6 +186,8 @@ const result = serializeToJson(myUser, serializeUser);
 const deserializedUser = deserializeFromJson(result, createUserFromDiscriminatorValue);
 ```
 
+---
+
 ## Untyped Node
 
 In scenarios where the type information for a property/parameter in the input OpenAPI description is not present, Kiota will generate with the generic `UntypedNode` type which represent that the property/parameter could be a primitive,object or a collection. As the type information is unknown at compile/generation time, the `UntypedNode` object can be parsed at runtime by calling the `GetValue()` methods of the derived types to get the native representation of the node.
