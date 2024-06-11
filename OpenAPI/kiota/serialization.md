@@ -188,7 +188,7 @@ const deserializedUser = deserializeFromJson(result, createUserFromDiscriminator
 
 ## Untyped Node
 
-In scenarios where the type information for a property/parameter could in the input description is not present, Kiota will generate with the generic `UntypedNode` type which represent that the property/parameter could be a primitive,object or a collection. As the type information is unknown at compile/generation time, the `UntypedNode` object can be parsed at runtime to call the `GetValue()` methods of the derived types to get the native representation of the node.
+In scenarios where the type information for a property/parameter in the input OpenAPI description is not present, Kiota will generate with the generic `UntypedNode` type which represent that the property/parameter could be a primitive,object or a collection. As the type information is unknown at compile/generation time, the `UntypedNode` object can be parsed at runtime by calling the `GetValue()` methods of the derived types to get the native representation of the node.
 
 The example below shows a sample generic function that parses an `UntypedNode` object parse out the various elements inside it.
 
@@ -241,28 +241,28 @@ private static void ParseUntypedNode(UntypedNode untypedNode)
 ```java
 import com.microsoft.kiota.serialization.*;
 
-    public static void parseUntypedNode(UntypedNode node) throws IOException {
-        switch (node) {
-            case UntypedArray array -> {
-                System.out.println("Found array value");
-                for(var item: array.getValue()){
-                    System.out.println("New Item");
-                    parseUntypedNode(item);// handle the nested nodes
-                }
+public static void parseUntypedNode(UntypedNode node) throws IOException {
+    switch (node) {
+        case UntypedArray array -> {
+            System.out.println("Found array value");
+            for(var item: array.getValue()){
+                System.out.println("New Item");
+                parseUntypedNode(item);// handle the nested nodes
             }
-            case UntypedObject object -> {
-                System.out.println("Found object value");
-                for(var item: object.getValue().entrySet()){
-                    System.out.println("Property name: " + item.getKey());
-                    parseUntypedNode(item.getValue());// handle the nested nodes
-                }
+        }
+        case UntypedObject object -> {
+            System.out.println("Found object value");
+            for(var item: object.getValue().entrySet()){
+                System.out.println("Property name: " + item.getKey());
+                parseUntypedNode(item.getValue());// handle the nested nodes
             }
-            default  -> {
-                String scalarAsString = KiotaJsonSerialization.serializeAsString(node);
-                System.out.println("Found scalar value: " + scalarAsString);
-            }
-        };
-    }
+        }
+        default  -> {
+            String scalarAsString = KiotaJsonSerialization.serializeAsString(node);
+            System.out.println("Found scalar value: " + scalarAsString);
+        }
+    };
+}
 ```
 
 <!-- markdownlint-disable-next-line MD051 -->
