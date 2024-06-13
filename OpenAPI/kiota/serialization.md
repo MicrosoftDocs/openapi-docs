@@ -16,7 +16,7 @@ APIs rely on some serialization format (JSON, YAML, XML...) to be able to receiv
 
 ## Additional data holder
 
-The additional data holder interface defines members implemented by models that might include properties in API responses that aren't described in the OpenAPI description of the API.
+The additional data holder interface defines members implemented by models that might include properties in API responses that aren't described in the OpenAPI description of the API. As the type information for these types is unknown at generation time, default serializers will make a best effort attempt during deserialization using [`UntypedNode`](#untyped-node) types.
 
 ```csharp
 public interface IAdditionalDataHolder
@@ -333,6 +333,94 @@ function parseUntypedJson(node: UntypedNode) {
         console.log("Found scalar value: " + scalarAsString);
     }
 }
+```
+
+---
+
+> [!NOTE]
+> As objects of `UntypedNode` implement the `IParsable` interface it is possible to use the serialization helpers from Kiota to serialize them to a string/stream and parse it with a preferable parser based on scenario.
+
+The next example below shows how one can use the `UntypedNode` objects to build a payload that sends a multi-dimensional array(tabular data).
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [C#](#tab/csharp)
+
+```cs
+
+using Microsoft.Kiota.Abstractions.Serialization;
+
+var table = new UntypedArray(new List<UntypedNode>
+{
+    new UntypedArray(new List<UntypedNode>{ new UntypedString("1"),new UntypedString("2"), new UntypedString("3"),}),// row 1
+    new UntypedArray(new List<UntypedNode>{ new UntypedString("4"),new UntypedString("5"), new UntypedString("6"),}),// row 2
+});
+
+var jsonString = KiotaJsonSerializer.SerializeAsString(table);
+```
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [Java](#tab/java)
+
+```java
+import com.microsoft.kiota.serialization.*;
+import java.util.Arrays;
+
+var table = new UntypedArray(Arrays.asList(
+        new UntypedArray(Arrays.asList(
+                new UntypedString("1"), new UntypedString("2"), new UntypedString("3")
+        )),//row 1
+        new UntypedArray(Arrays.asList(
+                new UntypedString("4"), new UntypedString("5"), new UntypedString("6")
+        ))//row 2
+));
+
+String jsonString = KiotaJsonSerialization.serializeAsString(table);
+```
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [Go](#tab/go)
+
+```go
+import (
+    kiotaSerialization "github.com/microsoft/kiota-abstractions-go/serialization"
+)
+
+table := make([]kiotaSerialization.UntypedNodeable, 2)
+
+firstRow := make([]kiotaSerialization.UntypedNodeable, 3)
+firstRow[0] = kiotaSerialization.NewUntypedString("1")
+firstRow[1] = kiotaSerialization.NewUntypedString("2")
+firstRow[2] = kiotaSerialization.NewUntypedString("3")
+
+table[0] = kiotaSerialization.NewUntypedArray(firstRow) // row 1
+
+secondRow := make([]kiotaSerialization.UntypedNodeable, 3)
+secondRow[0] = kiotaSerialization.NewUntypedString("4")
+secondRow[1] = kiotaSerialization.NewUntypedString("5")
+secondRow[2] = kiotaSerialization.NewUntypedString("6")
+table[1] = kiotaSerialization.NewUntypedArray(secondRow) // row 2
+
+tableNode := kiotaSerialization.NewUntypedArray(table)
+
+jsonString, err := kiotaSerialization.SerializeToJson(tableNode)
+```
+
+<!-- markdownlint-disable-next-line MD051 -->
+### [TypeScript](#tab/typescript)
+
+```TS
+import {createUntypedArray, createUntypedString, serializeToJson, serializeToJson} from "@microsoft/kiota-abstractions";
+
+const table = createUntypedArray([
+    createUntypedArray([
+        createUntypedString("1"), createUntypedString("2"), createUntypedString("3"),// row 1
+    ]),
+    createUntypedArray([
+        createUntypedString("4"), createUntypedString("5"), createUntypedString("6"),// row 2
+    ]),
+]);
+
+var json = serializeToJson(table, serializeUntypedNode);
 ```
 
 ---
