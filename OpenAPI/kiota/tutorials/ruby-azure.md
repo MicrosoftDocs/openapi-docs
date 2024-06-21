@@ -9,7 +9,7 @@ date: 03/20/2023
 
 # Build API clients for Ruby with Microsoft identity authentication
 
-In this tutorial, you will generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
+In this tutorial, you generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
 
 ## Required tools
 
@@ -22,13 +22,13 @@ Create a new file named **Gemfile** in the root directory of your project.
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-ruby). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-ruby). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-oauth-ruby))
 - HTTP ([Kiota default Faraday-based implementation](https://github.com/microsoft/kiota-http-ruby))
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-ruby))
 
-For this tutorial, you will use the default implementations.
+For this tutorial, use the default implementations.
 
 1. Edit your **Gemfile** and add the following code.
 
@@ -41,7 +41,7 @@ For this tutorial, you will use the default implementations.
     gem "microsoft_kiota_faraday"
     ```
 
-2. Run the following command to install the dependencies.
+2. To install dependencies, run the following command.
 
     ```bash
     bundle install
@@ -59,7 +59,7 @@ You can then use the Kiota command line tool to generate the API client classes.
 kiota generate -l ruby -d get-me.yml -n Graph -o ./client
 ```
 
-Lastly, create a file called **graph.rb** in the `client` folder that was just created by Kiota. Please add the following code:
+Lastly, create a file called **graph.rb** in the `client` folder that was created by Kiota. Add the following code:
 
 ```ruby
 # frozen_string_literal: true
@@ -85,7 +85,7 @@ end
 
 ## Create the client application
 
-Create a file in the root of the project named **get_user.rb** and add the code below. Replace the `client_id` and `client_secret` with your credentials from the previous step.
+Create a file in the root of the project named **get_user.rb** and add the following code. Replace the `client_id` and `client_secret` with your credentials from the previous step.
 
 [!INCLUDE [get-azure-auth-code-manually](../includes/get-azure-auth-code-manually.md)]
 
@@ -95,7 +95,7 @@ Replace the `auth_code` with your authorization code.
 
 ## Run the application
 
-Run the following command in your project directory to start the application.
+To start the application, run the following command in your project directory.
 
 ```bash
 ruby ./get_user.rb

@@ -1,6 +1,6 @@
 ---
 title: Modify an OpenAPI document
-description: Learn how to use the OpenAPI.NET library to modify an OpenAPI document
+description: Learn how to use the OpenAPI.NET library to modify an OpenAPI document.
 author: njaci1
 ms.author: kelvinnjaci
 ms.topic: conceptual
@@ -8,7 +8,7 @@ ms.topic: conceptual
 
 # Modify an OpenAPI document
 
-The PetStore API described in [Create an OpenAPI document](create-openapi.md) has only one path for getting all pets. Imagine the API has added the capability to add a pet to the store.
+The PetStore API described in [Create an OpenAPI document](create-openapi.md) has only one path for getting all pets. Imagine the API adds the capability to add a pet to the store.
 
 This example adds a new path to the OpenAPI document to describe a new endpoint for adding a pet to the store.
 
@@ -88,7 +88,7 @@ document.SerializeAsV3(writer);
 Console.WriteLine("PetStore OpenAPI document updated.");
 ```
 
-This is how the modified OpenAPI description for PetStore service looks now:
+The following YAML snippet is how the modified OpenAPI description for PetStore service looks now:
 
 ```yaml
 openapi: 3.0.1

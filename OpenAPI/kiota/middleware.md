@@ -7,15 +7,15 @@ ms.topic: overview
 date: 21/11/2023
 ---
 
-# Implementing Middleware
+# Implementing middleware
 
-By registering custom middleware handlers you can perform operations before a request is made. For example, auditing and filtering the request before the client sends it.
+By registering custom middleware handlers, you can perform operations before a request is made. For example, auditing and filtering the request before the client sends it.
 
 ## Middleware
 
-Create your middleware class and add your business requirements. For example you may wish to add custom Headers to the request or filter headers and content.
+Create your middleware class and add your business requirements. For example, you might wish to add custom headers to the request or filter headers and content.
 
-```cs
+```csharp
 public class SaveRequestHandler : DelegatingHandler
 {
     protected override async Task<HttpResponseMessage> SendAsync(
@@ -29,27 +29,27 @@ public class SaveRequestHandler : DelegatingHandler
 }
 ```
 
-## Register Middleware
+## Register middleware
 
-Create a middleware handlers array and use the existing middleware already implemented within **Microsoft.Kiota.HttpClientLibrary** that includes existing handlers like retry, redirect and more.
+Create a middleware handlers array and use the existing middleware already implemented within **Microsoft.Kiota.HttpClientLibrary** that includes existing handlers like retry, redirect, and more.
 
-```cs
+```csharp
 var handlers = KiotaClientFactory.CreateDefaultHandlers();
 handlers.Add(new SaveRequestHandler());
 ```
 
-Next you will need to create a Delegate chain so the middleware handlers are registered in the right order.
+Next you need to create a delegate chain so the middleware handlers are registered in the right order.
 
-```cs
+```csharp
 var httpMessageHandler =
     KiotaClientFactory.ChainHandlersCollectionAndGetFirstLink(
         KiotaClientFactory.GetDefaultHttpMessageHandler(),
         handlers.ToArray());
 ```
 
-Finally, create a request adapter using a HttpClient with the message handler that was just created. This adapter can then be used when submitting requests from the generated client. This design means different adapters/middleware can be used when calling APIs and therefore gives flexibility to how and when a middleware handler is used.
+Finally, create a request adapter using an `HttpClient` with the message handler. This adapter can then be used when submitting requests from the generated client. This design means different adapters/middleware can be used when calling APIs and therefore gives flexibility to how and when a middleware handler is used.
 
-```cs
+```csharp
 var httpClient = new HttpClient(httpMessageHandler!);
 var adapter = new HttpClientRequestAdapter(authProvider, httpClient:httpClient);
 var client = new PostsClient(adapter); // the name of the client will vary based on your generation parameters

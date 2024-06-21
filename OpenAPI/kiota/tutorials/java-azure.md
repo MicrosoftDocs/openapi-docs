@@ -11,7 +11,7 @@ date: 03/20/2023
 
 ## Required tools
 
-- [JDK 16](https://adoptopenjdk.net/)
+- [Java Development Kit (JDK) 16](https://adoptopenjdk.net/)
 - [Gradle 7.4](https://gradle.org/install/)
 
 ## Create a project
@@ -24,7 +24,7 @@ gradle init --dsl groovy --test-framework junit --type java-application --projec
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-java). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-java). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-java))
 - HTTP ([Kiota default OkHttp-based implementation](https://github.com/microsoft/kiota-java))
@@ -33,7 +33,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-java))
 - Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-java))
 
-For this tutorial, you will use the default implementations.
+For this tutorial, use the default implementations.
 
 Edit **./app/build.gradle** to add the following dependencies.
 
@@ -72,7 +72,7 @@ kiota generate -l java -d get-me.yml -c GetUserApiClient -n getuserclient.apicli
 
 ## Create the client application
 
-The final step is to update the **./app/src/main/java/getuserclient/App.java** file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
+The final step is to update the **./app/src/main/java/getuserclient/App.java** file that was generated as part of the console application to include the following code. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
 :::code language="java" source="~/code-snippets/get-started/azure-auth/java/app/src/main/java/getuserclient/App.java" id="ProgramSnippet":::
 
@@ -81,7 +81,7 @@ The final step is to update the **./app/src/main/java/getuserclient/App.java** f
 
 ## Run the application
 
-Run the following command in your project directory to start the application.
+To start the application, run the following command in your project directory.
 
 ```bash
 ./gradlew --console plain run

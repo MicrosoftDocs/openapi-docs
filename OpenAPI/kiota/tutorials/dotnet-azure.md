@@ -9,7 +9,7 @@ date: 11/29/2023
 
 # Build API clients for .NET with Microsoft identity authentication
 
-In this tutorial, you will generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
+In this tutorial, you generate an API client that uses [Microsoft identity authentication](/azure/active-directory/fundamentals/auth-oauth2) to access [Microsoft Graph](/graph/overview).
 
 ## Required tools
 
@@ -27,7 +27,7 @@ dotnet new gitignore
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you will need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
 - Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-azure-dotnet))
 - HTTP ([Kiota default HttpClient-based implementation](https://github.com/microsoft/kiota-http-dotnet))
@@ -36,7 +36,7 @@ Before you can compile and run the generated API client, you will need to make s
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
 - Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-dotnet))
 
-For this tutorial, you will use the default implementations.
+For this tutorial, use the default implementations.
 
 Run the following commands to get the required dependencies.
 
@@ -81,7 +81,7 @@ kiota generate -l csharp -d get-me.yml -c GetUserApiClient -n GetUserClient.ApiC
 
 ## Create the client application
 
-The final step is to update the _Program.cs_ file that was generated as part of the console application to include the code below. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
+The final step is to update the _Program.cs_ file that was generated as part of the console application to include the following code. Replace `YOUR_CLIENT_ID` with the client ID from your app registration.
 
 :::code language="csharp" source="~/code-snippets/get-started/azure-auth/dotnet/src/Program.cs" id="ProgramSnippet":::
 
@@ -90,7 +90,7 @@ The final step is to update the _Program.cs_ file that was generated as part of 
 
 ## Run the application
 
-Run the following command in your project directory to start the application.
+To start the application, run the following command in your project directory.
 
 ```dotnetcli
 dotnet run

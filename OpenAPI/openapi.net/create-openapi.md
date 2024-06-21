@@ -1,6 +1,6 @@
 ---
 title: Create an OpenAPI document
-description: Learn how to use the OpenAPI.NET library to create an OpenAPI document
+description: Learn how to use the OpenAPI.NET library to create an OpenAPI document.
 author: njaci1
 ms.author: kelvinnjaci
 ms.topic: conceptual
@@ -92,7 +92,7 @@ document.SerializeAsV3(writer);
 Console.WriteLine("PetStore OpenAPI document created and saved.");
 ```
 
-Here is the resulting OpenAPI description for our PetStore service:
+Here's the resulting OpenAPI description for our PetStore service:
 
 ```yaml
 openapi: 3.0.1
