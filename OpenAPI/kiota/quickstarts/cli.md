@@ -74,6 +74,11 @@ You can then use the Kiota command line tool to generate the API client classes.
 kiota generate -l CLI -c PostsClient -n KiotaPostsCLI.Client -d ./posts-api.yml -o ./src/Client
 ```
 
+> [!TIP]
+> Add [`--exclude-backward-compatible`](../using.md#--exclude-backward-compatible---ebc)
+> if you want to reduce the size of the generated client and are not concerned about
+> potentially source breaking changes with future versions of Kiota when updating the client.
+
 ## Create the client application
 
 The final step is to update the **Program.cs** file that was generated as part of the console application, replacing its contents with the following code.
