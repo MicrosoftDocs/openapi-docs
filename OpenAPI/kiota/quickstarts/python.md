@@ -65,6 +65,11 @@ You can then use the Kiota command line tool to generate the API client classes.
 kiota generate -l python -c PostsClient -n client -d ./posts-api.yml -o ./client
 ```
 
+> [!TIP]
+> Add [`--exclude-backward-compatible`](../using.md#--exclude-backward-compatible---ebc)
+> if you want to reduce the size of the generated client and are not concerned about
+> potentially source breaking changes with future versions of Kiota when updating the client.
+
 ## Create the client application
 
 Create a file in the root of the project named **main.py** and add the following code.
