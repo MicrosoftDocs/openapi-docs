@@ -65,6 +65,11 @@ You can then use the Kiota command line tool to generate the API client classes.
 kiota generate -l java -c PostsClient -n kiotaposts.client -d ./posts-api.yml -o ./app/src/main/java/kiotaposts/client
 ```
 
+> [!TIP]
+> Add [`--exclude-backward-compatible`](../using.md#--exclude-backward-compatible---ebc)
+> if you want to reduce the size of the generated client and are not concerned about
+> potentially source breaking changes with future versions of Kiota when updating the client.
+
 ## Create the client application
 
 The final step is to update the **./app/src/main/java/kiotaposts/App.java** file that was generated as part of the console application, replacing its contents with the following code.
