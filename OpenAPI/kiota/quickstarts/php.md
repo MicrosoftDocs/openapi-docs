@@ -63,6 +63,11 @@ You can then use the Kiota command line tool to generate the API client classes.
 kiota generate -l PHP -d ../posts-api.yml -c PostsApiClient -n KiotaPosts\Client -o ./client
 ```
 
+> [!TIP]
+> Add [`--exclude-backward-compatible`](../using.md#--exclude-backward-compatible---ebc)
+> if you want to reduce the size of the generated client and are not concerned about
+> potentially source breaking changes with future versions of Kiota when updating the client.
+
 Add the following to your `composer.json` to set your namespaces correctly:
 
 ```json
