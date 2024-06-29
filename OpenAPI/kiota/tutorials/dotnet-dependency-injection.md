@@ -51,14 +51,15 @@ dotnet add package Microsoft.Kiota.Serialization.Multipart
 
 ## Generate the API client
 
-Kiota generates API clients from OpenAPI documents. Create a file named _github-releases.yml_ and add the following.
-
-:::code language="yaml" source="~/code-snippets/get-started/dotnet-dependency-injection/github-releases.yml":::
+Kiota generates API clients from OpenAPI documents. Let's download the github api specs and generate the api client.
 
 You can then use the [Kiota](/openapi/kiota/install?tabs=bash&wt.mc_id=SEC-MVP-5004985#install-as-net-tool) command line tool to generate the API client classes.
 
 ```bash
-kiota generate -l csharp -d github-releases.yml -c GitHubClient -n GitHub.ApiClient -o ./GitHub
+# Download the specs to ./github-api.json
+kiota download apisguru::github.com -o ./github-api.json
+# Generate the client, path filter for just releases
+kiota generate -l csharp -d github-api.json -c GitHubClient -n GitHub.ApiClient -o ./GitHub --include-path "/repos/{owner}/{repo}/releases/*" --clean-output
 ```
 
 ## Create extension methods
