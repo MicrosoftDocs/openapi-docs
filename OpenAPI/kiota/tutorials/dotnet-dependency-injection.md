@@ -79,21 +79,7 @@ This is what you call a factory pattern, where you create a factory class that i
 
 Open the _Program.cs_ file and add the following code above the `var app = builder.Build();` line. Sample [Program.cs](https://github.com/microsoft/kiota-samples/blob/main/get-started/dotnet-dependency-injection/Program.cs).
 
-```csharp
-// Add Kiota handlers to the dependency injection container
-builder.Services.AddKiotaHandlers();
-
-// Register the factory for the GitHub client
-builder.Services.AddHttpClient<GitHubClientFactory>((sp, client) => {
-    // Set the base address and accept header
-    // or other settings on the http client
-    client.BaseAddress = new Uri("https://api.github.com");
-    client.DefaultRequestHeaders.Add("Accept", "application/vnd.github.v3+json");
-}).AttachKiotaHandlers(); // Attach the Kiota handlers to the http client, this is to enable all the Kiota features.
-
-// Register the GitHub client
-builder.Services.AddTransient(sp => sp.GetRequiredService<GitHubClientFactory>().GetClient());
-```
+:::code language="csharp" source="~/code-snippets/get-started/dotnet-dependency-injection/Program.cs" highlight="9-23":::
 
 ## Create an endpoint
 
@@ -101,15 +87,7 @@ We will now create an endpoint that uses the GitHub client from dependency injec
 
 Open the _Program.cs_ file and add the following code above the `app.Run();` line. Sample [Program.cs](https://github.com/microsoft/kiota-samples/blob/main/get-started/dotnet-dependency-injection/Program.cs).
 
-```csharp
-app.MapGet("/dotnet/releases", async (GitHub.ApiClient.GitHubClient client, CancellationToken cancellationToken) =>
-{
-    var releases = await client.Repos["dotnet"]["runtime"].Releases["latest"].GetAsync(cancellationToken: cancellationToken);
-    return releases;
-})
-.WithName("GetDotnetReleases")
-.WithOpenApi();
-```
+:::code language="csharp" source="~/code-snippets/get-started/dotnet-dependency-injection/Program.cs" highlight="56-66":::
 
 ## Run the application
 
