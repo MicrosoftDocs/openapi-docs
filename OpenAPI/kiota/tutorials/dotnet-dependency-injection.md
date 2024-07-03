@@ -9,7 +9,7 @@ date: 05/10/2024
 
 # Register a Kiota API client in .NET with dependency injection
 
-In this tutorial, you will learn how to register a [Kiota API client](/openapi/kiota/tutorials/dotnet-azure) with [dependency injection](/dotnet/core/extensions/dependency-injection-usage?wt.mc_id=SEC-MVP-5004985).
+In this tutorial, you learn how to register a [Kiota API client](/openapi/kiota/tutorials/dotnet-azure) with [dependency injection](/dotnet/core/extensions/dependency-injection-usage?wt.mc_id=SEC-MVP-5004985).
 
 ## Required tools
 
@@ -51,7 +51,7 @@ dotnet add package Microsoft.Kiota.Serialization.Multipart
 
 ## Generate the API client
 
-Kiota generates API clients from OpenAPI documents. Let's download the github api specs and generate the api client.
+Kiota generates API clients from OpenAPI documents. Let's download the GitHub API specs and generate the API client.
 
 You can then use the [Kiota](/openapi/kiota/install?tabs=bash&wt.mc_id=SEC-MVP-5004985#install-as-net-tool) command line tool to generate the API client classes.
 
@@ -72,7 +72,7 @@ Create a new file named _KiotaServiceCollectionExtensions.cs_ in the root of you
 
 Create a new file named _GitHubClientFactory.cs_ in the _GitHub_ folder and add the following code.
 
-This is what you call a factory pattern, where you create a factory class that is responsible for creating an instance of the client. This way you have a single place that is responsible for creating the client, and you can easily change the way the client is created. In this sample we will be registering the factory in the dependency injection container as well, because it will get the `HttpClient` injected in the constructor.
+The code in these files implement a factory pattern, where you create a factory class that is responsible for creating an instance of the client. This way you have a single place that is responsible for creating the client, and you can easily change the way the client is created. In this sample we are registering the factory in the dependency injection container as well, because it gets the `HttpClient` injected in the constructor.
 
 :::code language="csharp" source="~/code-snippets/get-started/dotnet-dependency-injection/GitHub/GitHubClientFactory.cs":::
 
@@ -92,7 +92,7 @@ Open the _Program.cs_ file and add the following code above the `app.Run();` lin
 
 ## Run the application
 
-Run the following command in your project directory to start the application.
+To start the application run the following command in your project directory.
 
 ```dotnetcli
 dotnet run
@@ -106,7 +106,7 @@ The `GitHubClientFactory` class is responsible for creating the client, and it i
 
 The `GitHubClientFactory` is used through dependency injection, which means you can have other types injected by the constructor that are needed for the authentication provider.
 
-You might want to create a [BaseBearerTokenAuthenticationProvider](/openapi/kiota/authentication?tabs=csharp&wt.mc_id=SEC-MVP-5004985#base-bearer-token-authentication-provider) that is available in Kiota and expects an `IAccessTokenProvider` which is just an interface with one method "give me an access token". Access tokens usually have a lifetime of 1 hour, which is why you need to get them at runtime and not set them at registration time.
+You might want to create a [BaseBearerTokenAuthenticationProvider](/openapi/kiota/authentication?tabs=csharp&wt.mc_id=SEC-MVP-5004985#base-bearer-token-authentication-provider) that is available in Kiota and expects an `IAccessTokenProvider`, which is just an interface with one method to provide an access token. Access tokens usually have a lifetime of 1 hour, which is why you need to get them at runtime and not set them at registration time.
 
 ## See also
 
