@@ -14,6 +14,7 @@ In this tutorial, you generate an API client that uses [Microsoft identity authe
 ## Required tools
 
 - [.NET SDK 8.0](https://get.dot.net/8)
+- [Kiota CLI](/openapi/kiota/install?tabs=bash&wt.mc_id=SEC-MVP-5004985#install-as-net-tool)
 
 ## Create a project
 
