@@ -41,6 +41,7 @@ Before you can compile and run the generated API client, you need to make sure t
 - JSON serialization ([Kiota default](https://github.com/microsoft/kiota-java))
 - Text serialization ([Kiota default](https://github.com/microsoft/kiota-java))
 - Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-java))
+- Jakarta annotations [Maven Central](https://central.sonatype.com/artifact/jakarta.annotation/jakarta.annotation-api)
 
 For this tutorial, use the default implementations.
 
