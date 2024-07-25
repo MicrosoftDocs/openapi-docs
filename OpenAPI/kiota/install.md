@@ -44,7 +44,7 @@ You can run Kiota in our Docker container with one of the following commands.
 
 ```bash
 docker run -v /some/output/path:/app/output \
--v /some/input/description.yml:/app/openapi.yml \
+-v /some/input/description.yml:/app/openapi.yaml \
 mcr.microsoft.com/openapi/kiota generate --language csharp -n namespace-prefix
 ```
 
@@ -52,7 +52,7 @@ mcr.microsoft.com/openapi/kiota generate --language csharp -n namespace-prefix
 
 ```powershell
 docker run -v /some/output/path:/app/output `
--v /some/input/description.yml:/app/openapi.yml `
+-v /some/input/description.yml:/app/openapi.yaml `
 mcr.microsoft.com/openapi/kiota generate --language csharp -n namespace-prefix
 ```
 
