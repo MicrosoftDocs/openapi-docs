@@ -113,7 +113,7 @@ This property always returns a value (non-null) and never throws an exception.
 
 ### Indexers
 
-Indexers are used for navigation path segments that declare a single unnamed parameter. This design choice was made as often APIs use that pattern for indexable collections endpoints.
+Indexers are used for navigation path segments that declare a single unnamed parameter. This design choice was made as APIs often use that pattern for indexable collections endpoints.
 
 In the following example:
 
