@@ -11,7 +11,7 @@ date: 03/21/2023
 
 On most platforms, there are a range of different HTTP client library implementations. Developers often have preferences on which is the best implementation to meet their needs. Kiota's objective is to make it easier to create an HTTP request object but attempt to be agnostic of the library that makes the HTTP call. In order to decouple Kiota from specific HTTP libraries, we defined a set of abstractions.
 
-Kiota attempts to minimizing the amount of generated code to decrease processing time and reduce the binary footprint of the client libraries. In order to achieve this goal, we attempt to put as much code as a possible into the core libraries. Kiota ships with a default set of core libraries that include default implementations for HTTP transport, authentication, and serialization. Replacing these core libraries with ones optimized for your scenarios is a supported scenario.
+Kiota attempts to minimize the amount of generated code to decrease processing time and reduce the binary footprint of the client libraries. In order to achieve this goal, we attempt to put as much code as a possible into the core libraries. Kiota ships with a default set of core libraries that include default implementations for HTTP transport, authentication, and serialization. Replacing these core libraries with ones optimized for your scenarios is a supported scenario.
 
 The core libraries take care of all generic processing of HTTP requests. The service library that Kiota generates is designed to create a strongly typed layer over the core libraries to simplify the process of creating requests and consuming responses.
 
