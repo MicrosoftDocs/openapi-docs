@@ -20,7 +20,9 @@ You can add your API descriptions to the search result by following these steps:
 
 1. Add the **kiota-index** topic to your GitHub repository.
 1. Add an **apis.json** or **apis.yaml** file at the root of your repository on your main branch.
-1. Make sure the repository is public and that it has a description.
+1. Make sure the repository has a description and:
+    1. The repository is public
+    1. Or the [kiota GitHub application](https://aka.ms/kiota/for/github) is installed on the repository, users are allowed to read the repository, and they are signed into kiota.
 
 ### Example apis.yaml
 
