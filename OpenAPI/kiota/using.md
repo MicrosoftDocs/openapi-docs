@@ -541,12 +541,14 @@ kiota info --language <language> --dependency-type authentication
 
 Accepted values:
 
-- Abstractions dependencies define the core concepts of the language. Required at build time.
-- Authentication dependencies implement authentication providers. Optional at runtime.
-- Additional dependencies are required in addition to the abstractions or bundle. Required at build time.
-- Bundle dependencies include abstractions, serialization and HTTP dependencies for simpler management.
-- HTTP dependencies implement the request adapter with a specific HTTP client. Required at runtime.
-- Serialization dependencies implement serialization and deserialization for a given format. Required at runtime.
+| Value | Description | Requirement |
+| ----- | ----------- | -------- |
+| Abstractions | Define the core concepts of the language. | Build time |
+| Additional | Required in addition to the abstractions or bundle. | Build time |
+| Authentication | Implement authentication providers. | Optional |
+| Bundle | Include abstractions, serialization and HTTP dependencies for simpler management. | |
+| HTTP | Implement the request adapter with a specific HTTP client. | Runtime |
+| Serialization | Implement serialization and deserialization for a given format. | Runtime |
 
 When no value is provided the info command will display:
 
