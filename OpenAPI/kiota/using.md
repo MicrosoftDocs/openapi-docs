@@ -412,6 +412,8 @@ kiota info [(--openapi | -d) <path>]
       [--clear-cache | --cc]
       [(--version | -v) <version>]
       [(--search-key | -k) <searchKey>]
+      [(--dependency-type | --dt) <typeKey>]
+      [(--json)]
 ```
 
 ### Example - global
@@ -455,6 +457,21 @@ dotnet add package Microsoft.Kiota.Serialization.Text --version 1.1.0
 dotnet add package Microsoft.Kiota.Serialization.Multipart --version 1.1.0
 ```
 
+### Optional Parameters
+
+The info command accepts optional parameters commonly available on the other commands:
+
+- [--openapi](#--openapi--d)
+- [--clear-cache](#--clear-cache---cc)
+- [--log-level](#--log-level---ll)
+- [--language](#--language--l)
+- [--version](#--version--v)
+- [--search-key](#--search-key--k)
+- [--dependency-type](#--dependency-type---dt)
+- [--json](#--json)
+
+### `--json`
+
 Using the `--json` optional parameter renders the output in a machine parsable format:
 
 ```bash
@@ -468,31 +485,43 @@ kiota info -l CSharp --json
   "dependencies": [
     {
       "name": "Microsoft.Kiota.Abstractions",
-      "version": "1.6.1"
+      "version": "1.6.1",
+      "type": "abstractions"
     },
     {
       "name": "Microsoft.Kiota.Http.HttpClientLibrary",
-      "version": "1.2.0"
+      "version": "1.2.0",
+      "type": "http"
     },
     {
       "name": "Microsoft.Kiota.Serialization.Form",
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "type": "serialization"
     },
     {
       "name": "Microsoft.Kiota.Serialization.Json",
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "type": "serialization"
     },
     {
       "name": "Microsoft.Kiota.Authentication.Azure",
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "type": "authentication"
     },
     {
       "name": "Microsoft.Kiota.Serialization.Text",
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "type": "serialization"
     },
     {
       "name": "Microsoft.Kiota.Serialization.Multipart",
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "type": "serialization"
+    },
+    {
+      "name": "Microsoft.Kiota.Bundle",
+      "version": "1.1.0",
+      "type": "bundle"
     }
   ],
   "clientClassName": "",
@@ -500,16 +529,29 @@ kiota info -l CSharp --json
 }
 ```
 
-### Optional Parameters
+### `--dependency type (--dt)`
 
-The info command accepts optional parameters commonly available on the other commands:
+Since: 1.18.1
 
-- [--openapi](#--openapi--d)
-- [--clear-cache](#--clear-cache---cc)
-- [--log-level](#--log-level---ll)
-- [--language](#--language--l)
-- [--version](#--version--v)
-- [--search-key](#--search-key--k)
+The type of dependencies to display when used in combination with the language option. Does not impact the json output. Accepts multiple values. Default empty.
+
+```bash
+kiota info --language <language> --dependency-type authentication
+```
+
+Accepted values:
+
+- Abstractions dependencies define the core concepts of the language. Required at build time.
+- Authentication dependencies implement authentication providers. Optional at runtime.
+- Additional dependencies are required in addition to the abstractions or bundle. Required at build time.
+- Bundle dependencies include abstractions, serialization and HTTP dependencies for simpler management.
+- HTTP dependencies implement the request adapter with a specific HTTP client. Required at runtime.
+- Serialization dependencies implement serialization and deserialization for a given format. Required at runtime.
+
+When no value is provided the info command will display:
+
+- All dependencies when no bundle is available.
+- Bundle, authentication and additional dependencies when a bundle is available.
 
 ## Client update
 
