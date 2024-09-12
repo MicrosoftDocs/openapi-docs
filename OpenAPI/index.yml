@@ -27,7 +27,7 @@ highlightedContent:
 
 productDirectory:
   title: Kiota
-  summary: Kiota builds API clients from OpenAPI descriptions
+  summary: Kiota builds API clients and plugins from OpenAPI descriptions
   items:
   - title: .NET
     imageSrc: /media/logos/logo_NET.svg
