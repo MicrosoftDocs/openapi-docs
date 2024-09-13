@@ -536,7 +536,7 @@ Since: 1.18.1
 The type of dependencies to display when used in combination with the language option. Does not impact the json output. Accepts multiple values. Default empty.
 
 ```bash
-kiota info --language <language> --dependency-type authentication
+kiota info --language CSharp --dependency-type authentication
 ```
 
 Accepted values:
