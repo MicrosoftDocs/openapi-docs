@@ -54,7 +54,7 @@ This file is a minimal OpenAPI description that describes how to call the `/post
 You can then use the Kiota command line tool to generate the API client classes.
 
 ```bash
-kiota generate -l java -c PostsClient -n kiotaposts.client -d ./posts-api.yml -o ./app/src/main/java/kiotaposts/client
+kiota generate -l java -c PostsClient -n kiotaposts.client -d ./posts-api.yml -o ./app/src/main/java/kiotaposts/client --ds none -s none
 ```
 
 > [!TIP]

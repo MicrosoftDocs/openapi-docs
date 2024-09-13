@@ -44,7 +44,7 @@ Kiota generates API clients from OpenAPI documents. Create a file named **get-me
 You can then use the Kiota command line tool to generate the SDK classes.
 
 ```bash
-kiota generate -l java -d get-me.yml -c GetUserApiClient -n getuserclient.apiclient -o ./app/src/main/java/getuserclient/apiclient
+kiota generate -l java -d get-me.yml -c GetUserApiClient -n getuserclient.apiclient -o ./app/src/main/java/getuserclient/apiclient --ds none -s none
 ```
 
 ## Register an application
