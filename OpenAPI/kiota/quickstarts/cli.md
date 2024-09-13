@@ -38,26 +38,15 @@ In case you're adding a Kiota client to an existing project, the following confi
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet) and the [cli-commons package](https://github.com/microsoft/kiota-cli-commons). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
-
-- HTTP ([Kiota default HttpClient-based implementation](https://github.com/microsoft/kiota-http-dotnet))
-- Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-dotnet))
-- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-dotnet))
-- Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
-- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-dotnet))
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-dotnet) and the [cli-commons package](https://github.com/microsoft/kiota-cli-commons). For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
 
 For this tutorial, use the default implementations.
 
 Run the following commands to get the required dependencies.
 
 ```bash
-dotnet add package Microsoft.Kiota.Abstractions
+dotnet add package Microsoft.Kiota.Bundle
 dotnet add package Microsoft.Kiota.Cli.Commons --prerelease
-dotnet add package Microsoft.Kiota.Http.HttpClientLibrary
-dotnet add package Microsoft.Kiota.Serialization.Form
-dotnet add package Microsoft.Kiota.Serialization.Json
-dotnet add package Microsoft.Kiota.Serialization.Text
-dotnet add package Microsoft.Kiota.Serialization.Multipart
 ```
 
 ## Generate the API client
