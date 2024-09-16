@@ -214,6 +214,7 @@ kiota generate (--openapi | -d) <path>
       [(--exclude-path | -e) <glob pattern>]
       [(--disable-validation-rules | --dvr) <rule name>]
       [--disable-ssl-validation | --dsv]
+      [(--type-access-modifier | --tam) <access modifier>]
 ```
 
 > [!NOTE]
@@ -399,6 +400,33 @@ Any valid MIME type that matches a request body type or a response type in the O
 
 ```bash
 kiota generate --structured-mime-types application/json
+```
+
+#### `--type-access-modifier (--tam)`
+
+Controls the accessibility level for generated client types.
+
+This can be useful to reduce the scope of visibility in library scenarios where you do not want to expose the generated types to consuming projects.
+
+Default value:
+
+- `Public`
+
+> [!NOTE]
+> This is currently only available for `--language CSharp`
+
+Available for commands: generate.
+
+#### Accepted values
+
+- `Public`
+- `Internal`
+- `Protected`
+
+### Examples
+
+```bash
+kiota generate --type-access-modifier Internal
 ```
 
 ## Language information
