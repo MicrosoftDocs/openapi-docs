@@ -28,25 +28,13 @@ dotnet new gitignore
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, ensure the generated source files are part of a project with the required dependencies. Your project must reference the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet) and default implementations.
-
-- HTTP ([Kiota default HttpClient-based implementation](https://github.com/microsoft/kiota-http-dotnet)) version `1.4.2` or higher
-- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-dotnet))
-- Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-dotnet))
-- Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
-- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-dotnet))
-- HttpClient support for Dependency Injection [Microsoft.Extensions.Http](https://www.nuget.org/packages/Microsoft.Extensions.Http)
+Before you can compile and run the generated API client, ensure the generated source files are part of a project with the required dependencies. Your project must reference the [bundle package](https://github.com/microsoft/kiota-dotnet). For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
 
 Run the following commands to get the required dependencies.
 
 ```dotnetcli
 dotnet add package Microsoft.Extensions.Http
-dotnet add package Microsoft.Kiota.Abstractions
-dotnet add package Microsoft.Kiota.Http.HttpClientLibrary
-dotnet add package Microsoft.Kiota.Serialization.Json
-dotnet add package Microsoft.Kiota.Serialization.Form
-dotnet add package Microsoft.Kiota.Serialization.Text
-dotnet add package Microsoft.Kiota.Serialization.Multipart
+dotnet add package Microsoft.Kiota.Bundle
 ```
 
 ## Generate the API client
