@@ -9,7 +9,7 @@ date: 03/21/2023
 
 # Managing dependencies of Kiota API clients
 
-Kiota clients require multiple dependencies to function properly. In this documentation page you'll find details about each dependency, which package to use in each language and guidance on how to properly manage these dependencies for your application.
+Kiota clients require multiple dependencies to function properly. In this documentation page, you find details about each dependency, which package to use in each language and guidance on how to properly manage these dependencies for your application.
 
 ## Guidance
 
@@ -21,9 +21,9 @@ For the best experience, after generating or updating a client, always ensure th
 
 ### Dependencies selection
 
-In most cases, the [bundle](#bundle) package and any [additionally required package](#additional) for the language you are using will bring most dependencies your application needs.
+In most cases, the [bundle](#bundle) package and any [additionally required package](#additional) for the language you're using brings most dependencies your application needs.
 
-If your application requires a specific [HTTP](#http) client, [serialization](#serialization) library or format, you'll need to at least add the abstractions and additionally required dependencies for the language you're using. Additionally, you can select default implementations for HTTP and serialization packages, or swap them for third party or your own implementations.
+If your application requires a specific [HTTP](#http) client, [serialization](#serialization) library or format, you need to at least add the abstractions and additionally required dependencies for the language you're using. Additionally, you can select default implementations for HTTP and serialization packages, or swap them for third party or your own implementations.
 
 Additionally, your application might need to reference an [authentication](#authentication) package depending on the target API.
 
@@ -49,7 +49,7 @@ The following table provides the list of abstractions package per language.
 
 ## Serialization
 
-Kiota provides default implementation for diverse serialization formats. These dependencies are required at runtime. Depending the the application requirements those implementations can be used as is, swapped or augmented with implementations from the application, or swapped with third party implementations.
+Kiota provides default implementation for diverse serialization formats. These dependencies are required at runtime. Depending the application requirements those implementations can be used as is, swapped or augmented with implementations from the application, or swapped with third party implementations.
 
 [More information about the serialization packages](./serialization.md)
 
@@ -127,7 +127,7 @@ The following table provides the list of serialization package per language.
 
 ## Http
 
-Kiota provides a default request adapter implementation to convert abstract request information objects created by the generated fluent API to HTTP requests. This dependency is required at runtime. Depending the the application requirements this implementation can be used as is, swapped with another implementation from the application, or swapped with a third party implementation.
+Kiota provides a default request adapter implementation to convert abstract request information objects created by the generated fluent API to HTTP requests. This dependency is required at runtime. Depending the application requirements this implementation can be used as is, swapped with another implementation from the application, or swapped with a third party implementation.
 
 [More information about the HTTP package](./middleware.md).
 
@@ -147,7 +147,7 @@ The following table provides the list of HTTP package per language.
 
 ## Authentication
 
-Depending on authentication requirements from the target REST APIs, your application might additionally need an authentication dependency. Kiota provides default implementation providers for specific scenarios. Depending the the application requirements those implementations can be used as is, swapped or augmented with implementations from the application, or swapped with third party implementations.
+Depending on authentication requirements from the target REST APIs, your application might additionally need an authentication dependency. Kiota provides default implementation providers for specific scenarios. Depending the application requirements those implementations can be used as is, swapped or augmented with implementations from the application, or swapped with third party implementations.
 
 [More information about the authentication package](./authentication.md)
 
@@ -189,7 +189,7 @@ The following table provides the list of additional package per language.
 
 ## Bundle
 
-To simplify dependencies management, kiota now offers bundles which contains abstractions, the default serialization implementations, and the default http implementation. Bundle packages can be used as an alternative to adding references to those packages.
+To simplify dependencies management, kiota now offers bundle packages. These packages contain the abstractions, the default serialization implementations, and the default http implementation. Bundle packages can be used as an alternative to adding references to those packages.
 
 The following table provides the list of bundle package per language.
 
