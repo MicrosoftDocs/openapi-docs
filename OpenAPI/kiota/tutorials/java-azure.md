@@ -24,15 +24,7 @@ gradle init --dsl groovy --test-framework junit --type java-application --projec
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-java). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
-
-- Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-java))
-- HTTP ([Kiota default OkHttp-based implementation](https://github.com/microsoft/kiota-java))
-- Form serialization ([Kiota default](https://github.com/microsoft/kiota-java))
-- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-java))
-- Text serialization ([Kiota default](https://github.com/microsoft/kiota-java))
-- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-java))
-- Jakarta annotations [Maven Central](https://central.sonatype.com/artifact/jakarta.annotation/jakarta.annotation-api)
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-java).  For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
 
 For this tutorial, use the default implementations.
 
@@ -52,7 +44,7 @@ Kiota generates API clients from OpenAPI documents. Create a file named **get-me
 You can then use the Kiota command line tool to generate the SDK classes.
 
 ```bash
-kiota generate -l java -d get-me.yml -c GetUserApiClient -n getuserclient.apiclient -o ./app/src/main/java/getuserclient/apiclient
+kiota generate -l java -d get-me.yml -c GetUserApiClient -n getuserclient.apiclient -o ./app/src/main/java/getuserclient/apiclient --ds none -s none
 ```
 
 ## Register an application

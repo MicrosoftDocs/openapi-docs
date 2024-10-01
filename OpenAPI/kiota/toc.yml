@@ -49,6 +49,8 @@ items:
   items:
   - name: Kiota design
     href: design.md
+  - name: Managing dependencies
+    href: dependencies.md
   - name: API client experience
     href: experience.md
   - name: Abstractions
