@@ -34,16 +34,7 @@ In case you're adding a Kiota client to an existing project, the following confi
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-java). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
-
-- HTTP ([Kiota default OkHttp-based implementation](https://github.com/microsoft/kiota-java))
-- Form serialization ([Kiota default](https://github.com/microsoft/kiota-java))
-- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-java))
-- Text serialization ([Kiota default](https://github.com/microsoft/kiota-java))
-- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-java))
-- Jakarta annotations [Maven Central](https://central.sonatype.com/artifact/jakarta.annotation/jakarta.annotation-api)
-
-For this tutorial, use the default implementations.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-java). For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
 
 Edit **./app/build.gradle** to add the following dependencies.
 
@@ -63,7 +54,7 @@ This file is a minimal OpenAPI description that describes how to call the `/post
 You can then use the Kiota command line tool to generate the API client classes.
 
 ```bash
-kiota generate -l java -c PostsClient -n kiotaposts.client -d ./posts-api.yml -o ./app/src/main/java/kiotaposts/client
+kiota generate -l java -c PostsClient -n kiotaposts.client -d ./posts-api.yml -o ./app/src/main/java/kiotaposts/client --ds none -s none
 ```
 
 > [!TIP]

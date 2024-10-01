@@ -27,26 +27,12 @@ dotnet new gitignore
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-dotnet). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
-
-- Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-azure-dotnet))
-- HTTP ([Kiota default HttpClient-based implementation](https://github.com/microsoft/kiota-http-dotnet))
-- Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-dotnet))
-- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-dotnet))
-- Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-dotnet))
-- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-dotnet))
-
-For this tutorial, use the default implementations.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-dotnet). For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
 
 Run the following commands to get the required dependencies.
 
 ```dotnetcli
-dotnet add package Microsoft.Kiota.Abstractions
-dotnet add package Microsoft.Kiota.Http.HttpClientLibrary
-dotnet add package Microsoft.Kiota.Serialization.Form
-dotnet add package Microsoft.Kiota.Serialization.Json
-dotnet add package Microsoft.Kiota.Serialization.Text
-dotnet add package Microsoft.Kiota.Serialization.Multipart
+dotnet add package Microsoft.Kiota.Bundle
 dotnet add package Microsoft.Kiota.Authentication.Azure
 dotnet add package Azure.Identity
 ```

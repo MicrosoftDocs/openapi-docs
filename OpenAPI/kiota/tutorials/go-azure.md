@@ -25,26 +25,12 @@ go mod init getuser
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-go). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
-
-- Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-azure-go))
-- HTTP ([Kiota default net/http-based implementation](https://github.com/microsoft/kiota-http-go))
-- Form serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-form-go))
-- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-go))
-- Text serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-text-go))
-- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-multipart-go))
-
-For this tutorial, use the default implementations.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-bundle-go). For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
 
 Run the following commands to get the required dependencies.
 
 ```bash
-go get github.com/microsoft/kiota-abstractions-go
-go get github.com/microsoft/kiota-http-go
-go get github.com/microsoft/kiota-serialization-form-go
-go get github.com/microsoft/kiota-serialization-json-go
-go get github.com/microsoft/kiota-serialization-text-go
-go get github.com/microsoft/kiota-serialization-multipart-go
+go get github.com/microsoft/kiota-bundle-go
 go get github.com/microsoft/kiota-authentication-azure-go
 go get github.com/Azure/azure-sdk-for-go/sdk/azidentity
 ```

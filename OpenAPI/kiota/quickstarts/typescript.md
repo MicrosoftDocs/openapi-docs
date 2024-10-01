@@ -39,25 +39,12 @@ In case you're adding a Kiota client to an existing project, the following confi
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://www.npmjs.com/package/@microsoft/kiota-abstractions). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
-
-- HTTP ([Kiota default fetch-based implementation](https://www.npmjs.com/package/@microsoft/kiota-http-fetchlibrary))
-- Form serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-form))
-- JSON serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-json))
-- Text serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-text))
-- Multipart serialization ([Kiota default](https://www.npmjs.com/package/@microsoft/kiota-serialization-multipart))
-
-For this tutorial, use the default implementations.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-typescript). For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
 
 Run the following commands to get the required dependencies.
 
 ```bash
-npm install @microsoft/kiota-abstractions
-npm install @microsoft/kiota-http-fetchlibrary
-npm install @microsoft/kiota-serialization-form
-npm install @microsoft/kiota-serialization-json
-npm install @microsoft/kiota-serialization-text
-npm install @microsoft/kiota-serialization-multipart
+npm install @microsoft/kiota-bundle
 ```
 
 ## Generate the API client
