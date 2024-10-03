@@ -188,6 +188,15 @@ const deserializedUser = deserializeFromJson(result, createUserFromDiscriminator
 
 ---
 
+## Types mapping
+
+The table below describes the mapping between [OpenAPI type-format pairs](https://spec.openapis.org/registry/format/) and language types.
+
+| OpenAPI type | OpenAPI format | C# Type | Go Type | Java Type | TypeScript Type | PHP Type | Python Type |
+| ------------ | -------------- | ------- | ------- | --------- | --------------- | -------- | ----------- |
+| number | int16 |
+| number | int16 |
+
 ## Untyped Node
 
 In scenarios where the type information for a property/parameter in the input OpenAPI description is not present, Kiota will generate with the generic `UntypedNode` type which represent that the property/parameter could be a primitive,object or a collection. As the type information is unknown at compile/generation time, the `UntypedNode` object can be parsed at runtime by calling the `GetValue()` methods of the derived types to get the native representation of the node.
