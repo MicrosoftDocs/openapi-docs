@@ -192,10 +192,25 @@ const deserializedUser = deserializeFromJson(result, createUserFromDiscriminator
 
 The table below describes the mapping between [OpenAPI type-format pairs](https://spec.openapis.org/registry/format/) and language types.
 
-| OpenAPI type | OpenAPI format | C# Type | Go Type | Java Type | TypeScript Type | PHP Type | Python Type |
-| ------------ | -------------- | ------- | ------- | --------- | --------------- | -------- | ----------- |
-| number | int16 |
-| number | int16 |
+| OpenAPI type | OpenAPI format | C# Type | Go Type | Java Type | TypeScript Type | PHP Type | Python Type | Remarks |
+| ------------ | -------------- | ------- | ------- | --------- | --------------- | -------- | ----------- | ------- |
+| number | [uint8](https://spec.openapis.org/registry/format/uint8.html) | [sbyte](https://learn.microsoft.com/dotnet/api/system.sbyte) |
+| number | [int8](https://spec.openapis.org/registry/format/int8.html) | [byte](https://learn.microsoft.com/dotnet/api/system.byte) |
+| number | [int16](https://spec.openapis.org/registry/format/int16.html) | [double](https://learn.microsoft.com/dotnet/api/system.double) | | | | | | Should be int instead |
+| number | [int32](https://spec.openapis.org/registry/format/int32.html) | [int32/int](https://learn.microsoft.com/dotnet/api/system.int32) |
+| number | [int64](https://spec.openapis.org/registry/format/int64.html) | [int64/long](https://learn.microsoft.com/dotnet/api/system.int32) |
+| number | [float](https://spec.openapis.org/registry/format/float.html) | [float/single](https://learn.microsoft.com/dotnet/api/system.single) |
+| number | [double](https://spec.openapis.org/registry/format/double.html) | [double](https://learn.microsoft.com/dotnet/api/system.double) |
+| number | [decimal](https://spec.openapis.org/registry/format/decimal.html) | [decimal](https://learn.microsoft.com/dotnet/api/system.decimal) |
+| string | N/A | [string](https://learn.microsoft.com/dotnet/api/system.string) |
+| string | [uuid](https://spec.openapis.org/registry/format/uuid.html) | [Guid](https://learn.microsoft.com/dotnet/api/system.guid) |
+| string | [date-time](https://spec.openapis.org/registry/format/date-time.html) | [DateTimeOffset](https://learn.microsoft.com/dotnet/api/system.datetimeoffset) |
+| string | [date](https://spec.openapis.org/registry/format/date.html) | [Kiota Date](https://github.com/microsoft/kiota-dotnet/blob/main/src/abstractions/Date.cs) |
+| string | [time](https://spec.openapis.org/registry/format/time.html) | [Kiota Time](https://github.com/microsoft/kiota-dotnet/blob/main/src/abstractions/Time.cs) |
+| string | [duration](https://spec.openapis.org/registry/format/duration.html) | [TimeSpan](https://learn.microsoft.com/dotnet/api/system.timespan) |
+| string | [binary](https://spec.openapis.org/registry/format/binary.html) | [Stream](https://learn.microsoft.com/dotnet/api/system.io.stream) |
+| string | [base64url](https://spec.openapis.org/registry/format/base64url.html) | byte[] |
+| bool | N/A | [bool](https://learn.microsoft.com/dotnet/api/system.boolean) |
 
 ## Untyped Node
 
