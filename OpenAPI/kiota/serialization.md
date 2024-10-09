@@ -211,6 +211,9 @@ The table below describes the mapping between [OpenAPI type-format pairs](https:
 | string | [base64url](https://spec.openapis.org/registry/format/base64url.html) | byte[] | byte[] | byte[] | [ArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) | [StreamInterface](https://github.com/php-fig/http-message/blob/master/src/StreamInterface.php) | bytes | |
 | bool | N/A | [bool](/dotnet/api/system.boolean) | [bool](https://pkg.go.dev/builtin#bool) | [Boolean](https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html) | [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | [bool](https://www.php.net/manual/en/language.types.boolean.php) | [bool](https://docs.python.org/3/library/functions.html#bool) | |
 
+> [!NOTE]
+> The C# Date and Time types also provide operators so they are fully convertible from or to [DateOnly](/dotnet/api/system.dateonly) and [TimeOnly](/dotnet/api/system.timeonly).
+
 ## Untyped Node
 
 In scenarios where the type information for a property/parameter in the input OpenAPI description is not present, Kiota will generate with the generic `UntypedNode` type which represent that the property/parameter could be a primitive,object or a collection. As the type information is unknown at compile/generation time, the `UntypedNode` object can be parsed at runtime by calling the `GetValue()` methods of the derived types to get the native representation of the node.
