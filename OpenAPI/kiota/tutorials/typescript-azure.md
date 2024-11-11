@@ -20,7 +20,7 @@ Run the following commands in the directory where you want to create a new proje
 
 ```bash
 npm init
-npm install -D typescript ts-node
+npm install -D typescript @types/node
 npx tsc --init
 ```
 
@@ -78,7 +78,7 @@ Create a file in the root of the project named **index.ts** and add the followin
 To start the application, run the following command in your project directory.
 
 ```bash
-npx ts-node index.ts
+tsc && node out/index.js
 ```
 
 ## See also
