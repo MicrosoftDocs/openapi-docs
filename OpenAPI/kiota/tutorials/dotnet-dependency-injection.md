@@ -28,7 +28,7 @@ dotnet new gitignore
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, ensure the generated source files are part of a project with the required dependencies. Your project must reference the [bundle package](https://github.com/microsoft/kiota-dotnet). For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
+Before you can compile and run the generated API client, ensure the generated source files are part of a project with the required dependencies. Your project must reference the [bundle package](https://github.com/microsoft/kiota-dotnet). For more information about Kiota dependencies, see [the dependencies documentation](../dependencies.md).
 
 Run the following commands to get the required dependencies.
 
