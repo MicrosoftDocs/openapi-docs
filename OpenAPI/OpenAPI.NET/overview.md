@@ -1,8 +1,8 @@
 ---
 title: Overview
 description: Learn about the features and use cases for the OpenAPI.NET library.
-author: njaci1
-ms.author: kelvinnjaci
+author: jasonjoh
+ms.author: jasonjoh
 ms.topic: conceptual
 ---
 
