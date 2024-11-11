@@ -24,7 +24,7 @@ gradle init --dsl groovy --test-framework junit --type java-application --projec
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-java).  For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-java).  For more information about Kiota dependencies, see [the dependencies documentation](../dependencies.md).
 
 For this tutorial, use the default implementations.
 
