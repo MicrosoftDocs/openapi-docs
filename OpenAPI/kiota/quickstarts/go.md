@@ -31,7 +31,7 @@ In case you're adding a Kiota client to an existing project, the following confi
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-bundle-go). For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-bundle-go). For more information about Kiota dependencies, see [the dependencies documentation](../dependencies.md).
 
 Run the following commands to get the required dependencies.
 
