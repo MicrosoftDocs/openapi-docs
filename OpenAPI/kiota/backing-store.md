@@ -4,7 +4,7 @@ description: Learn how Kiota generated models provide flexibility around data st
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 05/01/2024
+ms.date: 05/01/2024
 ---
 
 # Kiota backing store
