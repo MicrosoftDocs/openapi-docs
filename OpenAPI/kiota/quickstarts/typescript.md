@@ -22,7 +22,7 @@ Run the following commands in the directory where you want to create a new proje
 
 ```bash
 npm init
-npm install -D typescript ts-node
+npm install -D typescript @types/node
 npx tsc --init
 ```
 
@@ -35,11 +35,12 @@ In case you're adding a Kiota client to an existing project, the following confi
 - **tsconfig** > **compilerOptions** > **lib** with an entry of "es2015".
 - **tsconfig** > **compilerOptions** > **module** set to "NodeNext".
 - **tsconfig** > **compilerOptions** > **moduleResolution** set to "NodeNext".
-- **tsconfig** > **compilerOptions** > **target** set to "es2016" or later.
+- **tsconfig** > **compilerOptions** > **target** set to "es2020" or later.
+- **package.json** > **type** set to "module".
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-typescript). For more information about kiota dependencies, refer to [the dependencies documentation](../dependencies.md).
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [bundle package](https://github.com/microsoft/kiota-typescript). For more information about Kiota dependencies, see [the dependencies documentation](../dependencies.md).
 
 Run the following commands to get the required dependencies.
 
@@ -80,7 +81,7 @@ Create a file in the root of the project named **index.ts** and add the followin
 To start the application, run the following command in your project directory.
 
 ```bash
-npx ts-node index.ts
+tsc && node out/index.js
 ```
 
 ## See also
