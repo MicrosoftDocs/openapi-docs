@@ -4,7 +4,7 @@ description: Learn about the commands and options available for the Kiota CLI.
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 03/10/2023
+ms.date: 03/10/2023
 ---
 
 # Using the Kiota tool

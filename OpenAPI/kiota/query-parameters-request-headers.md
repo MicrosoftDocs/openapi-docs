@@ -4,7 +4,7 @@ description: Learn how to use query parameters and request headers to customize 
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 08/01/2023
+ms.date: 08/01/2023
 ---
 
 # Query parameters and request headers

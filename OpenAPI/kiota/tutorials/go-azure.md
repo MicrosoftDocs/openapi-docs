@@ -4,7 +4,7 @@ description: Learn how use Kiota to build API clients in Go to access APIs that 
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: tutorial
-date: 03/20/2023
+ms.date: 03/20/2023
 ---
 
 # Build API clients for Go with Azure authentication

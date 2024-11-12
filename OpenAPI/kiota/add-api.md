@@ -4,7 +4,7 @@ description: Learn how to add an API description to the Kiota search command.
 author: baywet
 ms.author: vibiret
 ms.topic: how-to
-date: 03/10/2023
+ms.date: 03/10/2023
 ---
 
 # Adding an API to search

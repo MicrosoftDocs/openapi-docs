@@ -4,7 +4,7 @@ description: Learn how Kiota decouples the API clients and models from the under
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 03/21/2023
+ms.date: 03/21/2023
 ---
 
 # Kiota abstractions

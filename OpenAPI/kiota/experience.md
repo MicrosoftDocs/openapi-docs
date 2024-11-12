@@ -4,7 +4,7 @@ description: Learn about the developer experience provided by Kiota-generated AP
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 03/10/2023
+ms.date: 03/10/2023
 ---
 
 # Kiota API client experience

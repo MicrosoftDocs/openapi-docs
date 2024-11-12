@@ -4,7 +4,7 @@ description: Learn how you can combine Kiota with dependency injection in .NET t
 author: svrooij
 ms.author: vibiret
 ms.topic: tutorial
-date: 05/10/2024
+ms.date: 05/10/2024
 ---
 
 # Register a Kiota API client in .NET with dependency injection
