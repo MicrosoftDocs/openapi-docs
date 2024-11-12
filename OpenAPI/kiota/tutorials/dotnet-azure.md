@@ -4,7 +4,7 @@ description: Learn how use Kiota to build API clients in .NET to access APIs tha
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: tutorial
-date: 11/29/2023
+ms.date: 11/29/2023
 ---
 
 # Build API clients for .NET with Microsoft identity authentication

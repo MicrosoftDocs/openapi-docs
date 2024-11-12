@@ -4,7 +4,7 @@ description: Learn about versioning and support options for Kiota.
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: conceptual
-date: 03/10/2023
+ms.date: 03/10/2023
 ---
 
 # Releases and support for Kiota

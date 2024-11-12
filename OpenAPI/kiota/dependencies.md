@@ -4,7 +4,7 @@ description: Learn what different dependencies bring to your project and how to 
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 03/21/2023
+ms.date: 03/21/2023
 ---
 
 # Managing dependencies of Kiota API clients

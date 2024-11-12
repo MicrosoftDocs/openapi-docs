@@ -4,7 +4,7 @@ description: Create an API client for a basic OpenAPI.
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: overview
-date: 03/22/2023
+ms.date: 03/22/2023
 ---
 
 # Kiota API client quick starts

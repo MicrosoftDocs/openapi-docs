@@ -4,7 +4,7 @@ description: Learn how OpenAPI types are used to generate models for Kiota API c
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 03/21/2023
+ms.date: 03/21/2023
 ---
 
 # Kiota API models
