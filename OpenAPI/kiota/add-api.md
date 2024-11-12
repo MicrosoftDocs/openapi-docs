@@ -42,7 +42,7 @@ apis:
 ```
 
 > [!NOTE]
-> For more information about apis.yaml, see [What is APIs.yaml?](http://apisyaml.org/).
+> For more information about apis.yaml, see [What is APIs.json?](https://apisjson.org/).
 
 ### Example apis.json
 
