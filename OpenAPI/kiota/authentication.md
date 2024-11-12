@@ -4,7 +4,7 @@ description: Learn how to authenticate requests made by Kiota API clients.
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 03/21/2023
+ms.date: 03/21/2023
 ---
 
 # Authentication with Kiota API clients

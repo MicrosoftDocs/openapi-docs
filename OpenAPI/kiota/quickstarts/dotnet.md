@@ -4,7 +4,7 @@ description: Learn how use Kiota to build API clients in .NET.
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: quickstart
-date: 03/20/2023
+ms.date: 03/20/2023
 ---
 
 # Build API clients for .NET

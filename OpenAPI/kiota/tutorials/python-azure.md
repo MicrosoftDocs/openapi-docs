@@ -4,7 +4,7 @@ description: Learn how use Kiota to build API clients in Python to access APIs t
 author: isvargasmsft
 ms.author: isvargas
 ms.topic: tutorial
-date: 03/20/2023
+ms.date: 03/20/2023
 ---
 
 # Build API clients for Python with Microsoft identity authentication

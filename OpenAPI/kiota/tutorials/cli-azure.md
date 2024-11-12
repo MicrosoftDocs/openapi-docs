@@ -4,7 +4,7 @@ description: Learn how use Kiota to build API clients for a CLI to access APIs t
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: tutorial
-date: 03/20/2023
+ms.date: 03/20/2023
 ---
 
 # Build API clients for a command line interface (CLI) with Microsoft identity authentication

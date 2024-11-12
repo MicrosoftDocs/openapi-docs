@@ -4,7 +4,7 @@ description: Learn about the interfaces used for serialization and deserializati
 author: baywet
 ms.author: vibiret
 ms.topic: conceptual
-date: 03/21/2023
+ms.date: 03/21/2023
 ---
 
 # Serialization with Kiota API clients
