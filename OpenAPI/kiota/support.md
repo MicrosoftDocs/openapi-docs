@@ -46,7 +46,7 @@ Breaking changes to languages that are stable result in major version change for
 
 Languages can be implemented by different authors, which impacts the support experience users can expect:
 
-- **Microsoft**: The language has been implemented the Kiota team at Microsoft, users can expect support from the team as any regular product.
+- **Microsoft**: The language has been implemented by the Kiota team at Microsoft, users can expect support from the team as any regular product.
 - **Community**: The language has been implemented by the broader Kiota community, users can expect help from other community members but should not expect direct support from Microsoft.
 
 ### Getting support information for a language
