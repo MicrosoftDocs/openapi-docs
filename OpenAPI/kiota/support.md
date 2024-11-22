@@ -29,6 +29,8 @@ Patches ship as needed, and they include security and nonsecurity bug fixes.
 
 ## Language support
 
+### Maturity level
+
 Language support in Kiota is either stable, preview or experimental for each language.
 
 The following criteria are used to determine the maturity levels.
@@ -36,8 +38,18 @@ The following criteria are used to determine the maturity levels.
 - **Stable**: Kiota provides full functionality for the language and is used to generate production API clients.
 - **Preview**: Kiota is at or near the level of stable but isn't being used to generate production API clients.
 - **Experimental**: Kiota provides some functionality for the language but is still in early stages. Some features might not work correctly or at all.
+- **Abandoned**: The language is not maintained anymore and will be removed in a future major release, users should start migrating off generated client for the language.
 
 Breaking changes to languages that are stable result in major version change for Kiota tooling. Code generation changes to a stable language aren't considered breaking when they rely on additions in the corresponding abstractions library. These changes only require updating the abstractions library to the latest minor/patch version under the same major version.
+
+### Support experience
+
+Languages can be implemented by different authors, which impacts the support experience users can expect:
+
+- **Microsoft**: The language has been implemented by the Kiota team at Microsoft, users can expect support from the team as any regular product.
+- **Community**: The language has been implemented by the broader Kiota community, users can expect help from other community members but should not expect direct support from Microsoft.
+
+### Getting support information for a language
 
 The current status of language support can be queried by using the following command.
 
