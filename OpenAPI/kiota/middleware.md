@@ -79,3 +79,6 @@ The following table describes which middleware handlers are implemented by the H
 
 > [!NOTE]
 > Languages with **Default** for the handler support value include the handler by default when creating the request adapter with no additional configuration.
+
+> [!NOTE]
+> Request body decompression is not enabled by default in ASP.NET Core APIs and needs to be enabled. Find out how to enable it with [Request Decompression in ASP.NET core](/aspnet/core/fundamentals/middleware/request-decompression).
