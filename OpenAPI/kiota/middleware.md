@@ -15,6 +15,10 @@ By registering custom middleware handlers, you can perform operations before a r
 
 Create your middleware class and add your business requirements. For example, you might wish to add custom headers to the request or filter headers and content.
 
+<!-- markdownlint-disable MD051 -->
+<!-- markdownlint-disable MD024 -->
+### [.NET](#tab/csharp)
+
 ```csharp
 public class SaveRequestHandler : DelegatingHandler
 {
@@ -29,16 +33,43 @@ public class SaveRequestHandler : DelegatingHandler
 }
 ```
 
+### [TypeScript](#tab/typescript)
+
+```typescript
+export class SaveRequestHandler implements Middleware {
+    next: Middleware | undefined;
+    public execute(url: string, requestInit: RequestInit, requestOptions?: Record<string, RequestOption>): Promise<Response> {
+        console.log(`Request: ${requestInit.body}`);
+        return await this.next?.execute(url, requestInit as RequestInit, requestOptions);
+    }
+}
+```
+
+---
+
 ## Register middleware
 
-Create a middleware handlers array and use the existing middleware already implemented within **Microsoft.Kiota.HttpClientLibrary** that includes existing handlers like retry, redirect, and more.
+Create a middleware handlers array and use the existing middleware already implemented within the HTTP library that includes existing handlers like retry, redirect, and more.
+
+### [.NET](#tab/csharp)
 
 ```csharp
 var handlers = KiotaClientFactory.CreateDefaultHandlers();
 handlers.Add(new SaveRequestHandler());
 ```
 
+### [TypeScript](#tab/typescript)
+
+```typescript
+const handlers = MiddlewareFactory.getDefaultMiddlewares();
+handlers.unshift(new SaveRequestHandler());
+```
+
+---
+
 Next you need to create a delegate chain so the middleware handlers are registered in the right order.
+
+### [.NET](#tab/csharp)
 
 ```csharp
 var httpMessageHandler =
@@ -47,13 +78,33 @@ var httpMessageHandler =
         handlers.ToArray());
 ```
 
-Finally, create a request adapter using an `HttpClient` with the message handler. This adapter can then be used when submitting requests from the generated client. This design means different adapters/middleware can be used when calling APIs and therefore gives flexibility to how and when a middleware handler is used.
+### [TypeScript](#tab/typescript)
+
+```typescript
+// this step is not required for TypeScript
+```
+
+---
+
+Finally, create a request adapter using an HTTP client. This adapter can then be used when submitting requests from the generated client. This design means different adapters/middleware can be used when calling APIs and therefore gives flexibility to how and when a middleware handler is used.
+
+### [.NET](#tab/csharp)
 
 ```csharp
 var httpClient = new HttpClient(httpMessageHandler!);
 var adapter = new HttpClientRequestAdapter(authProvider, httpClient:httpClient);
 var client = new PostsClient(adapter); // the name of the client will vary based on your generation parameters
 ```
+
+### [TypeScript](#tab/typescript)
+
+```typescript
+const httpClient = KiotaClientFactory.create(undefined, handlers);
+const adapter = new FetchRequestAdapter(authProvider, undefined, undefined, httpClient);
+const client = createApiClient(adapter);
+```
+
+---
 
 ## Middleware handlers
 
