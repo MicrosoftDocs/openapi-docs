@@ -128,11 +128,14 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 
 ## Install the Visual Studio Code extension
 
-1. Open the [Marketplace page of the extension](https://aka.ms/kiota/extension)
-1. Select on the **Install** button.
+1. Open VS Code and go to the [Marketplace page of the extension](https://aka.ms/kiota/extension)
+2. Click **Install**.
+3. Once Kiota is installed, enable the integration with Teams Toolkit (TTK) to leverage Kiota for creating AI plugins.
 
 > [!NOTE]
 > The Kiota Visual Studio Code extension is currently in public preview and is subject to change.
+
+
 
 ## Run in GitHub actions
 
