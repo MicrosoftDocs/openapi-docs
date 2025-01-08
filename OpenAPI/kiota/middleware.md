@@ -113,7 +113,7 @@ The following table describes which middleware handlers are implemented by the H
 | Name | Description | C# Support | Go Support | Java Support | TypeScript Support | PHP Support | Python Support |
 | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
 | Authorization | Adds an access token to the request when using a native HTTP client. | Yes | No | Yes | No | No | No |
-| Body Inspection | Allows the client application to inspect the request and response body through the associated options. | No | No | No | No | No | No |
+| Body Inspection | Allows the client application to inspect the request and response body through the associated options. | Yes | No | No | No | No | No |
 | Chaos | For testing purposes only. Randomly fails requests to allow testing clients' resilience. | Yes | Yes | Yes | Yes | Yes | No |
 | Headers Inspection | Allows the client application to inspect the request and response headers through the associated options. | Default | Default | Default | Default | Default | Default |
 | Parameters Name Decoding | Decodes query parameter names that were encoded when building the URL because they contained characters not allowed by RFC 6570. | Default | Default | Default | Default | Default | Default |
