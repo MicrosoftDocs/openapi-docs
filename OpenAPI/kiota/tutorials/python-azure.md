@@ -13,7 +13,7 @@ In this tutorial, you generate an API client that uses [Microsoft identity authe
 
 ## Required tools
 
-- [Python 3.8+](https://www.python.org/)
+- [Python 3.9+](https://www.python.org/)
 - [pip 20.0+](https://pip.pypa.io/en/stable/)
 - [asyncio](https://docs.python.org/3/library/asyncio.html) or any other supported async environment, for example, AnyIO, Trio.
 
