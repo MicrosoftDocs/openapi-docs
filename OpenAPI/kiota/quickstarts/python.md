@@ -13,7 +13,7 @@ In this tutorial, you build a sample app in Python that calls a REST API that do
 
 ## Required tools
 
-- [Python 3.8+](https://www.python.org/)
+- [Python 3.9+](https://www.python.org/)
 - [pip 20.0+](https://pip.pypa.io/en/stable/)
 - [asyncio](https://docs.python.org/3/library/asyncio.html) or any other supported async environment, for example, AnyIO, Trio.
 
