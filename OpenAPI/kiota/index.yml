@@ -44,6 +44,8 @@ landingContent:
             url: quickstarts/dotnet.md
           - text: Build API clients for CLI
             url: quickstarts/cli.md
+          - text: Build API clients for Dart
+            url: quickstarts/dart.md
           - text: Build API clients for Go
             url: quickstarts/go.md
           - text: Build API clients for Java
