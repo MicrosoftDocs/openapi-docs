@@ -508,8 +508,9 @@ person:
 
 - Reference an internal component using a $id
 - Reference an internal subschema using a $id
+- Reference external components and subschemas using a $id
 
-#### Reference an internal component using a $id 
+#### Reference an internal component using a $id
 ```yaml
 openapi: 3.1.0
 info:
@@ -574,7 +575,7 @@ components:
                         type: string
 ```
 
-#### Reference an external components and subschemas using a $id
+#### Reference external components and subschemas using a $id
 
 External components and subschemas are referenced in the exact same way as internal components.
 
