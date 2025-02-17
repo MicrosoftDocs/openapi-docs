@@ -271,6 +271,310 @@ JSON Schema references can use either a locator or an identifier. Locators indic
 - An internal inline subschema  [Not supported]
 - An external OpenApi document component
 - An external inline subchema [Not supported]
+- An external inline subchema using anchor
 - An external fragment [Not supported]
 
+#### An internal component
+
+```yaml
+openapi: 3.1.0
+info:
+    title: Reference to an internal component
+    version: 1.0.0
+paths:
+    /item:
+        get:
+          responses:
+            200:
+              description: ok
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/item'
+components:
+  schemas:
+      item:
+        type: object
+```
+
+#### An interal component subschema
+
+```yaml
+openapi: 3.1.0
+info:
+    title: Reference to an internal component
+    version: 1.0.0
+paths:
+    /person/{id}:
+        get:
+          responses:
+            200:
+              description: ok
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/person'
+    /person/{id}/address:
+        get:
+          responses:
+            200:
+              description: ok
+              content:
+                application/json:
+                  schema:
+                    $ref: '#/components/schemas/person/address'
+components:
+  schemas:
+      person:
+        type: object
+        properties:
+            name:
+                type: string
+            address:
+                type: object
+                properties:
+                    street:
+                        type: string
+                    city:
+                        type: string
+```
+#### An external OpenApi document component
+
+```yaml
+openapi: 3.1.0
+info:
+    title: Reference to an external OpenApi document component
+    version: 1.0.0
+paths:
+    /person/{id}:
+        get:
+          responses:
+            200:
+              description: ok
+              content:
+                application/json:
+                  schema:
+                    $ref: 'OAS-schemas.yaml#/components/schemas/person'
+```
+
+```yaml
+# OAS-schemas.yaml file
+openapi: 3.1.0
+info:
+    title: OpenAPI document containing reusable components
+    version: 1.0.0
+components:
+  schemas:
+      person:
+        type: object
+        properties:
+            name:
+                type: string
+            address:
+                type: object
+                properties:
+                    street:
+                        type: string
+                    city:
+                        type: string
+```
+
+
+#### An external inline subchema [Not supported and not recommended]
+
+```yaml
+openapi: 3.1.0
+info:
+    title: Reference to an external OpenApi document component
+    version: 1.0.0
+paths:
+    /person/{id}:
+        get:
+          responses:
+            200:
+              description: ok
+              content:
+                application/json:
+                  schema:
+                    $ref: 'OAS-schemas.yaml#/components/schemas/person/properties/address'
+```
+
+```yaml
+# OAS-schemas.yaml file
+openapi: 3.1.0
+info:
+    title: OpenAPI document containing reusable components
+    version: 1.0.0
+components:
+  schemas:
+      person:
+        type: object
+        properties:
+            name:
+                type: string
+            address:
+                type: object
+                properties:
+                    street:
+                        type: string
+                    city:
+                        type: string
+
+```
+
+
+#### An external inline subchema using an anchor [Not currently supported]
+
+```yaml
+openapi: 3.1.0
+info:
+    title: Reference to an external OpenApi document component
+    version: 1.0.0
+paths:
+    /person/{id}:
+        get:
+          responses:
+            200:
+              description: ok
+              content:
+                application/json:
+                  schema:
+                    $ref: 'OAS-schemas.yaml#address'
+```
+
+```yaml
+# OAS-schemas.yaml file
+openapi: 3.1.0
+info:
+    title: OpenAPI document containing reusable components
+    version: 1.0.0
+components:
+  schemas:
+      person:
+        type: object
+        properties:
+            name:
+                type: string
+            address:
+                $anchor: address
+                type: object
+                properties:
+                    street:
+                        type: string
+                    city:
+                        type: string
+
+```
+
+
+#### An external fragment [Not supported]
+
+```yaml
+openapi: 3.1.0
+info:
+    title: Reference to an external OpenApi document component
+    version: 1.0.0
+paths:
+    /person/{id}:
+        get:
+          responses:
+            200:
+              description: ok
+              content:
+                application/json:
+                  schema:
+                    $ref: 'OAS-schemas.yaml#/person/properties/address'
+```
+
+```yaml
+# OAS-schemas.yaml file
+person:
+  type: object
+  properties:
+    name:
+        type: string
+    address:
+        type: object
+        properties:
+            street:
+                type: string
+            city:
+                type: string
+
+```
+
+
 ### What can a JSON Schema identifier reference target
+
+- Reference an internal component using a $id
+- Reference an internal subschema using a $id
+
+#### Reference an internal component using a $id 
+```yaml
+openapi: 3.1.0
+info:
+    title: Reference an internal component using id
+    version: 1.0.0
+paths:
+    /person/{id}:
+        get:
+          responses:
+            200:
+              description: ok
+              content:
+                application/json:
+                  schema:
+                    $ref: 'https://schemas.acme.org/person'
+components:
+      person:
+        $id: 'https://schemas.acme.org/person'
+        type: object
+        properties:
+            name:
+                type: string
+            address:
+                type: object
+                properties:
+                    street:
+                        type: string
+                    city:
+                        type: string
+```
+
+#### Reference an internal subschema using a $id
+```yaml
+openapi: 3.1.0
+info:
+    title: Reference an internal subschema using id
+    version: 1.0.0
+paths:
+    /person/{id}/address:
+        get:
+          responses:
+            200:
+              description: ok
+              content:
+                application/json:
+                  schema:
+                    $ref: 'https://schemas.acme.org/address'
+components:
+      person:
+        $id: 'https://schemas.acme.org/person'
+        type: object
+        properties:
+            name:
+                type: string
+            address:
+                $id: 'address'
+                type: object
+                properties:
+                    street:
+                        type: string
+                    city:
+                        type: string
+```
+
+#### Reference an external components and subschemas using a $id
+
+External components and subschemas are referenced in the exact same way as internal components.
+
