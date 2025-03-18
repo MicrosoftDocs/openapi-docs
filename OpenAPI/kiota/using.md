@@ -24,6 +24,7 @@ The following table provides the list of environment variables that can be used 
 | `KIOTA_CONSOLE_COLORS_SWAP`    | Enable/disable inverting the color scheme of the output        | `false`       |
 | `KIOTA_TUTORIAL_ENABLED`       | Enable/disable displaying extra hints after commands execution | `true`        |
 | `KIOTA_OFFLINE_ENABLED`        | Enable/disable checking for updates before commands execution  | `false`       |
+| `KIOTA_CLI_TELEMETRY_OPTOUT`   | Enable/disable collecting telemetry                            | `false`       |
 
 ## Commands
 
