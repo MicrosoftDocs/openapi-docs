@@ -38,7 +38,7 @@ public class SaveRequestHandler : DelegatingHandler
 ```typescript
 export class SaveRequestHandler implements Middleware {
     next: Middleware | undefined;
-    public execute(url: string, requestInit: RequestInit, requestOptions?: Record<string, RequestOption>): Promise<Response> {
+    public async execute(url: string, requestInit: RequestInit, requestOptions?: Record<string, RequestOption>): Promise<Response> {
         console.log(`Request: ${requestInit.body}`);
         return await this.next?.execute(url, requestInit as RequestInit, requestOptions);
     }
