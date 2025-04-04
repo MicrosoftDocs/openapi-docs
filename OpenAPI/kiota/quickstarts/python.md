@@ -25,7 +25,7 @@ Create a directory to contain the new project.
 
 In case you're adding a Kiota client to an existing project, the following configuration is required:
 
-- **pyproject.toml** > **project** > **requires-python** set to ">=3.8".
+- **pyproject.toml** > **project** > **requires-python** set to ">=3.9".
 
 ## Add dependencies
 
