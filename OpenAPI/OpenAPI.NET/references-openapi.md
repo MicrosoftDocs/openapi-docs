@@ -62,17 +62,19 @@ Reference objects can use a relative reference with just a fragment identifier t
 ```yaml
 openapi: 3.1.0
 info:
-  title: Example of reference object pointing to a parameter
+  title: Example of reference object pointing to a pathitem
   version: 1.0.0
 paths:
   /jobs/{id}:
-    $ref: '#/components/pathItems/job'
+    post:
+      requestBody:
+        $ref: '#/components/requestBodies/job'
 components:
-  pathItems:
+  requestBodies:
     job:
-      get:
-      patch:
-      delete:
+      required: true
+      content:
+        application/json: {}
 ```
 
 Reference objects can reference OAS components in another OpenAPI document.
@@ -91,8 +93,7 @@ paths:
             application/json:
               examples:
                 item-list:
-                  $ref: './examples.yaml#/components/item-list'
-
+                  $ref: './examples.yaml#/components/examples/item-list'
 ```
 
 ```yaml
@@ -109,7 +110,7 @@ components:
           description: a thing
 ```
 
-For completeness, Reference Objects can also point to targets in a JSON/YAML document that contain properly formed OpenAPI objects, but not complete OpenApi document. We refer to these as OpenAPI "fragments". Currently OpenAPI.NET does not support referencing OpenAPI fragments.
+For completeness, Reference Objects can also point to targets in a JSON/YAML document that contain properly formed OpenAPI objects, but is not a complete OpenApi document. We refer to these as OpenAPI "fragments". Currently OpenAPI.NET does not support referencing OpenAPI fragments.
 
 ```yaml
 openapi: 3.1.0
@@ -132,15 +133,15 @@ paths:
 ```yaml
 # file for example fragments (examples.yaml)
 item-list:
-    value:
-    - name: thing
-        description: a thing
+  value:
+  - name: thing
+    description: a thing
 ```
 
 
 ### What types Reference objects can target
 
-Reference objects can be used to target the follow OAS types: parameter, response, example, header, securityScheme, link, callback and pathItem.  In OpenAPI 3.0, they also can reference schema objects.
+Reference objects can be used to target the follow OAS types: parameter, response, requestBody, example, header, securityScheme, link, callback and pathItem.  In OpenAPI 3.0, they also can reference schema objects.
 
 ## JSON Schema $refs in OpenAPI descriptions
 
@@ -229,6 +230,7 @@ components:
         title: Special Item
         $ref: "#/components/schemas/item"
       item:
+        title: Item
         type: object
 ```
 
@@ -259,6 +261,63 @@ components:
         type: object
 ```
 
+#### References local to a JSON Schema Resource defined by an OpenAPI Schema
+
+JSON Schema defines the concept of a JSON Schema Resource which is identified by a URI.  $ref values can be specified relative to the JSON Schema Resource.  Each OpenAPI schema object can be considered a JSON Schema Resource.
+
+In this example schema "a" is a JSON Schema resource and the reference in the "b" property of the "c" object is relative to the JSON Schema resource "a".  Unfortunately, OpenAPI 3.1 has no well defined URIs for OpenAPI Schemas. This should be resolved in OpenAPI 3.2 with the introduction of a new top level "self" property.
+
+```yaml
+components:
+schema:
+  a:
+    type:
+        - object
+        - 'null'
+    properties:
+        b:
+            type:
+                - object
+                - 'null'
+            properties:
+                c:
+                    type:
+                        - object
+                        - 'null'
+                    properties:
+                        b:
+                            $ref: '#/properties/b'
+```
+
+#### References local to a JSON Schema Resource defined by a $id
+
+```yaml
+components:
+schema:
+  a:
+    type:
+        - object
+        - 'null'
+    additionalProperties: false
+    properties:
+        b:
+            type:
+                - object
+                - 'null'
+            additionalProperties: false
+            properties:
+                c:
+                    $id: 'http://example.org/c'
+                    type:
+                        - object
+                        - 'null'
+                    additionalProperties: false
+                    properties:
+                        b:
+                            $ref: '#/properties/d'
+                        d:
+                            type: string
+```
 
 ### What kinds of JSON Schema references exist
 
@@ -268,7 +327,7 @@ JSON Schema references can use either a locator or an identifier. Locators indic
 
 - An internal component
 - An interal component subschema
-- An internal inline subschema  [Not supported]
+- An internal inline subschema
 - An external OpenApi document component
 - An external inline subchema [Not supported]
 - An external inline subchema using anchor
@@ -297,7 +356,7 @@ components:
         type: object
 ```
 
-#### An interal component subschema
+#### An internal component subschema
 
 ```yaml
 openapi: 3.1.0
@@ -322,7 +381,7 @@ paths:
               content:
                 application/json:
                   schema:
-                    $ref: '#/components/schemas/person/address'
+                    $ref: '#/components/schemas/person/properties/address'
 components:
   schemas:
       person:
@@ -338,6 +397,8 @@ components:
                     city:
                         type: string
 ```
+
+
 #### An external OpenApi document component
 
 ```yaml
@@ -380,7 +441,7 @@ components:
 ```
 
 
-#### An external inline subchema [Not supported and not recommended]
+#### An external inline subchema
 
 ```yaml
 openapi: 3.1.0
@@ -424,6 +485,8 @@ components:
 
 
 #### An external inline subchema using an anchor [Not currently supported]
+
+We accept pull requests.
 
 ```yaml
 openapi: 3.1.0
@@ -500,7 +563,6 @@ person:
                 type: string
             city:
                 type: string
-
 ```
 
 
@@ -542,12 +604,14 @@ components:
                         type: string
 ```
 
-#### Reference an internal subschema using a $id
+#### Reference an internal subschema using a $id  [Not supported yet]
+
 ```yaml
 openapi: 3.1.0
 info:
     title: Reference an internal subschema using id
     version: 1.0.0
+
 paths:
     /person/{id}/address:
         get:
@@ -579,3 +643,23 @@ components:
 
 External components and subschemas are referenced in the exact same way as internal components.
 
+## $ref in PathItem Objects
+
+This scenario is unsupported in OpenAPI.NET.
+
+```yaml
+openapi: 3.1.0
+info:
+  title: Example of reference object pointing to a pathitem
+  version: 1.0.0
+paths:
+  /jobs/{id}:
+    get:
+    $ref: '#/components/pathItems/job'
+components:
+  pathItems:
+    job:
+      get:
+      patch:
+      delete:
+```
