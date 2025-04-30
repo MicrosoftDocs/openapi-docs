@@ -29,6 +29,6 @@ Some of the benefits of using the OpenAPI.NET library when working with OpenAPI 
 
 ## See also
 
-- [Creating an OpenAPI document](create-openapi.md)
-- [Modifying an OpenAPI document](modify-openapi.md)
-- [Converting an OpenAPI document](convert-openapi.md)
+- [Creating an OpenAPI document](https://github.com/MicrosoftDocs/openapi-docs/blob/main/OpenAPI/openapi.net/convert-openapi.md)
+- [Modifying an OpenAPI document](https://github.com/MicrosoftDocs/openapi-docs/blob/main/OpenAPI/openapi.net/create-openapi.md)
+- [Converting an OpenAPI document](https://github.com/MicrosoftDocs/openapi-docs/blob/main/OpenAPI/openapi.net/modify-openapi.md)
