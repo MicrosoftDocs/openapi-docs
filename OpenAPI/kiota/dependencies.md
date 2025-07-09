@@ -38,7 +38,6 @@ The following table provides the list of abstractions package per language.
 | Language | Package Name |
 | -------- | ------------ |
 | C# | Microsoft.Kiota.Abstractions |
-| CLI | Microsoft.Kiota.Abstractions |
 | Go | github.com/microsoft/kiota-abstractions-go |
 | Java | com.microsoft.kiota:microsoft-kiota-abstractions |
 | PHP | microsoft/kiota-abstractions |
@@ -62,7 +61,6 @@ The following table provides the list of serialization package per language.
 | Language | Package Name | Relies on |
 | -------- | ------------ | --------- |
 | C# | Microsoft.Kiota.Serialization.Json | System.Text.Json |
-| CLI | Microsoft.Kiota.Serialization.Json | System.Text.Json |
 | Go | github.com/microsoft/kiota-serialization-json-go | None |
 | Java | com.microsoft.kiota:microsoft-kiota-serialization-json | Gson |
 | PHP | microsoft/kiota-serialization-json | None |
@@ -80,7 +78,6 @@ The following table provides the list of serialization package per language.
 | Language | Package Name | Relies on |
 | -------- | ------------ | --------- |
 | C# | Microsoft.Kiota.Serialization.Multipart | None |
-| CLI | Microsoft.Kiota.Serialization.Multipart | None |
 | Go | github.com/microsoft/kiota-serialization-multipart-go | None |
 | Java | com.microsoft.kiota:microsoft-kiota-serialization-multipart | None |
 | PHP | microsoft/kiota-serialization-multipart | None |
@@ -98,7 +95,6 @@ The following table provides the list of serialization package per language.
 | Language | Package Name | Relies on |
 | -------- | ------------ | --------- |
 | C# | Microsoft.Kiota.Serialization.Form | None |
-| CLI | Microsoft.Kiota.Serialization.Form | None |
 | Go | github.com/microsoft/kiota-serialization-form-go | None |
 | Java | com.microsoft.kiota:microsoft-kiota-serialization-form | None |
 | PHP | microsoft/kiota-serialization-form | None |
@@ -116,7 +112,6 @@ The following table provides the list of serialization package per language.
 | Language | Package Name | Relies on |
 | -------- | ------------ | --------- |
 | C# | Microsoft.Kiota.Serialization.Text | None |
-| CLI | Microsoft.Kiota.Serialization.Text | None |
 | Go | github.com/microsoft/kiota-serialization-text-go | None |
 | Java | com.microsoft.kiota:microsoft-kiota-serialization-text | None |
 | PHP | microsoft/kiota-serialization-text | None |
@@ -136,7 +131,6 @@ The following table provides the list of HTTP package per language.
 | Language | Package Name | Relies on |
 | -------- | ------------ | --------- |
 | C# | Microsoft.Kiota.Http.HttpClientLibrary | System.Net.Http |
-| CLI | Microsoft.Kiota.Http.HttpClientLibrary | System.Net.Http |
 | Go | github.com/microsoft/kiota-http-go | net/http |
 | Java | com.microsoft.kiota:microsoft-kiota-http-okHttp | None |
 | PHP | microsoft/kiota-http-guzzle | None |
@@ -160,7 +154,6 @@ The following table provides the list of authentication package per language.
 | Language | Package Name | Relies on |
 | -------- | ------------ | --------- |
 | C# | Microsoft.Kiota.Authentication.Azure | Azure.Identity |
-| CLI | Microsoft.Kiota.Authentication.Azure | Azure.Identity |
 | Go | github.com/microsoft/kiota-authentication-azure-go | github.com/Azure/azure-sdk-for-go/sdk/azidentity |
 | Java | com.microsoft.kiota:microsoft-kiota-authentication-azure | com.azure:azure-identity |
 | PHP | microsoft/kiota-authentication-phpleague | phpleague |
@@ -178,7 +171,6 @@ The following table provides the list of additional package per language.
 | Language | Package Name | Type |
 | -------- | ------------ | ---- |
 | C# | None | |
-| CLI | Microsoft.Kiota.CLI.Commons, System.CommandLine | Build and runtime |
 | Go | None | |
 | Java | jakarta.annotation:jakarta.annotation-api:2.0.0 | Build |
 | PHP | None | |
@@ -196,7 +188,6 @@ The following table provides the list of bundle package per language.
 | Language | Package Name |
 | -------- | ------------ |
 | C# | Microsoft.Kiota.Bundle |
-| CLI | Microsoft.Kiota.Bundle |
 | Go | github.com/microsoft/kiota-bundle-go |
 | Java | com.microsoft.kiota:microsoft-kiota-bundle |
 | PHP | Not available |

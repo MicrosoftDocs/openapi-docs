@@ -198,7 +198,6 @@ To produce a more idiomatic output for specific languages, mangling is applied t
 | Language   | Property name | Property accessors |
 | ---------- | ------------- | ------------------ |
 | CSharp     | `PascalCase`  | -                  |
-| CLI        | `PascalCase`  | -                  |
 | Go         | -             | `PascalCase`       |
 | Java       | `camelCase`   | `camelCase`        |
 | PHP        | -             | `camelCase`        |
