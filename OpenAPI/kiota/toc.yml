@@ -13,8 +13,6 @@ items:
     href: quickstarts/index.md
   - name: .NET
     href: quickstarts/dotnet.md
-  - name: CLI
-    href: quickstarts/cli.md
   - name: Dart
     href: quickstarts/dart.md
   - name: Go
@@ -33,8 +31,6 @@ items:
     items:
     - name: .NET
       href: tutorials/dotnet-azure.md
-    - name: CLI
-      href: tutorials/cli-azure.md
     - name: Go
       href: tutorials/go-azure.md
     - name: Java
