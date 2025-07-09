@@ -455,7 +455,6 @@ kiota info
 
 ```bash
 Language    Maturity Level
-CLI         Preview
 CSharp      Stable
 Go          Stable
 Java        Preview

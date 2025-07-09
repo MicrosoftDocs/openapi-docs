@@ -18,7 +18,7 @@ Kiota is a command line tool for generating an API client to call any OpenAPI-de
 
 ## Features
 
-- Provides support for a wide range of languages: C#, CLI, Go, Java, PHP, Python, Ruby, and TypeScript
+- Provides support for a wide range of languages: C#, Go, Java, PHP, Python, Ruby, and TypeScript
 - Uses the full capabilities of OpenAPI descriptions
 - Enables low effort implementation of new language support
 - Generates only the source code necessary by building on a core library

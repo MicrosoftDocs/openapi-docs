@@ -42,8 +42,6 @@ landingContent:
         links:
           - text: Build API clients for .NET
             url: quickstarts/dotnet.md
-          - text: Build API clients for CLI
-            url: quickstarts/cli.md
           - text: Build API clients for Dart
             url: quickstarts/dart.md
           - text: Build API clients for Go
@@ -63,8 +61,6 @@ landingContent:
         links:
           - text: .NET tutorial
             url: tutorials/dotnet-azure.md
-          - text: CLI tutorial
-            url: tutorials/cli-azure.md
           - text: Go tutorial
             url: tutorials/go-azure.md
           - text: Java tutorial
