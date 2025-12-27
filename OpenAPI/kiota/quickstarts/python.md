@@ -21,6 +21,30 @@ In this tutorial, you build a sample app in Python that calls a REST API that do
 
 Create a directory to contain the new project.
 
+## Set up a virtual environment
+
+**Create and start a virtual environment.**
+
+```bash
+python3 -m venv .venv # directories starting with '.' will be hidden)
+```
+
+**Activate the virtual environment**
+
+```bash
+source .venv/bin/activate # macOS/Linux
+```
+
+```bash
+.venv\Scripts\activate # Windows
+```
+
+**Verify the virtual environment**
+
+```bash
+python --version
+```
+
 ## Project configuration
 
 In case you're adding a Kiota client to an existing project, the following configuration is required:
