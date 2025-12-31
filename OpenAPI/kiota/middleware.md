@@ -45,6 +45,17 @@ export class SaveRequestHandler implements Middleware {
 }
 ```
 
+### [Python](#tab/python)
+
+```python
+class SaveRequestHandler(BaseMiddleware):
+    async def send(
+        self, request: httpx.Request, transport: httpx.AsyncBaseTransport
+    ) -> httpx.Response:
+        print(f"Request: {request.content}")
+        return await super().send(request, transport)
+```
+
 ---
 
 ## Register middleware
@@ -63,6 +74,13 @@ handlers.Add(new SaveRequestHandler());
 ```typescript
 const handlers = MiddlewareFactory.getDefaultMiddlewares();
 handlers.unshift(new SaveRequestHandler());
+```
+
+### [Python](#tab/python)
+
+```python
+handlers = KiotaClientFactory.get_default_middleware(options=None)
+handlers.append(SaveRequestHandler())
 ```
 
 ---
@@ -84,6 +102,12 @@ var httpMessageHandler =
 // this step is not required for TypeScript
 ```
 
+### [Python](#tab/python)
+
+```python
+# this step is not required for Python
+```
+
 ---
 
 Finally, create a request adapter using an HTTP client. This adapter can then be used when submitting requests from the generated client. This design means different adapters/middleware can be used when calling APIs and therefore gives flexibility to how and when a middleware handler is used.
@@ -102,6 +126,14 @@ var client = new PostsClient(adapter); // the name of the client will vary based
 const httpClient = KiotaClientFactory.create(undefined, handlers);
 const adapter = new FetchRequestAdapter(authProvider, undefined, undefined, httpClient);
 const client = createApiClient(adapter);
+```
+
+### [Python](#tab/python)
+
+```python
+http_client = KiotaClientFactory.create_with_custom_middleware(middleware=handlers)
+adapter = HttpxRequestAdapter(auth_provider, http_client=http_client)
+client = ApiClient(adapter)  # the name of the client will vary based on your generation parameters
 ```
 
 ---
