@@ -73,7 +73,7 @@ pip install microsoft-kiota-serialization-multipart
 ```
 
 > [!TIP]
-> It is recommended to use a package manager/virtual environment to avoid installing packages system wide. Read more [here](https://packaging.python.org/en/latest/).
+> It is recommended to use a package manager/virtual environment(.venv) to avoid installing packages system wide. Read more [here](https://packaging.python.org/en/latest/).
 
 ## Generate the API client
 
