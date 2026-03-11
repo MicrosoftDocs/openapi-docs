@@ -13,7 +13,7 @@ In this tutorial, you build a sample app in .NET that calls a REST API that does
 
 ## Required tools
 
-- [.NET SDK 8.0](https://get.dot.net/8)
+- [.NET SDK 10.0](https://get.dot.net/10)
 
 ## Create a project
 
@@ -28,7 +28,7 @@ dotnet new gitignore
 
 In case you're adding a Kiota client to an existing project, the following configuration is required:
 
-- ***.csproj** > **TargetFramework** set to "netstandard2.0", "netstandard2.1", "net462", or "net6" or later. [More information](/dotnet/standard/frameworks)
+- ***.csproj** > **TargetFramework** set to "netstandard2.0", "netstandard2.1", "net462", or "net8.0" or later. [More information](/dotnet/standard/frameworks)
 - ***.csproj** > **LangVersion** set to "preview", "latest", or "7.3" or later. [More information](/dotnet/csharp/language-reference/configure-language-version#c-language-version-reference)
 
 The following configuration is recommended:
