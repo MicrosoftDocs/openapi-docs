@@ -54,7 +54,7 @@ kiota generate -l dart -d posts-api.yml -c PostsClient -o ./client
 
 ## Create the client application
 
-Create a file in the root of the project named **index.ts** and add the following code.
+Create a file in the root of the project named **cli.dart** and add the following code.
 
 :::code language="dart" source="~/code-snippets/get-started/quickstart/dart/bin/cli.dart" id="ProgramSnippet":::
 
