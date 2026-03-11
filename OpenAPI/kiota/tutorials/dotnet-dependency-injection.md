@@ -13,7 +13,7 @@ In this tutorial, you learn how to register a [Kiota API client](/openapi/kiota/
 
 ## Required tools
 
-- [.NET SDK 8.0](https://get.dot.net/8)
+- [.NET SDK 10.0](https://get.dot.net/10)
 - [Kiota CLI](/openapi/kiota/install?tabs=bash#install-as-net-tool)
 
 ## Create a project
