@@ -79,5 +79,11 @@ items:
     href: add-api.md
   - name: Use Kiota with Dependency Injection in .NET
     href: tutorials/dotnet-dependency-injection.md
+- name: Extending Kiota
+  items:
+  - name: Code generation architecture
+    href: extending/architecture.md
+  - name: Add a new language
+    href: extending/add-language.md
 - name: Support
   href: support.md
