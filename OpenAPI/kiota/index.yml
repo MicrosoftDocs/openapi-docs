@@ -74,7 +74,7 @@ landingContent:
           - text: TypeScript tutorial
             url: tutorials/typescript-azure.md
 
-  - title: Extending Kiota libraries
+  - title: Extending Kiota
     linkLists:
       - linkListType: overview
         links:
@@ -86,3 +86,9 @@ landingContent:
             url: authentication.md
           - text: Serialization
             url: serialization.md
+      - linkListType: how-to-guide
+        links:
+          - text: Code generation architecture
+            url: extending/architecture.md
+          - text: Add a new language
+            url: extending/add-language.md
