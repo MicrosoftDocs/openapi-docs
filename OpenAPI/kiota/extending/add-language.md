@@ -391,6 +391,10 @@ Integration tests in `it/` exercise the full generation-compile-execute pipeline
 
 Generated Kiota code depends on runtime **companion libraries** that provide the core interfaces and implementations the generated code references. Without these libraries, generated code won't compile. Building these companion libraries is just as important as building the code generator itself.
 
+### URI template dependency
+
+Before implementing abstractions, add support for [std-uritemplate](https://github.com/std-uritemplate/std-uritemplate). Generated Kiota clients rely on URI template expansion to build request URIs before sending HTTP requests.
+
 ### Required library types
 
 There are five categories of companion library. The first three are essential for a minimum viable SDK.
@@ -403,7 +407,7 @@ There are five categories of companion library. The first three are essential fo
 
 1. **Authentication** &mdash; Auth provider implementations that plug into the abstractions' authentication interfaces.
 
-1. **Bundle** *(optional)* &mdash; A convenience meta-package that aggregates all of the above.
+1. **Bundle** *(optional)* &mdash; A convenience meta-package that aggregates all of the above and provides a `DefaultRequestAdapter`.
 
 ### Where they live
 
@@ -414,11 +418,11 @@ Companion libraries live in **separate repositories** from the Kiota generator. 
 - **[microsoft/kiota-typescript](https://github.com/microsoft/kiota-typescript)** &mdash; all components for TypeScript
 - **[microsoft/kiota-dart](https://github.com/microsoft/kiota-dart)** &mdash; all components for Dart
 
-Languages like Go, PHP, Python, and Ruby keep each component in its own repo (for example, `kiota-abstractions-php`, `kiota-http-guzzle-php`).
+Languages like Go, PHP, Python, and Ruby keep each component in its own repo (for example, `kiota-abstractions-php`, `kiota-http-guzzle-php`). Prefer the repository layout that follows your language and ecosystem best practices so packaging, dependency management, and contribution workflows feel idiomatic.
 
 ### Practical guidance
 
-- **Start with abstractions.** Define the core interfaces (`RequestAdapter`, `Parsable`, `SerializationWriter`, `ParseNode`) first. Every other library depends on these.
+- **Start with URI template support, then abstractions.** Wire up `std-uritemplate` first so request URIs can be expanded correctly, then define the core interfaces (`RequestAdapter`, `Parsable`, `SerializationWriter`, `ParseNode`) that every other library depends on.
 - **Minimum viable set:** abstractions + HTTP + JSON serialization is enough to generate and run a working SDK against most APIs.
 - **Develop in parallel.** You can build the generator and companion libraries at the same time.
 - **Add formats incrementally.** Once JSON works, add Form, Text, and Multipart serialization.
@@ -473,7 +477,7 @@ Create `src/Kiota.Builder/Writers/{Language}/` with:
 - [ ] **HTTP** &mdash; HTTP client implementation
 - [ ] **Serialization** &mdash; JSON, Form, Text, and Multipart
 - [ ] **Authentication** &mdash; at minimum, Anonymous and API Key providers
-- [ ] **Bundle** &mdash; convenience meta-package
+- [ ] **Bundle** &mdash; convenience meta-package with a `DefaultRequestAdapter`
 
 ### Documentation
 
