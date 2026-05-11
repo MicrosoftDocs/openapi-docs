@@ -3,7 +3,7 @@ title: Overview
 description: Learn about the features and use cases for the OpenAPI.NET library.
 author: jasonjoh
 ms.author: jasonjoh
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/10/2023
 ---
 

@@ -3,7 +3,7 @@ title: Create an OpenAPI document
 description: Learn how to use the OpenAPI.NET library to create an OpenAPI document.
 author: jasonjoh
 ms.author: jasonjoh
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Create an OpenAPI document

@@ -3,7 +3,7 @@ title: Convert an OpenAPI document
 description: Learn how to use the OpenAPI.NET library to convert OpenAPI documents between YAML and JSON.
 author: jasonjoh
 ms.author: jasonjoh
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Convert an OpenAPI document
