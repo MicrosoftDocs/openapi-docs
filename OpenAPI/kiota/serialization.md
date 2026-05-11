@@ -3,7 +3,7 @@ title: Serialization with Kiota API clients
 description: Learn about the interfaces used for serialization and deserialization in Kiota clients.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/21/2023
 ---
 

@@ -3,7 +3,7 @@ title: HTTP status code handling with Kiota API clients
 description: Learn how Kiota maps HTTP status codes to return values.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/21/2023
 ---
 
