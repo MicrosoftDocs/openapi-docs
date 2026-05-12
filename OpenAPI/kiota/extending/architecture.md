@@ -3,7 +3,7 @@ title: Kiota code generation architecture
 description: Learn how Kiota's code generation pipeline transforms OpenAPI descriptions into language-specific API clients.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/21/2026
 ---
 

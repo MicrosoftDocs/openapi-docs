@@ -3,7 +3,7 @@ title: Kiota backing store
 description: Learn how Kiota generated models provide flexibility around data storage and events subscriptions.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 05/01/2024
 ---
 

@@ -3,7 +3,7 @@ title: Query parameters and request headers
 description: Learn how to use query parameters and request headers to customize API calls.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 08/01/2023
 ---
 

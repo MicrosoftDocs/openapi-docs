@@ -3,7 +3,7 @@ title: Kiota API models
 description: Learn how OpenAPI types are used to generate models for Kiota API clients.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/21/2023
 ---
 
