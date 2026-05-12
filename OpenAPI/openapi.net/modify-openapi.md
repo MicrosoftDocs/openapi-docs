@@ -3,7 +3,7 @@ title: Modify an OpenAPI document
 description: Learn how to use the OpenAPI.NET library to modify an OpenAPI document.
 author: jasonjoh
 ms.author: jasonjoh
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Modify an OpenAPI document

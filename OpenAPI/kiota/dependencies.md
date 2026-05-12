@@ -3,7 +3,7 @@ title: Managing dependencies of Kiota API clients
 description: Learn what different dependencies bring to your project and how to manage them.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/21/2023
 ---
 
