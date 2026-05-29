@@ -13,68 +13,66 @@ The PetStore API described in [Create an OpenAPI document](create-openapi.md) ha
 This example adds a new path to the OpenAPI document to describe a new endpoint for adding a pet to the store.
 
 ```csharp
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Readers;
-using Microsoft.OpenApi.Writers;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.Reader;
+using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+// Configure settings so YAML parsing is also available
+var readerSettings = new OpenApiReaderSettings();
+readerSettings.AddYamlReader();
 
 // Load the existing OpenAPI document from a YAML file
-using var streamReader = new StreamReader("pet-store.yaml");
-var reader = new OpenApiStreamReader();
-var document = reader.Read(streamReader.BaseStream, out var diagnostic);
+var (document, diagnostic) = await OpenApiDocument.LoadAsync("pet-store.yaml", readerSettings);
 
 // Add a new property to the Pet schema
 var categoryProperty = new OpenApiSchema
 {
-    Type = "object",
-    Properties = new Dictionary<string, OpenApiSchema>
+    Type = JsonSchemaType.Object,
+    Properties = new Dictionary<string, IOpenApiSchema>
     {
         ["id"] = new OpenApiSchema
         {
-            Type = "integer",
+            Type = JsonSchemaType.Integer,
         },
         ["name"] = new OpenApiSchema
         {
-            Type = "string",
+            Type = JsonSchemaType.String,
         },
     },
 };
 
-document.Components.Schemas["Pet"].Properties.Add("category", categoryProperty);
+((OpenApiSchema)document.Components.Schemas["Pet"]).Properties.Add("category", categoryProperty);
 
 // Add a new path
 var newPetPath = new OpenApiPathItem
 {
-    Operations = new Dictionary<OperationType, OpenApiOperation>
+  Operations = new Dictionary<HttpMethod, OpenApiOperation>
+  {
+    [HttpMethod.Post] = new OpenApiOperation
     {
-        [OperationType.Post] = new OpenApiOperation
+      Description = "Add a new pet",
+      RequestBody = new OpenApiRequestBody
+      {
+        Content = new Dictionary<string, IOpenApiMediaType>
         {
-            Description = "Add a new pet",
-            RequestBody = new OpenApiRequestBody
-            {
-                Content = new Dictionary<string, OpenApiMediaType>
-                {
-                    ["application/json"] = new OpenApiMediaType
-                    {
-                        Schema = new OpenApiSchema
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.Schema,
-                                Id = "Pet",
-                            },
-                        },
-                    },
-                },
-                Required = true, // Indicates that the body is required
-            },
-            Responses = new OpenApiResponses
-            {
-                ["201"] = new OpenApiResponse
-                {
-                    Description = "Pet created successfully",
-                },
-            },
+          ["application/json"] = new OpenApiMediaType
+          {
+            Schema = new OpenApiSchemaReference("Pet"),
+          },
         },
+        Required = true, // Indicates that the body is required
+      },
+      Responses = new OpenApiResponses
+      {
+        ["201"] = new OpenApiResponse
+        {
+          Description = "Pet created successfully",
+        },
+      },
+    },
     },
 };
 
@@ -98,24 +96,24 @@ info:
 servers:
   - url: https://api.petstore.com
 paths:
-  /pets:
+  '/pets':
     get:
       description: Get all pets
       responses:
         '200':
           description: A list of pets
           content:
-            application/json:
+            'application/json':
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/Pet'
-  /pets/post:
+  '/pets/post':
     post:
       description: Add a new pet
       requestBody:
         content:
-          application/json:
+          'application/json':
             schema:
               $ref: '#/components/schemas/Pet'
         required: true
