@@ -655,7 +655,7 @@ info:
 paths:
   /jobs/{id}:
     get:
-    $ref: '#/components/pathItems/job'
+  $ref: '#/components/pathItems/job'
 components:
   pathItems:
     job:
