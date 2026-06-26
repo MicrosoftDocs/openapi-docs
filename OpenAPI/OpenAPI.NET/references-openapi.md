@@ -326,7 +326,7 @@ JSON Schema references can use either a locator or an identifier. Locators indic
 ### What can a JSON Schema locator reference target
 
 - An internal component
-- An interal component subschema
+- An internal component subschema
 - An internal inline subschema
 - An external OpenApi document component
 - An external inline subchema [Not supported]
