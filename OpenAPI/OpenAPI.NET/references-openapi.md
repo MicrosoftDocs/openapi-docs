@@ -268,7 +268,7 @@ components:
 
 JSON Schema defines the concept of a JSON Schema Resource which is identified by a URI.  $ref values can be specified relative to the JSON Schema Resource.  Each OpenAPI schema object can be considered a JSON Schema Resource.
 
-In this example schema "a" is a JSON Schema resource and the reference in the "b" property of the "c" object is relative to the JSON Schema resource "a".  Unfortunately, OpenAPI 3.1 has no well defined URIs for OpenAPI Schemas. This is resolved in OpenAPI 3.2 with the introduction of a new top level "self" property.
+In this example schema "a" is a JSON Schema resource and the reference in the "b" property of the "c" object is relative to the JSON Schema resource "a".  Unfortunately, OpenAPI 3.1 has no well defined URIs for OpenAPI Schemas. This is resolved in OpenAPI 3.2 with the introduction of a new top level "$self" property.
 
 ```yaml
 components:
