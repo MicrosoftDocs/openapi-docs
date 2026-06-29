@@ -47,14 +47,13 @@ info:
 paths:
   /item:
     get:
-        security:
-            - customapikey: []
+      security:
+        - customapikey: []
 components:
   securitySchemes:
     customapikey:
-        $ref: ./commonSecuritySchemes/customapikey.json#/components/securityschemes/customapikey
+      $ref: ./commonSecuritySchemes/customapikey.json#/components/securityschemes/customapikey
 ```
-
 
 ### Targeting Mechanisms used in Reference objects
 
@@ -139,7 +138,6 @@ item-list:
     description: a thing
 ```
 
-
 ### What types Reference objects can target
 
 Reference objects can be used to target the follow OAS types: parameter, response, requestBody, example, header, securityScheme, link, callback and pathItem.  In OpenAPI 3.0, they also can reference schema objects.
@@ -162,23 +160,22 @@ JSON Schema references can be used in the following locations:
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference in at the root of an inline schema
-    version: 1.0.0
+  title: Reference in at the root of an inline schema
+  version: 1.0.0
 paths:
-    /item:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/item'
+  /item:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/item'
 components:
-    schemas:
-      item:
-        type: object
-
+  schemas:
+    item:
+      type: object
 ```
 
 #### In a subschema of an inline schema
@@ -186,24 +183,24 @@ components:
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference in at the root of an inline schema
-    version: 1.0.0
+  title: Reference in at the root of an inline schema
+  version: 1.0.0
 paths:
-    /items:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/item'
+  /items:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/item'
 components:
-    schemas:
-      item:
-        type: object
+  schemas:
+    item:
+      type: object
 ```
 
 #### At the root of a component schema
@@ -211,28 +208,28 @@ components:
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference at the root of a component schema
-    version: 1.0.0
+  title: Reference at the root of a component schema
+  version: 1.0.0
 paths:
-    /items:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/specialitem'
+  /items:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/specialitem'
 components:
-    schemas:
-      specialitem:  # Use the item type but provide a different title for the type
-        title: Special Item
-        $ref: "#/components/schemas/item"
-      item:
-        title: Item
-        type: object
+  schemas:
+    specialitem:  # Use the item type but provide a different title for the type
+      title: Special Item
+      $ref: "#/components/schemas/item"
+    item:
+      title: Item
+      type: object
 ```
 
 #### In a subschema of a component schema
@@ -240,26 +237,26 @@ components:
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference in a subschema of an component schema
-    version: 1.0.0
+  title: Reference in a subschema of an component schema
+  version: 1.0.0
 paths:
-    /items:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/items'
+  /items:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/items'
 components:
-    schemas:
+  schemas:
+    items:
+      type: array
       items:
-        type: array
-        items:
-            $ref: '#/components/schemas/item'
-      item:
-        type: object
+        $ref: '#/components/schemas/item'
+    item:
+      type: object
 ```
 
 #### References local to a JSON Schema Resource defined by an OpenAPI Schema
@@ -270,24 +267,24 @@ In this example schema "a" is a JSON Schema resource and the reference in the "b
 
 ```yaml
 components:
-schema:
-  a:
-    type:
+  schemas:
+    a:
+      type:
         - object
         - 'null'
-    properties:
+      properties:
         b:
-            type:
+          type:
+            - object
+            - 'null'
+          properties:
+            c:
+              type:
                 - object
                 - 'null'
-            properties:
-                c:
-                    type:
-                        - object
-                        - 'null'
-                    properties:
-                        b:
-                            $ref: '#/properties/b'
+              properties:
+                b:
+                  $ref: '#/properties/b'
 ```
 
 #### References local to a JSON Schema Resource defined by a $id
@@ -297,27 +294,27 @@ components:
 schema:
   a:
     type:
-        - object
-        - 'null'
+      - object
+      - 'null'
     additionalProperties: false
     properties:
-        b:
+      b:
+        type:
+          - object
+          - 'null'
+        additionalProperties: false
+        properties:
+          c:
+            $id: 'http://example.org/c'
             type:
-                - object
-                - 'null'
+              - object
+              - 'null'
             additionalProperties: false
             properties:
-                c:
-                    $id: 'http://example.org/c'
-                    type:
-                        - object
-                        - 'null'
-                    additionalProperties: false
-                    properties:
-                        b:
-                            $ref: '#/properties/d'
-                        d:
-                            type: string
+              b:
+                $ref: '#/properties/d'
+              d:
+                type: string
 ```
 
 ### What kinds of JSON Schema references exist
@@ -339,22 +336,22 @@ JSON Schema references can use either a locator or an identifier. Locators indic
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference to an internal component
-    version: 1.0.0
+  title: Reference to an internal component
+  version: 1.0.0
 paths:
-    /item:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/item'
+  /item:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/item'
 components:
   schemas:
-      item:
-        type: object
+    item:
+      type: object
 ```
 
 #### An internal component subschema
@@ -362,128 +359,124 @@ components:
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference to an internal component
-    version: 1.0.0
+  title: Reference to an internal component
+  version: 1.0.0
 paths:
-    /person/{id}:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/person'
-    /person/{id}/address:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: '#/components/schemas/person/properties/address'
+  /person/{id}:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/person'
+  /person/{id}/address:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/person/properties/address'
 components:
   schemas:
-      person:
-        type: object
-        properties:
-            name:
-                type: string
-            address:
-                type: object
-                properties:
-                    street:
-                        type: string
-                    city:
-                        type: string
+    person:
+      type: object
+      properties:
+        name:
+          type: string
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
 ```
-
 
 #### An external OpenApi document component
 
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference to an external OpenApi document component
-    version: 1.0.0
+  title: Reference to an external OpenApi document component
+  version: 1.0.0
 paths:
-    /person/{id}:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: 'OAS-schemas.yaml#/components/schemas/person'
+  /person/{id}:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: 'OAS-schemas.yaml#/components/schemas/person'
 ```
 
 ```yaml
 # OAS-schemas.yaml file
 openapi: 3.1.0
 info:
-    title: OpenAPI document containing reusable components
-    version: 1.0.0
+  title: OpenAPI document containing reusable components
+  version: 1.0.0
 components:
   schemas:
-      person:
-        type: object
-        properties:
-            name:
-                type: string
-            address:
-                type: object
-                properties:
-                    street:
-                        type: string
-                    city:
-                        type: string
+    person:
+      type: object
+      properties:
+        name:
+          type: string
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
 ```
-
 
 #### An external inline subchema
 
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference to an external OpenApi document component
-    version: 1.0.0
+  title: Reference to an external OpenApi document component
+  version: 1.0.0
 paths:
-    /person/{id}:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: 'OAS-schemas.yaml#/components/schemas/person/properties/address'
+  /person/{id}:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: 'OAS-schemas.yaml#/components/schemas/person/properties/address'
 ```
 
 ```yaml
 # OAS-schemas.yaml file
 openapi: 3.1.0
 info:
-    title: OpenAPI document containing reusable components
-    version: 1.0.0
+  title: OpenAPI document containing reusable components
+  version: 1.0.0
 components:
   schemas:
-      person:
-        type: object
-        properties:
-            name:
-                type: string
-            address:
-                type: object
-                properties:
-                    street:
-                        type: string
-                    city:
-                        type: string
-
+    person:
+      type: object
+      properties:
+        name:
+          type: string
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
 ```
-
 
 #### An external inline subchema using an anchor [Not currently supported]
 
@@ -492,62 +485,61 @@ We accept pull requests.
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference to an external OpenApi document component
-    version: 1.0.0
+  title: Reference to an external OpenApi document component
+  version: 1.0.0
 paths:
-    /person/{id}:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: 'OAS-schemas.yaml#address'
+  /person/{id}:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: 'OAS-schemas.yaml#address'
 ```
 
 ```yaml
 # OAS-schemas.yaml file
 openapi: 3.1.0
 info:
-    title: OpenAPI document containing reusable components
-    version: 1.0.0
+  title: OpenAPI document containing reusable components
+  version: 1.0.0
 components:
   schemas:
-      person:
-        type: object
-        properties:
-            name:
-                type: string
-            address:
-                $anchor: address
-                type: object
-                properties:
-                    street:
-                        type: string
-                    city:
-                        type: string
+    person:
+      type: object
+      properties:
+        name:
+          type: string
+        address:
+          $anchor: address
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
 
 ```
-
 
 #### An external fragment [Not supported]
 
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference to an external OpenApi document component
-    version: 1.0.0
+  title: Reference to an external OpenApi document component
+  version: 1.0.0
 paths:
-    /person/{id}:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: 'OAS-schemas.yaml#/person/properties/address'
+  /person/{id}:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: 'OAS-schemas.yaml#/person/properties/address'
 ```
 
 ```yaml
@@ -556,16 +548,15 @@ person:
   type: object
   properties:
     name:
-        type: string
+      type: string
     address:
-        type: object
-        properties:
-            street:
-                type: string
-            city:
-                type: string
+      type: object
+      properties:
+        street:
+          type: string
+        city:
+          type: string
 ```
-
 
 ### What can a JSON Schema identifier reference target
 
@@ -574,35 +565,37 @@ person:
 - Reference external components and subschemas using a $id
 
 #### Reference an internal component using a $id
+
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference an internal component using id
-    version: 1.0.0
+  title: Reference an internal component using id
+  version: 1.0.0
 paths:
-    /person/{id}:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: 'https://schemas.acme.org/person'
+  /person/{id}:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: 'https://schemas.acme.org/person'
 components:
-      person:
-        $id: 'https://schemas.acme.org/person'
-        type: object
-        properties:
-            name:
-                type: string
-            address:
-                type: object
-                properties:
-                    street:
-                        type: string
-                    city:
-                        type: string
+  schemas:
+    person:
+      $id: 'https://schemas.acme.org/person'
+      type: object
+      properties:
+        name:
+          type: string
+        address:
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
 ```
 
 #### Reference an internal subschema using a $id  [Not supported yet]
@@ -610,34 +603,35 @@ components:
 ```yaml
 openapi: 3.1.0
 info:
-    title: Reference an internal subschema using id
-    version: 1.0.0
+  title: Reference an internal subschema using id
+  version: 1.0.0
 
 paths:
-    /person/{id}/address:
-        get:
-          responses:
-            200:
-              description: ok
-              content:
-                application/json:
-                  schema:
-                    $ref: 'https://schemas.acme.org/address'
+  /person/{id}/address:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: 'https://schemas.acme.org/address'
 components:
-      person:
-        $id: 'https://schemas.acme.org/person'
-        type: object
-        properties:
-            name:
-                type: string
-            address:
-                $id: 'address'
-                type: object
-                properties:
-                    street:
-                        type: string
-                    city:
-                        type: string
+  schemas:
+    person:
+      $id: 'https://schemas.acme.org/person'
+      type: object
+      properties:
+        name:
+          type: string
+        address:
+          $id: 'address'
+          type: object
+          properties:
+            street:
+              type: string
+            city:
+              type: string
 ```
 
 #### Reference external components and subschemas using a $id
