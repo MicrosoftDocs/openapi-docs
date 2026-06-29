@@ -1,9 +1,10 @@
 ---
 title: References in OpenAPI documents
 description: Learn the types of references that are supportined in the OpenAPI.NET library.
-author: darrmi
+author: darrelmiller
 ms.author: darrmi
-ms.topic: conceptual
+ms.topic: article
+ms.date: 02/17/2025
 ---
 
 # References in OpenAPI documents
