@@ -1,6 +1,6 @@
 ---
 title: References in OpenAPI documents
-description: Learn the types of references that are supportined in the OpenAPI.NET library.
+description: Learn the types of references that are supported in the OpenAPI.NET library.
 author: darrelmiller
 ms.author: darrmi
 ms.topic: article
@@ -34,7 +34,10 @@ paths:
 components:
   parameters:
     size:
-     type: number
+      name: size
+      in: query
+      schema:
+        type: number
 ```
 
 The following example shows a way to externalize security schemes using a reference object in a component.  This is necessary because security requirement objects do not allow referencing using an external URI.
@@ -52,7 +55,7 @@ paths:
 components:
   securitySchemes:
     customapikey:
-      $ref: ./commonSecuritySchemes/customapikey.json#/components/securityschemes/customapikey
+      $ref: ./commonSecuritySchemes/customapikey.json#/components/securitySchemes/customapikey
 ```
 
 ### Targeting Mechanisms used in Reference objects
@@ -90,6 +93,7 @@ paths:
       responses:
         200:
           description: Ok
+          content:
             application/json:
               examples:
                 item-list:
@@ -123,6 +127,7 @@ paths:
       responses:
         200:
           description: Ok
+          content:
             application/json:
               examples:
                 item-list:
@@ -134,8 +139,8 @@ paths:
 # file for example fragments (examples.yaml)
 item-list:
   value:
-  - name: thing
-    description: a thing
+    - name: thing
+      description: a thing
 ```
 
 ### What types Reference objects can target
@@ -291,7 +296,7 @@ components:
 
 ```yaml
 components:
-schema:
+  schemas:
   a:
     type:
       - object
@@ -649,12 +654,11 @@ info:
   version: 1.0.0
 paths:
   /jobs/{id}:
-    get:
-  $ref: '#/components/pathItems/job'
+    $ref: '#/components/pathItems/job'
 components:
   pathItems:
     job:
-      get:
-      patch:
-      delete:
+      get: {}
+      patch: {}
+      delete: {}
 ```
