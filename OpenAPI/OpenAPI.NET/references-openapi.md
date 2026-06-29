@@ -651,6 +651,56 @@ components:
 
 External components and subschemas are referenced in the exact same way as internal components.
 
+## $dynamicAnchor and $dynamicRef [Not currently supported]
+
+JSON Schema 2020-12, which is the basis for OpenAPI 3.1 schemas, introduces `$dynamicAnchor` and `$dynamicRef` as a mechanism for building extensible, generic schemas. They work together as overridable extension hooks:
+
+- `$dynamicAnchor` declares a named placeholder anchor in a schema. Any parent schema that references it can redefine the anchor to specialize behavior.
+- `$dynamicRef` references a dynamic anchor. Unlike `$ref`, it does not resolve statically. Instead, evaluation looks back through the stack of schema resources traversed so far, and jumps to the **first** encountered definition of that anchor. This allows a specializing schema to override the referenced subschema.
+
+This is analogous to generic type parameters in programming languages such as C++ templates or Java generics.
+
+OpenAPI.NET exposes `$dynamicAnchor` and `$dynamicRef` as properties on the schema model, but dynamic reference resolution is not currently implemented.
+
+The following example defines a generic `collection` schema whose item type can be overridden by a more specialized schema.
+
+```yaml
+openapi: 3.1.0
+info:
+  title: Generic collection schema using $dynamicAnchor and $dynamicRef
+  version: 1.0.0
+components:
+  schemas:
+    # A generic, reusable collection schema.
+    # The item type is left open and can be overridden by a specializing
+    # schema that redefines the "collection-item" dynamic anchor.
+    collection:
+      $id: 'https://schemas.acme.org/collection'
+      type: array
+      items:
+        $dynamicRef: '#collection-item'
+      $defs:
+        default:
+          $comment: Default declaration to satisfy the bookending requirement
+          $dynamicAnchor: collection-item
+
+    # A specialized collection schema that constrains items to strings.
+    # It references the generic schema and overrides the dynamic anchor.
+    string-collection:
+      $ref: 'https://schemas.acme.org/collection'
+      $defs:
+        collection-item:
+          $dynamicAnchor: collection-item
+          type: string
+```
+
+In this example:
+
+- `collection` uses `$dynamicRef: '#collection-item'` to declare that each array item should validate against whatever `collection-item` resolves to at runtime.
+- The `$defs/default` subschema in `collection` declares the `$dynamicAnchor: collection-item` placeholder. This satisfies the *bookending requirement*: the base schema that uses `$dynamicRef` must itself provide a `$dynamicAnchor` with the same name, even if it imposes no constraints.
+- `string-collection` uses `$ref` to extend `collection` and redefines `collection-item` in its own `$defs` with `type: string`.
+- When `string-collection` is evaluated, the `$dynamicRef` in `collection` resolves to the `collection-item` anchor defined in `string-collection`, effectively constraining all array items to be strings.
+
 ## $ref in PathItem Objects
 
 This scenario is unsupported in OpenAPI.NET.
