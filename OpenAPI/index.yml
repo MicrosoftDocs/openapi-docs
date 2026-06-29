@@ -36,13 +36,6 @@ productDirectory:
       url: ./kiota/quickstarts/dotnet.md
     - text: Azure auth tutorial
       url: ./kiota/tutorials/dotnet-azure.md
-  - title: CLI
-    imageSrc: /media/common/i_cligeneric.svg
-    links:
-    - text: Quick start
-      url: ./kiota/quickstarts/cli.md
-    - text: Azure auth tutorial
-      url: ./kiota/tutorials/cli-azure.md
   - title: Go
     imageSrc: /media/logos/logo_Go-lightblue.svg
     links:

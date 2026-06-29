@@ -16,7 +16,6 @@ Kiota quick starts are step-by-step exercises that guide you through generating 
 
 | Quick start | GitHub location |
 |-------------|-----------------|
-| [CLI](cli.md) | [microsoft/kiota-samples/get-started/quickstart/cli](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/cli) |
 | [.NET](dotnet.md) | [microsoft/kiota-samples/get-started/quickstart/dotnet](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/dotnet) |
 | [Go](go.md) | [microsoft/kiota-samples/get-started/quickstart/go](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/go) |
 | [Java](java.md) | [microsoft/kiota-samples/get-started/quickstart/java](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/java) |

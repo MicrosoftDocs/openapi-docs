@@ -3,7 +3,7 @@ title: Error handling with Kiota API clients
 description: Learn about error handling with Kiota API clients.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/21/2023
 ---
 

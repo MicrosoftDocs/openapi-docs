@@ -3,7 +3,7 @@ title: Create an OpenAPI document
 description: Learn how to use the OpenAPI.NET library to create an OpenAPI document.
 author: jasonjoh
 ms.author: jasonjoh
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Create an OpenAPI document
@@ -13,8 +13,10 @@ The `OpenApiDocument` class contains methods and properties that developers use 
 This example defines a simple PetStore API definition that allows users to view pets in an online store. It adds a GET operation for a single path (`/pets`), and defines the `Pet` type returned by the API.
 
 ```csharp
-using Microsoft.OpenApi.Models;
-using Microsoft.OpenApi.Writers;
+using Microsoft.OpenApi;
+using System.IO;
+using System.Collections.Generic;
+using System.Net.Http;
 
 // Create an OpenAPI document for the PetStore API
 var document = new OpenApiDocument
@@ -32,9 +34,9 @@ var document = new OpenApiDocument
     {
         ["/pets"] = new OpenApiPathItem
         {
-            Operations = new Dictionary<OperationType, OpenApiOperation>
+            Operations = new Dictionary<HttpMethod, OpenApiOperation>
             {
-                [OperationType.Get] = new OpenApiOperation
+                [HttpMethod.Get] = new OpenApiOperation
                 {
                     Description = "Get all pets",
                     Responses = new OpenApiResponses
@@ -42,21 +44,14 @@ var document = new OpenApiDocument
                         ["200"] = new OpenApiResponse
                         {
                             Description = "A list of pets",
-                            Content = new Dictionary<string, OpenApiMediaType>
+                            Content = new Dictionary<string, IOpenApiMediaType>
                             {
                                 ["application/json"] = new OpenApiMediaType
                                 {
                                     Schema = new OpenApiSchema
                                     {
-                                        Type = "array",
-                                        Items = new OpenApiSchema
-                                        {
-                                            Reference = new OpenApiReference
-                                            {
-                                                Type = ReferenceType.Schema,
-                                                Id = "Pet",
-                                            },
-                                        },
+                                        Type = JsonSchemaType.Array,
+                                        Items = new OpenApiSchemaReference("Pet"),
                                     },
                                 },
                             },
@@ -68,16 +63,16 @@ var document = new OpenApiDocument
     },
     Components = new OpenApiComponents
     {
-        Schemas = new Dictionary<string, OpenApiSchema>
+        Schemas = new Dictionary<string, IOpenApiSchema>
         {
             ["Pet"] = new OpenApiSchema
             {
-                Type = "object",
-                Properties = new Dictionary<string, OpenApiSchema>
+                Type = JsonSchemaType.Object,
+                Properties = new Dictionary<string, IOpenApiSchema>
                 {
                     ["name"] = new OpenApiSchema
                     {
-                        Type = "string",
+                        Type = JsonSchemaType.String,
                     },
                 },
             },
@@ -102,14 +97,14 @@ info:
 servers:
   - url: https://api.petstore.com
 paths:
-  /pets:
+  '/pets':
     get:
       description: Get all pets
       responses:
         '200':
           description: A list of pets
           content:
-            application/json:
+            'application/json':
               schema:
                 type: array
                 items:

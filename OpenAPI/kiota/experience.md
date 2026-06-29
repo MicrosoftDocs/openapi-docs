@@ -3,7 +3,7 @@ title: Kiota API client experience
 description: Learn about the developer experience provided by Kiota-generated API clients.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/10/2023
 ---
 

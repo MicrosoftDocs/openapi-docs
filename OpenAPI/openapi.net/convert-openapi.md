@@ -3,7 +3,7 @@ title: Convert an OpenAPI document
 description: Learn how to use the OpenAPI.NET library to convert OpenAPI documents between YAML and JSON.
 author: jasonjoh
 ms.author: jasonjoh
-ms.topic: conceptual
+ms.topic: article
 ---
 
 # Convert an OpenAPI document
@@ -15,13 +15,18 @@ Here's an example of how you can convert an OpenAPI document from YAML to JSON u
 This example converts the OpenAPI document [created](create-openapi.md) and [modified](modify-openapi.md) in the previous examples from YAML to JSON.
 
 ```csharp
-using Microsoft.OpenApi.Readers;
-using Microsoft.OpenApi.Writers;
+using Microsoft.OpenApi;
+using Microsoft.OpenApi.Reader;
+using System;
+using System.IO;
+using System.Threading.Tasks;
+
+// Configure settings so Yaml parsing is also available
+var readerSettings = new OpenApiReaderSettings();
+readerSettings.AddYamlReader();
 
 // Load the existing OpenAPI document from a YAML file
-using var streamReader = new StreamReader("updated-pet-store.yaml");
-var reader = new OpenApiStreamReader();
-var document = reader.Read(streamReader.BaseStream, out var diagnostic);
+var (document, diagnostic) = await OpenApiDocument.LoadAsync("updated-pet-store.yaml", readerSettings);
 
 // Serialize and save the OpenAPI document to a JSON file
 using var streamWriter = new StreamWriter("updated-pet-store.json");
@@ -43,24 +48,24 @@ info:
 servers:
   - url: https://api.petstore.com
 paths:
-  /pets:
+  '/pets':
     get:
       description: Get all pets
       responses:
         '200':
           description: A list of pets
           content:
-            application/json:
+            'application/json':
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/Pet'
-  /pets/post:
+  '/pets/post':
     post:
       description: Add a new pet
       requestBody:
         content:
-          application/json:
+          'application/json':
             schema:
               $ref: '#/components/schemas/Pet'
         required: true

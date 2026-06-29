@@ -13,7 +13,7 @@ In this tutorial, you generate an API client that uses [Microsoft identity authe
 
 ## Required tools
 
-- [Go 1.20](https://golang.org/dl/)
+- [Go 1.22](https://golang.org/dl/)
 
 ## Create a project
 

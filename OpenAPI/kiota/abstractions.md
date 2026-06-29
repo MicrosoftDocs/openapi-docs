@@ -3,7 +3,7 @@ title: Kiota abstractions
 description: Learn how Kiota decouples the API clients and models from the underlying implementations of HTTP, authentication, and serialization.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/21/2023
 ---
 

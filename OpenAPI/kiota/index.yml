@@ -42,8 +42,6 @@ landingContent:
         links:
           - text: Build API clients for .NET
             url: quickstarts/dotnet.md
-          - text: Build API clients for CLI
-            url: quickstarts/cli.md
           - text: Build API clients for Dart
             url: quickstarts/dart.md
           - text: Build API clients for Go
@@ -63,8 +61,6 @@ landingContent:
         links:
           - text: .NET tutorial
             url: tutorials/dotnet-azure.md
-          - text: CLI tutorial
-            url: tutorials/cli-azure.md
           - text: Go tutorial
             url: tutorials/go-azure.md
           - text: Java tutorial
@@ -78,7 +74,7 @@ landingContent:
           - text: TypeScript tutorial
             url: tutorials/typescript-azure.md
 
-  - title: Extending Kiota libraries
+  - title: Extending Kiota
     linkLists:
       - linkListType: overview
         links:
@@ -90,3 +86,9 @@ landingContent:
             url: authentication.md
           - text: Serialization
             url: serialization.md
+      - linkListType: how-to-guide
+        links:
+          - text: Code generation architecture
+            url: extending/architecture.md
+          - text: Add a new language
+            url: extending/add-language.md

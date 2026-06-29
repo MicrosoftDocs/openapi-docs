@@ -3,7 +3,7 @@ title: Kiota request builders
 description: Learn how to use Kiota request builders to call APIs.
 author: jasonjoh
 ms.author: jasonjoh
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/10/2023
 ---
 

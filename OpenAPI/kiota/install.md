@@ -30,6 +30,7 @@ You can download the latest version for your operating system.
 | Linux (x64)      | [linux-x64.zip](https://aka.ms/get/kiota/latest/linux-x64.zip) |
 | macOS (arm64)    | [osx-arm64.zip](https://aka.ms/get/kiota/latest/osx-arm64.zip) |
 | macOS (x64)      | [osx-x64.zip](https://aka.ms/get/kiota/latest/osx-x64.zip)     |
+| Windows (arm64)  | [win-x64.zip](https://aka.ms/get/kiota/latest/win-arm64.zip)   |
 | Windows (x64)    | [win-x64.zip](https://aka.ms/get/kiota/latest/win-x64.zip)     |
 | Windows (x86)    | [win-x86.zip](https://aka.ms/get/kiota/latest/win-x86.zip)     |
 
@@ -99,7 +100,7 @@ dotnet tool install --global Microsoft.OpenApi.Kiota
 ## Build from source
 
 1. Clone the [Kiota repository](https://github.com/microsoft/kiota).
-1. Install the [.NET SDK 8.0](https://get.dot.net/8).
+1. Install the [.NET SDK 10.0](https://get.dot.net/10).
 1. Open the solution with Visual Studio and right select *publish* **or** execute the following command:
 
     ```bash

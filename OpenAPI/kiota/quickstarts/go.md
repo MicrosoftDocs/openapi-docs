@@ -13,7 +13,7 @@ In this tutorial, you build a sample app in Go that calls a REST API that doesn'
 
 ## Required tools
 
-- [Go 1.20](https://golang.org/dl/)
+- [Go 1.22](https://golang.org/dl/)
 
 ## Create a project
 

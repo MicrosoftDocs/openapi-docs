@@ -38,11 +38,22 @@ public class SaveRequestHandler : DelegatingHandler
 ```typescript
 export class SaveRequestHandler implements Middleware {
     next: Middleware | undefined;
-    public execute(url: string, requestInit: RequestInit, requestOptions?: Record<string, RequestOption>): Promise<Response> {
+    public async execute(url: string, requestInit: RequestInit, requestOptions?: Record<string, RequestOption>): Promise<Response> {
         console.log(`Request: ${requestInit.body}`);
         return await this.next?.execute(url, requestInit as RequestInit, requestOptions);
     }
 }
+```
+
+### [Python](#tab/python)
+
+```python
+class SaveRequestHandler(BaseMiddleware):
+    async def send(
+        self, request: httpx.Request, transport: httpx.AsyncBaseTransport
+    ) -> httpx.Response:
+        print(f"Request: {request.content}")
+        return await super().send(request, transport)
 ```
 
 ---
@@ -65,6 +76,13 @@ const handlers = MiddlewareFactory.getDefaultMiddlewares();
 handlers.unshift(new SaveRequestHandler());
 ```
 
+### [Python](#tab/python)
+
+```python
+handlers = KiotaClientFactory.get_default_middleware(options=None)
+handlers.append(SaveRequestHandler())
+```
+
 ---
 
 Next you need to create a delegate chain so the middleware handlers are registered in the right order.
@@ -82,6 +100,12 @@ var httpMessageHandler =
 
 ```typescript
 // this step is not required for TypeScript
+```
+
+### [Python](#tab/python)
+
+```python
+# this step is not required for Python
 ```
 
 ---
@@ -104,6 +128,14 @@ const adapter = new FetchRequestAdapter(authProvider, undefined, undefined, http
 const client = createApiClient(adapter);
 ```
 
+### [Python](#tab/python)
+
+```python
+http_client = KiotaClientFactory.create_with_custom_middleware(middleware=handlers)
+adapter = HttpxRequestAdapter(auth_provider, http_client=http_client)
+client = ApiClient(adapter)  # the name of the client will vary based on your generation parameters
+```
+
 ---
 
 ## Middleware handlers
@@ -118,7 +150,7 @@ The following table describes which middleware handlers are implemented by the H
 | Headers Inspection | Allows the client application to inspect the request and response headers through the associated options. | Default | Default | Default | Default | Default | Default |
 | Parameters Name Decoding | Decodes query parameter names that were encoded when building the URL because they contained characters not allowed by RFC 6570. | Default | Default | Default | Default | Default | Default |
 | Redirect | Automatically follows Location response headers when a **301** or **302** response status code is received. | Default | Default | Default | Default | Default | Default |
-| Request Compression | Compresses request bodies and retries requests without compression when a **415** response status code is received. | No | Default | No | Default | No | No |
+| Request Compression | Compresses request bodies and retries requests without compression when a **415** response status code is received. | No | Default | No | Yes | No | No |
 | Response Decompression | Adds an **Accept-Encoding** request header and decompresses any response body with a **Content-Encoding** response header. | N/A | N/A | N/A | N/A | N/A | N/A |
 | Retry | Automatically retries requests when a **429** or a **503** response status code is received. | Default | Default | Default | Default | Default | Default |
 | Sunset | Logs a warning message with Open Telemetry upon receiving a **Sunset** response header. | No | No | No | No | No | No |

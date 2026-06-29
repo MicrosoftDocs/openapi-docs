@@ -13,7 +13,7 @@ In this tutorial, you build a sample app in Python that calls a REST API that do
 
 ## Required tools
 
-- [Python 3.9+](https://www.python.org/)
+- [Python 3.10+](https://www.python.org/)
 - [pip 20.0+](https://pip.pypa.io/en/stable/)
 - [asyncio](https://docs.python.org/3/library/asyncio.html) or any other supported async environment, for example, AnyIO, Trio.
 
@@ -21,11 +21,35 @@ In this tutorial, you build a sample app in Python that calls a REST API that do
 
 Create a directory to contain the new project.
 
+## Set up a virtual environment
+
+**Create and start a virtual environment.**
+
+```bash
+python3 -m venv .venv # directories starting with '.' will be hidden)
+```
+
+**Activate the virtual environment**
+
+```bash
+source .venv/bin/activate # macOS/Linux
+```
+
+```bash
+.venv\Scripts\activate # Windows
+```
+
+**Verify the virtual environment**
+
+```bash
+python --version
+```
+
 ## Project configuration
 
 In case you're adding a Kiota client to an existing project, the following configuration is required:
 
-- **pyproject.toml** > **project** > **requires-python** set to ">=3.8".
+- **pyproject.toml** > **project** > **requires-python** set to ">=3.10".
 
 ## Add dependencies
 
@@ -49,7 +73,7 @@ pip install microsoft-kiota-serialization-multipart
 ```
 
 > [!TIP]
-> It is recommended to use a package manager/virtual environment to avoid installing packages system wide. Read more [here](https://packaging.python.org/en/latest/).
+> It is recommended to use a package manager/virtual environment (.venv) to avoid installing packages system wide. Read more [here](https://packaging.python.org/en/latest/).
 
 ## Generate the API client
 

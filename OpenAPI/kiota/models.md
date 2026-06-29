@@ -3,7 +3,7 @@ title: Kiota API models
 description: Learn how OpenAPI types are used to generate models for Kiota API clients.
 author: baywet
 ms.author: vibiret
-ms.topic: conceptual
+ms.topic: article
 ms.date: 03/21/2023
 ---
 
@@ -198,7 +198,6 @@ To produce a more idiomatic output for specific languages, mangling is applied t
 | Language   | Property name | Property accessors |
 | ---------- | ------------- | ------------------ |
 | CSharp     | `PascalCase`  | -                  |
-| CLI        | `PascalCase`  | -                  |
 | Go         | -             | `PascalCase`       |
 | Java       | `camelCase`   | `camelCase`        |
 | PHP        | -             | `camelCase`        |
