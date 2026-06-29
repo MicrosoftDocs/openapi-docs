@@ -338,7 +338,7 @@ JSON Schema references can use either a locator or an identifier. Locators indic
 - An internal inline subschema
 - An external OpenApi document component
 - An external inline subchema
-- An external inline subchema using anchor [Not currently supported]
+- An external inline subchema using anchor
 - An external fragment [Not supported]
 
 #### An internal component
@@ -489,9 +489,10 @@ components:
               type: string
 ```
 
-#### An external inline subchema using an anchor [Not currently supported]
+#### An external inline subchema using an anchor
 
-We accept pull requests.
+OpenAPI.NET supports resolving plain-name JSON Schema anchors in external OpenAPI documents.
+
 
 ```yaml
 openapi: 3.1.0
@@ -572,7 +573,7 @@ person:
 ### What can a JSON Schema identifier reference target
 
 - Reference an internal component using a $id
-- Reference an internal subschema using a $id [Not supported yet]
+- Reference an internal subschema using a $id
 - Reference an external component schema using a $id
 
 #### Reference an internal component using a $id
@@ -609,7 +610,9 @@ components:
               type: string
 ```
 
-#### Reference an internal subschema using a $id  [Not supported yet]
+#### Reference an internal subschema using a $id
+
+OpenAPI.NET supports resolving `$id` values on nested schemas. Relative `$id` values are resolved against the closest parent schema resource identifier.
 
 ```yaml
 openapi: 3.1.0
