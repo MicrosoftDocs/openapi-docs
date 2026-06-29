@@ -7,3 +7,5 @@ items:
   href: modify-openapi.md
 - name: Convert an OpenAPI document
   href: convert-openapi.md
+- name: References in OpenAPI documents
+  href: references-openapi.md
