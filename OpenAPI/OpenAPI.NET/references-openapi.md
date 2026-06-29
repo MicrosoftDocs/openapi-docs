@@ -703,7 +703,7 @@ In this example:
 
 ## $ref in PathItem Objects
 
-This scenario is unsupported in OpenAPI.NET.
+This scenario is supported in OpenAPI.NET.
 
 ```yaml
 openapi: 3.1.0
