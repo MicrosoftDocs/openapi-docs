@@ -337,8 +337,8 @@ JSON Schema references can use either a locator or an identifier. Locators indic
 - An internal component subschema
 - An internal inline subschema
 - An external OpenApi document component
-- An external inline subchema [Not supported]
-- An external inline subchema using anchor
+- An external inline subchema
+- An external inline subchema using anchor [Not currently supported]
 - An external fragment [Not supported]
 
 #### An internal component
@@ -572,8 +572,8 @@ person:
 ### What can a JSON Schema identifier reference target
 
 - Reference an internal component using a $id
-- Reference an internal subschema using a $id
-- Reference external components and subschemas using a $id
+- Reference an internal subschema using a $id [Not supported yet]
+- Reference an external component schema using a $id
 
 #### Reference an internal component using a $id
 
@@ -647,9 +647,9 @@ components:
               type: string
 ```
 
-#### Reference external components and subschemas using a $id
+#### Reference external component schemas using a $id
 
-External components and subschemas are referenced in the exact same way as internal components.
+External component schemas are referenced in the exact same way as internal component schemas. External subschemas that rely on their own `$id` are not currently supported.
 
 ## $dynamicAnchor and $dynamicRef [Not currently supported]
 
