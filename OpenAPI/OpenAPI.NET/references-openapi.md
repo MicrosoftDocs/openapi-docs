@@ -268,11 +268,14 @@ components:
 
 JSON Schema defines the concept of a JSON Schema Resource which is identified by a URI.  $ref values can be specified relative to the JSON Schema Resource.  Each OpenAPI schema object can be considered a JSON Schema Resource.
 
-In this example schema "a" is a JSON Schema resource and the reference in the "b" property of the "c" object is relative to the JSON Schema resource "a".  Unfortunately, OpenAPI 3.1 has no well defined URIs for OpenAPI Schemas. This should be resolved in OpenAPI 3.2 with the introduction of a new top level "self" property.
+In this example schema "a" is a JSON Schema resource and the reference in the "b" property of the "c" object is relative to the JSON Schema resource "a".  Unfortunately, OpenAPI 3.1 has no well defined URIs for OpenAPI Schemas. This is resolved in OpenAPI 3.2 with the introduction of a new top level "self" property.
 
 ```yaml
 components:
   schemas:
+  # this component schema is ALSO a JSON schema resource
+  # therefore, the ref is relative to this schema.
+  # this would also work if the whole tree is a schema inside a media type schema, etc...
     a:
       type:
         - object
@@ -292,7 +295,7 @@ components:
                   $ref: '#/properties/b'
 ```
 
-#### References local to a JSON Schema Resource defined by a $id
+#### References local to a JSON Schema Resource defined by a $id [Not currently supported]
 
 ```yaml
 components:
@@ -310,6 +313,8 @@ components:
         additionalProperties: false
         properties:
           c:
+          # this is similar to the prior example, but the $id here turns this specific schema in a resource
+          # it effectively defines a "new root" for relative lookups.
             $id: 'http://example.org/c'
             type:
               - object
@@ -324,7 +329,7 @@ components:
 
 ### What kinds of JSON Schema references exist
 
-JSON Schema references can use either a locator or an identifier. Locators indicate where to find the target schema based on the name and structure of documents.  However, identifiers are opaque URIs that match to the identifer of a JSON schema that has a $id either explicitly or implicitly by inheriting an identity from its parent.
+JSON Schema references can use either a locator or an identifier. Locators indicate where to find the target schema based on the name and structure of documents.  However, identifiers are opaque URIs that match to the identifier of a JSON schema that has a $id either explicitly or implicitly by inheriting an identity from its parent.
 
 ### What can a JSON Schema locator reference target
 
@@ -417,6 +422,7 @@ paths:
           content:
             application/json:
               schema:
+                # the URI is assumed to be relative according to RFC 3986
                 $ref: 'OAS-schemas.yaml#/components/schemas/person'
 ```
 
@@ -630,6 +636,8 @@ components:
         name:
           type: string
         address:
+          # this is equivalent to https://schemas.acme.org/address because
+          # https://schemas.acme.org/person does NOT end up with / (RFC 3986)
           $id: 'address'
           type: object
           properties:
