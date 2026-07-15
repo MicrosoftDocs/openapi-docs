@@ -657,7 +657,7 @@ components:
 
 External component schemas are referenced in the exact same way as internal component schemas. External subschemas that rely on their own `$id` are not currently supported.
 
-## $dynamicAnchor and $dynamicRef [Not currently supported]
+## $dynamicAnchor and $dynamicRef
 
 JSON Schema 2020-12, which is the basis for OpenAPI 3.1 schemas, introduces `$dynamicAnchor` and `$dynamicRef` as a mechanism for building extensible, generic schemas. They work together as overridable extension hooks:
 
@@ -669,6 +669,8 @@ This is analogous to generic type parameters in programming languages such as C+
 OpenAPI.NET exposes `$dynamicAnchor` and `$dynamicRef` as properties on the schema model, but dynamic reference resolution is not currently implemented.
 
 The following example defines a generic `collection` schema whose item type can be overridden by a more specialized schema.
+
+> Note: support was added in versions 3.9.0 and 2.11.0.
 
 ```yaml
 openapi: 3.1.0
