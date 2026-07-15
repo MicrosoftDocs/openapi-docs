@@ -493,6 +493,7 @@ components:
 
 OpenAPI.NET supports resolving plain-name JSON Schema anchors in external OpenAPI documents.
 
+> Note: support was added in versions 3.9.0 and 2.11.0.
 
 ```yaml
 openapi: 3.1.0
@@ -613,6 +614,8 @@ components:
 #### Reference an internal subschema using a $id
 
 OpenAPI.NET supports resolving `$id` values on nested schemas. Relative `$id` values are resolved against the closest parent schema resource identifier.
+
+> Note: support was added in versions 3.9.0 and 2.11.0.
 
 ```yaml
 openapi: 3.1.0
