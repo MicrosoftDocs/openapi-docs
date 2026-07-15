@@ -495,8 +495,6 @@ OpenAPI.NET supports resolving plain-name JSON Schema anchors in external OpenAP
 
 > Note: support was added in versions 3.9.0 and 2.11.0.
 
-We accept pull requests.
-
 ```yaml
 openapi: 3.1.0
 info:
