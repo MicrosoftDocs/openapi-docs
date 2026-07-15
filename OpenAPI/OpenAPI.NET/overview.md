@@ -32,3 +32,4 @@ Some of the benefits of using the OpenAPI.NET library when working with OpenAPI 
 - [Creating an OpenAPI document](create-openapi.md)
 - [Modifying an OpenAPI document](modify-openapi.md)
 - [Converting an OpenAPI document](convert-openapi.md)
+- [Earlier-version serialization considerations](earlier-version-serialization.md)
