@@ -338,7 +338,7 @@ JSON Schema references can use either a locator or an identifier. Locators indic
 - An internal inline subschema
 - An external OpenApi document component
 - An external inline subchema
-- An external inline subchema using anchor [Not currently supported]
+- An external inline subchema using anchor
 - An external fragment [Not supported]
 
 #### An internal component
@@ -489,7 +489,11 @@ components:
               type: string
 ```
 
-#### An external inline subchema using an anchor [Not currently supported]
+#### An external inline subchema using an anchor
+
+OpenAPI.NET supports resolving plain-name JSON Schema anchors in external OpenAPI documents.
+
+> Note: support was added in versions 3.9.0 and 2.11.0.
 
 We accept pull requests.
 
@@ -572,7 +576,7 @@ person:
 ### What can a JSON Schema identifier reference target
 
 - Reference an internal component using a $id
-- Reference an internal subschema using a $id [Not supported yet]
+- Reference an internal subschema using a $id
 - Reference an external component schema using a $id
 
 #### Reference an internal component using a $id
@@ -609,7 +613,11 @@ components:
               type: string
 ```
 
-#### Reference an internal subschema using a $id  [Not supported yet]
+#### Reference an internal subschema using a $id
+
+OpenAPI.NET supports resolving `$id` values on nested schemas. Relative `$id` values are resolved against the closest parent schema resource identifier.
+
+> Note: support was added in versions 3.9.0 and 2.11.0.
 
 ```yaml
 openapi: 3.1.0
@@ -651,7 +659,7 @@ components:
 
 External component schemas are referenced in the exact same way as internal component schemas. External subschemas that rely on their own `$id` are not currently supported.
 
-## $dynamicAnchor and $dynamicRef [Not currently supported]
+## $dynamicAnchor and $dynamicRef
 
 JSON Schema 2020-12, which is the basis for OpenAPI 3.1 schemas, introduces `$dynamicAnchor` and `$dynamicRef` as a mechanism for building extensible, generic schemas. They work together as overridable extension hooks:
 
@@ -663,6 +671,8 @@ This is analogous to generic type parameters in programming languages such as C+
 OpenAPI.NET exposes `$dynamicAnchor` and `$dynamicRef` as properties on the schema model, but dynamic reference resolution is not currently implemented.
 
 The following example defines a generic `collection` schema whose item type can be overridden by a more specialized schema.
+
+> Note: support was added in versions 3.9.0 and 2.11.0.
 
 ```yaml
 openapi: 3.1.0
