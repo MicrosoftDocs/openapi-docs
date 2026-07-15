@@ -327,6 +327,50 @@ components:
                 type: string
 ```
 
+### `$ref` siblings
+
+In OpenAPI 3.0, any properties placed alongside `$ref` in a JSON Schema are ignored. This restriction was lifted in OpenAPI 3.1, which aligns with JSON Schema 2020-12: sibling keywords are valid and evaluated alongside the referenced target schema.
+
+> Note: preservation of JSON Schema 2020-12 keyword siblings on `$ref` schemas was added in versions 3.8.0 and 2.10.0.
+
+This is useful when you want to annotate or constrain a specific use of a referenced schema without creating a new component.
+
+```yaml
+openapi: 3.1.0
+info:
+  title: $ref with siblings
+  version: 1.0.0
+paths:
+  /items:
+    get:
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/item'
+                  title: Item in response
+                  minProperties: 2
+components:
+  schemas:
+    item:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+```
+
+In this example, the `items` schema references `item` but also adds a local `title` annotation and a local `minProperties` constraint. OpenAPI.NET preserves these sibling values on `JsonSchemaReference`.
+
+The resolved target schema remains available through `OpenApiSchemaReference.Target`, while the authored sibling values are available through `OpenApiSchemaReference.Reference`. Some convenience properties on `OpenApiSchemaReference` return the local reference value first and fall back to the target schema value when the local value is absent. For example, `schemaReference.MinProperties` returns the sibling `minProperties` value when one is present, while `schemaReference.Target.MinProperties` returns the target schema's value.
+
+In JSON Schema evaluation, sibling assertion keywords are evaluated alongside the referenced schema rather than replacing the referenced schema's assertions.
+
 ### What kinds of JSON Schema references exist
 
 JSON Schema references can use either a locator or an identifier. Locators indicate where to find the target schema based on the name and structure of documents.  However, identifiers are opaque URIs that match to the identifier of a JSON schema that has a $id either explicitly or implicitly by inheriting an identity from its parent.
@@ -666,11 +710,11 @@ JSON Schema 2020-12, which is the basis for OpenAPI 3.1 schemas, introduces `$dy
 
 This is analogous to generic type parameters in programming languages such as C++ templates or Java generics.
 
-OpenAPI.NET exposes `$dynamicAnchor` and `$dynamicRef` as properties on the schema model, but dynamic reference resolution is not currently implemented.
+OpenAPI.NET resolves `$dynamicRef` values against the `$dynamicAnchor` and `$anchor` registries in the document's `OpenApiWorkspace`. Bare `$dynamicRef` schemas (no `$ref`) deserialize as `OpenApiSchemaReference` whose `Target` resolves via the per-document `$dynamicAnchor` registry, with `$anchor` fallback when no `$dynamicAnchor` candidate exists. When multiple schemas declare the same `$dynamicAnchor`, `Target` returns null because the spec requires the outermost dynamic anchor, which needs dynamic-scope evaluation the library does not perform. Consumers that track dynamic scope can use `OpenApiWorkspace.ResolveDynamicAnchorInContext(contextSchema, anchorName)` for context-aware resolution.
 
 The following example defines a generic `collection` schema whose item type can be overridden by a more specialized schema.
 
-> Note: support was added in versions 3.9.0 and 2.11.0.
+> Note: `$dynamicRef` resolution, including cross-document resolution with relative URIs, was added in versions 3.9.0 and 2.11.0.
 
 ```yaml
 openapi: 3.1.0
