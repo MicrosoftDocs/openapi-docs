@@ -194,6 +194,11 @@ var redirectOption = new RedirectHandlerOption
 var handlers = KiotaClientFactory.CreateDefaultHandlers(new IRequestOption[] { redirectOption });
 ```
 
+### [TypeScript](#tab/typescript)
+
+> [!NOTE]
+> A composable way to remove custom headers while preserving the built-in scrubbing isn't available yet in the TypeScript library, because the default scrubbing implementation isn't exposed for reuse. Until then, avoid attaching custom API key or authorization headers to requests that can be redirected across origins.
+
 ### [Python](#tab/python)
 
 ```python
