@@ -166,3 +166,61 @@ The following table describes which middleware handlers are implemented by the H
 
 > [!NOTE]
 > Request body decompression is not enabled by default in ASP.NET Core APIs and needs to be enabled. Find out how to enable it with [Request Decompression in ASP.NET core](/aspnet/core/fundamentals/middleware/request-decompression).
+
+## Scrubbing sensitive headers on redirects
+
+When the Redirect handler follows a redirect to a different origin (a change of host, scheme, or port), it removes well-known credential headers so they aren't leaked to an untrusted target. By default, the handler removes the `Authorization` and `Cookie` headers (and, where applicable, `Proxy-Authorization`).
+
+> [!IMPORTANT]
+> Only the standard `Authorization`, `Cookie`, and `Proxy-Authorization` headers are scrubbed by default. Custom credential headers, such as API keys (for example `X-Api-Key`, `api-key`, or `Ocp-Apim-Subscription-Key`), are **not** removed automatically. Scrubbing a custom API key or authorization header on redirect is the consumer's responsibility, using the redirect option's sensitive-headers callback described below.
+
+To remove your own custom headers, provide a sensitive-headers callback on the redirect option that removes the header when the origin changes.
+
+### [.NET](#tab/csharp)
+
+```csharp
+var redirectOption = new RedirectHandlerOption
+{
+    ScrubSensitiveHeaders = (request, originalUri, proxyResolver) =>
+    {
+        // Keep the default scrubbing of Authorization, Cookie, and Proxy-Authorization.
+        RedirectHandlerOption.DefaultScrubSensitiveHeaders(request, originalUri, proxyResolver);
+
+        // Remove your custom API key header on redirect.
+        request.Headers.Remove("X-Api-Key");
+    }
+};
+
+var handlers = KiotaClientFactory.CreateDefaultHandlers(new IRequestOption[] { redirectOption });
+```
+
+### [TypeScript](#tab/typescript)
+
+> [!NOTE]
+> A composable way to remove custom headers while preserving the built-in scrubbing isn't available yet in the TypeScript library, because the default scrubbing implementation isn't exposed for reuse. Until then, avoid attaching custom API key or authorization headers to requests that can be redirected across origins.
+
+### [Python](#tab/python)
+
+```python
+from kiota_http.kiota_client_factory import KiotaClientFactory
+from kiota_http.middleware.options.redirect_handler_option import (
+    RedirectHandlerOption,
+    default_scrub_sensitive_headers,
+)
+
+
+def scrub_sensitive_headers(new_request, original_url):
+    # Keep the default scrubbing of Authorization and Cookie.
+    default_scrub_sensitive_headers(new_request, original_url)
+
+    # Remove your custom API key header on redirect.
+    new_request.headers.pop("X-Api-Key", None)
+
+
+redirect_option = RedirectHandlerOption(scrub_sensitive_headers=scrub_sensitive_headers)
+middleware = KiotaClientFactory.get_default_middleware(
+    {RedirectHandlerOption.get_key(): redirect_option}
+)
+```
+
+---
