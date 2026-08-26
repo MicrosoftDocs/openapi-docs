@@ -196,8 +196,34 @@ var handlers = KiotaClientFactory.CreateDefaultHandlers(new IRequestOption[] { r
 
 ### [TypeScript](#tab/typescript)
 
-> [!NOTE]
-> A composable way to remove custom headers while preserving the built-in scrubbing isn't available yet in the TypeScript library, because the default scrubbing implementation isn't exposed for reuse. Until then, avoid attaching custom API key or authorization headers to requests that can be redirected across origins.
+```typescript
+import {
+    KiotaClientFactory,
+    MiddlewareFactory,
+    RedirectHandler,
+    RedirectHandlerOptions,
+    defaultScrubSensitiveHeaders,
+} from "@microsoft/kiota-http-fetchlibrary";
+
+const redirectOptions = new RedirectHandlerOptions({
+    scrubSensitiveHeaders: (headers, originalUrl, newUrl) => {
+        // Keep the default scrubbing of Authorization, Cookie, and Proxy-Authorization.
+        defaultScrubSensitiveHeaders(headers, originalUrl, newUrl);
+
+        // Remove your custom API key header on redirect.
+        // Header keys are lower-cased before they reach the middleware.
+        delete headers["x-api-key"];
+    },
+});
+
+// Start from the default middleware chain and replace the redirect handler
+// with one configured to scrub the custom header.
+const middlewares = MiddlewareFactory.getDefaultMiddlewares();
+const redirectIndex = middlewares.findIndex((handler) => handler instanceof RedirectHandler);
+middlewares[redirectIndex] = new RedirectHandler(redirectOptions);
+
+const httpClient = KiotaClientFactory.create(undefined, middlewares);
+```
 
 ### [Python](#tab/python)
 
