@@ -9,6 +9,18 @@ ms.date: 03/10/2023
 
 # Using the Kiota tool
 
+Kiota now supports the generation of AI plugins, including Type-B Plugin manifests, tailored for Microsoft Copilots. These AI plugins can be used to ground Large Language Models (LLMs) by integrating them with relevant, use-case-specific data, thereby enhancing the user experience.
+
+This article provides instructions on how to use Kiota in Visual Studio Code (VS Code) to generate AI plugins, create API manifests, and integrate them with Microsoft Copilot workflows.
+
+## Prerequisites
+* Visual Studio Code installed on your machine.
+* Kiota extension for Visual Studio Code (VS Code).
+* A basic understanding of OpenAPI and plugin generation.
+* Access to Kiota or a compatible API catalog (e.g., Microsoft Graph API, GitHub API).
+
+
+
 <!-- markdownlint-disable MD024 -->
 
 > [!NOTE]
