@@ -4,7 +4,7 @@ description: Learn how use Kiota to build API clients in Ruby to access APIs tha
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: tutorial
-ms.date: 03/20/2023
+ms.date: 09/29/2026
 ---
 
 # Build API clients for Ruby with Microsoft identity authentication
@@ -13,7 +13,7 @@ In this tutorial, you generate an API client that uses [Microsoft identity authe
 
 ## Required tools
 
-- [Ruby 3](https://www.ruby-lang.org/en/downloads/)
+- [Ruby 3.3 or newer](https://www.ruby-lang.org/en/downloads/)
 - [Bundler](https://bundler.io/)
 
 ## Create a project
@@ -34,6 +34,8 @@ For this tutorial, use the default implementations.
 
     ```ruby
     source 'https://rubygems.org'
+
+    ruby ">= 3.3.0"
 
     gem "microsoft_kiota_abstractions"
     gem "microsoft_kiota_serialization_json"
