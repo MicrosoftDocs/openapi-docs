@@ -13,7 +13,7 @@ In this tutorial, you build a sample app in TypeScript that calls a REST API tha
 
 ## Required tools
 
-- [NodeJS 18 or above](https://nodejs.org/en/)
+- [NodeJS 22 or above](https://nodejs.org/en/)
 - [TypeScript 5 or above](https://www.typescriptlang.org/)
 
 ## Create a project
