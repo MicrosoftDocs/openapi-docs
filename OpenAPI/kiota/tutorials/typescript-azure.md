@@ -11,7 +11,7 @@ ms.date: 03/20/2023
 
 ## Required tools
 
-- [NodeJS 18](https://nodejs.org/en/)
+- [NodeJS 22 or above](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
 
 ## Create a project
