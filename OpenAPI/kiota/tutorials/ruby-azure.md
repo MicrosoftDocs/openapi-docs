@@ -4,7 +4,7 @@ description: Learn how use Kiota to build API clients in Ruby to access APIs tha
 author: jasonjoh
 ms.author: jasonjoh
 ms.topic: tutorial
-ms.date: 09/29/2026
+ms.date: 11/02/2026
 ---
 
 # Build API clients for Ruby with Microsoft identity authentication
@@ -22,11 +22,14 @@ Create a new file named **Gemfile** in the root directory of your project.
 
 ## Add dependencies
 
-Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-abstractions-ruby). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
+Before you can compile and run the generated API client, you need to make sure the generated source files are part of a project with the required dependencies. Your project must have a reference to the [abstraction package](https://github.com/microsoft/kiota-ruby/tree/main/components/abstractions). Additionally, you must either use the Kiota default implementations or provide your own custom implementations of the following packages.
 
-- Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-authentication-oauth-ruby))
-- HTTP ([Kiota default Faraday-based implementation](https://github.com/microsoft/kiota-http-ruby))
-- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-serialization-json-ruby))
+- Authentication ([Kiota default Azure authentication](https://github.com/microsoft/kiota-ruby/tree/main/components/authentication/oauth))
+- HTTP ([Kiota default Faraday-based implementation](https://github.com/microsoft/kiota-ruby/tree/main/components/http))
+- JSON serialization ([Kiota default](https://github.com/microsoft/kiota-ruby/tree/main/components/serialization/json))
+- Text serialization ([Kiota default](https://github.com/microsoft/kiota-ruby/tree/main/components/serialization/text))
+- Form serialization ([Kiota default](https://github.com/microsoft/kiota-ruby/tree/main/components/serialization/form))
+- Multipart serialization ([Kiota default](https://github.com/microsoft/kiota-ruby/tree/main/components/serialization/multipart))
 
 For this tutorial, use the default implementations.
 
@@ -39,6 +42,9 @@ For this tutorial, use the default implementations.
 
     gem "microsoft_kiota_abstractions"
     gem "microsoft_kiota_serialization_json"
+    gem "microsoft_kiota_serialization_text"
+    gem "microsoft_kiota_serialization_form"
+    gem "microsoft_kiota_serialization_multipart"
     gem "microsoft_kiota_authentication_oauth"
     gem "microsoft_kiota_faraday"
     ```
@@ -58,15 +64,7 @@ Kiota generates API clients from OpenAPI documents. Create a file named **get-me
 You can then use the Kiota command line tool to generate the API client classes.
 
 ```bash
-kiota generate -l ruby -d get-me.yml -n Graph -o ./client
-```
-
-Lastly, create a file called **graph.rb** in the `client` folder that was created by Kiota. Add the following code:
-
-```ruby
-# frozen_string_literal: true
-module Graph
-end
+kiota generate -l ruby -d get-me.yml -c GetUserApiClient -n GetUser -o ./client
 ```
 
 ## Register an application

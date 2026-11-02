@@ -21,4 +21,5 @@ Kiota quick starts are step-by-step exercises that guide you through generating 
 | [Java](java.md) | [microsoft/kiota-samples/get-started/quickstart/java](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/java) |
 | [PHP](php.md) | [microsoft/kiota-samples/get-started/quickstart/php](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/php) |
 | [Python](python.md) | [microsoft/kiota-samples/get-started/quickstart/python](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/python) |
+| [Ruby](ruby.md) | [microsoft/kiota-samples/get-started/quickstart/ruby](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/ruby) |
 | [TypeScript](typescript.md) | [microsoft/kiota-samples/get-started/quickstart/typescript](https://github.com/microsoft/kiota-samples/tree/main/get-started/quickstart/typescript) |

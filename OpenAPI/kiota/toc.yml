@@ -23,6 +23,8 @@ items:
     href: quickstarts/php.md
   - name: Python
     href: quickstarts/python.md
+  - name: Ruby
+    href: quickstarts/ruby.md
   - name: TypeScript
     href: quickstarts/typescript.md
 - name: Tutorials
