@@ -82,7 +82,7 @@ The following table provides the list of serialization package per language.
 | Java | com.microsoft.kiota:microsoft-kiota-serialization-multipart | None |
 | PHP | microsoft/kiota-serialization-multipart | None |
 | Python | microsoft-kiota-serialization-multipart | None |
-| Ruby | Not released | None |
+| Ruby | microsoft_kiota_serialization_multipart | None |
 | Swift | Not released | None |
 | TypeScript | @microsoft/kiota-serialization-multipart | None |
 
@@ -99,7 +99,7 @@ The following table provides the list of serialization package per language.
 | Java | com.microsoft.kiota:microsoft-kiota-serialization-form | None |
 | PHP | microsoft/kiota-serialization-form | None |
 | Python | microsoft-kiota-serialization-form | None |
-| Ruby | Not Released | None |
+| Ruby | microsoft_kiota_serialization_form | None |
 | Swift | Not released | None |
 | TypeScript | @microsoft/kiota-serialization-form | None |
 
@@ -116,7 +116,7 @@ The following table provides the list of serialization package per language.
 | Java | com.microsoft.kiota:microsoft-kiota-serialization-text | None |
 | PHP | microsoft/kiota-serialization-text | None |
 | Python | microsoft-kiota-serialization-text | None |
-| Ruby | Not Released | None |
+| Ruby | microsoft_kiota_serialization_text | None |
 | Swift | Not released | None |
 | TypeScript | @microsoft/kiota-serialization-text | None |
 
