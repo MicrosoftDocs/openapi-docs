@@ -149,7 +149,7 @@ The following table describes which middleware handlers are implemented by the H
 | Chaos | For testing purposes only. Randomly fails requests to allow testing clients' resilience. | Yes | Yes | Yes | Yes | Yes | No | No |
 | Headers Inspection | Allows the client application to inspect the request and response headers through the associated options. | Default | Default | Default | Default | Default | Default | Default |
 | Parameters Name Decoding | Decodes query parameter names that were encoded when building the URL because they contained characters not allowed by RFC 6570. | Default | Default | Default | Default | Default | Default | Default |
-| Redirect | Automatically follows Location response headers when a **301** or **302** response status code is received. | Default | Default | Default | Default | Default | Default | No |
+| Redirect | Automatically follows Location response headers when a **301** or **302** response status code is received. | Default | Default | Default | Default | Default | Default | Default |
 | Request Compression | Compresses request bodies and retries requests without compression when a **415** response status code is received. | No | Default | No | Yes | No | No | No |
 | Response Decompression | Adds an **Accept-Encoding** request header and decompresses any response body with a **Content-Encoding** response header. | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | Retry | Automatically retries requests when a **429** or a **503** response status code is received. | Default | Default | Default | Default | Default | Default | No |
