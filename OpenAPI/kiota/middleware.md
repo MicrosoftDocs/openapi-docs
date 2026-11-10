@@ -167,6 +167,8 @@ The following table describes which middleware handlers are implemented by the H
 > [!NOTE]
 > Request body decompression is not enabled by default in ASP.NET Core APIs and needs to be enabled. Find out how to enable it with [Request Decompression in ASP.NET core](/aspnet/core/fundamentals/middleware/request-decompression).
 
+The default Kiota request adapter for Ruby also includes the Headers Inspection handler. To capture headers, add a `HeadersInspectionOption` to the request configuration. For an example, see [Inspect response headers in Kiota for Ruby](https://github.com/microsoft/kiota-ruby#inspect-response-headers).
+
 ## Scrubbing sensitive headers on redirects
 
 When the Redirect handler follows a redirect to a different origin (a change of host, scheme, or port), it removes well-known credential headers so they aren't leaked to an untrusted target. By default, the handler removes the `Authorization` and `Cookie` headers (and, where applicable, `Proxy-Authorization`).
