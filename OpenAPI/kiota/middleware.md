@@ -142,21 +142,21 @@ client = ApiClient(adapter)  # the name of the client will vary based on your ge
 
 The following table describes which middleware handlers are implemented by the HTTP package, and which ones are included by default with any new request adapter.
 
-| Name | Description | C# Support | Go Support | Java Support | TypeScript Support | PHP Support | Python Support |
-| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
-| Authorization | Adds an access token to the request when using a native HTTP client. | Yes | No | Yes | No | No | No |
-| Body Inspection | Allows the client application to inspect the request and response body through the associated options. | Yes | No | No | No | No | Default |
-| Chaos | For testing purposes only. Randomly fails requests to allow testing clients' resilience. | Yes | Yes | Yes | Yes | Yes | No |
-| Headers Inspection | Allows the client application to inspect the request and response headers through the associated options. | Default | Default | Default | Default | Default | Default |
-| Parameters Name Decoding | Decodes query parameter names that were encoded when building the URL because they contained characters not allowed by RFC 6570. | Default | Default | Default | Default | Default | Default |
-| Redirect | Automatically follows Location response headers when a **301** or **302** response status code is received. | Default | Default | Default | Default | Default | Default |
-| Request Compression | Compresses request bodies and retries requests without compression when a **415** response status code is received. | No | Default | No | Yes | No | No |
-| Response Decompression | Adds an **Accept-Encoding** request header and decompresses any response body with a **Content-Encoding** response header. | N/A | N/A | N/A | N/A | N/A | N/A |
-| Retry | Automatically retries requests when a **429** or a **503** response status code is received. | Default | Default | Default | Default | Default | Default |
-| Sunset | Logs a warning message with Open Telemetry upon receiving a **Sunset** response header. | No | No | No | No | No | No |
-| Telemetry | Adds an extension point to augment the request with telemetry headers. | Yes | No | No | Yes | Yes | No |
-| Uri Replacement | Enables replacement of segments of the request URI before it's sent out. | Default | Yes | Default | Yes | Yes | Default |
-| User Agent | Adds the kiota http library version to the user agent request header. | Default | Default | Default | Default | Default | Default |
+| Name | Description | C# Support | Go Support | Java Support | TypeScript Support | PHP Support | Python Support | Ruby Support |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- | ---- |
+| Authorization | Adds an access token to the request when using a native HTTP client. | Yes | No | Yes | No | No | No | No |
+| Body Inspection | Allows the client application to inspect the request and response body through the associated options. | Yes | No | No | No | No | Default | No |
+| Chaos | For testing purposes only. Randomly fails requests to allow testing clients' resilience. | Yes | Yes | Yes | Yes | Yes | No | No |
+| Headers Inspection | Allows the client application to inspect the request and response headers through the associated options. | Default | Default | Default | Default | Default | Default | Default |
+| Parameters Name Decoding | Decodes query parameter names that were encoded when building the URL because they contained characters not allowed by RFC 6570. | Default | Default | Default | Default | Default | Default | Default |
+| Redirect | Automatically follows Location response headers when a **301** or **302** response status code is received. | Default | Default | Default | Default | Default | Default | No |
+| Request Compression | Compresses request bodies and retries requests without compression when a **415** response status code is received. | No | Default | No | Yes | No | No | No |
+| Response Decompression | Adds an **Accept-Encoding** request header and decompresses any response body with a **Content-Encoding** response header. | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| Retry | Automatically retries requests when a **429** or a **503** response status code is received. | Default | Default | Default | Default | Default | Default | No |
+| Sunset | Logs a warning message with Open Telemetry upon receiving a **Sunset** response header. | No | No | No | No | No | No | No |
+| Telemetry | Adds an extension point to augment the request with telemetry headers. | Yes | No | No | Yes | Yes | No | No |
+| Uri Replacement | Enables replacement of segments of the request URI before it's sent out. | Default | Yes | Default | Yes | Yes | Default | No |
+| User Agent | Adds the kiota http library version to the user agent request header. | Default | Default | Default | Default | Default | Default | Default |
 
 > [!NOTE]
 > Languages with **N/A** in the response decompression column leverage the native response decompression offered by the HTTP client instead.
@@ -166,8 +166,6 @@ The following table describes which middleware handlers are implemented by the H
 
 > [!NOTE]
 > Request body decompression is not enabled by default in ASP.NET Core APIs and needs to be enabled. Find out how to enable it with [Request Decompression in ASP.NET core](/aspnet/core/fundamentals/middleware/request-decompression).
-
-The default Kiota request adapter for Ruby also includes the Headers Inspection handler. To capture headers, add a `HeadersInspectionOption` to the request configuration. For an example, see [Inspect response headers in Kiota for Ruby](https://github.com/microsoft/kiota-ruby#inspect-response-headers).
 
 ## Scrubbing sensitive headers on redirects
 
